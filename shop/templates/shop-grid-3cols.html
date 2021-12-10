@@ -12,8 +12,8 @@
             <nav class="breadcrumb-nav">
                 <div class="container">
                     <ul class="breadcrumb bb-no">
-                        <li><a href="demo1.html">Home</a></li>
-                        <li><a href="shop-banner-sidebar.html">Shop</a></li>
+                        <li><a href="{% url 'home:index' %}">Home</a></li>
+                        <li><a href="{% url 'product:shop' %}">Shop</a></li>
                         <li>3 Columns</li>
                     </ul>
                 </div>
@@ -30,7 +30,7 @@
                             <h4 class="banner-subtitle font-weight-bold">Accessories Collection</h4>
                             <h3 class="banner-title text-white text-uppercase font-weight-bolder ls-normal">Smart Wrist
                                 Watches</h3>
-                            <a href="shop-banner-sidebar.html" class="btn btn-dark btn-rounded btn-icon-right">Discover
+                            <a href="{% url 'product:shop' %}" class="btn btn-dark btn-rounded btn-icon-right">Discover
                                 Now<i class="w-icon-long-arrow-right"></i></a>
                         </div>
                     </div>
@@ -130,14 +130,14 @@
                                 <div class="swiper-slide category-wrap">
                                     <div class="category category-ellipse">
                                         <figure class="category-media">
-                                            <a href="shop-banner-sidebar.html">
+                                            <a href="{% url 'product:shop' %}">
                                                 <img src="{% static 'images/categories/category-4.jpg' %}" alt="Categroy"
                                                     width="190" height="190" style="background-color: #5C92C0;" />
                                             </a>
                                         </figure>
                                         <div class="category-content">
                                             <h4 class="category-name">
-                                                <a href="shop-banner-sidebar.html">Sports</a>
+                                                <a href="{% url 'product:shop' %}">Sports</a>
                                             </h4>
                                         </div>
                                     </div>
@@ -145,14 +145,14 @@
                                 <div class="swiper-slide category-wrap">
                                     <div class="category category-ellipse">
                                         <figure class="category-media">
-                                            <a href="shop-banner-sidebar.html">
+                                            <a href="{% url 'product:shop' %}">
                                                 <img src="{% static 'images/categories/category-5.jpg' %}" alt="Categroy"
                                                     width="190" height="190" style="background-color: #B8BDC1;" />
                                             </a>
                                         </figure>
                                         <div class="category-content">
                                             <h4 class="category-name">
-                                                <a href="shop-banner-sidebar.html">Babies</a>
+                                                <a href="{% url 'product:shop' %}">Babies</a>
                                             </h4>
                                         </div>
                                     </div>
@@ -160,14 +160,14 @@
                                 <div class="swiper-slide category-wrap">
                                     <div class="category category-ellipse">
                                         <figure class="category-media">
-                                            <a href="shop-banner-sidebar.html">
+                                            <a href="{% url 'product:shop' %}">
                                                 <img src="{% static 'images/categories/category-6.jpg' %}" alt="Categroy"
                                                     width="190" height="190" style="background-color: #99C4CA;" />
                                             </a>
                                         </figure>
                                         <div class="category-content">
                                             <h4 class="category-name">
-                                                <a href="shop-banner-sidebar.html">Sneakers</a>
+                                                <a href="{% url 'product:shop' %}">Sneakers</a>
                                             </h4>
                                         </div>
                                     </div>
@@ -175,14 +175,14 @@
                                 <div class="swiper-slide category-wrap">
                                     <div class="category category-ellipse">
                                         <figure class="category-media">
-                                            <a href="shop-banner-sidebar.html">
+                                            <a href="{% url 'product:shop' %}">
                                                 <img src="{% static 'images/categories/category-7.jpg' %}" alt="Categroy"
                                                     width="190" height="190" style="background-color: #4E5B63;" />
                                             </a>
                                         </figure>
                                         <div class="category-content">
                                             <h4 class="category-name">
-                                                <a href="shop-banner-sidebar.html">Cameras</a>
+                                                <a href="{% url 'product:shop' %}">Cameras</a>
                                             </h4>
                                         </div>
                                     </div>
@@ -190,14 +190,14 @@
                                 <div class="swiper-slide category-wrap">
                                     <div class="category category-ellipse">
                                         <figure class="category-media">
-                                            <a href="shop-banner-sidebar.html">
+                                            <a href="{% url 'product:shop' %}">
                                                 <img src="{% static 'images/categories/category-8.jpg' %}" alt="Categroy"
                                                     width="190" height="190" style="background-color: #D3E5EF;" />
                                             </a>
                                         </figure>
                                         <div class="category-content">
                                             <h4 class="category-name">
-                                                <a href="shop-banner-sidebar.html">Games</a>
+                                                <a href="{% url 'product:shop' %}">Games</a>
                                             </h4>
                                         </div>
                                     </div>
@@ -205,14 +205,14 @@
                                 <div class="swiper-slide category-wrap">
                                     <div class="category category-ellipse">
                                         <figure class="category-media">
-                                            <a href="shop-banner-sidebar.html">
+                                            <a href="{% url 'product:shop' %}">
                                                 <img src="{% static 'images/categories/category-9.jpg' %}" alt="Categroy"
                                                     width="190" height="190" style="background-color: #65737C;" />
                                             </a>
                                         </figure>
                                         <div class="category-content">
                                             <h4 class="category-name">
-                                                <a href="shop-banner-sidebar.html">Kitchen</a>
+                                                <a href="{% url 'product:shop' %}">Kitchen</a>
                                             </h4>
                                         </div>
                                     </div>
@@ -220,14 +220,14 @@
                                 <div class="swiper-slide category-wrap">
                                     <div class="category category-ellipse">
                                         <figure class="category-media">
-                                            <a href="shop-banner-sidebar.html">
+                                            <a href="{% url 'product:shop' %}">
                                                 <img src="{% static 'images/categories/category-20.jpg' %}" alt="Categroy"
                                                     width="190" height="190" style="background-color: #E4E4E4;" />
                                             </a>
                                         </figure>
                                         <div class="category-content">
                                             <h4 class="category-name">
-                                                <a href="shop-banner-sidebar.html">Watches</a>
+                                                <a href="{% url 'product:shop' %}">Watches</a>
                                             </h4>
                                         </div>
                                     </div>
@@ -235,14 +235,14 @@
                                 <div class="swiper-slide category-wrap">
                                     <div class="category category-ellipse">
                                         <figure class="category-media">
-                                            <a href="shop-banner-sidebar.html">
+                                            <a href="{% url 'product:shop' %}">
                                                 <img src="{% static 'images/categories/category-21.jpg' %}" alt="Categroy"
                                                     width="190" height="190" style="background-color: #D3D8DE;" />
                                             </a>
                                         </figure>
                                         <div class="category-content">
                                             <h4 class="category-name">
-                                                <a href="shop-banner-sidebar.html">Clothes</a>
+                                                <a href="{% url 'product:shop' %}">Clothes</a>
                                             </h4>
                                         </div>
                                     </div>
@@ -388,10 +388,10 @@
                                         </select>
                                     </div>
                                     <div class="toolbox-item toolbox-layout">
-                                        <a href="shop-banner-sidebar.html" class="icon-mode-grid btn-layout active">
+                                        <a href="{% url 'product:shop' %}" class="icon-mode-grid btn-layout active">
                                             <i class="w-icon-grid"></i>
                                         </a>
-                                        <a href="shop-list.html" class="icon-mode-list btn-layout">
+                                        <a href="{% url 'product:shop' %}" class="icon-mode-list btn-layout">
                                             <i class="w-icon-list"></i>
                                         </a>
                                     </div>
@@ -401,7 +401,7 @@
                                 <div class="product-wrap">
                                     <div class="product text-center">
                                         <figure class="product-media">
-                                            <a href="product-default.html">
+                                            <a href="{% url 'product:single_product' %}">
                                                 <img src="{% static 'images/shop/1.jpg' %}" alt="Product" width="300"
                                                     height="338" />
                                             </a>
@@ -418,17 +418,17 @@
                                         </figure>
                                         <div class="product-details">
                                             <div class="product-cat">
-                                                <a href="shop-banner-sidebar.html">Electronics</a>
+                                                <a href="{% url 'product:shop' %}">Electronics</a>
                                             </div>
                                             <h3 class="product-name">
-                                                <a href="product-default.html">3D Television</a>
+                                                <a href="{% url 'product:single_product' %}">3D Television</a>
                                             </h3>
                                             <div class="ratings-container">
                                                 <div class="ratings-full">
                                                     <span class="ratings" style="width: 100%;"></span>
                                                     <span class="tooltiptext tooltip-top"></span>
                                                 </div>
-                                                <a href="product-default.html" class="rating-reviews">(3 reviews)</a>
+                                                <a href="{% url 'product:single_product' %}" class="rating-reviews">(3 reviews)</a>
                                             </div>
                                             <div class="product-pa-wrapper">
                                                 <div class="product-price">
@@ -441,7 +441,7 @@
                                 <div class="product-wrap">
                                     <div class="product text-center">
                                         <figure class="product-media">
-                                            <a href="product-default.html">
+                                            <a href="{% url 'product:single_product' %}">
                                                 <img src="{% static 'images/shop/2-1.jpg' %}" alt="Product" width="300"
                                                     height="338" />
                                                 <img src="{% static 'images/shop/2-2.jpg' %}" alt="Product" width="300"
@@ -466,17 +466,17 @@
                                         </figure>
                                         <div class="product-details">
                                             <div class="product-cat">
-                                                <a href="shop-banner-sidebar.html">Electronics</a>
+                                                <a href="{% url 'product:shop' %}">Electronics</a>
                                             </div>
                                             <h3 class="product-name">
-                                                <a href="product-default.html">Alarm Clock With Lamp</a>
+                                                <a href="{% url 'product:single_product' %}">Alarm Clock With Lamp</a>
                                             </h3>
                                             <div class="ratings-container">
                                                 <div class="ratings-full">
                                                     <span class="ratings" style="width: 100%;"></span>
                                                     <span class="tooltiptext tooltip-top"></span>
                                                 </div>
-                                                <a href="product-default.html" class="rating-reviews">(10 reviews)</a>
+                                                <a href="{% url 'product:single_product' %}" class="rating-reviews">(10 reviews)</a>
                                             </div>
                                             <div class="product-pa-wrapper">
                                                 <div class="product-price">
@@ -490,7 +490,7 @@
                                 <div class="product-wrap">
                                     <div class="product text-center">
                                         <figure class="product-media">
-                                            <a href="product-default.html">
+                                            <a href="{% url 'product:single_product' %}">
                                                 <img src="{% static 'images/shop/3.jpg' %}" alt="Product" width="300"
                                                     height="338" />
                                             </a>
@@ -507,17 +507,17 @@
                                         </figure>
                                         <div class="product-details">
                                             <div class="product-cat">
-                                                <a href="shop-banner-sidebar.html">Electronics</a>
+                                                <a href="{% url 'product:shop' %}">Electronics</a>
                                             </div>
                                             <h3 class="product-name">
-                                                <a href="product-default.html">Apple Laptop</a>
+                                                <a href="{% url 'product:single_product' %}">Apple Laptop</a>
                                             </h3>
                                             <div class="ratings-container">
                                                 <div class="ratings-full">
                                                     <span class="ratings" style="width: 80%;"></span>
                                                     <span class="tooltiptext tooltip-top"></span>
                                                 </div>
-                                                <a href="product-default.html" class="rating-reviews">(5 reviews)</a>
+                                                <a href="{% url 'product:single_product' %}" class="rating-reviews">(5 reviews)</a>
                                             </div>
                                             <div class="product-pa-wrapper">
                                                 <div class="product-price">
@@ -530,7 +530,7 @@
                                 <div class="product-wrap">
                                     <div class="product text-center">
                                         <figure class="product-media">
-                                            <a href="product-default.html">
+                                            <a href="{% url 'product:single_product' %}">
                                                 <img src="{% static 'images/shop/4.jpg' %}" alt="Product" width="300"
                                                     height="338" />
                                             </a>
@@ -547,17 +547,17 @@
                                         </figure>
                                         <div class="product-details">
                                             <div class="product-cat">
-                                                <a href="shop-banner-sidebar.html">Electronics</a>
+                                                <a href="{% url 'product:shop' %}">Electronics</a>
                                             </div>
                                             <h3 class="product-name">
-                                                <a href="product-default.html">Attachable Charge Alarm</a>
+                                                <a href="{% url 'product:single_product' %}">Attachable Charge Alarm</a>
                                             </h3>
                                             <div class="ratings-container">
                                                 <div class="ratings-full">
                                                     <span class="ratings" style="width: 60%;"></span>
                                                     <span class="tooltiptext tooltip-top"></span>
                                                 </div>
-                                                <a href="product-default.html" class="rating-reviews">(7 reviews)</a>
+                                                <a href="{% url 'product:single_product' %}" class="rating-reviews">(7 reviews)</a>
                                             </div>
                                             <div class="product-pa-wrapper">
                                                 <div class="product-price">
@@ -570,7 +570,7 @@
                                 <div class="product-wrap">
                                     <div class="product text-center">
                                         <figure class="product-media">
-                                            <a href="product-default.html">
+                                            <a href="{% url 'product:single_product' %}">
                                                 <img src="{% static 'images/shop/5.jpg' %}" alt="Product" width="300"
                                                     height="338" />
                                             </a>
@@ -587,17 +587,17 @@
                                         </figure>
                                         <div class="product-details">
                                             <div class="product-cat">
-                                                <a href="shop-banner-sidebar.html">Fashion</a>
+                                                <a href="{% url 'product:shop' %}">Fashion</a>
                                             </div>
                                             <h3 class="product-name">
-                                                <a href="product-default.html">Best Travel Bag</a>
+                                                <a href="{% url 'product:single_product' %}">Best Travel Bag</a>
                                             </h3>
                                             <div class="ratings-container">
                                                 <div class="ratings-full">
                                                     <span class="ratings" style="width: 80%;"></span>
                                                     <span class="tooltiptext tooltip-top"></span>
                                                 </div>
-                                                <a href="product-default.html" class="rating-reviews">(4 reviews)</a>
+                                                <a href="{% url 'product:single_product' %}" class="rating-reviews">(4 reviews)</a>
                                             </div>
                                             <div class="product-pa-wrapper">
                                                 <div class="product-price">
@@ -610,7 +610,7 @@
                                 <div class="product-wrap">
                                     <div class="product text-center">
                                         <figure class="product-media">
-                                            <a href="product-default.html">
+                                            <a href="{% url 'product:single_product' %}">
                                                 <img src="{% static 'images/shop/6.jpg' %}" alt="Product" width="300"
                                                     height="338" />
                                             </a>
@@ -627,17 +627,17 @@
                                         </figure>
                                         <div class="product-details">
                                             <div class="product-cat">
-                                                <a href="shop-banner-sidebar.html">Sports</a>
+                                                <a href="{% url 'product:shop' %}">Sports</a>
                                             </div>
                                             <h3 class="product-name">
-                                                <a href="product-default.html">Black Stunt Motor</a>
+                                                <a href="{% url 'product:single_product' %}">Black Stunt Motor</a>
                                             </h3>
                                             <div class="ratings-container">
                                                 <div class="ratings-full">
                                                     <span class="ratings" style="width: 100%;"></span>
                                                     <span class="tooltiptext tooltip-top"></span>
                                                 </div>
-                                                <a href="product-default.html" class="rating-reviews">(12 reviews)</a>
+                                                <a href="{% url 'product:single_product' %}" class="rating-reviews">(12 reviews)</a>
                                             </div>
                                             <div class="product-pa-wrapper">
                                                 <div class="product-price">
@@ -650,7 +650,7 @@
                                 <div class="product-wrap">
                                     <div class="product text-center">
                                         <figure class="product-media">
-                                            <a href="product-default.html">
+                                            <a href="{% url 'product:single_product' %}">
                                                 <img src="{% static 'images/shop/7-1.jpg' %}" alt="Product" width="300"
                                                     height="338" />
                                                 <img src="{% static 'images/shop/7-2.jpg' %}" alt="Product" width="300"
@@ -669,17 +669,17 @@
                                         </figure>
                                         <div class="product-details">
                                             <div class="product-cat">
-                                                <a href="shop-banner-sidebar.html">Fashion</a>
+                                                <a href="{% url 'product:shop' %}">Fashion</a>
                                             </div>
                                             <h3 class="product-name">
-                                                <a href="product-default.html">Blue Sky Trunk</a>
+                                                <a href="{% url 'product:single_product' %}">Blue Sky Trunk</a>
                                             </h3>
                                             <div class="ratings-container">
                                                 <div class="ratings-full">
                                                     <span class="ratings" style="width: 100%;"></span>
                                                     <span class="tooltiptext tooltip-top"></span>
                                                 </div>
-                                                <a href="product-default.html" class="rating-reviews">(9 reviews)</a>
+                                                <a href="{% url 'product:single_product' %}" class="rating-reviews">(9 reviews)</a>
                                             </div>
                                             <div class="product-pa-wrapper">
                                                 <div class="product-price">
@@ -692,7 +692,7 @@
                                 <div class="product-wrap">
                                     <div class="product text-center">
                                         <figure class="product-media">
-                                            <a href="product-default.html">
+                                            <a href="{% url 'product:single_product' %}">
                                                 <img src="{% static 'images/shop/8.jpg' %}" alt="Product" width="300"
                                                     height="338" />
                                             </a>
@@ -709,17 +709,17 @@
                                         </figure>
                                         <div class="product-details">
                                             <div class="product-cat">
-                                                <a href="shop-banner-sidebar.html">Beauty</a>
+                                                <a href="{% url 'product:shop' %}">Beauty</a>
                                             </div>
                                             <h3 class="product-name">
-                                                <a href="product-default.html">Bodycare Smooth Powder</a>
+                                                <a href="{% url 'product:single_product' %}">Bodycare Smooth Powder</a>
                                             </h3>
                                             <div class="ratings-container">
                                                 <div class="ratings-full">
                                                     <span class="ratings" style="width: 60%;"></span>
                                                     <span class="tooltiptext tooltip-top"></span>
                                                 </div>
-                                                <a href="product-default.html" class="rating-reviews">(4 reviews)</a>
+                                                <a href="{% url 'product:single_product' %}" class="rating-reviews">(4 reviews)</a>
                                             </div>
                                             <div class="product-pa-wrapper">
                                                 <div class="product-price">
@@ -732,7 +732,7 @@
                                 <div class="product-wrap">
                                     <div class="product text-center">
                                         <figure class="product-media">
-                                            <a href="product-default.html">
+                                            <a href="{% url 'product:single_product' %}">
                                                 <img src="{% static 'images/shop/9.jpg' %}" alt="Product" width="300"
                                                     height="338" />
                                             </a>
@@ -749,17 +749,17 @@
                                         </figure>
                                         <div class="product-details">
                                             <div class="product-cat">
-                                                <a href="shop-banner-sidebar.html">Electronics</a>
+                                                <a href="{% url 'product:shop' %}">Electronics</a>
                                             </div>
                                             <h3 class="product-name">
-                                                <a href="product-default.html">Bright Green IPhone</a>
+                                                <a href="{% url 'product:single_product' %}">Bright Green IPhone</a>
                                             </h3>
                                             <div class="ratings-container">
                                                 <div class="ratings-full">
                                                     <span class="ratings" style="width: 80%;"></span>
                                                     <span class="tooltiptext tooltip-top"></span>
                                                 </div>
-                                                <a href="product-default.html" class="rating-reviews">(4 reviews)</a>
+                                                <a href="{% url 'product:single_product' %}" class="rating-reviews">(4 reviews)</a>
                                             </div>
                                             <div class="product-pa-wrapper">
                                                 <div class="product-price">
@@ -772,7 +772,7 @@
                                 <div class="product-wrap">
                                     <div class="product text-center">
                                         <figure class="product-media">
-                                            <a href="product-default.html">
+                                            <a href="{% url 'product:single_product' %}">
                                                 <img src="{% static 'images/shop/10.jpg' %}" alt="Product" width="300"
                                                     height="338" />
                                             </a>
@@ -789,17 +789,17 @@
                                         </figure>
                                         <div class="product-details">
                                             <div class="product-cat">
-                                                <a href="shop-banner-sidebar.html">Fashion</a>
+                                                <a href="{% url 'product:shop' %}">Fashion</a>
                                             </div>
                                             <h3 class="product-name">
-                                                <a href="product-default.html">Cavin Fashion Suede Handbag</a>
+                                                <a href="{% url 'product:single_product' %}">Cavin Fashion Suede Handbag</a>
                                             </h3>
                                             <div class="ratings-container">
                                                 <div class="ratings-full">
                                                     <span class="ratings" style="width: 80%;"></span>
                                                     <span class="tooltiptext tooltip-top"></span>
                                                 </div>
-                                                <a href="product-default.html" class="rating-reviews">(4 reviews)</a>
+                                                <a href="{% url 'product:single_product' %}" class="rating-reviews">(4 reviews)</a>
                                             </div>
                                             <div class="product-pa-wrapper">
                                                 <div class="product-price">
@@ -812,7 +812,7 @@
                                 <div class="product-wrap">
                                     <div class="product text-center">
                                         <figure class="product-media">
-                                            <a href="product-default.html">
+                                            <a href="{% url 'product:single_product' %}">
                                                 <img src="{% static 'images/shop/11-1.jpg' %}" alt="Product" width="300"
                                                     height="338" />
                                                 <img src="{% static 'images/shop/11-2.jpg' %}" alt="Product" width="300"
@@ -831,17 +831,17 @@
                                         </figure>
                                         <div class="product-details">
                                             <div class="product-cat">
-                                                <a href="shop-banner-sidebar.html">Electronics</a>
+                                                <a href="{% url 'product:shop' %}">Electronics</a>
                                             </div>
                                             <h3 class="product-name">
-                                                <a href="product-default.html">Charming Design Watch</a>
+                                                <a href="{% url 'product:single_product' %}">Charming Design Watch</a>
                                             </h3>
                                             <div class="ratings-container">
                                                 <div class="ratings-full">
                                                     <span class="ratings" style="width: 100%;"></span>
                                                     <span class="tooltiptext tooltip-top"></span>
                                                 </div>
-                                                <a href="product-default.html" class="rating-reviews">(10 reviews)</a>
+                                                <a href="{% url 'product:single_product' %}" class="rating-reviews">(10 reviews)</a>
                                             </div>
                                             <div class="product-pa-wrapper">
                                                 <div class="product-price">
@@ -854,7 +854,7 @@
                                 <div class="product-wrap">
                                     <div class="product text-center">
                                         <figure class="product-media">
-                                            <a href="product-default.html">
+                                            <a href="{% url 'product:single_product' %}">
                                                 <img src="{% static 'images/shop/12.jpg' %}" alt="Product" width="300"
                                                     height="338" />
                                             </a>
@@ -871,17 +871,17 @@
                                         </figure>
                                         <div class="product-details">
                                             <div class="product-cat">
-                                                <a href="shop-banner-sidebar.html">Fashion</a>
+                                                <a href="{% url 'product:shop' %}">Fashion</a>
                                             </div>
                                             <h3 class="product-name">
-                                                <a href="product-default.html">Classic Simple Backpack</a>
+                                                <a href="{% url 'product:single_product' %}">Classic Simple Backpack</a>
                                             </h3>
                                             <div class="ratings-container">
                                                 <div class="ratings-full">
                                                     <span class="ratings" style="width: 100%;"></span>
                                                     <span class="tooltiptext tooltip-top"></span>
                                                 </div>
-                                                <a href="product-default.html" class="rating-reviews">(9 reviews)</a>
+                                                <a href="{% url 'product:single_product' %}" class="rating-reviews">(9 reviews)</a>
                                             </div>
                                             <div class="product-pa-wrapper">
                                                 <div class="product-price">
