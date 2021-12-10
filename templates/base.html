@@ -42,14 +42,14 @@
     <link rel="stylesheet" type="text/css" href="{% static 'vendor/fontawesome-free/css/all.min.css' %}">
 
     <!-- Plugins CSS -->
-    <link rel="stylesheet" href="{% static 'vendor/swiper/swiper-bundle.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'vendor/swiper/swiper-bundle.min.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'vendor/animate/animate.min.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'vendor/magnific-popup/magnific-popup.min.css' %}">
 
     <!-- Default CSS -->
-    <link rel="stylesheet" type="text/css" href="{% static 'css/style.min.css' %}">
+    {% block styleCss %}    {% endblock %}
     <!-- <link rel="stylesheet" type="text/css" href="{% static 'css/demo1.min.css' %}"> -->
-    <link rel="stylesheet" type="text/css" href="{% static 'css/demo7.min.css' %}">
+    {% block indexCss %}    {% endblock %}
 </head>
 
 <body class="home">
