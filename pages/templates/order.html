@@ -16,7 +16,7 @@
                     <ul class="breadcrumb shop-breadcrumb bb-no">
                         <li class="passed"><a href="{% url 'pages:cart' %}">Shopping Cart</a></li>
                         <li class="passed"><a href="{% url 'pages:checkout' %}">Checkout</a></li>
-                        <li class="active"><a href="order.html">Order Complete</a></li>
+                        <li class="active"><a href="{% url 'pages:order' %}">Order Complete</a></li>
                     </ul>
                 </div>
             </nav>
@@ -125,14 +125,14 @@
                                     <td class="date">April 23, 2021</td>
                                     <td class="status">On hold</td>
                                     <td class="total">$40.00 for 1 items</td>
-                                    <td class="action"><a href="order-view.html" class="btn btn-rounded">View</a></td>
+                                    <td class="action"><a href="{% url 'pages:order_view' %}" class="btn btn-rounded">View</a></td>
                                 </tr>
                                 <tr>
                                     <td class="order">951</td>
                                     <td class="date">April 25, 2021</td>
                                     <td class="status">On hold</td>
                                     <td class="total">$60.00 for 1 items</td>
-                                    <td class="action"><a href="order-view.html" class="btn btn-rounded">View</a></td>
+                                    <td class="action"><a href="{% url 'pages:order_view' %}" class="btn btn-rounded">View</a></td>
                                 </tr>
                             </tbody>
                         </table>
