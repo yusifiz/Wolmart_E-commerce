@@ -7,4 +7,4 @@ def vendor_dokan_store(request):
 
 
 def vendor_wcfm_store(request):
-    return render(request, "vendor-wcfm-store.html")
+    return render(request, "vendor-wcfm-store-list.html")
