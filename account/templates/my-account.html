@@ -20,7 +20,7 @@
             <nav class="breadcrumb-nav">
                 <div class="container">
                     <ul class="breadcrumb">
-                        <li><a href="demo7.html">Home</a></li>
+                        <li><a href="{% url 'home:index' %}">Home</a></li>
                         <li>My account</li>
                     </ul>
                 </div>
@@ -48,10 +48,10 @@
                                 <a href="#account-details" class="nav-link">Account details</a>
                             </li>
                             <li class="link-item">
-                                <a href="wishlist.html" class="nav-link">Wishlist</a>
+                                <a href="{% url 'pages:wishlist' %}" class="nav-link">Wishlist</a>
                             </li>
                             <li class="link-item">
-                                <a href="login.html" class="nav-link">Logout</a>
+                                <a href="{% url 'account:login' %}" class="nav-link">Logout</a>
                             </li>
                         </ul>
 
@@ -125,7 +125,7 @@
                                         </a>
                                     </div>
                                     <div class="col-lg-4 col-md-6 col-sm-4 col-xs-6 mb-4">
-                                        <a href="wishlist.html" class="link-to-tab">
+                                        <a href="{% url 'pages:wishlist' %}" class="link-to-tab">
                                             <div class="icon-box text-center">
                                                 <span class="icon-box-icon icon-wishlist">
                                                     <i class="w-icon-heart"></i>
@@ -227,7 +227,7 @@
                                     </tbody>
                                 </table>
 
-                                <a href="shop-banner-sidebar.html" class="btn btn-dark btn-rounded btn-icon-right">Go
+                                <a href="{% url 'product:single_product' %}" class="btn btn-dark btn-rounded btn-icon-right">Go
                                     Shop<i class="w-icon-long-arrow-right"></i></a>
                             </div>
 
@@ -241,7 +241,7 @@
                                     </div>
                                 </div>
                                 <p class="mb-4">No downloads available yet.</p>
-                                <a href="shop-banner-sidebar.html" class="btn btn-dark btn-rounded btn-icon-right">Go
+                                <a href="{% url 'product:single_product' %}" class="btn btn-dark btn-rounded btn-icon-right">Go
                                     Shop<i class="w-icon-long-arrow-right"></i></a>
                             </div>
 
