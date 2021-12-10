@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "base{% url 'blog:blog' %}" %}
 {% load static %}
 {% block styleCss %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/style.min.css' %}">
@@ -22,8 +22,8 @@
             <nav class="breadcrumb-nav">
                 <div class="container">
                     <ul class="breadcrumb bb-no">
-                        <li><a href="demo1.html">Home</a></li>
-                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="{% url 'home:index' %}">Home</a></li>
+                        <li><a href="{% url 'blog:blog' %}">Blog</a></li>
                         <li>Blog Single</li>
                     </ul>
                 </div>
@@ -153,7 +153,7 @@
                                     <div class="swiper-wrapper row cols-lg-3 cols-md-4 cols-sm-3 cols-xs-2 cols-1">
                                         <div class="swiper-slide post post-grid">
                                             <figure class="post-media br-sm">
-                                                <a href="post-single.html">
+                                                <a href="{% url 'blog:single_blog' %}">
                                                     <img src="{% static 'images/blog/single/2.jpg' %}" alt="Post" width="296"
                                                         height="190" style="background-color: #bcbcb4;" />
                                                 </a>
@@ -163,13 +163,13 @@
                                                     by <a href="#" class="post-author">Logan Cee</a>
                                                     - <a href="#" class="post-date">03.05.2021</a>
                                                 </div>
-                                                <h4 class="post-title mb-3"><a href="post-single.html">Fashion tell about who you are from...</a></h4>
-                                                <a href="post-single.html" class="btn btn-link btn-dark btn-underline font-weight-normal">Read More<i class="w-icon-long-arrow-right"></i></a>
+                                                <h4 class="post-title mb-3"><a href="{% url 'blog:single_blog' %}">Fashion tell about who you are from...</a></h4>
+                                                <a href="{% url 'blog:single_blog' %}" class="btn btn-link btn-dark btn-underline font-weight-normal">Read More<i class="w-icon-long-arrow-right"></i></a>
                                             </div>
                                         </div>
                                         <div class="swiper-slide post post-grid">
                                             <figure class="post-media br-sm">
-                                                <a href="post-single.html">
+                                                <a href="{% url 'blog:single_blog' %}">
                                                     <img src="{% static 'images/blog/single/3.jpg' %}" alt="Post" width="296"
                                                         height="190" style="background-color: #cad2d1;" />
                                                 </a>
@@ -179,13 +179,13 @@
                                                     by <a href="#" class="post-author">Hilary Kreton</a>
                                                     - <a href="#" class="post-date">03.05.2021</a>
                                                 </div>
-                                                <h4 class="post-title mb-3"><a href="post-single.html">Comes a cool blog post with Images</a></h4>
-                                                <a href="post-single.html" class="btn btn-link btn-dark btn-underline font-weight-normal">Read More<i class="w-icon-long-arrow-right"></i></a>
+                                                <h4 class="post-title mb-3"><a href="{% url 'blog:single_blog' %}">Comes a cool blog post with Images</a></h4>
+                                                <a href="{% url 'blog:single_blog' %}" class="btn btn-link btn-dark btn-underline font-weight-normal">Read More<i class="w-icon-long-arrow-right"></i></a>
                                             </div>
                                         </div>
                                         <div class="swiper-slide post post-grid">
                                             <figure class="post-media br-sm">
-                                                <a href="post-single.html">
+                                                <a href="{% url 'blog:single_blog' %}">
                                                     <img src="{% static 'images/blog/single/4.jpg' %}" alt="Post" width="296"
                                                         height="190" style="background-color: #ececec;" />
                                                 </a>
@@ -195,13 +195,13 @@
                                                     by <a href="#" class="post-author">Casper Dailn</a>
                                                     - <a href="#" class="post-date">03.05.2021</a>
                                                 </div>
-                                                <h4 class="post-title mb-3"><a href="post-single.html">Comes a cool blog post with Images</a></h4>
-                                                <a href="post-single.html" class="btn btn-link btn-dark btn-underline font-weight-normal">Read More<i class="w-icon-long-arrow-right"></i></a>
+                                                <h4 class="post-title mb-3"><a href="{% url 'blog:single_blog' %}">Comes a cool blog post with Images</a></h4>
+                                                <a href="{% url 'blog:single_blog' %}" class="btn btn-link btn-dark btn-underline font-weight-normal">Read More<i class="w-icon-long-arrow-right"></i></a>
                                             </div>
                                         </div>
                                         <div class="swiper-slide post post-grid">
                                             <figure class="post-media br-sm">
-                                                <a href="post-single.html">
+                                                <a href="{% url 'blog:single_blog' %}">
                                                     <img src="{% static 'images/blog/single/5.jpg' %}" alt="Post" width="296"
                                                         height="190" style="background-color: #AFAFAF;" />
                                                 </a>
@@ -211,8 +211,8 @@
                                                     by <a href="#" class="post-author">John Doe</a>
                                                     - <a href="#" class="post-date">03.05.2021</a>
                                                 </div>
-                                                <h4 class="post-title mb-3"><a href="post-single.html">We want to be different and fashion gives to me that outlet</a></h4>
-                                                <a href="post-single.html" class="btn btn-link btn-dark btn-underline font-weight-normal">Read More<i class="w-icon-long-arrow-right"></i></a>
+                                                <h4 class="post-title mb-3"><a href="{% url 'blog:single_blog' %}">We want to be different and fashion gives to me that outlet</a></h4>
+                                                <a href="{% url 'blog:single_blog' %}" class="btn btn-link btn-dark btn-underline font-weight-normal">Read More<i class="w-icon-long-arrow-right"></i></a>
                                             </div>
                                         </div>
                                     </div>
@@ -314,13 +314,13 @@
                                     <div class="widget widget-categories">
                                         <h3 class="widget-title bb-no mb-0">Categories</h3>
                                         <ul class="widget-body filter-items search-ul">
-                                            <li><a href="blog.html">Clothes</a></li>
-                                            <li><a href="blog.html">Entertainment</a></li>
-                                            <li><a href="blog.html">Fashion</a></li>
-                                            <li><a href="blog.html">Lifestyle</a></li>
-                                            <li><a href="blog.html">Others</a></li>
-                                            <li><a href="blog.html">Shoes</a></li>
-                                            <li><a href="blog.html">Technology</a></li>
+                                            <li><a href="blog{% url 'blog:blog' %}">Clothes</a></li>
+                                            <li><a href="blog{% url 'blog:blog' %}">Entertainment</a></li>
+                                            <li><a href="blog{% url 'blog:blog' %}">Fashion</a></li>
+                                            <li><a href="blog{% url 'blog:blog' %}">Lifestyle</a></li>
+                                            <li><a href="blog{% url 'blog:blog' %}">Others</a></li>
+                                            <li><a href="blog{% url 'blog:blog' %}">Shoes</a></li>
+                                            <li><a href="blog{% url 'blog:blog' %}">Technology</a></li>
                                         </ul>
                                     </div>
                                     <!-- End of Widget categories -->
@@ -343,7 +343,7 @@
                                                                         <a href="#" class="post-date">March 1, 2021</a>
                                                                     </div>
                                                                     <h4 class="post-title">
-                                                                        <a href="post-single.html">Fashion tells about who you are from external point</a>
+                                                                        <a href="{% url 'blog:single_blog' %}">Fashion tells about who you are from external point</a>
                                                                     </h4>
                                                                 </div>
                                                             </div>
@@ -356,7 +356,7 @@
                                                                         <a href="#" class="post-date">March 5, 2021</a>
                                                                     </div>
                                                                     <h4 class="post-title">
-                                                                        <a href="post-single.html">New found the men dress for summer</a>
+                                                                        <a href="{% url 'blog:single_blog' %}">New found the men dress for summer</a>
                                                                     </h4>
                                                                 </div>
                                                             </div>
@@ -369,7 +369,7 @@
                                                                         <a href="#" class="post-date">March 1, 2021</a>
                                                                     </div>
                                                                     <h4 class="post-title">
-                                                                        <a href="post-single.html">Cras ornare tristique elit</a>
+                                                                        <a href="{% url 'blog:single_blog' %}">Cras ornare tristique elit</a>
                                                                     </h4>
                                                                 </div>
                                                             </div>
@@ -384,7 +384,7 @@
                                                                         <a href="#" class="post-date">March 1, 2021</a>
                                                                     </div>
                                                                     <h4 class="post-title">
-                                                                        <a href="post-single.html">Vivamus vestibulum ntulla nec ante</a>
+                                                                        <a href="{% url 'blog:single_blog' %}">Vivamus vestibulum ntulla nec ante</a>
                                                                     </h4>
                                                                 </div>
                                                             </div>
@@ -397,7 +397,7 @@
                                                                         <a href="#" class="post-date">March 5, 2021</a>
                                                                     </div>
                                                                     <h4 class="post-title">
-                                                                        <a href="post-single.html">Fusce lacinia arcuet nulla</a>
+                                                                        <a href="{% url 'blog:single_blog' %}">Fusce lacinia arcuet nulla</a>
                                                                     </h4>
                                                                 </div>
                                                             </div>
@@ -410,7 +410,7 @@
                                                                         <a href="#" class="post-date">March 1, 2021</a>
                                                                     </div>
                                                                     <h4 class="post-title">
-                                                                        <a href="post-single.html">Comes a cool blog post with Images</a>
+                                                                        <a href="{% url 'blog:single_blog' %}">Comes a cool blog post with Images</a>
                                                                     </h4>
                                                                 </div>
                                                             </div>

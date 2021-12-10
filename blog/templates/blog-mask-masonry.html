@@ -21,8 +21,8 @@
             <nav class="breadcrumb-nav mb-6">
                 <div class="container">
                     <ul class="breadcrumb">
-                        <li><a href="demo1.html">Home</a></li>
-                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="{% url 'home:index' %}">Home</a></li>
+                        <li><a href="{% url 'blog:blog' %}">Blog</a></li>
                         <li>Mask Grid</li>
                     </ul>
                 </div>
@@ -49,7 +49,7 @@
                         <div class="grid-item fashion">
                             <article class="post post-mask overlay-zoom br-sm">
                                 <figure class="post-media">
-                                    <a href="post-single.html">
+                                    <a href="{% url 'blog:single_blog' %}">
                                         <img src="{% static 'images/blog/classic/1.jpg' %}" width="900"
                                             height="530" alt="blog">
                                     </a>
@@ -73,7 +73,7 @@
                         <div class="grid-item others technology">
                             <article class="post post-mask overlay-zoom br-sm">
                                 <figure class="post-media">
-                                    <a href="post-single.html">
+                                    <a href="{% url 'blog:single_blog' %}">
                                         <img src="{% static 'images/blog/2cols/2.jpg' %}" width="600"
                                             height="420" alt="blog">
                                     </a>
@@ -98,7 +98,7 @@
                         <div class="grid-item clothes">
                             <article class="post post-mask overlay-zoom br-sm">
                                 <figure class="post-media">
-                                    <a href="post-single.html">
+                                    <a href="{% url 'blog:single_blog' %}">
                                         <img src="{% static 'images/blog/classic/3.jpg' %}" width="900"
                                             height="530" alt="blog">
                                     </a>
@@ -122,7 +122,7 @@
                         <div class="grid-item lifestyle">
                             <article class="post post-mask overlay-zoom br-sm">
                                 <figure class="post-media">
-                                    <a href="post-single.html">
+                                    <a href="{% url 'blog:single_blog' %}">
                                         <img src="{% static 'images/blog/2cols/4.jpg' %}" width="600"
                                             height="420" alt="blog">
                                     </a>
@@ -146,7 +146,7 @@
                         <div class="grid-item entertainment shoes lifestyle others">
                             <article class="post post-mask overlay-zoom br-sm">
                                 <figure class="post-media">
-                                    <a href="post-single.html">
+                                    <a href="{% url 'blog:single_blog' %}">
                                         <img src="{% static 'images/blog/2cols/5.jpg' %}" width="600"
                                             height="420" alt="blog">
                                     </a>
@@ -172,7 +172,7 @@
                         <div class="grid-item fashion lifestyle">
                             <article class="post post-mask overlay-zoom br-sm">
                                 <figure class="post-media">
-                                    <a href="post-single.html">
+                                    <a href="{% url 'blog:single_blog' %}">
                                         <img src="{% static 'images/blog/classic/6.jpg' %}" width="900"
                                             height="530" alt="blog">
                                     </a>
