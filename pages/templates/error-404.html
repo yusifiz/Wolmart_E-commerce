@@ -12,7 +12,7 @@
             <nav class="breadcrumb-nav">
                 <div class="container">
                     <ul class="breadcrumb bb-no">
-                        <li><a href="demo1.html">Home</a></li>
+                        <li><a href="{% url 'home:index' %}">Home</a></li>
                         <li>Error 404</li>
                     </ul>
                 </div>
@@ -32,7 +32,7 @@
                                 <span class="text-secondary">Oops!!!</span> Something Went Wrong Here
                             </h2>
                             <p class="text-light">There may be a misspelling in the URL entered, or the page you are looking for may no longer exist</p>
-                            <a href="demo1.html" class="btn btn-dark btn-rounded btn-icon-right">Go Back Home<i class="w-icon-long-arrow-right"></i></a>
+                            <a href="{% url 'home:index' %}" class="btn btn-dark btn-rounded btn-icon-right">Go Back Home<i class="w-icon-long-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
