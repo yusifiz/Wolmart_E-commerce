@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 {% block content %}
 
 
@@ -28,7 +29,7 @@
                     <div class="row align-items-center">
                         <div class="col-md-6 mb-4 mb-md-0">
                             <figure class="br-sm">
-                                <img src="assets/images/pages/become/1.jpg" alt="Banner"
+                                <img src="{% static 'images/pages/become/1.jpg' %}" alt="Banner"
                                     width="610" height="435" style="background-color: #D9D8DD;" />
                             </figure>
                         </div>
@@ -51,7 +52,7 @@
                         <div class="row align-items-center">
                             <div class="col-lg-6 mb-4 mb-lg-0">
                                 <figure class="br-sm">
-                                    <img src="assets/images/pages/become/2.jpg" alt="Banner"
+                                    <img src="{% static 'images/pages/become/2.jpg' %}" alt="Banner"
                                         width="610" height="520" style="background-color: #C9C8CD;" />
                                 </figure>
                             </div>
@@ -178,7 +179,7 @@
                                                 <div class="testimonial testimonial-centered testimonial-boxed bg-white br-sm">
                                                     <div class="testimonial-info">
                                                         <figure class="testimonial-author-thumbnail">
-                                                            <img src="assets/images/agents/1-100x100.png" alt="Testimonial" width="100"
+                                                            <img src="{% static 'images/agents/1-100x100.png' %}" alt="Testimonial" width="100"
                                                                 height="100" />
                                                         </figure>
                                                         <div class="ratings-container">
@@ -201,7 +202,7 @@
                                                 <div class="testimonial testimonial-centered testimonial-boxed bg-white br-sm">
                                                     <div class="testimonial-info">
                                                         <figure class="testimonial-author-thumbnail">
-                                                            <img src="assets/images/agents/2-100x100.png" alt="Testimonial" width="100"
+                                                            <img src="{% static 'images/agents/2-100x100.png' %}" alt="Testimonial" width="100"
                                                                 height="100" />
                                                         </figure>
                                                         <div class="ratings-container">
@@ -224,7 +225,7 @@
                                                 <div class="testimonial testimonial-centered testimonial-boxed bg-white br-sm">
                                                     <div class=" testimonial-info">
                                                         <figure class="testimonial-author-thumbnail">
-                                                            <img src="assets/images/agents/3-100x100.png" alt="Testimonial" width="100"
+                                                            <img src="{% static 'images/agents/3-100x100.png' %}" alt="Testimonial" width="100"
                                                                 height="100" />
                                                         </figure>
                                                         <div class="ratings-container">
@@ -282,7 +283,7 @@
                 <!-- End of Container -->
 
                 <div class="banner parallax" data-parallax-options="{'speed': 10, 'parallaxHeight': '200%', 'offset': -99}"
-                    data-image-src="assets/images/pages/become/3.jpg" style="background-color: #929294;">
+                    data-image-src="{% static 'images/pages/become/3.jpg' %}" style="background-color: #929294;">
                     <div class="container">
                         <div class="banner-content text-center">
                             <h2 class="title title-center text-white font-weight-bold">Let’s talk about how we can make

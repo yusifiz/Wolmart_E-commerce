@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 {% block content %}
 
         <!-- start of .main -->
@@ -14,7 +15,7 @@
                     }">
                         <div class="swiper-wrapper row cols-1 gutter-no">
                             <div  class="swiper-slide banner banner-fixed intro-slide intro-slide1"
-                            style="background-image: url(assets/images/demos/demo7/slides/slide-1.jpg); background-color: #EEEDEB;">
+                            style="background-image: url({% static 'images/demos/demo7/slides/slide-1.jpg' %}); background-color: #EEEDEB;">
                                 <div class="container">
                                     <div class="banner-content d-inline-block y-50">
                                         <div class="slide-animate" data-animation-options="{
@@ -37,7 +38,7 @@
                             </div>
                             <!-- End of Intro Slide 1 -->
                             <div class="swiper-slide banner banner-fixed intro-slide intro-slide2"
-                            style="background-image: url(assets/images/demos/demo7/slides/slide-2.jpg); background-color: #A9A9A9;">
+                            style="background-image: url({% static 'images/demos/demo7/slides/slide-2.jpg' %}); background-color: #A9A9A9;">
                                 <div class="container text-right">
                                     <div class="banner-content y-50 d-inline-block">
                                         <div class="slide-animate" data-animation-options="{
@@ -58,7 +59,7 @@
                             </div>
                             <!-- End of Intro Slide 2 -->
                             <div class="swiper-slide banner banner-fixed intro-slide intro-slide3"
-                                style="background-image: url(assets/images/demos/demo7/slides/slide-3.jpg); background-color: #F3F3F3;">
+                                style="background-image: url({% static 'images/demos/demo7/slides/slide-3.jpg' %}); background-color: #F3F3F3;">
                                 <div class="container">
                                     <div class="banner-content y-50 d-inline-block">
                                         <div class="slide-animate" data-animation-options="{
@@ -81,7 +82,7 @@
                             </div>
                             <!-- End of Intro Slide 3 -->
                             <div class="swiper-slide banner banner-fixed intro-slide intro-slide1"
-                                style="background-image: url(assets/images/demos/demo7/slides/slide-1.jpg); background-color: #EEEDEB;">
+                                style="background-image: url({% static 'images/demos/demo7/slides/slide-1.jpg' %}); background-color: #EEEDEB;">
                                 <div class="container">
                                     <div class="banner-content d-inline-block y-50">
                                         <div class="slide-animate" data-animation-options="{
@@ -104,7 +105,7 @@
                             </div>
                             <!-- End of Intro Slide 1 -->
                             <div class="swiper-slide banner banner-fixed intro-slide intro-slide3"
-                                style="background-image: url(assets/images/demos/demo7/slides/slide-3.jpg); background-color: #F3F3F3;">
+                                style="background-image: url({% static 'images/demos/demo7/slides/slide-3.jpg' %}); background-color: #F3F3F3;">
                                 <div class="container">
                                     <div class="banner-content y-50 d-inline-block">
                                         <div class="slide-animate" data-animation-options="{
@@ -129,23 +130,23 @@
                         </div>
                         <div class="custom-dots swiper-img-dots appear-animate">
                             <a href="#" class="active appear-animate">
-                                <img src="assets/images/demos/demo7/slides/dot-1.png" alt="Slide Thumb" width="70"
+                                <img src="{% static 'images/demos/demo7/slides/dot-1.png' %}" alt="Slide Thumb" width="70"
                                     height="70">
                             </a>
                             <a href="#" class="appear-animate">
-                                <img src="assets/images/demos/demo7/slides/dot-2.png" alt="Slide Thumb" width="70"
+                                <img src="{% static 'images/demos/demo7/slides/dot-2.png' %}" alt="Slide Thumb" width="70"
                                     height="70">
                             </a>
                             <a href="#" class="appear-animate">
-                                <img src="assets/images/demos/demo7/slides/dot-3.png" alt="Slide Thumb" width="70"
+                                <img src="{% static 'images/demos/demo7/slides/dot-3.png' %}" alt="Slide Thumb" width="70"
                                     height="70">
                             </a>
                             <a href="#" class="appear-animate">
-                                <img src="assets/images/demos/demo7/slides/dot-4.png" alt="Slide Thumb" width="70"
+                                <img src="{% static 'images/demos/demo7/slides/dot-4.png' %}" alt="Slide Thumb" width="70"
                                     height="70">
                             </a>
                             <a href="#" class="appear-animate">
-                                <img src="assets/images/demos/demo7/slides/dot-3.png" alt="Slide Thumb" width="70"
+                                <img src="{% static 'images/demos/demo7/slides/dot-3.png' %}" alt="Slide Thumb" width="70"
                                     height="70">
                             </a>
                         </div>
@@ -233,7 +234,7 @@
                         <div class="swiper-wrapper row cols-lg-3 cols-sm-2 cols-1">
                             <div class="swiper-slide banner banner-fixed br-xs">
                                 <figure>
-                                    <img src="assets/images/demos/demo7/category/1-1.jpg" alt="Category Banner" width="440"
+                                    <img src="{% static 'images/demos/demo7/category/1-1.jpg' %}" alt="Category Banner" width="440"
                                         height="210" style="background-color: #E3DFDE;" />
                                 </figure>
                                 <div class="banner-content y-50">
@@ -250,7 +251,7 @@
                             <!-- End of Categpry Banner -->
                             <div class="swiper-slide banner banner-fixed br-xs">
                                 <figure>
-                                    <img src="assets/images/demos/demo7/category/1-2.jpg" alt="Category Banner" width="440"
+                                    <img src="{% static 'images/demos/demo7/category/1-2.jpg' %}" alt="Category Banner" width="440"
                                         height="210" style="background-color: #272729;" />
                                 </figure>
                                 <div class="banner-content text-center x-50 y-50 w-100">
@@ -264,7 +265,7 @@
                             <!-- End of Category Banner -->
                             <div class="swiper-slide banner banner-fixed br-xs">
                                 <figure>
-                                    <img src="assets/images/demos/demo7/category/1-3.jpg" alt="Category Banner" width="440"
+                                    <img src="{% static 'images/demos/demo7/category/1-3.jpg' %}" alt="Category Banner" width="440"
                                         height="210" style="background-color: #DDD8D5;" />
                                 </figure>
                                 <div class="banner-content y-50">
@@ -294,7 +295,7 @@
                             <div class="product product-list br-xs mb-0">
                                 <figure class="product-media">
                                     <a href="product-default.html">
-                                        <img src="assets/images/demos/demo7/products/1-1.jpg" alt="Product" width="315"
+                                        <img src="{% static 'images/demos/demo7/products/1-1.jpg' %}" alt="Product" width="315"
                                             height="355">
                                     </a>
                                     <div class="product-action-vertical">
@@ -340,7 +341,7 @@
                             <div class="product product-list br-xs mb-0">
                                 <figure class="product-media">
                                     <a href="product-default.html">
-                                        <img src="assets/images/demos/demo7/products/1-2.jpg" alt="Product" width="315"
+                                        <img src="{% static 'images/demos/demo7/products/1-2.jpg' %}" alt="Product" width="315"
                                             height="355">
                                     </a>
                                     <div class="product-action-vertical">
@@ -390,7 +391,7 @@
                             <div class="product product-widget">
                                 <figure class="product-media">
                                     <a href="product-default.html">
-                                        <img src="assets/images/demos/demo7/products/2-1.jpg" alt="Product" width="100"
+                                        <img src="{% static 'images/demos/demo7/products/2-1.jpg' %}" alt="Product" width="100"
                                             height="106">
                                     </a>
                                 </figure>
@@ -415,7 +416,7 @@
                             <div class="product product-widget">
                                 <figure class="product-media">
                                     <a href="product-default.html">
-                                        <img src="assets/images/demos/demo7/products/2-2.jpg" alt="Product" width="100"
+                                        <img src="{% static 'images/demos/demo7/products/2-2.jpg' %}" alt="Product" width="100"
                                             height="106">
                                     </a>
                                 </figure>
@@ -440,7 +441,7 @@
                             <div class="product product-widget">
                                 <figure class="product-media">
                                     <a href="product-default.html">
-                                        <img src="assets/images/demos/demo7/products/2-3.jpg" alt="Product" width="100"
+                                        <img src="{% static 'images/demos/demo7/products/2-3.jpg' %}" alt="Product" width="100"
                                             height="106">
                                     </a>
                                 </figure>
@@ -465,7 +466,7 @@
                             <div class="product product-widget">
                                 <figure class="product-media">
                                     <a href="product-default.html">
-                                        <img src="assets/images/demos/demo7/products/2-5.jpg" alt="Product" width="100"
+                                        <img src="{% static 'images/demos/demo7/products/2-5.jpg' %}" alt="Product" width="100"
                                             height="106">
                                     </a>
                                 </figure>
@@ -490,7 +491,7 @@
                             <div class="product product-widget">
                                 <figure class="product-media">
                                     <a href="product-default.html">
-                                        <img src="assets/images/demos/demo7/products/2-4.jpg" alt="Product" width="100"
+                                        <img src="{% static 'images/demos/demo7/products/2-4.jpg' %}" alt="Product" width="100"
                                             height="106">
                                     </a>
                                 </figure>
@@ -515,7 +516,7 @@
                             <div class="product product-widget">
                                 <figure class="product-media">
                                     <a href="product-default.html">
-                                        <img src="assets/images/demos/demo7/products/2-6.jpg" alt="Product" width="100"
+                                        <img src="{% static 'images/demos/demo7/products/2-6.jpg' %}" alt="Product" width="100"
                                             height="106">
                                     </a>
                                 </figure>
@@ -540,7 +541,7 @@
                             <div class="product product-widget">
                                 <figure class="product-media">
                                     <a href="product-default.html">
-                                        <img src="assets/images/demos/demo7/products/2-7.jpg" alt="Product" width="100"
+                                        <img src="{% static 'images/demos/demo7/products/2-7.jpg' %}" alt="Product" width="100"
                                             height="106">
                                     </a>
                                 </figure>
@@ -565,7 +566,7 @@
                             <div class="product product-widget">
                                 <figure class="product-media">
                                     <a href="product-default.html">
-                                        <img src="assets/images/demos/demo7/products/2-8.jpg" alt="Product" width="100"
+                                        <img src="{% static 'images/demos/demo7/products/2-8.jpg' %}" alt="Product" width="100"
                                             height="106">
                                     </a>
                                 </figure>
@@ -621,14 +622,14 @@
                                 <div class="vendor-widget-banner border-no">
                                     <figure class="vendor-banner">
                                         <a href="vendor-dokan-store.html">
-                                            <img src="assets/images/demos/demo7/vendors/1.jpg" alt="Vendor Banner"
+                                            <img src="{% static 'images/demos/demo7/vendors/1.jpg' %}" alt="Vendor Banner"
                                                 width="625" height="300" style="background-color: #EFF0F2;" />
                                         </a>
                                     </figure>
                                     <div class="vendor-details">
                                         <figure class="vendor-logo">
                                             <a href="vendor-dokan-store.html">
-                                                <img src="assets/images/demos/demo7/vendors/logo-1.png" alt="Vendor Logo"
+                                                <img src="{% static 'images/demos/demo7/vendors/logo-1.png' %}" alt="Vendor Logo"
                                                     width="90" height="90" />
                                             </a>
                                         </figure>
@@ -650,7 +651,7 @@
                                             <div class="vendor-product">
                                                 <figure class="product-media">
                                                     <a href="product-default.html">
-                                                        <img src="assets/images/demos/demo7/products/3-1.jpg"
+                                                        <img src="{% static 'images/demos/demo7/products/3-1.jpg' %}"
                                                             alt="Vendor Product" width="91" height="102" />
                                                     </a>
                                                 </figure>
@@ -658,7 +659,7 @@
                                             <div class="vendor-product">
                                                 <figure class="product-media">
                                                     <a href="product-default.html">
-                                                        <img src="assets/images/demos/demo7/products/3-2.jpg"
+                                                        <img src="{% static 'images/demos/demo7/products/3-2.jpg' %}"
                                                             alt="Vendor Product" width="91" height="102" />
                                                     </a>
                                                 </figure>
@@ -666,7 +667,7 @@
                                             <div class="vendor-product">
                                                 <figure class="product-media">
                                                     <a href="product-default.html">
-                                                        <img src="assets/images/demos/demo7/products/3-3.jpg"
+                                                        <img src="{% static 'images/demos/demo7/products/3-3.jpg' %}"
                                                             alt="Vendor Product" width="91" height="102" />
                                                     </a>
                                                 </figure>
@@ -680,14 +681,14 @@
                                 <div class="vendor-widget-banner border-no">
                                     <figure class="vendor-banner">
                                         <a href="vendor-dokan-store.html">
-                                            <img src="assets/images/demos/demo7/vendors/2.jpg" alt="Vendor Banner"
+                                            <img src="{% static 'images/demos/demo7/vendors/2.jpg' %}" alt="Vendor Banner"
                                                 width="625" height="300" style="background-color: #525357;" />
                                         </a>
                                     </figure>
                                     <div class="vendor-details">
                                         <figure class="vendor-logo">
                                             <a href="vendor-dokan-store.html">
-                                                <img src="assets/images/demos/demo7/vendors/logo-2.png" alt="Vendor Logo"
+                                                <img src="{% static 'images/demos/demo7/vendors/logo-2.png' %}" alt="Vendor Logo"
                                                     width="90" height="90" />
                                             </a>
                                         </figure>
@@ -709,7 +710,7 @@
                                             <div class="vendor-product">
                                                 <figure class="product-media">
                                                     <a href="product-default.html">
-                                                        <img src="assets/images/demos/demo7/products/3-4.jpg"
+                                                        <img src="{% static 'images/demos/demo7/products/3-4.jpg' %}"
                                                             alt="Vendor Product" width="91" height="102" />
                                                     </a>
                                                 </figure>
@@ -717,7 +718,7 @@
                                             <div class="vendor-product">
                                                 <figure class="product-media">
                                                     <a href="product-default.html">
-                                                        <img src="assets/images/demos/demo7/products/3-5.jpg"
+                                                        <img src="{% static 'images/demos/demo7/products/3-5.jpg' %}"
                                                             alt="Vendor Product" width="91" height="102" />
                                                     </a>
                                                 </figure>
@@ -725,7 +726,7 @@
                                             <div class="vendor-product">
                                                 <figure class="product-media">
                                                     <a href="product-default.html">
-                                                        <img src="assets/images/demos/demo7/products/3-6.jpg"
+                                                        <img src="{% static 'images/demos/demo7/products/3-6.jpg' %}"
                                                             alt="Vendor Product" width="91" height="102" />
                                                     </a>
                                                 </figure>
@@ -739,14 +740,14 @@
                                 <div class="vendor-widget-banner border-no">
                                     <figure class="vendor-banner">
                                         <a href="vendor-dokan-store.html">
-                                            <img src="assets/images/demos/demo7/vendors/3.jpg" alt="Vendor Banner"
+                                            <img src="{% static 'images/demos/demo7/vendors/3.jpg' %}" alt="Vendor Banner"
                                                 width="625" height="300" style="background-color: #C7D0D9;" />
                                         </a>
                                     </figure>
                                     <div class="vendor-details">
                                         <figure class="vendor-logo">
                                             <a href="vendor-dokan-store.html">
-                                                <img src="assets/images/demos/demo7/vendors/logo-3.png" alt="Vendor Logo"
+                                                <img src="{% static 'images/demos/demo7/vendors/logo-3.png' %}" alt="Vendor Logo"
                                                     width="90" height="90" />
                                             </a>
                                         </figure>
@@ -768,7 +769,7 @@
                                             <div class="vendor-product">
                                                 <figure class="product-media">
                                                     <a href="product-default.html">
-                                                        <img src="assets/images/demos/demo7/products/3-7.jpg"
+                                                        <img src="{% static 'images/demos/demo7/products/3-7.jpg' %}"
                                                             alt="Vendor Product" width="91" height="102" />
                                                     </a>
                                                 </figure>
@@ -776,7 +777,7 @@
                                             <div class="vendor-product">
                                                 <figure class="product-media">
                                                     <a href="product-default.html">
-                                                        <img src="assets/images/demos/demo7/products/3-8.jpg"
+                                                        <img src="{% static 'images/demos/demo7/products/3-8.jpg' %}"
                                                             alt="Vendor Product" width="91" height="102" />
                                                     </a>
                                                 </figure>
@@ -784,7 +785,7 @@
                                             <div class="vendor-product">
                                                 <figure class="product-media">
                                                     <a href="product-default.html">
-                                                        <img src="assets/images/demos/demo7/products/3-9.jpg"
+                                                        <img src="{% static 'images/demos/demo7/products/3-9.jpg' %}"
                                                             alt="Vendor Product" width="91" height="102" />
                                                     </a>
                                                 </figure>
@@ -798,14 +799,14 @@
                                 <div class="vendor-widget-banner border-no">
                                     <figure class="vendor-banner">
                                         <a href="vendor-dokan-store.html">
-                                            <img src="assets/images/demos/demo7/vendors/4.jpg" alt="Vendor Banner"
+                                            <img src="{% static 'images/demos/demo7/vendors/4.jpg' %}" alt="Vendor Banner"
                                                 width="625" height="300" style="background-color: #363435;" />
                                         </a>
                                     </figure>
                                     <div class="vendor-details">
                                         <figure class="vendor-logo">
                                             <a href="vendor-dokan-store.html">
-                                                <img src="assets/images/demos/demo7/vendors/logo-4.png" alt="Vendor Logo"
+                                                <img src="{% static 'images/demos/demo7/vendors/logo-4.png' %}" alt="Vendor Logo"
                                                     width="90" height="90" />
                                             </a>
                                         </figure>
@@ -827,7 +828,7 @@
                                             <div class="vendor-product">
                                                 <figure class="product-media">
                                                     <a href="product-default.html">
-                                                        <img src="assets/images/demos/demo7/products/3-10.jpg"
+                                                        <img src="{% static 'images/demos/demo7/products/3-10.jpg' %}"
                                                             alt="Vendor Product" width="91" height="102" />
                                                     </a>
                                                 </figure>
@@ -835,7 +836,7 @@
                                             <div class="vendor-product">
                                                 <figure class="product-media">
                                                     <a href="product-default.html">
-                                                        <img src="assets/images/demos/demo7/products/3-11.jpg"
+                                                        <img src="{% static 'images/demos/demo7/products/3-11.jpg' %}"
                                                             alt="Vendor Product" width="91" height="102" />
                                                     </a>
                                                 </figure>
@@ -843,7 +844,7 @@
                                             <div class="vendor-product">
                                                 <figure class="product-media">
                                                     <a href="product-default.html">
-                                                        <img src="assets/images/demos/demo7/products/3-12.jpg"
+                                                        <img src="{% static 'images/demos/demo7/products/3-12.jpg' %}"
                                                             alt="Vendor Product" width="91" height="102" />
                                                     </a>
                                                 </figure>
@@ -907,7 +908,7 @@
                                         <div class="product product-slideup-content">
                                             <figure class="product-media">
                                                 <a href="product-default.html">
-                                                    <img src="assets/images/demos/demo7/products/4-1.jpg" alt="Product"
+                                                    <img src="{% static 'images/demos/demo7/products/4-1.jpg' %}" alt="Product"
                                                         width="187" height="210">
                                                 </a>
                                                 <div class="product-action-vertical">
@@ -938,7 +939,7 @@
                                         <div class="product product-slideup-content">
                                             <figure class="product-media">
                                                 <a href="product-default.html">
-                                                    <img src="assets/images/demos/demo7/products/4-2.jpg" alt="Product"
+                                                    <img src="{% static 'images/demos/demo7/products/4-2.jpg' %}" alt="Product"
                                                         width="187" height="210">
                                                 </a>
                                                 <div class="product-action-vertical">
@@ -972,7 +973,7 @@
                                         <div class="product product-slideup-content">
                                             <figure class="product-media">
                                                 <a href="product-default.html">
-                                                    <img src="assets/images/demos/demo7/products/4-3.jpg" alt="Product"
+                                                    <img src="{% static 'images/demos/demo7/products/4-3.jpg' %}" alt="Product"
                                                         width="187" height="210">
                                                 </a>
                                                 <div class="product-action-vertical">
@@ -1003,7 +1004,7 @@
                                         <div class="product product-slideup-content">
                                             <figure class="product-media">
                                                 <a href="product-default.html">
-                                                    <img src="assets/images/demos/demo7/products/4-4.jpg" alt="Product"
+                                                    <img src="{% static 'images/demos/demo7/products/4-4.jpg' %}" alt="Product"
                                                         width="187" height="210">
                                                 </a>
                                                 <div class="product-action-vertical">
@@ -1037,7 +1038,7 @@
                                         <div class="product product-slideup-content">
                                             <figure class="product-media">
                                                 <a href="product-default.html">
-                                                    <img src="assets/images/demos/demo7/products/4-5.jpg" alt="Product"
+                                                    <img src="{% static 'images/demos/demo7/products/4-5.jpg' %}" alt="Product"
                                                         width="187" height="210">
                                                 </a>
                                                 <div class="product-action-vertical">
@@ -1068,7 +1069,7 @@
                                         <div class="product product-slideup-content">
                                             <figure class="product-media">
                                                 <a href="product-default.html">
-                                                    <img src="assets/images/demos/demo7/products/4-6.jpg" alt="Product"
+                                                    <img src="{% static 'images/demos/demo7/products/4-6.jpg' %}" alt="Product"
                                                         width="187" height="210">
                                                 </a>
                                                 <div class="product-action-vertical">
@@ -1102,7 +1103,7 @@
                                         <div class="product product-slideup-content">
                                             <figure class="product-media">
                                                 <a href="product-default.html">
-                                                    <img src="assets/images/demos/demo7/products/4-7.jpg" alt="Product"
+                                                    <img src="{% static 'images/demos/demo7/products/4-7.jpg' %}" alt="Product"
                                                         width="187" height="210">
                                                 </a>
                                                 <div class="product-action-vertical">
@@ -1133,7 +1134,7 @@
                                         <div class="product product-slideup-content">
                                             <figure class="product-media">
                                                 <a href="product-default.html">
-                                                    <img src="assets/images/demos/demo7/products/4-8.jpg" alt="Product"
+                                                    <img src="{% static 'images/demos/demo7/products/4-8.jpg' %}" alt="Product"
                                                         width="187" height="210">
                                                 </a>
                                                 <div class="product-action-vertical">
@@ -1167,7 +1168,7 @@
                                         <div class="product product-slideup-content">
                                             <figure class="product-media">
                                                 <a href="product-default.html">
-                                                    <img src="assets/images/demos/demo7/products/4-9.jpg" alt="Product"
+                                                    <img src="{% static 'images/demos/demo7/products/4-9.jpg' %}" alt="Product"
                                                         width="187" height="210">
                                                 </a>
                                                 <div class="product-action-vertical">
@@ -1198,7 +1199,7 @@
                                         <div class="product product-slideup-content">
                                             <figure class="product-media">
                                                 <a href="product-default.html">
-                                                    <img src="assets/images/demos/demo7/products/4-10.jpg" alt="Product"
+                                                    <img src="{% static 'images/demos/demo7/products/4-10.jpg' %}" alt="Product"
                                                         width="187" height="210">
                                                 </a>
                                                 <div class="product-action-vertical">
@@ -1239,7 +1240,7 @@
                         <div class="col-md-6 mb-4">
                             <div class="banner banner-fixed br-xs">
                                 <figure>
-                                    <img src="assets/images/demos/demo7/category/2-1.jpg" alt="Catgory Banner"
+                                    <img src="{% static 'images/demos/demo7/category/2-1.jpg' %}" alt="Catgory Banner"
                                         width="670" height="180" style="background-color: #e6e7eb;" />
                                 </figure>
                                 <div class="banner-content y-50">
@@ -1257,7 +1258,7 @@
                         <div class="col-md-6 mb-4">
                             <div class="banner banner-fixed br-xs">
                                 <figure>
-                                    <img src="assets/images/demos/demo7/category/2-2.jpg" alt="Catgory Banner"
+                                    <img src="{% static 'images/demos/demo7/category/2-2.jpg' %}" alt="Catgory Banner"
                                         width="670" height="180" style="background-color: #28272f;" />
                                 </figure>
                                 <div class="banner-content y-50">
@@ -1289,7 +1290,7 @@
                     </div>
                     <div class="row banner-product-wrapper appear-animate">
                         <div class="col-xl-3 col-lg-4 col-md-5 mb-4 mb-md-0">
-                            <div class="banner banner-fixed br-xs" style="background-image: url(assets/images/demos/demo7/banner/1.jpg);
+                            <div class="banner banner-fixed br-xs" style="background-image: url({% static 'images/demos/demo7/banner/1.jpg' %});
                                 background-color: #363634;">
                                 <div class="banner-content">
                                     <h5 class="banner-subtitle text-white text-uppercase ls-25 font-weight-bold">New
@@ -1325,7 +1326,7 @@
                                         <div class="product product-slideup-content">
                                             <figure class="product-media">
                                                 <a href="product-default.html">
-                                                    <img src="assets/images/demos/demo7/products/5-1.jpg" alt="Product"
+                                                    <img src="{% static 'images/demos/demo7/products/5-1.jpg' %}" alt="Product"
                                                         width="239" height="269">
                                                 </a>
                                                 <div class="product-action-vertical">
@@ -1363,7 +1364,7 @@
                                         <div class="product product-slideup-content">
                                             <figure class="product-media">
                                                 <a href="product-default.html">
-                                                    <img src="assets/images/demos/demo7/products/5-2.jpg" alt="Product"
+                                                    <img src="{% static 'images/demos/demo7/products/5-2.jpg' %}" alt="Product"
                                                         width="239" height="269">
                                                 </a>
                                                 <div class="product-action-vertical">
@@ -1404,7 +1405,7 @@
                                         <div class="product product-slideup-content">
                                             <figure class="product-media">
                                                 <a href="product-default.html">
-                                                    <img src="assets/images/demos/demo7/products/5-3.jpg" alt="Product"
+                                                    <img src="{% static 'images/demos/demo7/products/5-3.jpg' %}" alt="Product"
                                                         width="239" height="269">
                                                 </a>
                                                 <div class="product-action-vertical">
@@ -1442,7 +1443,7 @@
                                         <div class="product product-slideup-content">
                                             <figure class="product-media">
                                                 <a href="product-default.html">
-                                                    <img src="assets/images/demos/demo7/products/5-4.jpg" alt="Product"
+                                                    <img src="{% static 'images/demos/demo7/products/5-4.jpg' %}" alt="Product"
                                                         width="239" height="269">
                                                 </a>
                                                 <div class="product-action-vertical">
@@ -1483,7 +1484,7 @@
                                         <div class="product product-slideup-content">
                                             <figure class="product-media">
                                                 <a href="product-default.html">
-                                                    <img src="assets/images/demos/demo7/products/5-5.jpg" alt="Product"
+                                                    <img src="{% static 'images/demos/demo7/products/5-5.jpg' %}" alt="Product"
                                                         width="239" height="269">
                                                 </a>
                                                 <div class="product-action-vertical">
@@ -1521,7 +1522,7 @@
                                         <div class="product product-slideup-content">
                                             <figure class="product-media">
                                                 <a href="product-default.html">
-                                                    <img src="assets/images/demos/demo7/products/5-6.jpg" alt="Product"
+                                                    <img src="{% static 'images/demos/demo7/products/5-6.jpg' %}" alt="Product"
                                                         width="239" height="269">
                                                 </a>
                                                 <div class="product-action-vertical">
@@ -1562,7 +1563,7 @@
                                         <div class="product product-slideup-content">
                                             <figure class="product-media">
                                                 <a href="product-default.html">
-                                                    <img src="assets/images/demos/demo7/products/5-7.jpg" alt="Product"
+                                                    <img src="{% static 'images/demos/demo7/products/5-7.jpg' %}" alt="Product"
                                                         width="239" height="269">
                                                 </a>
                                                 <div class="product-action-vertical">
@@ -1600,7 +1601,7 @@
                                         <div class="product product-slideup-content">
                                             <figure class="product-media">
                                                 <a href="product-default.html">
-                                                    <img src="assets/images/demos/demo7/products/5-8.jpg" alt="Product"
+                                                    <img src="{% static 'images/demos/demo7/products/5-8.jpg' %}" alt="Product"
                                                         width="239" height="269">
                                                 </a>
                                                 <div class="product-action-vertical">
@@ -1658,7 +1659,7 @@
                     </div>
                     <div class="row pb-1 banner-product-wrapper appear-animate">
                         <div class="col-xl-3 col-lg-4 col-md-5 mb-4 mb-md-0">
-                            <div class="banner banner-fixed br-xs" style="background-image: url(assets/images/demos/demo7/banner/2.jpg);
+                            <div class="banner banner-fixed br-xs" style="background-image: url({% static 'images/demos/demo7/banner/2.jpg' %});
                                 background-color: #CCCFD4;">
                                 <div class="banner-content">
                                     <h5 class="banner-subtitle text-white text-uppercase font-weight-bold ls-25">Weekend
@@ -1694,7 +1695,7 @@
                                         <div class="product product-slideup-content">
                                             <figure class="product-media">
                                                 <a href="product-default.html">
-                                                    <img src="assets/images/demos/demo7/products/6-1.jpg" alt="Product"
+                                                    <img src="{% static 'images/demos/demo7/products/6-1.jpg' %}" alt="Product"
                                                         width="239" height="269">
                                                 </a>
                                                 <div class="product-action-vertical">
@@ -1732,7 +1733,7 @@
                                         <div class="product product-slideup-content">
                                             <figure class="product-media">
                                                 <a href="product-default.html">
-                                                    <img src="assets/images/demos/demo7/products/6-2.jpg" alt="Product"
+                                                    <img src="{% static 'images/demos/demo7/products/6-2.jpg' %}" alt="Product"
                                                         width="239" height="269">
                                                 </a>
                                                 <div class="product-action-vertical">
@@ -1773,7 +1774,7 @@
                                         <div class="product product-slideup-content">
                                             <figure class="product-media">
                                                 <a href="product-default.html">
-                                                    <img src="assets/images/demos/demo7/products/6-3.jpg" alt="Product"
+                                                    <img src="{% static 'images/demos/demo7/products/6-3.jpg' %}" alt="Product"
                                                         width="239" height="269">
                                                 </a>
                                                 <div class="product-action-vertical">
@@ -1811,7 +1812,7 @@
                                         <div class="product product-slideup-content">
                                             <figure class="product-media">
                                                 <a href="product-default.html">
-                                                    <img src="assets/images/demos/demo7/products/6-4.jpg" alt="Product"
+                                                    <img src="{% static 'images/demos/demo7/products/6-4.jpg' %}" alt="Product"
                                                         width="239" height="269">
                                                 </a>
                                                 <div class="product-action-vertical">
@@ -1852,7 +1853,7 @@
                                         <div class="product product-slideup-content">
                                             <figure class="product-media">
                                                 <a href="product-default.html">
-                                                    <img src="assets/images/demos/demo7/products/6-5.jpg" alt="Product"
+                                                    <img src="{% static 'images/demos/demo7/products/6-5.jpg' %}" alt="Product"
                                                         width="239" height="269">
                                                 </a>
                                                 <div class="product-action-vertical">
@@ -1890,7 +1891,7 @@
                                         <div class="product product-slideup-content">
                                             <figure class="product-media">
                                                 <a href="product-default.html">
-                                                    <img src="assets/images/demos/demo7/products/6-6.jpg" alt="Product"
+                                                    <img src="{% static 'images/demos/demo7/products/6-6.jpg' %}" alt="Product"
                                                         width="239" height="269">
                                                 </a>
                                                 <div class="product-action-vertical">
@@ -1931,7 +1932,7 @@
                                         <div class="product product-slideup-content">
                                             <figure class="product-media">
                                                 <a href="product-default.html">
-                                                    <img src="assets/images/demos/demo7/products/6-7.jpg" alt="Product"
+                                                    <img src="{% static 'images/demos/demo7/products/6-7.jpg' %}" alt="Product"
                                                         width="239" height="269">
                                                 </a>
                                                 <div class="product-action-vertical">
@@ -1969,7 +1970,7 @@
                                         <div class="product product-slideup-content">
                                             <figure class="product-media">
                                                 <a href="product-default.html">
-                                                    <img src="assets/images/demos/demo7/products/6-8.jpg" alt="Product"
+                                                    <img src="{% static 'images/demos/demo7/products/6-8.jpg' %}" alt="Product"
                                                         width="239" height="269">
                                                 </a>
                                                 <div class="product-action-vertical">
@@ -2045,7 +2046,7 @@
                                 <div class="product product-widget">
                                     <figure class="product-media">
                                         <a href="product-default.html">
-                                            <img src="assets/images/demos/demo7/products/7-1.jpg" alt="Product"
+                                            <img src="{% static 'images/demos/demo7/products/7-1.jpg' %}" alt="Product"
                                                 width="124" height="140">
                                         </a>
                                     </figure>
@@ -2068,7 +2069,7 @@
                                 <div class="product product-widget">
                                     <figure class="product-media">
                                         <a href="product-default.html">
-                                            <img src="assets/images/demos/demo7/products/7-2.jpg" alt="Product"
+                                            <img src="{% static 'images/demos/demo7/products/7-2.jpg' %}" alt="Product"
                                                 width="124" height="140">
                                         </a>
                                     </figure>
@@ -2091,7 +2092,7 @@
                                 <div class="product product-widget">
                                     <figure class="product-media">
                                         <a href="product-default.html">
-                                            <img src="assets/images/demos/demo7/products/7-3.jpg" alt="Product"
+                                            <img src="{% static 'images/demos/demo7/products/7-3.jpg' %}" alt="Product"
                                                 width="124" height="140">
                                         </a>
                                     </figure>
@@ -2122,7 +2123,7 @@
                                 <div class="product product-widget">
                                     <figure class="product-media">
                                         <a href="product-default.html">
-                                            <img src="assets/images/demos/demo7/products/7-4.jpg" alt="Product"
+                                            <img src="{% static 'images/demos/demo7/products/7-4.jpg' %}" alt="Product"
                                                 width="124" height="140">
                                         </a>
                                     </figure>
@@ -2145,7 +2146,7 @@
                                 <div class="product product-widget">
                                     <figure class="product-media">
                                         <a href="product-default.html">
-                                            <img src="assets/images/demos/demo7/products/7-5.jpg" alt="Product"
+                                            <img src="{% static 'images/demos/demo7/products/7-5.jpg' %}" alt="Product"
                                                 width="124" height="140">
                                         </a>
                                     </figure>
@@ -2168,7 +2169,7 @@
                                 <div class="product product-widget">
                                     <figure class="product-media">
                                         <a href="product-default.html">
-                                            <img src="assets/images/demos/demo7/products/7-6.jpg" alt="Product"
+                                            <img src="{% static 'images/demos/demo7/products/7-6.jpg' %}" alt="Product"
                                                 width="124" height="140">
                                         </a>
                                     </figure>
@@ -2199,7 +2200,7 @@
                                 <div class="product product-widget">
                                     <figure class="product-media">
                                         <a href="product-default.html">
-                                            <img src="assets/images/demos/demo7/products/7-7.jpg" alt="Product"
+                                            <img src="{% static 'images/demos/demo7/products/7-7.jpg' %}" alt="Product"
                                                 width="124" height="140">
                                         </a>
                                     </figure>
@@ -2222,7 +2223,7 @@
                                 <div class="product product-widget">
                                     <figure class="product-media">
                                         <a href="product-default.html">
-                                            <img src="assets/images/demos/demo7/products/7-8.jpg" alt="Product"
+                                            <img src="{% static 'images/demos/demo7/products/7-8.jpg' %}" alt="Product"
                                                 width="124" height="140">
                                         </a>
                                     </figure>
@@ -2245,7 +2246,7 @@
                                 <div class="product product-widget">
                                     <figure class="product-media">
                                         <a href="product-default.html">
-                                            <img src="assets/images/demos/demo7/products/7-9.jpg" alt="Product"
+                                            <img src="{% static 'images/demos/demo7/products/7-9.jpg' %}" alt="Product"
                                                 width="124" height="140">
                                         </a>
                                     </figure>
@@ -2276,7 +2277,7 @@
                                 <div class="product product-widget">
                                     <figure class="product-media">
                                         <a href="product-default.html">
-                                            <img src="assets/images/demos/demo7/products/7-10.jpg" alt="Product"
+                                            <img src="{% static 'images/demos/demo7/products/7-10.jpg' %}" alt="Product"
                                                 width="124" height="140">
                                         </a>
                                     </figure>
@@ -2299,7 +2300,7 @@
                                 <div class="product product-widget">
                                     <figure class="product-media">
                                         <a href="product-default.html">
-                                            <img src="assets/images/demos/demo7/products/7-11.jpg" alt="Product"
+                                            <img src="{% static 'images/demos/demo7/products/7-11.jpg' %}" alt="Product"
                                                 width="124" height="140">
                                         </a>
                                     </figure>
@@ -2322,7 +2323,7 @@
                                 <div class="product product-widget">
                                     <figure class="product-media">
                                         <a href="product-default.html">
-                                            <img src="assets/images/demos/demo7/products/7-12.jpg" alt="Product"
+                                            <img src="{% static 'images/demos/demo7/products/7-12.jpg' %}" alt="Product"
                                                 width="124" height="140">
                                         </a>
                                     </figure>
@@ -2375,42 +2376,42 @@
                         <div class="swiper-wrapper row cols-xl-8 cols-lg-6 cols-md-4 cols-sm-3 cols-2">
                             <div class="swiper-slide">
                                 <figure>
-                                    <img src="assets/images/demos/demo2/brands/1.png" alt="Brand" width="290" height="100" />
+                                    <img src="{% static 'images/demos/demo2/brands/1.png' %}" alt="Brand" width="290" height="100" />
                                 </figure>
                             </div>
                             <div class="swiper-slide">
                                 <figure>
-                                    <img src="assets/images/demos/demo2/brands/2.png" alt="Brand" width="290" height="100" />
+                                    <img src="{% static 'images/demos/demo2/brands/2.png' %}" alt="Brand" width="290" height="100" />
                                 </figure>
                             </div>
                             <div class="swiper-slide">
                                 <figure>
-                                    <img src="assets/images/demos/demo2/brands/3.png" alt="Brand" width="290" height="100" />
+                                    <img src="{% static 'images/demos/demo2/brands/3.png' %}" alt="Brand" width="290" height="100" />
                                 </figure>
                             </div>
                             <div class="swiper-slide">
                                 <figure>
-                                    <img src="assets/images/demos/demo2/brands/4.png" alt="Brand" width="290" height="100" />
+                                    <img src="{% static 'images/demos/demo2/brands/4.png' %}" alt="Brand" width="290" height="100" />
                                 </figure>
                             </div>
                             <div class="swiper-slide">
                                 <figure>
-                                    <img src="assets/images/demos/demo2/brands/5.png" alt="Brand" width="290" height="100" />
+                                    <img src="{% static 'images/demos/demo2/brands/5.png' %}" alt="Brand" width="290" height="100" />
                                 </figure>
                             </div>
                             <div class="swiper-slide">
                                 <figure>
-                                    <img src="assets/images/demos/demo2/brands/6.png" alt="Brand" width="290" height="100" />
+                                    <img src="{% static 'images/demos/demo2/brands/6.png' %}" alt="Brand" width="290" height="100" />
                                 </figure>
                             </div>
                             <div class="swiper-slide">
                                 <figure>
-                                    <img src="assets/images/demos/demo2/brands/7.png" alt="Brand" width="290" height="100" />
+                                    <img src="{% static 'images/demos/demo2/brands/7.png' %}" alt="Brand" width="290" height="100" />
                                 </figure>
                             </div>
                             <div class="swiper-slide">
                                 <figure>
-                                    <img src="assets/images/demos/demo2/brands/8.png" alt="Brand" width="290" height="100" />
+                                    <img src="{% static 'images/demos/demo2/brands/8.png' %}" alt="Brand" width="290" height="100" />
                                 </figure>
                             </div>
                         </div>
@@ -2442,7 +2443,7 @@
                             <div class="swiper-slide post text-center overlay-zoom">
                                 <figure class="post-media br-sm">
                                     <a href="post-single.html">
-                                        <img src="assets/images/demos/demo7/blog/1.jpg" alt="Post" width="325" height="214"
+                                        <img src="{% static 'images/demos/demo7/blog/1.jpg' %}" alt="Post" width="325" height="214"
                                             style="background-color: #b8bfc4;" />
                                     </a>
                                 </figure>
@@ -2460,7 +2461,7 @@
                             <div class="swiper-slide post text-center overlay-zoom">
                                 <figure class="post-media br-sm">
                                     <a href="post-single.html">
-                                        <img src="assets/images/demos/demo7/blog/2.jpg" alt="Post" width="325" height="214"
+                                        <img src="{% static 'images/demos/demo7/blog/2.jpg' %}" alt="Post" width="325" height="214"
                                             style="background-color: #596066;" />
                                     </a>
                                 </figure>
@@ -2478,7 +2479,7 @@
                             <div class="swiper-slide post text-center overlay-zoom">
                                 <figure class="post-media br-sm">
                                     <a href="post-single.html">
-                                        <img src="assets/images/demos/demo7/blog/3.jpg" alt="Post" width="325" height="214"
+                                        <img src="{% static 'images/demos/demo7/blog/3.jpg' %}" alt="Post" width="325" height="214"
                                             style="background-color: #eff3f4;" />
                                     </a>
                                 </figure>
@@ -2496,7 +2497,7 @@
                             <div class="swiper-slide post text-center overlay-zoom">
                                 <figure class="post-media br-sm">
                                     <a href="post-single.html">
-                                        <img src="assets/images/demos/demo7/blog/4.jpg" alt="Post" width="325" height="214"
+                                        <img src="{% static 'images/demos/demo7/blog/4.jpg' %}" alt="Post" width="325" height="214"
                                             style="background-color: #68605e;" />
                                     </a>
                                 </figure>
@@ -2545,7 +2546,7 @@
                                 <div class="product text-center product-absolute">
                                     <figure class="product-media">
                                         <a href="https://www.portotheme.com/html/wolmart/product-defaproduct-default.html">
-                                            <img src="assets/images/demos/demo7/products/8-1.jpg" alt="Category image"
+                                            <img src="{% static 'images/demos/demo7/products/8-1.jpg' %}" alt="Category image"
                                                 width="152" height="171" style="background-color: #fff" />
                                         </a>
                                     </figure>
@@ -2559,7 +2560,7 @@
                                 <div class="product text-center product-absolute">
                                     <figure class="product-media">
                                         <a href="https://www.portotheme.com/html/wolmart/product-defaproduct-default.html">
-                                            <img src="assets/images/demos/demo7/products/8-2.jpg" alt="Category image"
+                                            <img src="{% static 'images/demos/demo7/products/8-2.jpg' %}" alt="Category image"
                                                 width="152" height="171" style="background-color: #fff" />
                                         </a>
                                     </figure>
@@ -2573,7 +2574,7 @@
                                 <div class="product text-center product-absolute">
                                     <figure class="product-media">
                                         <a href="https://www.portotheme.com/html/wolmart/product-defaproduct-default.html">
-                                            <img src="assets/images/demos/demo7/products/8-3.jpg" alt="Category image"
+                                            <img src="{% static 'images/demos/demo7/products/8-3.jpg' %}" alt="Category image"
                                                 width="152" height="171" style="background-color: #fff" />
                                         </a>
                                     </figure>
@@ -2587,7 +2588,7 @@
                                 <div class="product text-center product-absolute">
                                     <figure class="product-media">
                                         <a href="https://www.portotheme.com/html/wolmart/product-defaproduct-default.html">
-                                            <img src="assets/images/demos/demo7/products/8-4.jpg" alt="Category image"
+                                            <img src="{% static 'images/demos/demo7/products/8-4.jpg' %}" alt="Category image"
                                                 width="152" height="171" style="background-color: #fff" />
                                         </a>
                                     </figure>
@@ -2601,7 +2602,7 @@
                                 <div class="product text-center product-absolute">
                                     <figure class="product-media">
                                         <a href="https://www.portotheme.com/html/wolmart/product-defaproduct-default.html">
-                                            <img src="assets/images/demos/demo7/products/8-5.jpg" alt="Category image"
+                                            <img src="{% static 'images/demos/demo7/products/8-5.jpg' %}" alt="Category image"
                                                 width="152" height="171" style="background-color: #fff" />
                                         </a>
                                     </figure>
@@ -2615,7 +2616,7 @@
                                 <div class="product text-center product-absolute">
                                     <figure class="product-media">
                                         <a href="https://www.portotheme.com/html/wolmart/product-defaproduct-default.html">
-                                            <img src="assets/images/demos/demo7/products/8-6.jpg" alt="Category image"
+                                            <img src="{% static 'images/demos/demo7/products/8-6.jpg' %}" alt="Category image"
                                                 width="152" height="171" style="background-color: #fff" />
                                         </a>
                                     </figure>
@@ -2629,7 +2630,7 @@
                                 <div class="product text-center product-absolute">
                                     <figure class="product-media">
                                         <a href="https://www.portotheme.com/html/wolmart/product-defaproduct-default.html">
-                                            <img src="assets/images/demos/demo7/products/8-7.jpg" alt="Category image"
+                                            <img src="{% static 'images/demos/demo7/products/8-7.jpg' %}" alt="Category image"
                                                 width="152" height="171" style="background-color: #fff" />
                                         </a>
                                     </figure>
@@ -2643,7 +2644,7 @@
                                 <div class="product text-center product-absolute">
                                     <figure class="product-media">
                                         <a href="https://www.portotheme.com/html/wolmart/product-defaproduct-default.html">
-                                            <img src="assets/images/demos/demo7/products/8-8.jpg" alt="Category image"
+                                            <img src="{% static 'images/demos/demo7/products/8-8.jpg' %}" alt="Category image"
                                                 width="152" height="171" style="background-color: #fff" />
                                         </a>
                                     </figure>
