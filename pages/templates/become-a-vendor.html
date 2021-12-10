@@ -20,7 +20,7 @@
             <nav class="breadcrumb-nav mb-10 pb-1 pb-lg-10">
                 <div class="container">
                     <ul class="breadcrumb">
-                        <li><a href="demo1.html">Home</a></li>
+                        <li><a href="{% url 'home:index' %}">Home</a></li>
                         <li>Become a Vendor</li>
                     </ul>
                 </div>
@@ -161,7 +161,7 @@
                                 <p>Lorem ipsum dolor sit amet, consectetuer adipiscing
                                     hendrerit. Pellentesque aliquet nibh nec urna dolor sit
                                     In nisi dapibus id, mattis</p>
-                                <a href="vendor-dokan-store.html" class="btn btn-dark btn-link btn-underline btn-icon-right">
+                                <a href="{% url 'vendor:vendor' %}" class="btn btn-dark btn-link btn-underline btn-icon-right">
                                     Visit Vendors<i class="w-icon-long-arrow-right"></i></a>
                             </div>
                             <!-- End of Col -->
