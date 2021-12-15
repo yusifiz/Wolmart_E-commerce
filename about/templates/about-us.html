@@ -246,70 +246,26 @@
                             }
                         }">
                             <div class="swiper-wrapper row cols-xl-4 cols-lg-3 cols-sm-2 cols-1">
+                                {% for leader in leaders %}
+                                
                                 <div class="swiper-slide member-wrap">
                                     <figure class="br-lg">
-                                        <img src="{% static 'images/pages/about_us/4.jpg' %}" alt="Member" width="295" height="332" />
+                                        <img src="{{ leader.image.url }}" alt="Member" width="295" height="332" />
                                         <div class="overlay">
                                             <div class="social-icons">
-                                                <a href="#" class="social-icon social-facebook w-icon-facebook"></a>
-                                                <a href="#" class="social-icon social-twitter w-icon-twitter"></a>
-                                                <a href="#" class="social-icon social-instagram w-icon-instagram"></a>
+                                                <a href="{{ leader.facebook }}" class="social-icon social-facebook w-icon-facebook"></a>
+                                                <a href="{{ leader.twitter }}" class="social-icon social-twitter w-icon-twitter"></a>
+                                                <a href="{{ leader.instagram }}" class="social-icon social-instagram w-icon-instagram"></a>
                                             </div>
                                         </div>
                                     </figure>
                                     <div class="member-info text-center">
-                                        <h4 class="member-name">John Doe</h4>
-                                        <p class="text-uppercase">Founder &amp; CEO</p>
+                                        <h4 class="member-name">{{ leader.name }}</h4>
+                                        <p class="text-uppercase">{{ leader.specialty }}</p>
                                     </div>
                                 </div>
-                                <div class="swiper-slide member-wrap">
-                                    <figure class="br-lg">
-                                        <img src="{% static 'images/pages/about_us/5.jpg' %}" alt="Member" width="295" height="332" />
-                                        <div class="overlay">
-                                            <div class="social-icons">
-                                                <a href="#" class="social-icon social-facebook w-icon-facebook"></a>
-                                                <a href="#" class="social-icon social-twitter w-icon-twitter"></a>
-                                                <a href="#" class="social-icon social-instagram w-icon-instagram"></a>
-                                            </div>
-                                        </div>
-                                    </figure>
-                                    <div class="member-info text-center">
-                                        <h4 class="member-name">Jessica Doe</h4>
-                                        <p class="text-uppercase">Marketing</p>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide member-wrap">
-                                    <figure class="br-lg">
-                                        <img src="{% static 'images/pages/about_us/6.jpg' %}" alt="Member" width="295" height="332" />
-                                        <div class="overlay">
-                                            <div class="social-icons">
-                                                <a href="#" class="social-icon social-facebook w-icon-facebook"></a>
-                                                <a href="#" class="social-icon social-twitter w-icon-twitter"></a>
-                                                <a href="#" class="social-icon social-instagram w-icon-instagram"></a>
-                                            </div>
-                                        </div>
-                                    </figure>
-                                    <div class="member-info text-center">
-                                        <h4 class="member-name">Rick Edward Doe</h4>
-                                        <p class="text-uppercase">Developer</p>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide member-wrap">
-                                    <figure class="br-lg">
-                                        <img src="{% static 'images/pages/about_us/7.jpg' %}" alt="Member" width="295" height="332" />
-                                        <div class="overlay">
-                                            <div class="social-icons">
-                                                <a href="#" class="social-icon social-facebook w-icon-facebook"></a>
-                                                <a href="#" class="social-icon social-twitter w-icon-twitter"></a>
-                                                <a href="#" class="social-icon social-instagram w-icon-instagram"></a>
-                                            </div>
-                                        </div>
-                                    </figure>
-                                    <div class="member-info text-center">
-                                        <h4 class="member-name">Melinda Wolosky</h4>
-                                        <p class="text-uppercase">Design</p>
-                                    </div>
-                                </div>
+
+                                {% endfor %}
                             </div>
                             <div class="swiper-pagination"></div>
                         </div>
