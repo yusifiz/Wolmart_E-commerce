@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+        <!-- Start of Main -->
+        <main class="main login-page">
+            <!-- Start of Page Header -->
+            <div class="page-header">
+                <div class="container">
+                    <h1 class="page-title mb-0">My Account</h1>
+                </div>
+            </div>
+            <!-- End of Page Header -->
+
+            <!-- Start of Breadcrumb -->
+            <nav class="breadcrumb-nav">
+                <div class="container">
+                    <ul class="breadcrumb">
+                        <li><a href="demo1.html">Home</a></li>
+                        <li>My account</li>
+                    </ul>
+                </div>
+            </nav>
+            <!-- End of Breadcrumb -->
+            <div class="page-content">
+                <div class="container">
+                    <div class="login-popup">
+                        <div class="tab tab-nav-boxed tab-nav-center tab-nav-underline">
+                            <ul class="nav nav-tabs text-uppercase" role="tablist">
+                                <li class="nav-item">
+                                    <a href="#sign-up" class="nav-link">Sign Up</a>
+                                </li>
+                            </ul>
+                                <form action="" method="post" enctype='multipart/form-data' class="bg-light p-5 contact-form">
+                                    {% csrf_token %}
+                                    <div class="tab-pane" id="sign-up">
+                                        {% for field in form %}
+                                        <div class="form-group">
+                                            {{ field }}
+                                            {% for error in field.errors %}
+                                            <li class="alert-danger alert">{{ error }}</li>
+                                            {% endfor %}
+                                        </div>
+                                        {% endfor %}
+                                        <input type="submit" value="Register" class="btn btn-primary py-3 px-5">
+                                    </div>
+                                </form>
+                            </div>
+                            <p class="text-center">Sign in with social account</p>
+                            <div class="social-icons social-icon-border-color d-flex justify-content-center">
+                                <a href="#" class="social-icon social-facebook w-icon-facebook"></a>
+                                <a href="#" class="social-icon social-twitter w-icon-twitter"></a>
+                                <a href="#" class="social-icon social-google fab fa-google"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!-- End of Main -->
+
+{% endblock %}
