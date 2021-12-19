@@ -40,7 +40,7 @@
                                 </li>
                             </ul>
                             <div class="tab-content">
-                                <div class="tab-pane active" id="sign-in">
+                                <!-- <div class="tab-pane active" id="sign-in">
                                     <div class="form-group">
                                         <label>Username or email address *</label>
                                         <input type="text" class="form-control" name="username" id="username" required>
@@ -104,7 +104,24 @@
                                         <label for="remember" class="font-size-md">I agree to the <a  href="#" class="text-primary font-size-md">privacy policy</a></label>
                                     </div>
                                     <a href="#" class="btn btn-primary">Sign Un</a>
-                                </div>
+                                </div> -->
+                                <form action="" method="post" class="bg-light p-5 contact-form">
+                                    {% csrf_token %}
+                                    {% for error in form.non_field_errors %}
+                                        {{error}}
+                                    {% endfor %}
+                                        <div class="tab-pane active" id="sign-in">
+                                            {% for field in form %}
+                                            <div class="form-group">
+                                                {{ field }}
+                                                {% for error in field.errors %}
+                                                <p>{{error}}</p>
+                                                {% endfor %}
+                                            </div>
+                                            {% endfor %}
+                                            <input type="submit" value="Login" class="btn btn-primary py-3 px-5">
+                                        </div>
+                                    </form>
                             </div>
                             <p class="text-center">Sign in with social account</p>
                             <div class="social-icons social-icon-border-color d-flex justify-content-center">

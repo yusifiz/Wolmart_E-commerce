@@ -36,6 +36,7 @@
                                 <form action="" method="post" enctype='multipart/form-data' class="bg-light p-5 contact-form">
                                     {% csrf_token %}
                                     <div class="tab-pane" id="sign-up">
+                                        {{ form.non_field_errors }}
                                         {% for field in form %}
                                         <div class="form-group">
                                             {{ field }}
