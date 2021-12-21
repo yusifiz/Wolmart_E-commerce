@@ -94,10 +94,10 @@
                         <a href="{% url 'blog:blog' %}" class="d-lg-show">Blog</a>
                         <a href="{% url 'contact:contact' %}" class="d-lg-show">Contact Us</a>
                         <a href="{% url 'account:my_account' %}" class="d-lg-show">My Account</a>
-                        <a href="../static/ajax/login.html" class="d-lg-show login sign-in"><i
+                        <a href="{% url 'account:login' %}" class="d-lg-show"><i
                                 class="w-icon-account"></i>Sign In</a>
                         <span class="delimiter d-lg-show">/</span>
-                        <a href="../static/ajax/login.html" class="ml-0 d-lg-show login register">Register</a>
+                        <a href="{% url 'account:register' %}" class="ml-0 d-lg-show">Register</a>
                     </div>
                 </div>
             </div>
@@ -232,8 +232,8 @@
                                 <a href="#" class="category-toggle text-white" role="button" data-toggle="dropdown"
                                     aria-haspopup="true" aria-expanded="true" data-display="static"
                                     title="Browse Categories">
-                                    <i class="w-icon-category"></i>
-                                    <span>Browse Categories</span>
+                                    <i class="w-icon-category text-dark"></i>
+                                    <span class="text-dark">Browse Categories</span>
                                 </a>
 
                                 <div class="dropdown-box mt-0">
@@ -1526,26 +1526,7 @@
     </div>
     <!-- End of Mobile Menu -->
 
-    <!-- Start of Newsletter popup -->
-    <div class="newsletter-popup mfp-hide">
-        <div class="newsletter-content">
-            <h4 class="text-uppercase font-weight-normal ls-25">Get Up to<span class="text-primary">25% Off</span></h4>
-            <h2 class="ls-25">Sign up to Wolmart</h2>
-            <p class="text-light ls-10">Subscribe to the Wolmart market newsletter to 
-                receive updates on special offers.</p>
-            <form action="#" method="get" class="input-wrapper input-wrapper-inline input-wrapper-round">
-                <input type="email" class="form-control email font-size-md" name="email" id="email2"
-                    placeholder="Your email address" required="">
-                <button class="btn btn-dark" type="submit">SUBMIT</button>
-            </form>
-            <div class="form-checkbox d-flex align-items-center">
-                <input type="checkbox" class="custom-checkbox" id="hide-newsletter-popup" name="hide-newsletter-popup"
-                    required="">
-                <label for="hide-newsletter-popup" class="font-size-sm text-light">Don't show this popup again.</label>
-            </div>
-        </div>
-    </div>
-    <!-- End of Newsletter popup -->
+
 
     <!-- Start of Quick View -->
     <div class="product product-single product-popup">
