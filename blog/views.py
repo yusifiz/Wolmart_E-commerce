@@ -12,5 +12,11 @@ class BlogListView(ListView):
 # def blog_mask_masonry(request):
 #     return render(request, "blog-mask-masonry.html")
 
-def post_single(request):
-    return render(request, "post-single.html")
+class BlogDetailView(DetailView):
+    model = Blog
+    template_name = 'post-single.html'
+    context_object_name = 'blog_detail'
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        return context

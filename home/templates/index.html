@@ -2443,78 +2443,26 @@
                         }
                     }">
                         <div class="swiper-wrapper row cols-lg-4 cols-md-3 cols-sm-2 cols-1">
+                            {% for blog in blog_list %} 
                             <div class="swiper-slide post text-center overlay-zoom">
                                 <figure class="post-media br-sm">
-                                    <a href="{% url 'blog:single_blog' %}">
-                                        <img src="{% static 'images/demos/demo7/blog/1.jpg' %}" alt="Post" width="325" height="214"
+                                    <a href="{% url 'blog:single_blog' blog.slug %}">
+                                        <img src="{{ blog.image.url }}" alt="Post" width="325" height="214"
                                             style="background-color: #b8bfc4;" />
                                     </a>
                                 </figure>
                                 <div class="post-details">
                                     <div class="post-meta">
-                                        by <a href="#" class="post-author">John Doe</a>
-                                        - <a href="#" class="post-date mr-0">03.05.2021</a>
+                                        by <a href="#" class="post-author">{{blog.author}}</a>
+                                        - <a href="#" class="post-date mr-0">{{blog.created_at}}</a>
                                     </div>
-                                    <h4 class="post-title"><a href="{% url 'blog:single_blog' %}">Comes a cool blog post with Images</a>
+                                    <h4 class="post-title"><a href="{% url 'blog:single_blog' blog.slug %}">{{blog.name}}</a>
                                     </h4>
-                                    <a href="{% url 'blog:single_blog' %}" class="btn btn-link btn-dark btn-underline">Read More<i
+                                    <a href="{% url 'blog:single_blog' blog.slug %}" class="btn btn-link btn-dark btn-underline">Read More<i
                                             class="w-icon-long-arrow-right"></i></a>
                                 </div>
                             </div>
-                            <div class="swiper-slide post text-center overlay-zoom">
-                                <figure class="post-media br-sm">
-                                    <a href="{% url 'blog:single_blog' %}">
-                                        <img src="{% static 'images/demos/demo7/blog/2.jpg' %}" alt="Post" width="325" height="214"
-                                            style="background-color: #596066;" />
-                                    </a>
-                                </figure>
-                                <div class="post-details">
-                                    <div class="post-meta">
-                                        by <a href="#" class="post-author">John Doe</a>
-                                        - <a href="#" class="post-date mr-0">03.05.2021</a>
-                                    </div>
-                                    <h4 class="post-title"><a href="{% url 'blog:single_blog' %}">Comes a cool blog post with Images</a>
-                                    </h4>
-                                    <a href="{% url 'blog:single_blog' %}" class="btn btn-link btn-dark btn-underline">Read More<i
-                                            class="w-icon-long-arrow-right"></i></a>
-                                </div>
-                            </div>
-                            <div class="swiper-slide post text-center overlay-zoom">
-                                <figure class="post-media br-sm">
-                                    <a href="{% url 'blog:single_blog' %}">
-                                        <img src="{% static 'images/demos/demo7/blog/3.jpg' %}" alt="Post" width="325" height="214"
-                                            style="background-color: #eff3f4;" />
-                                    </a>
-                                </figure>
-                                <div class="post-details">
-                                    <div class="post-meta">
-                                        by <a href="#" class="post-author">John Doe</a>
-                                        - <a href="#" class="post-date mr-0">03.05.2021</a>
-                                    </div>
-                                    <h4 class="post-title"><a href="{% url 'blog:single_blog' %}">Comes a cool blog post with Images</a>
-                                    </h4>
-                                    <a href="{% url 'blog:single_blog' %}" class="btn btn-link btn-dark btn-underline">Read More<i
-                                            class="w-icon-long-arrow-right"></i></a>
-                                </div>
-                            </div>
-                            <div class="swiper-slide post text-center overlay-zoom">
-                                <figure class="post-media br-sm">
-                                    <a href="{% url 'blog:single_blog' %}">
-                                        <img src="{% static 'images/demos/demo7/blog/4.jpg' %}" alt="Post" width="325" height="214"
-                                            style="background-color: #68605e;" />
-                                    </a>
-                                </figure>
-                                <div class="post-details">
-                                    <div class="post-meta">
-                                        by <a href="#" class="post-author">John Doe</a>
-                                        - <a href="#" class="post-date mr-0">03.05.2021</a>
-                                    </div>
-                                    <h4 class="post-title"><a href="{% url 'blog:single_blog' %}">Comes a cool blog post with Images</a>
-                                    </h4>
-                                    <a href="{% url 'blog:single_blog' %}" class="btn btn-link btn-dark btn-underline">Read More<i
-                                            class="w-icon-long-arrow-right"></i></a>
-                                </div>
-                            </div>
+                            {% endfor %}
                         </div>
                         <div class="swiper-pagination"></div>
                     </div>

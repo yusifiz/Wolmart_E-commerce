@@ -8,7 +8,9 @@ class Blog(models.Model):
     image = models.ImageField(upload_to='blog/')
     author = models.CharField(max_length=127, null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True, null=True,blank=True)
-    link = models.URLField(max_length=255)
+    content = models.TextField(help_text='Content', null=True, blank=True)
+    author_comment = models.CharField(max_length=255, null=True, blank=True)
+    slug = models.SlugField(max_length=127, null=True, blank=True)
     
     
     class Meta:
