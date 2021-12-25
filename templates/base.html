@@ -94,10 +94,14 @@
                         <a href="{% url 'blog:blog' %}" class="d-lg-show">Blog</a>
                         <a href="{% url 'contact:contact' %}" class="d-lg-show">Contact Us</a>
                         <a href="{% url 'account:my_account' %}" class="d-lg-show">My Account</a>
+                        {% if user.is_authenticated %}
+                        <a href="{% url 'account:logout' %}"><i class="fas fa-sign-out-alt"></i></a>
+                        {% else %}
                         <a href="{% url 'account:login' %}" class="d-lg-show"><i
                                 class="w-icon-account"></i>Sign In</a>
                         <span class="delimiter d-lg-show">/</span>
                         <a href="{% url 'account:register' %}" class="ml-0 d-lg-show">Register</a>
+                        {% endif %}
                     </div>
                 </div>
             </div>

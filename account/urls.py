@@ -1,5 +1,5 @@
 from django.urls import path, re_path
-from .views import login, my_account, register, activate
+from .views import login, my_account, register, activate, logout
 
 app_name = 'account'
 
@@ -9,4 +9,6 @@ urlpatterns = [
     path('register/', register, name='register'),
     re_path(r'^activate/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,33})/$',
             activate, name='activate'),
+    path('logout/', logout, name='logout')
+
 ]
