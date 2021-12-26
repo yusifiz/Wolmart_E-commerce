@@ -7,7 +7,7 @@ class BlogListView(ListView):
     model = Blog
     template_name = 'blog.html'
     paginate_by = 3 
-
+    
 
 # def blog_mask_masonry(request):
 #     return render(request, "blog-mask-masonry.html")

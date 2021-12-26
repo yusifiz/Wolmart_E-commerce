@@ -14,8 +14,8 @@
             <nav class="breadcrumb-nav container">
                 <ul class="breadcrumb bb-no">
                     <li><a href="{% url 'home:index' %}">Home</a></li>
-                    <li><a href="{% url 'product:single_product' %}">Products</a></li>
-                    <li>Gallery</li>
+                    <li><a href="{% url 'product:shop' %}">Products</a></li>
+                    
                 </ul>
                 <ul class="product-nav list-style-none">
                     <li class="product-nav-prev">
@@ -57,7 +57,7 @@
                                         <div class="swiper-wrapper row cols-sm-2">
                                             <div class="swiper-slide">
                                                 <figure class="product-image">
-                                                    <img src="{% static 'images/products/gallery/1-800x900.jpg' %}"
+                                                    <img src="{{ product.image.url }}"
                                                         data-zoom-image="{% static 'images/products/gallery/1-800x900.jpg' %}"
                                                         alt="Smart Watch" width="800" height="900">
                                                     <a href="#" class="product-gallery-btn product-image-full"><i
@@ -66,7 +66,7 @@
                                             </div>
                                             <div class="swiper-slide">
                                                 <figure class="product-image">
-                                                    <img src="{% static 'images/products/gallery/2-800x900.jpg' %}"
+                                                    <img src="{{ product.image.url }}"
                                                         data-zoom-image="{% static 'images/products/gallery/2-800x900.jpg' %}"
                                                         alt="Smart Watch" width="488" height="549">
                                                     <a href="#" class="product-gallery-btn product-image-full"><i
@@ -75,7 +75,7 @@
                                             </div>
                                             <div class="swiper-slide">
                                                 <figure class="product-image">
-                                                    <img src="{% static 'images/products/gallery/3-800x900.jpg' %}"
+                                                    <img src="{{ product.image.url }}"
                                                         data-zoom-image="{% static 'images/products/gallery/3-800x900.jpg' %}"
                                                         alt="Smart Watch" width="800" height="900">
                                                     <a href="#" class="product-gallery-btn product-image-full"><i
@@ -84,7 +84,7 @@
                                             </div>
                                             <div class="swiper-slide">
                                                 <figure class="product-image">
-                                                    <img src="{% static 'images/products/gallery/4-800x900.jpg' %}"
+                                                    <img src="{{ product.image.url }}"
                                                         data-zoom-image="{% static 'images/products/gallery/4-800x900.jpg' %}"
                                                         alt="Smart Watch" width="800" height="900">
                                                     <a href="#" class="product-gallery-btn product-image-full"><i
@@ -96,16 +96,16 @@
                                 </div>
                                 <div class="product-details row pl-0">
                                     <div class="col-md-6">
-                                        <h1 class="product-title">Smart Watch</h1>
+                                        <h1 class="product-title">{{product.name}}</h1>
                                         <div class="product-bm-wrapper">
                                             <figure class="brand">
-                                                <img src="{% static 'images/products/brand/brand-1.jpg' %}" alt="Brand"
+                                                <img src="{{ product.image.url }}" alt="Brand"
                                                     width="102" height="48" />
                                             </figure>
                                             <div class="product-meta">
                                                 <div class="product-categories">
                                                     Category:
-                                                    <span class="product-category"><a href="#">Watches</a></span>
+                                                    <span class="product-category"><a href="#">{{product.category}}</a></span>
                                                 </div>
                                                 <div class="product-sku">
                                                     SKU: <span>MS46891340</span>
@@ -114,7 +114,7 @@
                                         </div>
 
                                         <div class="product-price">
-                                            <ins class="new-price">$80.00 - $90.00</ins></div>
+                                            <ins class="new-price">${{product.price1}} - ${{product.price2}}</ins></div>
 
                                         <div class="ratings-container">
                                             <div class="ratings-full">
@@ -969,7 +969,7 @@
                                     <div class="swiper-wrapper row cols-lg-3 cols-md-4 cols-sm-3 cols-2">
                                         <div class="swiper-slide product">
                                             <figure class="product-media">
-                                                <a href="{% url 'product:single_product' %}">
+                                                <a href="{% url 'product:single_product' product.id %}">
                                                     <img src="{% static 'images/products/default/1-1.jpg' %}" alt="Product"
                                                         width="300" height="338" />
                                                     <img src="{% static 'images/products/default/1-2.jpg' %}" alt="Product"
@@ -991,14 +991,14 @@
                                             <div class="product-details">
                                                 <div class="product-cat"><a href="{% url 'product:shop' %}">Accessories</a>
                                                 </div>
-                                                <h4 class="product-name"><a href="{% url 'product:single_product' %}">Sticky Pencil</a>
+                                                <h4 class="product-name"><a href="{% url 'product:single_product' product.id %}">Sticky Pencil</a>
                                                 </h4>
                                                 <div class="ratings-container">
                                                     <div class="ratings-full">
                                                         <span class="ratings" style="width: 100%;"></span>
                                                         <span class="tooltiptext tooltip-top"></span>
                                                     </div>
-                                                    <a href="{% url 'product:single_product' %}" class="rating-reviews">(3 reviews)</a>
+                                                    <a href="{% url 'product:single_product' product.id %}" class="rating-reviews">(3 reviews)</a>
                                                 </div>
                                                 <div class="product-pa-wrapper">
                                                     <div class="product-price">$20.00</div>
@@ -1007,7 +1007,7 @@
                                         </div>
                                         <div class="swiper-slide product">
                                             <figure class="product-media">
-                                                <a href="{% url 'product:single_product' %}">
+                                                <a href="{% url 'product:single_product' product.id %}">
                                                     <img src="{% static 'images/products/default/2.jpg' %}" alt="Product"
                                                         width="300" height="338" />
                                                 </a>
@@ -1027,14 +1027,14 @@
                                             <div class="product-details">
                                                 <div class="product-cat"><a href="{% url 'product:shop' %}">Electronics</a>
                                                 </div>
-                                                <h4 class="product-name"><a href="{% url 'product:single_product' %}">Mini
+                                                <h4 class="product-name"><a href="{% url 'product:single_product' product.id %}">Mini
                                                         Multi-Functional Cooker</a></h4>
                                                 <div class="ratings-container">
                                                     <div class="ratings-full">
                                                         <span class="ratings" style="width: 80%;"></span>
                                                         <span class="tooltiptext tooltip-top"></span>
                                                     </div>
-                                                    <a href="{% url 'product:single_product' %}" class="rating-reviews">(5 reviews)</a>
+                                                    <a href="{% url 'product:single_product' product.id %}" class="rating-reviews">(5 reviews)</a>
                                                 </div>
                                                 <div class="product-pa-wrapper">
                                                     <div class="product-price">
@@ -1046,7 +1046,7 @@
                                         </div>
                                         <div class="swiper-slide product">
                                             <figure class="product-media">
-                                                <a href="{% url 'product:single_product' %}">
+                                                <a href="{% url 'product:single_product' product.id %}">
                                                     <img src="{% static 'images/products/default/3.jpg' %}" alt="Product"
                                                         width="300" height="338" />
                                                 </a>
@@ -1065,13 +1065,13 @@
                                             </figure>
                                             <div class="product-details">
                                                 <div class="product-cat"><a href="{% url 'product:shop' %}">Sports</a></div>
-                                                <h4 class="product-name"><a href="{% url 'product:single_product' %}">Skate Pan</a></h4>
+                                                <h4 class="product-name"><a href="{% url 'product:single_product' product.id %}">Skate Pan</a></h4>
                                                 <div class="ratings-container">
                                                     <div class="ratings-full">
                                                         <span class="ratings" style="width: 100%;"></span>
                                                         <span class="tooltiptext tooltip-top"></span>
                                                     </div>
-                                                    <a href="{% url 'product:single_product' %}" class="rating-reviews">(3 reviews)</a>
+                                                    <a href="{% url 'product:single_product' product.id %}" class="rating-reviews">(3 reviews)</a>
                                                 </div>
                                                 <div class="product-pa-wrapper">
                                                     <div class="product-price">
@@ -1083,7 +1083,7 @@
                                         </div>
                                         <div class="swiper-slide product">
                                             <figure class="product-media">
-                                                <a href="{% url 'product:single_product' %}">
+                                                <a href="{% url 'product:single_product' product.id %}">
                                                     <img src="{% static 'images/products/default/4-1.jpg' %}" alt="Product"
                                                         width="300" height="338" />
                                                     <img src="{% static 'images/products/default/4-2.jpg' %}" alt="Product"
@@ -1105,14 +1105,14 @@
                                             <div class="product-details">
                                                 <div class="product-cat"><a href="{% url 'product:shop' %}">Accessories</a>
                                                 </div>
-                                                <h4 class="product-name"><a href="{% url 'product:single_product' %}">Clip Attachment</a>
+                                                <h4 class="product-name"><a href="{% url 'product:single_product' product.id %}">Clip Attachment</a>
                                                 </h4>
                                                 <div class="ratings-container">
                                                     <div class="ratings-full">
                                                         <span class="ratings" style="width: 100%;"></span>
                                                         <span class="tooltiptext tooltip-top"></span>
                                                     </div>
-                                                    <a href="{% url 'product:single_product' %}" class="rating-reviews">(5 reviews)</a>
+                                                    <a href="{% url 'product:single_product' product.id %}" class="rating-reviews">(5 reviews)</a>
                                                 </div>
                                                 <div class="product-pa-wrapper">
                                                     <div class="product-price">$40.00</div>
@@ -1146,7 +1146,7 @@
                                     <div class="swiper-wrapper row cols-lg-3 cols-md-4 cols-sm-3 cols-2">
                                         <div class="swiper-slide product">
                                             <figure class="product-media">
-                                                <a href="{% url 'product:single_product' %}">
+                                                <a href="{% url 'product:single_product' product.id %}">
                                                     <img src="{% static 'images/products/default/5.jpg' %}" alt="Product"
                                                         width="300" height="338" />
                                                 </a>
@@ -1164,13 +1164,13 @@
                                                 </div>
                                             </figure>
                                             <div class="product-details">
-                                                <h4 class="product-name"><a href="{% url 'product:single_product' %}">Drone</a></h4>
+                                                <h4 class="product-name"><a href="{% url 'product:single_product' product.id %}">Drone</a></h4>
                                                 <div class="ratings-container">
                                                     <div class="ratings-full">
                                                         <span class="ratings" style="width: 100%;"></span>
                                                         <span class="tooltiptext tooltip-top"></span>
                                                     </div>
-                                                    <a href="{% url 'product:single_product' %}" class="rating-reviews">(3 reviews)</a>
+                                                    <a href="{% url 'product:single_product' product.id %}" class="rating-reviews">(3 reviews)</a>
                                                 </div>
                                                 <div class="product-pa-wrapper">
                                                     <div class="product-price">$632.00</div>
@@ -1179,7 +1179,7 @@
                                         </div>
                                         <div class="swiper-slide product">
                                             <figure class="product-media">
-                                                <a href="{% url 'product:single_product' %}">
+                                                <a href="{% url 'product:single_product' product.id %}">
                                                     <img src="{% static 'images/products/default/6.jpg' %}" alt="Product"
                                                         width="300" height="338" />
                                                 </a>
@@ -1197,14 +1197,14 @@
                                                 </div>
                                             </figure>
                                             <div class="product-details">
-                                                <h4 class="product-name"><a href="{% url 'product:single_product' %}">Official Camera</a>
+                                                <h4 class="product-name"><a href="{% url 'product:single_product' product.id %}">Official Camera</a>
                                                 </h4>
                                                 <div class="ratings-container">
                                                     <div class="ratings-full">
                                                         <span class="ratings" style="width: 100%;"></span>
                                                         <span class="tooltiptext tooltip-top"></span>
                                                     </div>
-                                                    <a href="{% url 'product:single_product' %}" class="rating-reviews">(3 reviews)</a>
+                                                    <a href="{% url 'product:single_product' product.id %}" class="rating-reviews">(3 reviews)</a>
                                                 </div>
                                                 <div class="product-pa-wrapper">
                                                     <div class="product-price">
@@ -1216,7 +1216,7 @@
                                         </div>
                                         <div class="swiper-slide product">
                                             <figure class="product-media">
-                                                <a href="{% url 'product:single_product' %}">
+                                                <a href="{% url 'product:single_product' product.id %}">
                                                     <img src="{% static 'images/products/default/7-1.jpg' %}" alt="Product"
                                                         width="300" height="338" />
                                                     <img src="{% static 'images/products/default/7-2.jpg' %}" alt="Product"
@@ -1236,14 +1236,14 @@
                                                 </div>
                                             </figure>
                                             <div class="product-details">
-                                                <h4 class="product-name"><a href="{% url 'product:single_product' %}">Phone Charge Pad</a>
+                                                <h4 class="product-name"><a href="{% url 'product:single_product' product.id %}">Phone Charge Pad</a>
                                                 </h4>
                                                 <div class="ratings-container">
                                                     <div class="ratings-full">
                                                         <span class="ratings" style="width: 80%;"></span>
                                                         <span class="tooltiptext tooltip-top"></span>
                                                     </div>
-                                                    <a href="{% url 'product:single_product' %}" class="rating-reviews">(8 reviews)</a>
+                                                    <a href="{% url 'product:single_product' product.id %}" class="rating-reviews">(8 reviews)</a>
                                                 </div>
                                                 <div class="product-pa-wrapper">
                                                     <div class="product-price">$23.00</div>
@@ -1252,7 +1252,7 @@
                                         </div>
                                         <div class="swiper-slide product">
                                             <figure class="product-media">
-                                                <a href="{% url 'product:single_product' %}">
+                                                <a href="{% url 'product:single_product' product.id %}">
                                                     <img src="{% static 'images/products/default/8.jpg' %}" alt="Product"
                                                         width="300" height="338" />
                                                 </a>
@@ -1270,14 +1270,14 @@
                                                 </div>
                                             </figure>
                                             <div class="product-details">
-                                                <h4 class="product-name"><a href="{% url 'product:single_product' %}">Fashionalble
+                                                <h4 class="product-name"><a href="{% url 'product:single_product' product.id %}">Fashionalble
                                                         Pencil</a></h4>
                                                 <div class="ratings-container">
                                                     <div class="ratings-full">
                                                         <span class="ratings" style="width: 100%;"></span>
                                                         <span class="tooltiptext tooltip-top"></span>
                                                     </div>
-                                                    <a href="{% url 'product:single_product' %}" class="rating-reviews">(9 reviews)</a>
+                                                    <a href="{% url 'product:single_product' product.id %}" class="rating-reviews">(9 reviews)</a>
                                                 </div>
                                                 <div class="product-pa-wrapper">
                                                     <div class="product-price">$50.00</div>

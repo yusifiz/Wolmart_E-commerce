@@ -168,9 +168,12 @@
                                 </div>
 
                                 <div class="products">
+                                    {% for product in products %}
+                                    
+                                    
                                     <div class="product product-cart">
                                         <div class="product-detail">
-                                            <a href="{% url 'product:single_product' %}" class="product-name">Beige knitted
+                                            <a href="{% url 'product:single_product' product.id %}" class="product-name">Beige knitted
                                                 elas<br>tic
                                                 runner shoes</a>
                                             <div class="price-box">
@@ -179,8 +182,8 @@
                                             </div>
                                         </div>
                                         <figure class="product-media">
-                                            <a href="{% url 'product:single_product' %}">
-                                                <img src="{% static 'images/cart/product-1.jpg' %}" alt="product" height="84"
+                                            <a href="{% url 'product:single_product' product.id %}">
+                                                <img src="{{ product.image.url }}" alt="product" height="84"
                                                     width="94" />
                                             </a>
                                         </figure>
@@ -189,26 +192,7 @@
                                         </button>
                                     </div>
 
-                                    <div class="product product-cart">
-                                        <div class="product-detail">
-                                            <a href="{% url 'product:single_product' %}" class="product-name">Blue utility
-                                                pina<br>fore
-                                                denim dress</a>
-                                            <div class="price-box">
-                                                <span class="product-quantity">1</span>
-                                                <span class="product-price">$32.99</span>
-                                            </div>
-                                        </div>
-                                        <figure class="product-media">
-                                            <a href="{% url 'product:single_product' %}">
-                                                <img src="{% static 'images/cart/product-2.jpg' %}" alt="product" width="84"
-                                                    height="94" />
-                                            </a>
-                                        </figure>
-                                        <button class="btn btn-link btn-close" aria-label="button">
-                                            <i class="fas fa-times"></i>
-                                        </button>
-                                    </div>
+                                    {% endfor %}
                                 </div>
 
                                 <div class="cart-total">
@@ -637,72 +621,10 @@
                                     <li>
                                         <a href="{% url 'product:shop' %}">Shop</a>
 
-                                        <!-- Start of Megamenu -->
-                                        <ul class="megamenu">
-                                            <li>
-                                                <h4 class="menu-title">Shop Pages</h4>
-                                                <ul>
-                                                    <li><a href="{% url 'product:shop' %}">Banner With Sidebar</a></li>
-                                                    <li><a href="{% url 'product:shop' %}">Boxed Banner</a></li>
-                                                    <li><a href="{% url 'product:shop' %}">Full Width Banner</a></li>
-                                                    <li><a href="{% url 'product:shop' %}">Horizontal Filter<span
-                                                                class="tip tip-hot">Hot</span></a></li>
-                                                    <li><a href="{% url 'product:shop' %}">Off Canvas Sidebar<span
-                                                                class="tip tip-new">New</span></a></li>
-                                                    <li><a href="{% url 'product:shop' %}">Infinite Ajax Scroll</a>
-                                                    </li>
-                                                    <li><a href="{% url 'product:shop' %}">Right Sidebar</a></li>
-                                                    <li><a href="{% url 'product:shop' %}">Both Sidebar</a></li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <h4 class="menu-title">Shop Layouts</h4>
-                                                <ul>
-                                                    <li><a href="{% url 'product:shop' %}">3 Columns Mode</a></li>
-                                                    <li><a href="{% url 'product:shop' %}">4 Columns Mode</a></li>
-                                                    <li><a href="{% url 'product:shop' %}">5 Columns Mode</a></li>
-                                                    <li><a href="{% url 'product:shop' %}">6 Columns Mode</a></li>
-                                                    <li><a href="{% url 'product:shop' %}">7 Columns Mode</a></li>
-                                                    <li><a href="{% url 'product:shop' %}">8 Columns Mode</a></li>
-                                                    <li><a href="{% url 'product:shop' %}">List Mode</a></li>
-                                                    <li><a href="{% url 'product:shop' %}">List Mode With Sidebar</a></li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <h4 class="menu-title">Product Pages</h4>
-                                                <ul>
-                                                    <li><a href="{% url 'product:single_product' %}">Variable Product</a></li>
-                                                    <li><a href="{% url 'product:single_product' %}">Featured &amp; Sale</a></li>
-                                                    <li><a href="{% url 'product:single_product' %}">Data In Accordion</a></li>
-                                                    <li><a href="{% url 'product:single_product' %}">Data In Sections</a></li>
-                                                    <li><a href="{% url 'product:single_product' %}">Image Swatch</a></li>
-                                                    <li><a href="{% url 'product:single_product' %}">Extended Info</a>
-                                                    </li>
-                                                    <li><a href="{% url 'product:single_product' %}">Without Sidebar</a></li>
-                                                    <li><a href="{% url 'product:single_product' %}">360<sup>o</sup> &amp; Video<span
-                                                                class="tip tip-new">New</span></a></li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <h4 class="menu-title">Product Layouts</h4>
-                                                <ul>
-                                                    <li><a href="{% url 'product:single_product' %}">Default<span
-                                                                class="tip tip-hot">Hot</span></a></li>
-                                                    <li><a href="{% url 'product:single_product' %}">Vertical Thumbs</a></li>
-                                                    <li><a href="{% url 'product:single_product' %}">Grid Images</a></li>
-                                                    <li><a href="{% url 'product:single_product' %}">Masonry</a></li>
-                                                    <li><a href="{% url 'product:single_product' %}">Gallery</a></li>
-                                                    <li><a href="{% url 'product:single_product' %}">Sticky Info</a></li>
-                                                    <li><a href="{% url 'product:single_product' %}">Sticky Thumbs</a></li>
-                                                    <li><a href="{% url 'product:single_product' %}">Sticky Both</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                        <!-- End of Megamenu -->
                                     </li>
                                     <li>
                                         <a href="{% url 'vendor:vendor' %}">Vendor</a>
-                                        <ul>
+                                        <!-- <ul>
                                             <li>
                                                 <a href="{% url 'vendor:vendor' %}">Store Listing</a>
                                                 <ul>
@@ -724,11 +646,11 @@
                                                     </li>
                                                 </ul>
                                             </li>
-                                        </ul>
+                                        </ul> -->
                                     </li>
                                     <li>
                                         <a href="{% url 'blog:blog' %}">Blog</a>
-                                        <ul>
+                                        <!-- <ul>
                                             <li><a href="{% url 'blog:blog' %}">Classic</a></li>
                                             <li><a href="{% url 'blog:blog' %}">Listing</a></li>
                                             <li>
@@ -759,11 +681,11 @@
                                             <li>
                                                 <a href="{% url 'blog:blog' %}">Single Post salam</a>
                                             </li>
-                                        </ul>
+                                        </ul> -->
                                     </li>
                                     <li>
                                         <a href="{% url 'about:about' %}">Pages</a>
-                                        <ul>
+                                        <!-- <ul>
 
                                             <li><a href="{% url 'about:about' %}">About Us</a></li>
                                             <li><a href="{% url 'pages:become_a_vendor' %}">Become A Vendor</a></li>
@@ -775,7 +697,7 @@
                                             <li><a href="{% url 'pages:checkout' %}">Checkout</a></li>
                                             <li><a href="{% url 'account:my_account' %}">My Account</a></li>
                                             <li><a href="{% url 'pages:compare' %}">Compare</a></li>
-                                        </ul>
+                                        </ul> -->
                                     </li>
 
                                 </ul>
@@ -1006,20 +928,23 @@
             </a>
             <div class="dropdown-box">
                 <div class="products">
+                    {% for product in products %}
+                                    
+                                    
                     <div class="product product-cart">
                         <div class="product-detail">
-                            <h3 class="product-name">
-                                <a href="{% url 'product:single_product' %}">Beige knitted elas<br>tic
-                                    runner shoes</a>
-                            </h3>
+                            <a href="{% url 'product:single_product' product.id %}" class="product-name">Beige knitted
+                                elas<br>tic
+                                runner shoes</a>
                             <div class="price-box">
                                 <span class="product-quantity">1</span>
                                 <span class="product-price">$25.68</span>
                             </div>
                         </div>
                         <figure class="product-media">
-                            <a href="{% url 'product:single_product' %}">
-                                <img src="{% static 'images/cart/product-1.jpg' %}" alt="product" height="84" width="94" />
+                            <a href="{% url 'product:single_product' product.id %}">
+                                <img src="{{ product.image.url }}" alt="product" height="84"
+                                    width="94" />
                             </a>
                         </figure>
                         <button class="btn btn-link btn-close" aria-label="button">
@@ -1027,26 +952,7 @@
                         </button>
                     </div>
 
-                    <div class="product product-cart">
-                        <div class="product-detail">
-                            <h3 class="product-name">
-                                <a href="{% url 'product:single_product' %}">Blue utility pina<br>fore
-                                    denim dress</a>
-                            </h3>
-                            <div class="price-box">
-                                <span class="product-quantity">1</span>
-                                <span class="product-price">$32.99</span>
-                            </div>
-                        </div>
-                        <figure class="product-media">
-                            <a href="{% url 'product:single_product' %}">
-                                <img src="{% static 'images/cart/product-2.jpg' %}" alt="product" width="84" height="94" />
-                            </a>
-                        </figure>
-                        <button class="btn btn-link btn-close" aria-label="button">
-                            <i class="fas fa-times"></i>
-                        </button>
-                    </div>
+                    {% endfor %}
                 </div>
 
                 <div class="cart-total">
@@ -1144,35 +1050,7 @@
                                         <li><a href="{% url 'product:shop' %}">List Mode With Sidebar</a></li>
                                     </ul>
                                 </li>
-                                <li>
-                                    <a href="#">Product Pages</a>
-                                    <ul>
-                                        <li><a href="{% url 'product:single_product' %}">Variable Product</a></li>
-                                        <li><a href="{% url 'product:single_product' %}">Featured &amp; Sale</a></li>
-                                        <li><a href="{% url 'product:single_product' %}">Data In Accordion</a></li>
-                                        <li><a href="{% url 'product:single_product' %}">Data In Sections</a></li>
-                                        <li><a href="{% url 'product:single_product' %}">Image Swatch</a></li>
-                                        <li><a href="{% url 'product:single_product' %}">Extended Info</a>
-                                        </li>
-                                        <li><a href="{% url 'product:single_product' %}">Without Sidebar</a></li>
-                                        <li><a href="{% url 'product:single_product' %}">360<sup>o</sup> &amp; Video<span
-                                                    class="tip tip-new">New</span></a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#">Product Layouts</a>
-                                    <ul>
-                                        <li><a href="{% url 'product:single_product' %}">Default<span
-                                                    class="tip tip-hot">Hot</span></a></li>
-                                        <li><a href="{% url 'product:single_product' %}">Vertical Thumbs</a></li>
-                                        <li><a href="{% url 'product:single_product' %}">Grid Images</a></li>
-                                        <li><a href="{% url 'product:single_product' %}">Masonry</a></li>
-                                        <li><a href="{% url 'product:single_product' %}">Gallery</a></li>
-                                        <li><a href="{% url 'product:single_product' %}">Sticky Info</a></li>
-                                        <li><a href="{% url 'product:single_product' %}">Sticky Thumbs</a></li>
-                                        <li><a href="{% url 'product:single_product' %}">Sticky Both</a></li>
-                                    </ul>
-                                </li>
+
                             </ul>
                         </li>
                         <li>
