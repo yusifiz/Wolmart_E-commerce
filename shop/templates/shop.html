@@ -448,22 +448,30 @@
                                 <p class="showing-info mb-2 mb-sm-0">
                                     Showing<span>1-12 of 60</span>Products
                                 </p>
-                                <ul class="pagination">
+                                <ul class="pagination justify-content-center mb-10 pb-2 pt-2 mt-8">
                                     <li class="prev disabled">
-                                        <a href="#" aria-label="Previous" tabindex="-1" aria-disabled="true">
+                                        {% if page_obj.has_previous %}
+                                        <a href="?page={{ page_obj.previous_page_number }}" aria-label="Previous" tabindex="-1" aria-disabled="true">
                                             <i class="w-icon-long-arrow-left"></i>Prev
                                         </a>
+                                            <a href="?page=1"><<<</a>
+            
+                                        {% endif %}
                                     </li>
-                                    <li class="page-item active">
-                                        <a class="page-link" href="#">1</a>
-                                    </li>
-                                    <li class="page-item">
-                                        <a class="page-link" href="#">2</a>
-                                    </li>
+                                    {% for page in page_obj.paginator.page_range %}
+                                                {% if page is page_obj.number %}
+                                                    <li class="page-item active"><a class="page-link" href="#">{{page}}</a></li>
+                                                {% else %}
+                                                    <li class="page-item"><a href="?page={{page}}" class='page-link'>{{page}}</a></li>
+                                                    <a href="?page={{ page_obj.paginator.num_pages }}">>>></a>
+                                                {% endif %}
+                                            {% endfor %}
                                     <li class="next">
-                                        <a href="#" aria-label="Next">
+                                        {% if page_obj.has_next %}
+                                        <a href="?page={{ page_obj.next_page_number }}" aria-label="Next">
                                             Next<i class="w-icon-long-arrow-right"></i>
                                         </a>
+                                        {% endif %}
                                     </li>
                                 </ul>
                             </div>
