@@ -82,10 +82,10 @@
                                         class="dropdown-image" />
                                     ENG
                                 </a>
-                                <a href="#FRA">
-                                    <img src="{% static 'images/flags/fra.png' %}" alt="FRA Flag" width="14" height="8"
+                                <a href="#AZE">
+                                    <img src="{% static 'images/flags/aze.png' %}" alt="AZE Flag" width="14" height="8"
                                         class="dropdown-image" />
-                                    FRA
+                                    AZE
                                 </a>
                             </div>
                         </div>
@@ -149,10 +149,6 @@
                             <i class="w-icon-heart"></i>
                             <span class="wishlist-label d-lg-show">Wishlist</span>
                         </a>
-                        <a class="compare label-down link d-xs-show" href="{% url 'pages:compare' %}">
-                            <i class="w-icon-compare"></i>
-                            <span class="compare-label d-lg-show">Compare</span>
-                        </a>
                         <div class="dropdown cart-dropdown cart-offcanvas mr-0 mr-lg-2">
                             <div class="cart-overlay"></div>
                             <a href="#" class="cart-toggle label-down link">
@@ -173,7 +169,7 @@
                                     
                                     <div class="product product-cart">
                                         <div class="product-detail">
-                                            <a href="{% url 'product:single_product' product.id %}" class="product-name">Beige knitted
+                                            <a href="{% url 'product:single_product' product.slug %}" class="product-name">Beige knitted
                                                 elas<br>tic
                                                 runner shoes</a>
                                             <div class="price-box">
@@ -182,7 +178,7 @@
                                             </div>
                                         </div>
                                         <figure class="product-media">
-                                            <a href="{% url 'product:single_product' product.id %}">
+                                            <a href="{% url 'product:single_product' product.slug %}">
                                                 <img src="{{ product.image.url }}" alt="product" height="84"
                                                     width="94" />
                                             </a>
@@ -933,7 +929,7 @@
                                     
                     <div class="product product-cart">
                         <div class="product-detail">
-                            <a href="{% url 'product:single_product' product.id %}" class="product-name">Beige knitted
+                            <a href="{% url 'product:single_product' product.slug %}" class="product-name">Beige knitted
                                 elas<br>tic
                                 runner shoes</a>
                             <div class="price-box">
@@ -942,7 +938,7 @@
                             </div>
                         </div>
                         <figure class="product-media">
-                            <a href="{% url 'product:single_product' product.id %}">
+                            <a href="{% url 'product:single_product' product.slug %}">
                                 <img src="{{ product.image.url }}" alt="product" height="84"
                                     width="94" />
                             </a>
@@ -1570,8 +1566,7 @@
                         <span class="divider d-xs-show"></span>
                         <div class="product-link-wrapper d-flex">
                             <a href="#" class="btn-product-icon btn-wishlist w-icon-heart"><span></span></a>
-                            <a href="#"
-                                class="btn-product-icon btn-compare btn-icon-left w-icon-compare"><span></span></a>
+                            
                         </div>
                     </div>
                 </div>

@@ -21,7 +21,14 @@ from django.conf.urls.static import static
 from django.conf import settings
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
+
+
+from django.conf.urls.i18n import i18n_patterns
+# from django.utils.translation import ugettext_lazy as _
+
+urlpatterns += i18n_patterns(
+    path('admin/', admin.site.urls),    
     path('',include("home.urls", namespace='home')),
     path('about/',include("about.urls", namespace="about")),
     path('account/',include("account.urls", namespace='account')),
@@ -30,5 +37,4 @@ urlpatterns = [
     path('pages/',include("pages.urls", namespace='pages')),
     path('shop/',include("shop.urls", namespace='product')),
     path('vendor/',include("vendor.urls", namespace='vendor')),
-    
-] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
+)

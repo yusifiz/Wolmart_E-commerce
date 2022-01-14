@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load i18n %}
 {% block indexCss %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/demo7.min.css' %}">
 {% endblock %}
@@ -33,7 +34,7 @@
                                             </h3>
                                             <a href="{% url 'product:shop' %}"
                                                 class="btn btn-dark btn-outline btn-rounded btn-icon-right">
-                                                Shop Now<i class="w-icon-long-arrow-right"></i>
+                                                {% trans "Shop Now" %}<i class="w-icon-long-arrow-right"></i>
                                             </a>
                                         </div>
                                     </div>
@@ -54,7 +55,7 @@
                                             <div class="banner-price-info text-white">Start at $125.00</div>
                                             <a href="{% url 'product:shop' %}"
                                                 class="btn btn-white btn-outline btn-rounded btn-icon-right">
-                                                Shop Now<i class="w-icon-long-arrow-right"></i>
+                                                {% trans "Shop Now" %}<i class="w-icon-long-arrow-right"></i>
                                             </a>
                                         </div>
                                     </div>
@@ -77,7 +78,7 @@
                                                     class="text-dark">$99.00</span></p>
                                             <a href="{% url 'product:shop' %}"
                                                 class="btn btn-dark btn-rounded btn-outline btn-icon-right">
-                                                Shop Now<i class="w-icon-long-arrow-right"></i>
+                                                {% trans "Shop Now" %}<i class="w-icon-long-arrow-right"></i>
                                             </a>
                                         </div>
                                     </div>
@@ -100,7 +101,7 @@
                                             </h3>
                                             <a href="{% url 'product:shop' %}"
                                                 class="btn btn-dark btn-outline btn-rounded btn-icon-right">
-                                                Shop Now<i class="w-icon-long-arrow-right"></i>
+                                                {% trans "Shop Now" %}<i class="w-icon-long-arrow-right"></i>
                                             </a>
                                         </div>
                                     </div>
@@ -123,7 +124,7 @@
                                                     class="text-dark">$99.00</span></p>
                                             <a href="{% url 'product:shop' %}"
                                                 class="btn btn-dark btn-rounded btn-outline btn-icon-right">
-                                                Shop Now<i class="w-icon-long-arrow-right"></i>
+                                                {% trans "Shop Now" %}<i class="w-icon-long-arrow-right"></i>
                                             </a>
                                         </div>
                                     </div>
@@ -247,7 +248,7 @@
                                     </div>
                                     <a href="{% url 'product:shop' %}"
                                         class="btn btn-dark btn-link btn-underline btn-icon-right">
-                                        Shop Now<i class="w-icon-long-arrow-right"></i>
+                                        {% trans "Shop Now" %}<i class="w-icon-long-arrow-right"></i>
                                     </a>
                                 </div>
                             </div>
@@ -262,7 +263,7 @@
                                         OFF YOUR ENTIRE ORDER!</h5>
                                     <h3 class="banner-title text-white text-capitalize">Black Friday Sale</h3>
                                     <a href="{% url 'product:shop' %}"
-                                        class="btn btn-white btn-outline btn-rounded btn-sm">Shop Now</a>
+                                        class="btn btn-white btn-outline btn-rounded btn-sm">{% trans "Shop Now" %}</a>
                                 </div>
                             </div>
                             <!-- End of Category Banner -->
@@ -278,7 +279,7 @@
                                     </div>
                                     <a href="{% url 'product:shop' %}"
                                         class="btn btn-dark btn-link btn-underline btn-icon-right">
-                                        Shop Now<i class="w-icon-long-arrow-right"></i>
+                                        {% trans "Shop Now" %}<i class="w-icon-long-arrow-right"></i>
                                     </a>
                                 </div>
                             </div>
@@ -297,7 +298,7 @@
                         <div class="col-lg-6 mb-4">
                             <div class="product product-list br-xs mb-0">
                                 <figure class="product-media">
-                                    <a href="{% url 'product:single_product' %}">
+                                    <a href="{% url 'product:shop' %}">
                                         <img src="{% static 'images/demos/demo7/products/1-1.jpg' %}" alt="Product" width="315"
                                             height="355">
                                     </a>
@@ -314,7 +315,7 @@
                                 </figure>
                                 <div class="product-details">
                                     <h4 class="product-name">
-                                        <a href="{% url 'product:single_product' %}">Lorem ipsum dolor sit amet</a>
+                                        <a href="{% url 'product:shop' %}">Lorem ipsum dolor sit amet</a>
                                     </h4>
                                     <div class="ratings-container">
                                         <div class="ratings-full">
@@ -343,7 +344,7 @@
                         <div class="col-lg-6 mb-4">
                             <div class="product product-list br-xs mb-0">
                                 <figure class="product-media">
-                                    <a href="{% url 'product:single_product' %}">
+                                    <a href="{% url 'product:shop' %}">
                                         <img src="{% static 'images/demos/demo7/products/1-2.jpg' %}" alt="Product" width="315"
                                             height="355">
                                     </a>
@@ -360,7 +361,7 @@
                                 </figure>
                                 <div class="product-details">
                                     <h4 class="product-name">
-                                        <a href="{% url 'product:single_product' %}">Lorem ipsum dolor sit amet</a>
+                                        <a href="{% url 'product:shop' %}">Lorem ipsum dolor sit amet</a>
                                     </h4>
                                     <div class="ratings-container">
                                         <div class="ratings-full">
@@ -393,14 +394,14 @@
                         <div class="product-widget-wrap">
                             <div class="product product-widget">
                                 <figure class="product-media">
-                                    <a href="{% url 'product:single_product' %}">
+                                    <a href="{% url 'product:shop' %}">
                                         <img src="{% static 'images/demos/demo7/products/2-1.jpg' %}" alt="Product" width="100"
                                             height="106">
                                     </a>
                                 </figure>
                                 <div class="product-details">
                                     <h4 class="product-name">
-                                        <a href="{% url 'product:single_product' %}">Fashionable Leather Satchel</a>
+                                        <a href="{% url 'product:shop' %}">Fashionable Leather Satchel</a>
                                     </h4>
                                     <div class="ratings-container">
                                         <div class="ratings-full">
@@ -418,14 +419,14 @@
                         <div class="product-widget-wrap">
                             <div class="product product-widget">
                                 <figure class="product-media">
-                                    <a href="{% url 'product:single_product' %}">
+                                    <a href="{% url 'product:shop' %}">
                                         <img src="{% static 'images/demos/demo7/products/2-2.jpg' %}" alt="Product" width="100"
                                             height="106">
                                     </a>
                                 </figure>
                                 <div class="product-details">
                                     <h4 class="product-name">
-                                        <a href="{% url 'product:single_product' %}">Mini Wireless Earphone</a>
+                                        <a href="{% url 'product:shop' %}">Mini Wireless Earphone</a>
                                     </h4>
                                     <div class="ratings-container">
                                         <div class="ratings-full">
@@ -443,14 +444,14 @@
                         <div class="product-widget-wrap">
                             <div class="product product-widget">
                                 <figure class="product-media">
-                                    <a href="{% url 'product:single_product' %}">
+                                    <a href="{% url 'product:shop' %}">
                                         <img src="{% static 'images/demos/demo7/products/2-3.jpg' %}" alt="Product" width="100"
                                             height="106">
                                     </a>
                                 </figure>
                                 <div class="product-details">
                                     <h4 class="product-name">
-                                        <a href="{% url 'product:single_product' %}">Women's Comforter</a>
+                                        <a href="{% url 'product:shop' %}">Women's Comforter</a>
                                     </h4>
                                     <div class="ratings-container">
                                         <div class="ratings-full">
@@ -468,14 +469,14 @@
                         <div class="product-widget-wrap">
                             <div class="product product-widget">
                                 <figure class="product-media">
-                                    <a href="{% url 'product:single_product' %}">
+                                    <a href="{% url 'product:shop' %}">
                                         <img src="{% static 'images/demos/demo7/products/2-5.jpg' %}" alt="Product" width="100"
                                             height="106">
                                     </a>
                                 </figure>
                                 <div class="product-details">
                                     <h4 class="product-name">
-                                        <a href="{% url 'product:single_product' %}">T-Shirt</a>
+                                        <a href="{% url 'product:shop' %}">T-Shirt</a>
                                     </h4>
                                     <div class="ratings-container">
                                         <div class="ratings-full">
@@ -493,14 +494,14 @@
                         <div class="product-widget-wrap">
                             <div class="product product-widget">
                                 <figure class="product-media">
-                                    <a href="{% url 'product:single_product' %}">
+                                    <a href="{% url 'product:shop' %}">
                                         <img src="{% static 'images/demos/demo7/products/2-4.jpg' %}" alt="Product" width="100"
                                             height="106">
                                     </a>
                                 </figure>
                                 <div class="product-details">
                                     <h4 class="product-name">
-                                        <a href="{% url 'product:single_product' %}">Leather Stripe Watch</a>
+                                        <a href="{% url 'product:shop' %}">Leather Stripe Watch</a>
                                     </h4>
                                     <div class="ratings-container">
                                         <div class="ratings-full">
@@ -518,14 +519,14 @@
                         <div class="product-widget-wrap">
                             <div class="product product-widget">
                                 <figure class="product-media">
-                                    <a href="{% url 'product:single_product' %}">
+                                    <a href="{% url 'product:shop' %}">
                                         <img src="{% static 'images/demos/demo7/products/2-6.jpg' %}" alt="Product" width="100"
                                             height="106">
                                     </a>
                                 </figure>
                                 <div class="product-details">
                                     <h4 class="product-name">
-                                        <a href="{% url 'product:single_product' %}">Best Pedestrian Bag</a>
+                                        <a href="{% url 'product:shop' %}">Best Pedestrian Bag</a>
                                     </h4>
                                     <div class="ratings-container">
                                         <div class="ratings-full">
@@ -543,14 +544,14 @@
                         <div class="product-widget-wrap">
                             <div class="product product-widget">
                                 <figure class="product-media">
-                                    <a href="{% url 'product:single_product' %}">
+                                    <a href="{% url 'product:shop' %}">
                                         <img src="{% static 'images/demos/demo7/products/2-7.jpg' %}" alt="Product" width="100"
                                             height="106">
                                     </a>
                                 </figure>
                                 <div class="product-details">
                                     <h4 class="product-name">
-                                        <a href="{% url 'product:single_product' %}">Fashionable Original Coat</a>
+                                        <a href="{% url 'product:shop' %}">Fashionable Original Coat</a>
                                     </h4>
                                     <div class="ratings-container">
                                         <div class="ratings-full">
@@ -568,14 +569,14 @@
                         <div class="product-widget-wrap">
                             <div class="product product-widget">
                                 <figure class="product-media">
-                                    <a href="{% url 'product:single_product' %}">
+                                    <a href="{% url 'product:shop' %}">
                                         <img src="{% static 'images/demos/demo7/products/2-8.jpg' %}" alt="Product" width="100"
                                             height="106">
                                     </a>
                                 </figure>
                                 <div class="product-details">
                                     <h4 class="product-name">
-                                        <a href="{% url 'product:single_product' %}">Classic Hat</a>
+                                        <a href="{% url 'product:shop' %}">Classic Hat</a>
                                     </h4>
                                     <div class="ratings-container">
                                         <div class="ratings-full">
@@ -653,7 +654,7 @@
                                         <div class="vendor-products row cols-3 gutter-xs">
                                             <div class="vendor-product">
                                                 <figure class="product-media">
-                                                    <a href="{% url 'product:single_product' %}">
+                                                    <a href="{% url 'product:shop' %}">
                                                         <img src="{% static 'images/demos/demo7/products/3-1.jpg' %}"
                                                             alt="Vendor Product" width="91" height="102" />
                                                     </a>
@@ -661,7 +662,7 @@
                                             </div>
                                             <div class="vendor-product">
                                                 <figure class="product-media">
-                                                    <a href="{% url 'product:single_product' %}">
+                                                    <a href="{% url 'product:shop' %}">
                                                         <img src="{% static 'images/demos/demo7/products/3-2.jpg' %}"
                                                             alt="Vendor Product" width="91" height="102" />
                                                     </a>
@@ -669,7 +670,7 @@
                                             </div>
                                             <div class="vendor-product">
                                                 <figure class="product-media">
-                                                    <a href="{% url 'product:single_product' %}">
+                                                    <a href="{% url 'product:shop' %}">
                                                         <img src="{% static 'images/demos/demo7/products/3-3.jpg' %}"
                                                             alt="Vendor Product" width="91" height="102" />
                                                     </a>
@@ -712,7 +713,7 @@
                                         <div class="vendor-products row cols-3 gutter-xs">
                                             <div class="vendor-product">
                                                 <figure class="product-media">
-                                                    <a href="{% url 'product:single_product' %}">
+                                                    <a href="{% url 'product:shop' %}">
                                                         <img src="{% static 'images/demos/demo7/products/3-4.jpg' %}"
                                                             alt="Vendor Product" width="91" height="102" />
                                                     </a>
@@ -720,7 +721,7 @@
                                             </div>
                                             <div class="vendor-product">
                                                 <figure class="product-media">
-                                                    <a href="{% url 'product:single_product' %}">
+                                                    <a href="{% url 'product:shop' %}">
                                                         <img src="{% static 'images/demos/demo7/products/3-5.jpg' %}"
                                                             alt="Vendor Product" width="91" height="102" />
                                                     </a>
@@ -728,7 +729,7 @@
                                             </div>
                                             <div class="vendor-product">
                                                 <figure class="product-media">
-                                                    <a href="{% url 'product:single_product' %}">
+                                                    <a href="{% url 'product:shop' %}">
                                                         <img src="{% static 'images/demos/demo7/products/3-6.jpg' %}"
                                                             alt="Vendor Product" width="91" height="102" />
                                                     </a>
@@ -771,7 +772,7 @@
                                         <div class="vendor-products row cols-3 gutter-xs">
                                             <div class="vendor-product">
                                                 <figure class="product-media">
-                                                    <a href="{% url 'product:single_product' %}">
+                                                    <a href="{% url 'product:shop' %}">
                                                         <img src="{% static 'images/demos/demo7/products/3-7.jpg' %}"
                                                             alt="Vendor Product" width="91" height="102" />
                                                     </a>
@@ -779,7 +780,7 @@
                                             </div>
                                             <div class="vendor-product">
                                                 <figure class="product-media">
-                                                    <a href="{% url 'product:single_product' %}">
+                                                    <a href="{% url 'product:shop' %}">
                                                         <img src="{% static 'images/demos/demo7/products/3-8.jpg' %}"
                                                             alt="Vendor Product" width="91" height="102" />
                                                     </a>
@@ -787,7 +788,7 @@
                                             </div>
                                             <div class="vendor-product">
                                                 <figure class="product-media">
-                                                    <a href="{% url 'product:single_product' %}">
+                                                    <a href="{% url 'product:shop' %}">
                                                         <img src="{% static 'images/demos/demo7/products/3-9.jpg' %}"
                                                             alt="Vendor Product" width="91" height="102" />
                                                     </a>
@@ -830,7 +831,7 @@
                                         <div class="vendor-products row cols-3 gutter-xs">
                                             <div class="vendor-product">
                                                 <figure class="product-media">
-                                                    <a href="{% url 'product:single_product' %}">
+                                                    <a href="{% url 'product:shop' %}">
                                                         <img src="{% static 'images/demos/demo7/products/3-10.jpg' %}"
                                                             alt="Vendor Product" width="91" height="102" />
                                                     </a>
@@ -838,7 +839,7 @@
                                             </div>
                                             <div class="vendor-product">
                                                 <figure class="product-media">
-                                                    <a href="{% url 'product:single_product' %}">
+                                                    <a href="{% url 'product:shop' %}">
                                                         <img src="{% static 'images/demos/demo7/products/3-11.jpg' %}"
                                                             alt="Vendor Product" width="91" height="102" />
                                                     </a>
@@ -846,7 +847,7 @@
                                             </div>
                                             <div class="vendor-product">
                                                 <figure class="product-media">
-                                                    <a href="{% url 'product:single_product' %}">
+                                                    <a href="{% url 'product:shop' %}">
                                                         <img src="{% static 'images/demos/demo7/products/3-12.jpg' %}"
                                                             alt="Vendor Product" width="91" height="102" />
                                                     </a>
@@ -910,7 +911,7 @@
                                     <div class="swiper-slide product-col">
                                         <div class="product product-slideup-content">
                                             <figure class="product-media">
-                                                <a href="{% url 'product:single_product' %}">
+                                                <a href="{% url 'product:shop' %}">
                                                     <img src="{% static 'images/demos/demo7/products/4-1.jpg' %}" alt="Product"
                                                         width="187" height="210">
                                                 </a>
@@ -921,7 +922,7 @@
                                             </figure>
                                             <div class="product-details">
                                                 <h3 class="product-name">
-                                                    <a href="{% url 'product:single_product' %}">Colorful Flavoring Box</a>
+                                                    <a href="{% url 'product:shop' %}">Colorful Flavoring Box</a>
                                                 </h3>
                                                 <div class="product-price">
                                                     <ins class="new-price">$25.70</ins>
@@ -941,7 +942,7 @@
                                         <!-- End of Product Slideup Content -->
                                         <div class="product product-slideup-content">
                                             <figure class="product-media">
-                                                <a href="{% url 'product:single_product' %}">
+                                                <a href="{% url 'product:shop' %}">
                                                     <img src="{% static 'images/demos/demo7/products/4-2.jpg' %}" alt="Product"
                                                         width="187" height="210">
                                                 </a>
@@ -952,7 +953,7 @@
                                             </figure>
                                             <div class="product-details">
                                                 <h3 class="product-name">
-                                                    <a href="{% url 'product:single_product' %}">Men's Suede Belt</a>
+                                                    <a href="{% url 'product:shop' %}">Men's Suede Belt</a>
                                                 </h3>
                                                 <div class="product-price">
                                                     <ins class="new-price">$73.71</ins><del class="old-price">$78.04</del>
@@ -975,7 +976,7 @@
                                     <div class="swiper-slide product-col">
                                         <div class="product product-slideup-content">
                                             <figure class="product-media">
-                                                <a href="{% url 'product:single_product' %}">
+                                                <a href="{% url 'product:shop' %}">
                                                     <img src="{% static 'images/demos/demo7/products/4-3.jpg' %}" alt="Product"
                                                         width="187" height="210">
                                                 </a>
@@ -986,7 +987,7 @@
                                             </figure>
                                             <div class="product-details">
                                                 <h3 class="product-name">
-                                                    <a href="{% url 'product:single_product' %}">Plastic Cup</a>
+                                                    <a href="{% url 'product:shop' %}">Plastic Cup</a>
                                                 </h3>
                                                 <div class="product-price">
                                                     <ins class="new-price">$16.00</ins>
@@ -1006,7 +1007,7 @@
                                         <!-- End of Product Slideup Content -->
                                         <div class="product product-slideup-content">
                                             <figure class="product-media">
-                                                <a href="{% url 'product:single_product' %}">
+                                                <a href="{% url 'product:shop' %}">
                                                     <img src="{% static 'images/demos/demo7/products/4-4.jpg' %}" alt="Product"
                                                         width="187" height="210">
                                                 </a>
@@ -1017,7 +1018,7 @@
                                             </figure>
                                             <div class="product-details">
                                                 <h3 class="product-name">
-                                                    <a href="{% url 'product:single_product' %}">Headkerchief</a>
+                                                    <a href="{% url 'product:shop' %}">Headkerchief</a>
                                                 </h3>
                                                 <div class="product-price">
                                                     <ins class="new-price">$73.71</ins><del class="old-price">$78.04</del>
@@ -1040,7 +1041,7 @@
                                     <div class="swiper-slide product-col">
                                         <div class="product product-slideup-content">
                                             <figure class="product-media">
-                                                <a href="{% url 'product:single_product' %}">
+                                                <a href="{% url 'product:shop' %}">
                                                     <img src="{% static 'images/demos/demo7/products/4-5.jpg' %}" alt="Product"
                                                         width="187" height="210">
                                                 </a>
@@ -1051,7 +1052,7 @@
                                             </figure>
                                             <div class="product-details">
                                                 <h3 class="product-name">
-                                                    <a href="{% url 'product:single_product' %}">Mini Wireless Earphone</a>
+                                                    <a href="{% url 'product:shop' %}">Mini Wireless Earphone</a>
                                                 </h3>
                                                 <div class="product-price">
                                                     <ins class="new-price">$49.99</ins>
@@ -1071,7 +1072,7 @@
                                         <!-- End of Product Slideup Content -->
                                         <div class="product product-slideup-content">
                                             <figure class="product-media">
-                                                <a href="{% url 'product:single_product' %}">
+                                                <a href="{% url 'product:shop' %}">
                                                     <img src="{% static 'images/demos/demo7/products/4-6.jpg' %}" alt="Product"
                                                         width="187" height="210">
                                                 </a>
@@ -1082,7 +1083,7 @@
                                             </figure>
                                             <div class="product-details">
                                                 <h3 class="product-name">
-                                                    <a href="{% url 'product:single_product' %}">Portable Charger</a>
+                                                    <a href="{% url 'product:shop' %}">Portable Charger</a>
                                                 </h3>
                                                 <div class="product-price">
                                                     <ins class="new-price">$25.00</ins>
@@ -1105,7 +1106,7 @@
                                     <div class="swiper-slide product-col">
                                         <div class="product product-slideup-content">
                                             <figure class="product-media">
-                                                <a href="{% url 'product:single_product' %}">
+                                                <a href="{% url 'product:shop' %}">
                                                     <img src="{% static 'images/demos/demo7/products/4-7.jpg' %}" alt="Product"
                                                         width="187" height="210">
                                                 </a>
@@ -1116,7 +1117,7 @@
                                             </figure>
                                             <div class="product-details">
                                                 <h3 class="product-name">
-                                                    <a href="{% url 'product:single_product' %}">Red Cap Sound Marker</a>
+                                                    <a href="{% url 'product:shop' %}">Red Cap Sound Marker</a>
                                                 </h3>
                                                 <div class="product-price">
                                                     <ins class="new-price">$65.89 - $69.99</ins>
@@ -1136,7 +1137,7 @@
                                         <!-- End of Product Slideup Content -->
                                         <div class="product product-slideup-content">
                                             <figure class="product-media">
-                                                <a href="{% url 'product:single_product' %}">
+                                                <a href="{% url 'product:shop' %}">
                                                     <img src="{% static 'images/demos/demo7/products/4-8.jpg' %}" alt="Product"
                                                         width="187" height="210">
                                                 </a>
@@ -1147,7 +1148,7 @@
                                             </figure>
                                             <div class="product-details">
                                                 <h3 class="product-name">
-                                                    <a href="{% url 'product:single_product' %}">Perfect Classic Hat</a>
+                                                    <a href="{% url 'product:shop' %}">Perfect Classic Hat</a>
                                                 </h3>
                                                 <div class="product-price">
                                                     <ins class="new-price">$69.99</ins><del class="old-price">$84.16</del>
@@ -1170,7 +1171,7 @@
                                     <div class="swiper-slide product-col">
                                         <div class="product product-slideup-content">
                                             <figure class="product-media">
-                                                <a href="{% url 'product:single_product' %}">
+                                                <a href="{% url 'product:shop' %}">
                                                     <img src="{% static 'images/demos/demo7/products/4-9.jpg' %}" alt="Product"
                                                         width="187" height="210">
                                                 </a>
@@ -1181,7 +1182,7 @@
                                             </figure>
                                             <div class="product-details">
                                                 <h3 class="product-name">
-                                                    <a href="{% url 'product:single_product' %}">Roller Skate</a>
+                                                    <a href="{% url 'product:shop' %}">Roller Skate</a>
                                                 </h3>
                                                 <div class="product-price">
                                                     <ins class="new-price">$66.99</ins>
@@ -1201,7 +1202,7 @@
                                         <!-- End of Product Slideup Content -->
                                         <div class="product product-slideup-content">
                                             <figure class="product-media">
-                                                <a href="{% url 'product:single_product' %}">
+                                                <a href="{% url 'product:shop' %}">
                                                     <img src="{% static 'images/demos/demo7/products/4-10.jpg' %}" alt="Product"
                                                         width="187" height="210">
                                                 </a>
@@ -1212,7 +1213,7 @@
                                             </figure>
                                             <div class="product-details">
                                                 <h3 class="product-name">
-                                                    <a href="{% url 'product:single_product' %}">Men's Black Watch</a>
+                                                    <a href="{% url 'product:shop' %}">Men's Black Watch</a>
                                                 </h3>
                                                 <div class="product-price">
                                                     <ins class="new-price">$232.62</ins>
@@ -1303,7 +1304,7 @@
                                     <div class="banner-price-info text-white font-weight-bold ls25">Sale up to <span
                                             class="text-primary text-uppercase">20% Off</span></div>
                                     <a href="{% url 'product:shop' %}"
-                                        class="btn btn-white btn-outline btn-rounded">Shop Now</a>
+                                        class="btn btn-white btn-outline btn-rounded">{% trans "Shop Now" %}</a>
                                 </div>
                             </div>
                         </div>
@@ -1328,7 +1329,7 @@
                                     <div class="swiper-slide product-col">
                                         <div class="product product-slideup-content">
                                             <figure class="product-media">
-                                                <a href="{% url 'product:single_product' %}">
+                                                <a href="{% url 'product:shop' %}">
                                                     <img src="{% static 'images/demos/demo7/products/5-1.jpg' %}" alt="Product"
                                                         width="239" height="269">
                                                 </a>
@@ -1339,7 +1340,7 @@
                                             </figure>
                                             <div class="product-details">
                                                 <h3 class="product-name">
-                                                    <a href="{% url 'product:single_product' %}">Populated Gaming Mouse</a>
+                                                    <a href="{% url 'product:shop' %}">Populated Gaming Mouse</a>
                                                 </h3>
                                                 <div class="ratings-container">
                                                     <div class="ratings-full">
@@ -1366,7 +1367,7 @@
                                         <!-- End of Product Slideup Content -->
                                         <div class="product product-slideup-content">
                                             <figure class="product-media">
-                                                <a href="{% url 'product:single_product' %}">
+                                                <a href="{% url 'product:shop' %}">
                                                     <img src="{% static 'images/demos/demo7/products/5-2.jpg' %}" alt="Product"
                                                         width="239" height="269">
                                                 </a>
@@ -1377,7 +1378,7 @@
                                             </figure>
                                             <div class="product-details">
                                                 <h3 class="product-name">
-                                                    <a href="{% url 'product:single_product' %}">Mobile Electronic Recorder</a>
+                                                    <a href="{% url 'product:shop' %}">Mobile Electronic Recorder</a>
                                                 </h3>
                                                 <div class="ratings-container">
                                                     <div class="ratings-full">
@@ -1407,7 +1408,7 @@
                                     <div class="swiper-slide product-col">
                                         <div class="product product-slideup-content">
                                             <figure class="product-media">
-                                                <a href="{% url 'product:single_product' %}">
+                                                <a href="{% url 'product:shop' %}">
                                                     <img src="{% static 'images/demos/demo7/products/5-3.jpg' %}" alt="Product"
                                                         width="239" height="269">
                                                 </a>
@@ -1418,7 +1419,7 @@
                                             </figure>
                                             <div class="product-details">
                                                 <h3 class="product-name">
-                                                    <a href="{% url 'product:single_product' %}">Men's Black Watch</a>
+                                                    <a href="{% url 'product:shop' %}">Men's Black Watch</a>
                                                 </h3>
                                                 <div class="ratings-container">
                                                     <div class="ratings-full">
@@ -1445,7 +1446,7 @@
                                         <!-- End of Product Slideup Content -->
                                         <div class="product product-slideup-content">
                                             <figure class="product-media">
-                                                <a href="{% url 'product:single_product' %}">
+                                                <a href="{% url 'product:shop' %}">
                                                     <img src="{% static 'images/demos/demo7/products/5-4.jpg' %}" alt="Product"
                                                         width="239" height="269">
                                                 </a>
@@ -1456,7 +1457,7 @@
                                             </figure>
                                             <div class="product-details">
                                                 <h3 class="product-name">
-                                                    <a href="{% url 'product:single_product' %}">Fabulous Sound Speaker</a>
+                                                    <a href="{% url 'product:shop' %}">Fabulous Sound Speaker</a>
                                                 </h3>
                                                 <div class="ratings-container">
                                                     <div class="ratings-full">
@@ -1486,7 +1487,7 @@
                                     <div class="swiper-slide product-col">
                                         <div class="product product-slideup-content">
                                             <figure class="product-media">
-                                                <a href="{% url 'product:single_product' %}">
+                                                <a href="{% url 'product:shop' %}">
                                                     <img src="{% static 'images/demos/demo7/products/5-5.jpg' %}" alt="Product"
                                                         width="239" height="269">
                                                 </a>
@@ -1497,7 +1498,7 @@
                                             </figure>
                                             <div class="product-details">
                                                 <h3 class="product-name">
-                                                    <a href="{% url 'product:single_product' %}">Smooth Click Mouse</a>
+                                                    <a href="{% url 'product:shop' %}">Smooth Click Mouse</a>
                                                 </h3>
                                                 <div class="ratings-container">
                                                     <div class="ratings-full">
@@ -1524,7 +1525,7 @@
                                         <!-- End of Product Slideup Content -->
                                         <div class="product product-slideup-content">
                                             <figure class="product-media">
-                                                <a href="{% url 'product:single_product' %}">
+                                                <a href="{% url 'product:shop' %}">
                                                     <img src="{% static 'images/demos/demo7/products/5-6.jpg' %}" alt="Product"
                                                         width="239" height="269">
                                                 </a>
@@ -1535,7 +1536,7 @@
                                             </figure>
                                             <div class="product-details">
                                                 <h3 class="product-name">
-                                                    <a href="{% url 'product:single_product' %}">Dark-grey Mobile Charger</a>
+                                                    <a href="{% url 'product:shop' %}">Dark-grey Mobile Charger</a>
                                                 </h3>
                                                 <div class="ratings-container">
                                                     <div class="ratings-full">
@@ -1565,7 +1566,7 @@
                                     <div class="swiper-slide product-col">
                                         <div class="product product-slideup-content">
                                             <figure class="product-media">
-                                                <a href="{% url 'product:single_product' %}">
+                                                <a href="{% url 'product:shop' %}">
                                                     <img src="{% static 'images/demos/demo7/products/5-7.jpg' %}" alt="Product"
                                                         width="239" height="269">
                                                 </a>
@@ -1576,7 +1577,7 @@
                                             </figure>
                                             <div class="product-details">
                                                 <h3 class="product-name">
-                                                    <a href="{% url 'product:single_product' %}">Wireless Mouse</a>
+                                                    <a href="{% url 'product:shop' %}">Wireless Mouse</a>
                                                 </h3>
                                                 <div class="ratings-container">
                                                     <div class="ratings-full">
@@ -1603,7 +1604,7 @@
                                         <!-- End of Product Slideup Content -->
                                         <div class="product product-slideup-content">
                                             <figure class="product-media">
-                                                <a href="{% url 'product:single_product' %}">
+                                                <a href="{% url 'product:shop' %}">
                                                     <img src="{% static 'images/demos/demo7/products/5-8.jpg' %}" alt="Product"
                                                         width="239" height="269">
                                                 </a>
@@ -1614,7 +1615,7 @@
                                             </figure>
                                             <div class="product-details">
                                                 <h3 class="product-name">
-                                                    <a href="{% url 'product:single_product' %}">Transit Tool</a>
+                                                    <a href="{% url 'product:shop' %}">Transit Tool</a>
                                                 </h3>
                                                 <div class="ratings-container">
                                                     <div class="ratings-full">
@@ -1672,7 +1673,7 @@
                                     <div class="banner-price-info text-white font-weight-bold ls25">From only <span
                                             class="text-primary text-uppercase">$185.00</span></div>
                                     <a href="{% url 'product:shop' %}"
-                                        class="btn btn-white btn-outline btn-rounded">Shop Now</a>
+                                        class="btn btn-white btn-outline btn-rounded">{% trans "Shop Now" %}</a>
                                 </div>
                             </div>
                         </div>
@@ -1697,7 +1698,7 @@
                                     <div class="swiper-slide product-col">
                                         <div class="product product-slideup-content">
                                             <figure class="product-media">
-                                                <a href="{% url 'product:single_product' %}">
+                                                <a href="{% url 'product:shop' %}">
                                                     <img src="{% static 'images/demos/demo7/products/6-1.jpg' %}" alt="Product"
                                                         width="239" height="269">
                                                 </a>
@@ -1708,7 +1709,7 @@
                                             </figure>
                                             <div class="product-details">
                                                 <h3 class="product-name">
-                                                    <a href="{% url 'product:single_product' %}">Leather Stripe Watch</a>
+                                                    <a href="{% url 'product:shop' %}">Leather Stripe Watch</a>
                                                 </h3>
                                                 <div class="ratings-container">
                                                     <div class="ratings-full">
@@ -1735,7 +1736,7 @@
                                         <!-- End of Product Slideup Content -->
                                         <div class="product product-slideup-content">
                                             <figure class="product-media">
-                                                <a href="{% url 'product:single_product' %}">
+                                                <a href="{% url 'product:shop' %}">
                                                     <img src="{% static 'images/demos/demo7/products/6-2.jpg' %}" alt="Product"
                                                         width="239" height="269">
                                                 </a>
@@ -1746,7 +1747,7 @@
                                             </figure>
                                             <div class="product-details">
                                                 <h3 class="product-name">
-                                                    <a href="{% url 'product:single_product' %}">Dark Blue Sneaker</a>
+                                                    <a href="{% url 'product:shop' %}">Dark Blue Sneaker</a>
                                                 </h3>
                                                 <div class="ratings-container">
                                                     <div class="ratings-full">
@@ -1776,7 +1777,7 @@
                                     <div class="swiper-slide product-col">
                                         <div class="product product-slideup-content">
                                             <figure class="product-media">
-                                                <a href="{% url 'product:single_product' %}">
+                                                <a href="{% url 'product:shop' %}">
                                                     <img src="{% static 'images/demos/demo7/products/6-3.jpg' %}" alt="Product"
                                                         width="239" height="269">
                                                 </a>
@@ -1787,7 +1788,7 @@
                                             </figure>
                                             <div class="product-details">
                                                 <h3 class="product-name">
-                                                    <a href="{% url 'product:single_product' %}">Women's Handbag</a>
+                                                    <a href="{% url 'product:shop' %}">Women's Handbag</a>
                                                 </h3>
                                                 <div class="ratings-container">
                                                     <div class="ratings-full">
@@ -1814,7 +1815,7 @@
                                         <!-- End of Product Slideup Content -->
                                         <div class="product product-slideup-content">
                                             <figure class="product-media">
-                                                <a href="{% url 'product:single_product' %}">
+                                                <a href="{% url 'product:shop' %}">
                                                     <img src="{% static 'images/demos/demo7/products/6-4.jpg' %}" alt="Product"
                                                         width="239" height="269">
                                                 </a>
@@ -1825,7 +1826,7 @@
                                             </figure>
                                             <div class="product-details">
                                                 <h3 class="product-name">
-                                                    <a href="{% url 'product:single_product' %}">Dark Green Bag</a>
+                                                    <a href="{% url 'product:shop' %}">Dark Green Bag</a>
                                                 </h3>
                                                 <div class="ratings-container">
                                                     <div class="ratings-full">
@@ -1855,7 +1856,7 @@
                                     <div class="swiper-slide product-col">
                                         <div class="product product-slideup-content">
                                             <figure class="product-media">
-                                                <a href="{% url 'product:single_product' %}">
+                                                <a href="{% url 'product:shop' %}">
                                                     <img src="{% static 'images/demos/demo7/products/6-5.jpg' %}" alt="Product"
                                                         width="239" height="269">
                                                 </a>
@@ -1866,7 +1867,7 @@
                                             </figure>
                                             <div class="product-details">
                                                 <h3 class="product-name">
-                                                    <a href="{% url 'product:single_product' %}">Multi Function Watch</a>
+                                                    <a href="{% url 'product:shop' %}">Multi Function Watch</a>
                                                 </h3>
                                                 <div class="ratings-container">
                                                     <div class="ratings-full">
@@ -1893,7 +1894,7 @@
                                         <!-- End of Product Slideup Content -->
                                         <div class="product product-slideup-content">
                                             <figure class="product-media">
-                                                <a href="{% url 'product:single_product' %}">
+                                                <a href="{% url 'product:shop' %}">
                                                     <img src="{% static 'images/demos/demo7/products/6-6.jpg' %}" alt="Product"
                                                         width="239" height="269">
                                                 </a>
@@ -1904,7 +1905,7 @@
                                             </figure>
                                             <div class="product-details">
                                                 <h3 class="product-name">
-                                                    <a href="{% url 'product:single_product' %}"> Brown Leather Shoes</a>
+                                                    <a href="{% url 'product:shop' %}"> Brown Leather Shoes</a>
                                                 </h3>
                                                 <div class="ratings-container">
                                                     <div class="ratings-full">
@@ -1934,7 +1935,7 @@
                                     <div class="swiper-slide product-col">
                                         <div class="product product-slideup-content">
                                             <figure class="product-media">
-                                                <a href="{% url 'product:single_product' %}">
+                                                <a href="{% url 'product:shop' %}">
                                                     <img src="{% static 'images/demos/demo7/products/6-7.jpg' %}" alt="Product"
                                                         width="239" height="269">
                                                 </a>
@@ -1945,7 +1946,7 @@
                                             </figure>
                                             <div class="product-details">
                                                 <h3 class="product-name">
-                                                    <a href="{% url 'product:single_product' %}">Top Men's Hiking Hat</a>
+                                                    <a href="{% url 'product:shop' %}">Top Men's Hiking Hat</a>
                                                 </h3>
                                                 <div class="ratings-container">
                                                     <div class="ratings-full">
@@ -1972,7 +1973,7 @@
                                         <!-- End of Product Slideup Content -->
                                         <div class="product product-slideup-content">
                                             <figure class="product-media">
-                                                <a href="{% url 'product:single_product' %}">
+                                                <a href="{% url 'product:shop' %}">
                                                     <img src="{% static 'images/demos/demo7/products/6-8.jpg' %}" alt="Product"
                                                         width="239" height="269">
                                                 </a>
@@ -1983,7 +1984,7 @@
                                             </figure>
                                             <div class="product-details">
                                                 <h3 class="product-name">
-                                                    <a href="{% url 'product:single_product' %}">Womne's Handbag</a>
+                                                    <a href="{% url 'product:shop' %}">Womne's Handbag</a>
                                                 </h3>
                                                 <div class="ratings-container">
                                                     <div class="ratings-full">
@@ -2034,7 +2035,7 @@
                                         <strong class="mr-10 pr-lg-10">Most Popular Brand Now!</strong>
                                     </span>
                                 </h3>
-                                <a href="{% url 'product:shop' %}" class="btn btn-white btn-rounded">Shop Now
+                                <a href="{% url 'product:shop' %}" class="btn btn-white btn-rounded">{% trans "Shop Now" %}
                                     <i class="w-icon-long-arrow-right"></i>
                                 </a>
                             </div>
@@ -2048,14 +2049,14 @@
                             <div class="widget widget-products">
                                 <div class="product product-widget">
                                     <figure class="product-media">
-                                        <a href="{% url 'product:single_product' %}">
+                                        <a href="{% url 'product:shop' %}">
                                             <img src="{% static 'images/demos/demo7/products/7-1.jpg' %}" alt="Product"
                                                 width="124" height="140">
                                         </a>
                                     </figure>
                                     <div class="product-details">
                                         <h4 class="product-name">
-                                            <a href="{% url 'product:single_product' %}">Dark Blue Sneaker</a>
+                                            <a href="{% url 'product:shop' %}">Dark Blue Sneaker</a>
                                         </h4>
                                         <div class="ratings-container">
                                             <div class="ratings-full">
@@ -2071,14 +2072,14 @@
                                 <!-- End of Product Widget -->
                                 <div class="product product-widget">
                                     <figure class="product-media">
-                                        <a href="{% url 'product:single_product' %}">
+                                        <a href="{% url 'product:shop' %}">
                                             <img src="{% static 'images/demos/demo7/products/7-2.jpg' %}" alt="Product"
                                                 width="124" height="140">
                                         </a>
                                     </figure>
                                     <div class="product-details">
                                         <h4 class="product-name">
-                                            <a href="{% url 'product:single_product' %}">Women's Handbag</a>
+                                            <a href="{% url 'product:shop' %}">Women's Handbag</a>
                                         </h4>
                                         <div class="ratings-container">
                                             <div class="ratings-full">
@@ -2094,14 +2095,14 @@
                                 <!-- End of Product Widget -->
                                 <div class="product product-widget">
                                     <figure class="product-media">
-                                        <a href="{% url 'product:single_product' %}">
+                                        <a href="{% url 'product:shop' %}">
                                             <img src="{% static 'images/demos/demo7/products/7-3.jpg' %}" alt="Product"
                                                 width="124" height="140">
                                         </a>
                                     </figure>
                                     <div class="product-details">
                                         <h4 class="product-name">
-                                            <a href="{% url 'product:single_product' %}">Perfect Classic Hat</a>
+                                            <a href="{% url 'product:shop' %}">Perfect Classic Hat</a>
                                         </h4>
                                         <div class="ratings-container">
                                             <div class="ratings-full">
@@ -2125,14 +2126,14 @@
                             <div class="widget widget-products">
                                 <div class="product product-widget">
                                     <figure class="product-media">
-                                        <a href="{% url 'product:single_product' %}">
+                                        <a href="{% url 'product:shop' %}">
                                             <img src="{% static 'images/demos/demo7/products/7-4.jpg' %}" alt="Product"
                                                 width="124" height="140">
                                         </a>
                                     </figure>
                                     <div class="product-details">
                                         <h4 class="product-name">
-                                            <a href="{% url 'product:single_product' %}">Perfect Classic Hat</a>
+                                            <a href="{% url 'product:shop' %}">Perfect Classic Hat</a>
                                         </h4>
                                         <div class="ratings-container">
                                             <div class="ratings-full">
@@ -2148,14 +2149,14 @@
                                 <!-- End of Product Widget -->
                                 <div class="product product-widget">
                                     <figure class="product-media">
-                                        <a href="{% url 'product:single_product' %}">
+                                        <a href="{% url 'product:shop' %}">
                                             <img src="{% static 'images/demos/demo7/products/7-5.jpg' %}" alt="Product"
                                                 width="124" height="140">
                                         </a>
                                     </figure>
                                     <div class="product-details">
                                         <h4 class="product-name">
-                                            <a href="{% url 'product:single_product' %}">Portable Charger</a>
+                                            <a href="{% url 'product:shop' %}">Portable Charger</a>
                                         </h4>
                                         <div class="ratings-container">
                                             <div class="ratings-full">
@@ -2171,14 +2172,14 @@
                                 <!-- End of Product Widget -->
                                 <div class="product product-widget">
                                     <figure class="product-media">
-                                        <a href="{% url 'product:single_product' %}">
+                                        <a href="{% url 'product:shop' %}">
                                             <img src="{% static 'images/demos/demo7/products/7-6.jpg' %}" alt="Product"
                                                 width="124" height="140">
                                         </a>
                                     </figure>
                                     <div class="product-details">
                                         <h4 class="product-name">
-                                            <a href="{% url 'product:single_product' %}">Headkerchief</a>
+                                            <a href="{% url 'product:shop' %}">Headkerchief</a>
                                         </h4>
                                         <div class="ratings-container">
                                             <div class="ratings-full">
@@ -2202,14 +2203,14 @@
                             <div class="widget widget-products">
                                 <div class="product product-widget">
                                     <figure class="product-media">
-                                        <a href="{% url 'product:single_product' %}">
+                                        <a href="{% url 'product:shop' %}">
                                             <img src="{% static 'images/demos/demo7/products/7-7.jpg' %}" alt="Product"
                                                 width="124" height="140">
                                         </a>
                                     </figure>
                                     <div class="product-details">
                                         <h4 class="product-name">
-                                            <a href="{% url 'product:single_product' %}">T-Shirt</a>
+                                            <a href="{% url 'product:shop' %}">T-Shirt</a>
                                         </h4>
                                         <div class="ratings-container">
                                             <div class="ratings-full">
@@ -2225,14 +2226,14 @@
                                 <!-- End of Product Widget -->
                                 <div class="product product-widget">
                                     <figure class="product-media">
-                                        <a href="{% url 'product:single_product' %}">
+                                        <a href="{% url 'product:shop' %}">
                                             <img src="{% static 'images/demos/demo7/products/7-8.jpg' %}" alt="Product"
                                                 width="124" height="140">
                                         </a>
                                     </figure>
                                     <div class="product-details">
                                         <h4 class="product-name">
-                                            <a href="{% url 'product:single_product' %}">Whiter Training Shoes</a>
+                                            <a href="{% url 'product:shop' %}">Whiter Training Shoes</a>
                                         </h4>
                                         <div class="ratings-container">
                                             <div class="ratings-full">
@@ -2248,14 +2249,14 @@
                                 <!-- End of Product Widget -->
                                 <div class="product product-widget">
                                     <figure class="product-media">
-                                        <a href="{% url 'product:single_product' %}">
+                                        <a href="{% url 'product:shop' %}">
                                             <img src="{% static 'images/demos/demo7/products/7-9.jpg' %}" alt="Product"
                                                 width="124" height="140">
                                         </a>
                                     </figure>
                                     <div class="product-details">
                                         <h4 class="product-name">
-                                            <a href="{% url 'product:single_product' %}">Grey Calotte</a>
+                                            <a href="{% url 'product:shop' %}">Grey Calotte</a>
                                         </h4>
                                         <div class="ratings-container">
                                             <div class="ratings-full">
@@ -2279,14 +2280,14 @@
                             <div class="widget widget-products">
                                 <div class="product product-widget">
                                     <figure class="product-media">
-                                        <a href="{% url 'product:single_product' %}">
+                                        <a href="{% url 'product:shop' %}">
                                             <img src="{% static 'images/demos/demo7/products/7-10.jpg' %}" alt="Product"
                                                 width="124" height="140">
                                         </a>
                                     </figure>
                                     <div class="product-details">
                                         <h4 class="product-name">
-                                            <a href="{% url 'product:single_product' %}">Women's Training Shoes</a>
+                                            <a href="{% url 'product:shop' %}">Women's Training Shoes</a>
                                         </h4>
                                         <div class="ratings-container">
                                             <div class="ratings-full">
@@ -2302,14 +2303,14 @@
                                 <!-- End of Product Widget -->
                                 <div class="product product-widget">
                                     <figure class="product-media">
-                                        <a href="{% url 'product:single_product' %}">
+                                        <a href="{% url 'product:shop' %}">
                                             <img src="{% static 'images/demos/demo7/products/7-11.jpg' %}" alt="Product"
                                                 width="124" height="140">
                                         </a>
                                     </figure>
                                     <div class="product-details">
                                         <h4 class="product-name">
-                                            <a href="{% url 'product:single_product' %}">Multi Function Watch</a>
+                                            <a href="{% url 'product:shop' %}">Multi Function Watch</a>
                                         </h4>
                                         <div class="ratings-container">
                                             <div class="ratings-full">
@@ -2325,14 +2326,14 @@
                                 <!-- End of Product Widget -->
                                 <div class="product product-widget">
                                     <figure class="product-media">
-                                        <a href="{% url 'product:single_product' %}">
+                                        <a href="{% url 'product:shop' %}">
                                             <img src="{% static 'images/demos/demo7/products/7-12.jpg' %}" alt="Product"
                                                 width="124" height="140">
                                         </a>
                                     </figure>
                                     <div class="product-details">
                                         <h4 class="product-name">
-                                            <a href="{% url 'product:single_product' %}">Top Men's Hiking Hat</a>
+                                            <a href="{% url 'product:shop' %}">Top Men's Hiking Hat</a>
                                         </h4>
                                         <div class="ratings-container">
                                             <div class="ratings-full">
@@ -2496,13 +2497,13 @@
                             <div class="swiper-slide product-wrap mb-0">
                                 <div class="product text-center product-absolute">
                                     <figure class="product-media">
-                                        <a href="https://www.portotheme.com/html/wolmart/product-defa{% url 'product:single_product' %}">
+                                        <a href="https://www.portotheme.com/html/wolmart/product-defa{% url 'product:shop' %}">
                                             <img src="{% static 'images/demos/demo7/products/8-1.jpg' %}" alt="Category image"
                                                 width="152" height="171" style="background-color: #fff" />
                                         </a>
                                     </figure>
                                     <h4 class="product-name">
-                                        <a href="{% url 'product:single_product' %}">Top Men's Hiking Hat</a>
+                                        <a href="{% url 'product:shop' %}">Top Men's Hiking Hat</a>
                                     </h4>
                                 </div>
                             </div>
@@ -2510,13 +2511,13 @@
                             <div class="swiper-slide product-wrap mb-0">
                                 <div class="product text-center product-absolute">
                                     <figure class="product-media">
-                                        <a href="https://www.portotheme.com/html/wolmart/product-defa{% url 'product:single_product' %}">
+                                        <a href="https://www.portotheme.com/html/wolmart/product-defa{% url 'product:shop' %}">
                                             <img src="{% static 'images/demos/demo7/products/8-2.jpg' %}" alt="Category image"
                                                 width="152" height="171" style="background-color: #fff" />
                                         </a>
                                     </figure>
                                     <h4 class="product-name">
-                                        <a href="{% url 'product:single_product' %}">Leather Stripe Watch</a>
+                                        <a href="{% url 'product:shop' %}">Leather Stripe Watch</a>
                                     </h4>
                                 </div>
                             </div>
@@ -2524,13 +2525,13 @@
                             <div class="swiper-slide product-wrap mb-0">
                                 <div class="product text-center product-absolute">
                                     <figure class="product-media">
-                                        <a href="https://www.portotheme.com/html/wolmart/product-defa{% url 'product:single_product' %}">
+                                        <a href="https://www.portotheme.com/html/wolmart/product-defa{% url 'product:shop' %}">
                                             <img src="{% static 'images/demos/demo7/products/8-3.jpg' %}" alt="Category image"
                                                 width="152" height="171" style="background-color: #fff" />
                                         </a>
                                     </figure>
                                     <h4 class="product-name">
-                                        <a href="{% url 'product:single_product' %}">Red Cap Sound Marker</a>
+                                        <a href="{% url 'product:shop' %}">Red Cap Sound Marker</a>
                                     </h4>
                                 </div>
                             </div>
@@ -2538,13 +2539,13 @@
                             <div class="swiper-slide product-wrap mb-0">
                                 <div class="product text-center product-absolute">
                                     <figure class="product-media">
-                                        <a href="https://www.portotheme.com/html/wolmart/product-defa{% url 'product:single_product' %}">
+                                        <a href="https://www.portotheme.com/html/wolmart/product-defa{% url 'product:shop' %}">
                                             <img src="{% static 'images/demos/demo7/products/8-4.jpg' %}" alt="Category image"
                                                 width="152" height="171" style="background-color: #fff" />
                                         </a>
                                     </figure>
                                     <h4 class="product-name">
-                                        <a href="{% url 'product:single_product' %}">Smartphone Electronic Charger</a>
+                                        <a href="{% url 'product:shop' %}">Smartphone Electronic Charger</a>
                                     </h4>
                                 </div>
                             </div>
@@ -2552,13 +2553,13 @@
                             <div class="swiper-slide product-wrap mb-0">
                                 <div class="product text-center product-absolute">
                                     <figure class="product-media">
-                                        <a href="https://www.portotheme.com/html/wolmart/product-defa{% url 'product:single_product' %}">
+                                        <a href="https://www.portotheme.com/html/wolmart/product-defa{% url 'product:shop' %}">
                                             <img src="{% static 'images/demos/demo7/products/8-5.jpg' %}" alt="Category image"
                                                 width="152" height="171" style="background-color: #fff" />
                                         </a>
                                     </figure>
                                     <h4 class="product-name">
-                                        <a href="{% url 'product:single_product' %}">Blue Ski Boots</a>
+                                        <a href="{% url 'product:shop' %}">Blue Ski Boots</a>
                                     </h4>
                                 </div>
                             </div>
@@ -2566,13 +2567,13 @@
                             <div class="swiper-slide product-wrap mb-0">
                                 <div class="product text-center product-absolute">
                                     <figure class="product-media">
-                                        <a href="https://www.portotheme.com/html/wolmart/product-defa{% url 'product:single_product' %}">
+                                        <a href="https://www.portotheme.com/html/wolmart/product-defa{% url 'product:shop' %}">
                                             <img src="{% static 'images/demos/demo7/products/8-6.jpg' %}" alt="Category image"
                                                 width="152" height="171" style="background-color: #fff" />
                                         </a>
                                     </figure>
                                     <h4 class="product-name">
-                                        <a href="{% url 'product:single_product' %}">Soft Sound Marker</a>
+                                        <a href="{% url 'product:shop' %}">Soft Sound Marker</a>
                                     </h4>
                                 </div>
                             </div>
@@ -2580,13 +2581,13 @@
                             <div class="swiper-slide product-wrap mb-0">
                                 <div class="product text-center product-absolute">
                                     <figure class="product-media">
-                                        <a href="https://www.portotheme.com/html/wolmart/product-defa{% url 'product:single_product' %}">
+                                        <a href="https://www.portotheme.com/html/wolmart/product-defa{% url 'product:shop' %}">
                                             <img src="{% static 'images/demos/demo7/products/8-7.jpg' %}" alt="Category image"
                                                 width="152" height="171" style="background-color: #fff" />
                                         </a>
                                     </figure>
                                     <h4 class="product-name">
-                                        <a href="{% url 'product:single_product' %}">Multi Function Watch</a>
+                                        <a href="{% url 'product:shop' %}">Multi Function Watch</a>
                                     </h4>
                                 </div>
                             </div>
@@ -2594,13 +2595,13 @@
                             <div class="swiper-slide product-wrap mb-0">
                                 <div class="product text-center product-absolute">
                                     <figure class="product-media">
-                                        <a href="https://www.portotheme.com/html/wolmart/product-defa{% url 'product:single_product' %}">
+                                        <a href="https://www.portotheme.com/html/wolmart/product-defa{% url 'product:shop' %}">
                                             <img src="{% static 'images/demos/demo7/products/8-8.jpg' %}" alt="Category image"
                                                 width="152" height="171" style="background-color: #fff" />
                                         </a>
                                     </figure>
                                     <h4 class="product-name">
-                                        <a href="{% url 'product:single_product' %}">Running Machine</a>
+                                        <a href="{% url 'product:shop' %}">Running Machine</a>
                                     </h4>
                                 </div>
                             </div>

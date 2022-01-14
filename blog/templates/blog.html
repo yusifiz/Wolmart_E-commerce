@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load i18n %}
 {% load static %}
 {% block styleCss %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/style.min.css' %}">
@@ -40,7 +41,7 @@
                         <li><a href="#" class="nav-filter" data-filter=".lifestyle">Lifestyle <span>3</span></a></li>
                         <li><a href="#" class="nav-filter" data-filter=".others">Others <span>2</span></a></li>
                         <li><a href="#" class="nav-filter" data-filter=".shoes">Shoes <span>1</span></a></li>
-                        <li><a href="#" class="nav-filter" data-filter=".technology">Technology <span>1</span></a></li>
+                        <li><a href="#" class="nav-filter" data-filter=".technology">{% trans "Technology" %} <span>1</span></a></li>
                     </ul>
 
                     <div class="row grid cols-lg-3 cols-md-2 mb-2" data-grid-options="{
