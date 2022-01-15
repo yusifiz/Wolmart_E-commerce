@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-15 02:25+0400\n"
+"POT-Creation-Date: 2022-01-15 23:57+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -36,15 +36,19 @@ msgstr ""
 msgid "email address"
 msgstr ""
 
-#: .\core\settings.py:130
-msgid "English"
+#: .\blog\templates\blog.html:44
+msgid "Technology"
 msgstr ""
 
 #: .\core\settings.py:131
-msgid "Azerbaijan"
+msgid "English"
 msgstr ""
 
 #: .\core\settings.py:132
+msgid "Azerbaijan"
+msgstr ""
+
+#: .\core\settings.py:133
 msgid "Russian"
 msgstr ""
 
@@ -55,7 +59,7 @@ msgstr ""
 #: .\home\templates\index.html:1307 .\home\templates\index.html:1676
 #: .\home\templates\index.html:2038
 msgid "Shop Now"
-msgstr "Купить Cейчас"
+msgstr ""
 
 #: .\venv\Lib\site-packages\django\contrib\messages\apps.py:7
 msgid "Messages"
@@ -1248,4 +1252,8 @@ msgstr ""
 
 #: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:249
 msgid "Connect, get help, or contribute"
+msgstr ""
+
+#: .\venv\Lib\site-packages\modeltranslation\widgets.py:25
+msgid "None"
 msgstr ""

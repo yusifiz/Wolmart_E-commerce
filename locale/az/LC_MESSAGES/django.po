@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-15 03:39+0400\n"
+"POT-Creation-Date: 2022-01-15 23:56+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,7 +20,7 @@ msgstr ""
 
 #: .\account\forms.py:17
 msgid "Password"
-msgstr "Şifrə"
+msgstr ""
 
 #: .\account\forms.py:23
 msgid "Password confirmation"
@@ -36,7 +36,7 @@ msgstr ""
 
 #: .\blog\templates\blog.html:44
 msgid "Technology"
-msgstr "Texnologiya"
+msgstr ""
 
 #: .\core\settings.py:131
 msgid "English"
