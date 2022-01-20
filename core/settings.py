@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    
+    #my apps
     'about',
     'account',
     'blog.apps.BlogConfig',
@@ -46,6 +48,8 @@ INSTALLED_APPS = [
     'pages',
     'shop.apps.ShopConfig',
     'vendor',
+    'social_django',
+    
 ]
 
 MIDDLEWARE = [
@@ -113,6 +117,35 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'social_core.backends.facebook.FacebookOAuth2',
+    'social_core.backends.google.GoogleOAuth2',
+
+     ]
+
+
+from django.urls import reverse_lazy
+
+
+LOGIN_URL = reverse_lazy('account:login')
+LOGIN_REDIRECT_URL = reverse_lazy('home:index')
+LOGOUT_URL = reverse_lazy('account:logout')
+LOGOUT_REDIRECT_URL = reverse_lazy('account:login')
+
+SOCIAL_AUTH_URL_NAMESPACE = 'social'
+
+SOCIAL_AUTH_FACEBOOK_SCOPE = ['email', 'user_friends']
+SOCIAL_AUTH_FACEBOOK_PROFILE_EXTRA_PARAMS = {
+    'fields': 'id,name,email,picture',
+}
+
+SOCIAL_AUTH_FACEBOOK_KEY = '1691450071200702'
+SOCIAL_AUTH_FACEBOOK_SECRET = '3d843af755b9f3ded70b60ae673d1158'
+
+
 
 
 # Internationalization

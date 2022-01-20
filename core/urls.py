@@ -21,6 +21,8 @@ from django.conf.urls.static import static
 from django.conf import settings
 
 urlpatterns = [
+    path('social-auth/', include('social_django.urls', namespace="social")),
+
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
 
 
@@ -37,4 +39,5 @@ urlpatterns += i18n_patterns(
     path('pages/',include("pages.urls", namespace='pages')),
     path('shop/',include("shop.urls", namespace='product')),
     path('vendor/',include("vendor.urls", namespace='vendor')),
+    
 )
