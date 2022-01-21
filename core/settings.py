@@ -61,6 +61,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    
+    'social_django.middleware.SocialAuthExceptionMiddleware',
 ]
 
 ROOT_URLCONF = 'core.urls'
@@ -77,7 +79,12 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'shop.context_processors.global_shop'
+                
+                'shop.context_processors.global_shop',
+                
+                'social_django.context_processors.backends',  # <--
+                'social_django.context_processors.login_redirect', # <--
+
             ],
         },
     },
@@ -124,7 +131,7 @@ AUTHENTICATION_BACKENDS = [
     'social_core.backends.facebook.FacebookOAuth2',
     'social_core.backends.google.GoogleOAuth2',
 
-     ]
+]
 
 
 from django.urls import reverse_lazy
