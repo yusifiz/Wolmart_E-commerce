@@ -1,4 +1,6 @@
 {% load static %}
+{% load i18n %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -64,29 +66,30 @@
                         <p class="welcome-msg">Welcome to Wolmart Store message or remove it!</p>
                     </div>
                     <div class="header-right">
-                        <div class="dropdown">
+                        <!-- <div class="dropdown">
                             <a href="#currency">USD</a>
                             <div class="dropdown-box">
                                 <a href="#USD">USD</a>
                                 <a href="#EUR">EUR</a>
                             </div>
-                        </div>
+                        </div> -->
                         <!-- End of DropDown Menu -->
 
+ 
                         <div class="dropdown">
-                            <a href="#language"><img src="{% static 'images/flags/eng.png' %}" alt="ENG Flag" width="14"
-                                    height="8" class="dropdown-image" /> ENG</a>
+                            {% get_current_language as CURRENT_LANGUAGE %}
+                            {% get_available_languages as AVAILABLE_LANGUAGES %}
+                            {% get_language_info_list for AVAILABLE_LANGUAGES as languages %}
+                            <a href="#language">{{CURRENT_LANGUAGE}}</a>
                             <div class="dropdown-box">
-                                <a href="#ENG">
-                                    <img src="{% static 'images/flags/eng.png' %}" alt="ENG Flag" width="14" height="8"
-                                        class="dropdown-image" />
-                                    ENG
-                                </a>
-                                <a href="#AZE">
-                                    <img src="{% static 'images/flags/aze.png' %}" alt="AZE Flag" width="14" height="8"
-                                        class="dropdown-image" />
-                                    AZE
-                                </a>
+                                {% for language in languages %}
+                                
+                                  <a href="/{{ language.code }}/"
+                                    {% if language.code == CURRENT_LANGUAGE %} class="active"{% endif %}>
+                                    {{ language.name_local }}
+                                  </a>
+                                
+                              {% endfor %}
                             </div>
                         </div>
                         <!-- End of Dropdown Menu -->
