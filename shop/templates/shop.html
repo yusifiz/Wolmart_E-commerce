@@ -408,7 +408,7 @@
                                                     height="338" />
                                             </a>
                                             <div class="product-action-horizontal">
-                                                <a href="#" class="btn-product-icon btn-cart w-icon-cart"
+                                                <a href="#" data-product={{product.id}} data-action="add" class="btn-product-icon btn-cart w-icon-cart update-cart"
                                                     title="Add to cart"></a>
                                                 <a href="#" class="btn-product-icon btn-wishlist w-icon-heart"
                                                     title="Wishlist"></a>
@@ -434,7 +434,7 @@
                                             </div>
                                             <div class="product-pa-wrapper">
                                                 <div class="product-price">
-                                                    {{product.price1}}$ - {{product.price2}}$
+                                                    {{product.price}}$
                                                 </div>
                                             </div>
                                         </div>

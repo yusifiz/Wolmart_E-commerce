@@ -200,7 +200,7 @@
                                 </div>
 
                                 <div class="cart-action">
-                                    <a href="{% url 'pages:cart' %}" class="btn btn-dark btn-outline btn-rounded">View Cart</a>
+                                    <a href="{% url 'product:cart' %}" class="btn btn-dark btn-outline btn-rounded">View Cart</a>
                                     <a href="{% url 'pages:checkout' %}" class="btn btn-primary  btn-rounded">Checkout</a>
                                 </div>
                             </div>
@@ -692,7 +692,7 @@
                                             <li><a href="{% url 'pages:faq' %}">FAQs</a></li>
                                             <li><a href="{% url 'pages:error_404' %}">Error 404</a></li>
                                             <li><a href="{% url 'pages:wishlist' %}">Wishlist</a></li>
-                                            <li><a href="{% url 'pages:cart' %}">Cart</a></li>
+                                            <li><a href="{% url 'product:cart' %}">Cart</a></li>
                                             <li><a href="{% url 'pages:checkout' %}">Checkout</a></li>
                                             <li><a href="{% url 'account:my_account' %}">My Account</a></li>
                                             <li><a href="{% url 'pages:compare' %}">Compare</a></li>
@@ -790,7 +790,7 @@
                                 <h4 class="widget-title">My Account</h4>
                                 <ul class="widget-body">
                                     <li><a href="#">Track My Order</a></li>
-                                    <li><a href="{% url 'pages:cart' %}">View Cart</a></li>
+                                    <li><a href="{% url 'product:cart' %}">View Cart</a></li>
                                     <li><a href="{% url 'account:login' %}">Sign In</a></li>
                                     <li><a href="#">Help</a></li>
                                     <li><a href="{% url 'pages:wishlist' %}">My Wishlist</a></li>
@@ -921,7 +921,7 @@
             <p>Account</p>
         </a>
         <div class="cart-dropdown dir-up">
-            <a href="{% url 'pages:cart' %}" class="sticky-link">
+            <a href="{% url 'product:cart' %}" class="sticky-link">
                 <i class="w-icon-cart"></i>
                 <p>Cart</p>
             </a>
@@ -960,7 +960,7 @@
                 </div>
 
                 <div class="cart-action">
-                    <a href="{% url 'pages:cart' %}" class="btn btn-dark btn-outline btn-rounded">View Cart</a>
+                    <a href="{% url 'product:cart' %}" class="btn btn-dark btn-outline btn-rounded">View Cart</a>
                     <a href="{% url 'pages:checkout' %}" class="btn btn-primary  btn-rounded">Checkout</a>
                 </div>
             </div>
@@ -1122,7 +1122,7 @@
                                 <li><a href="{% url 'pages:error_404' %}">Error 404</a></li>
                                 <li><a href="coming-soon{% url 'blog:blog' %}">Coming Soon</a></li>
                                 <li><a href="{% url 'pages:wishlist' %}">Wishlist</a></li>
-                                <li><a href="{% url 'pages:cart' %}">Cart</a></li>
+                                <li><a href="{% url 'product:cart' %}">Cart</a></li>
                                 <li><a href="{% url 'pages:checkout' %}">Checkout</a></li>
                                 <li><a href="{% url 'account:my_account' %}">My Account</a></li>
                             </ul>
@@ -1590,6 +1590,27 @@
 
     <!-- Main JS -->
     <script src="{% static 'js/main.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/cart.js' %}"></script>
+    <script type="text/javascript">
+        var user = '{{request.user}}'
+
+        function getToken(name) {
+            let cookieValue = null;
+            if (document.cookie && document.cookie !== '') {
+                const cookies = document.cookie.split(';');
+                for (let i = 0; i < cookies.length; i++) {
+                    const cookie = cookies[i].trim();
+                    // Does this cookie string begin with the name we want?
+                    if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+        const csrftoken = getToken('csrftoken');
+    </script>
 </body>
 
 
