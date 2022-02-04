@@ -57,14 +57,16 @@ def base_cart(request):
         user = request.user.id
         order, created = Order.objects.get_or_create(user=user, status=False)
         items = order.orderitem_set.all()
+        cartItems = order['get_cart_items']
     else:
         items = []
-
+        order = {'get_cart_total':0, 'get_cart_items':0}
+        cartItems = order['get_cart_items']
         
     context = {
         'items': items,
-        'order':order
-        
+        'order':order,
+        'cartItems':cartItems,
     }
     return render(request, 'base.html', context)
 
@@ -76,6 +78,7 @@ def checkout(request):
         items = order.orderitem_set.all()
     else:
         items = []
+        order = {'get_cart_total':0, 'get_cart_items':0}
 
         
     context = {
@@ -90,6 +93,19 @@ def update_item(request):
     productID = data['productID']
     action = data['action']
     print('Action', action)
+    print('ProductID', productID)
     
-    print('ProductID', productID)  
+    user = request.user.id
+    product = Shop.objects.get(id=productID)
+    order, created = Order.objects.get_or_create(user=user, status=False)
+    orderItem, created = OrderItem.objects.get_or_create(order=order, product=product)
+    
+    if action == 'add':
+        orderItem.quantity = (orderItem.quantity + 1)
+    elif action == 'remove':
+        orderItem.quantity = (orderItem.quantity - 1)
+    orderItem.save()
+    
+    if orderItem.quantity <= 0:
+        orderItem.delete() 
     return JsonResponse('item was added', safe=False)

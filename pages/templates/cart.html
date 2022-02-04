@@ -14,7 +14,7 @@
                 <div class="container">
                     <ul class="breadcrumb shop-breadcrumb bb-no">
                         <li class="active"><a href="{% url 'product:cart' %}">Shopping Cart</a></li>
-                        <li><a href="{% url 'pages:checkout' %}">Checkout</a></li>
+                        <li><a href="{% url 'product:checkout' %}">Checkout</a></li>
                         <li><a href="{% url 'pages:order' %}">Order Complete</a></li>
                     </ul>
                 </div>
@@ -37,6 +37,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    
                                     {% for item in items %}
                                     
                                     <tr>
