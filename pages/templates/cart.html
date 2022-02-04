@@ -49,7 +49,7 @@
                                                             width="300" height="338">
                                                     </figure>
                                                 </a>
-                                                <button type="submit" class="btn btn-close"><i
+                                                <button data-product="{{item.product.id}}" data-action="removeAll" type="submit" class="btn btn-close update-cart"><i
                                                         class="fas fa-times"></i></button>
                                             </div>
                                         </td>
@@ -63,8 +63,8 @@
                                             <div class="input-group">
                                                 {{item.quantity}}
                                                 <!-- <div class="quantity form-control input-group" type="number"></div> -->
-                                                <!-- <button class="quantity-plus w-icon-plus"></button>
-                                                <button class="quantity-minus w-icon-minus"></button> -->
+                                                <button class="quantity-plus w-icon-plus update-cart" data-product="{{item.product.id}}" data-action="add" ></button>
+                                                <button class="quantity-minus w-icon-minus update-cart" data-product="{{item.product.id}}" data-action="remove" ></button>
                                             </div>
                                         </td>
                                         <td class="product-subtotal">

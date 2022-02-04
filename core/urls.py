@@ -39,6 +39,7 @@ urlpatterns += i18n_patterns(
     path('shop/',include("shop.urls", namespace='product')),
     path('vendor/',include("vendor.urls", namespace='vendor')),
     
+    
     path('social-auth/', include('social_django.urls', namespace="social")),
     
 )

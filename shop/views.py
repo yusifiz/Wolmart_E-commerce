@@ -41,6 +41,7 @@ def cart(request):
         user = request.user.id
         order, created = Order.objects.get_or_create(user=user, status=False)
         items = order.orderitem_set.all()
+        
     else:
         items = []
         order = {'get_cart_total':0, 'get_cart_items':0}
@@ -104,8 +105,9 @@ def update_item(request):
         orderItem.quantity = (orderItem.quantity + 1)
     elif action == 'remove':
         orderItem.quantity = (orderItem.quantity - 1)
+
     orderItem.save()
     
-    if orderItem.quantity <= 0:
+    if orderItem.quantity <= 0 or action == 'removeAll':
         orderItem.delete() 
     return JsonResponse('item was added', safe=False)
