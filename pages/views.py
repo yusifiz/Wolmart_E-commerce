@@ -5,9 +5,6 @@ from django.shortcuts import render
 def become_a_vendor(request):
     return render(request, "become-a-vendor.html")
 
-def checkout(request):
-    return render(request, "checkout.html")
-
 def compare(request):
     return render(request, "compare.html")
 

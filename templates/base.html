@@ -167,22 +167,20 @@
                                 </div>
 
                                 <div class="products">
-                                    {% for product in products %}
+                                    {% for item in items %}
                                     
                                     
                                     <div class="product product-cart">
                                         <div class="product-detail">
-                                            <a href="{% url 'product:single_product' product.slug %}" class="product-name">Beige knitted
-                                                elas<br>tic
-                                                runner shoes</a>
+                                            <a href="{% url 'product:single_product' item.id %}" class="product-name">{{item.product.name}}</a>
                                             <div class="price-box">
-                                                <span class="product-quantity">1</span>
-                                                <span class="product-price">$25.68</span>
+                                                <span class="product-quantity">{{item.quantity}}</span>
+                                                <span class="product-price">${{item.product.price}}</span>
                                             </div>
                                         </div>
                                         <figure class="product-media">
-                                            <a href="{% url 'product:single_product' product.slug %}">
-                                                <img src="{{ product.image.url }}" alt="product" height="84"
+                                            <a href="{% url 'product:single_product' item.id %}">
+                                                <img src="{{ item.product.image.url }}" alt="product" height="84"
                                                     width="94" />
                                             </a>
                                         </figure>
@@ -191,18 +189,19 @@
                                         </button>
                                     </div>
 
-                                    {% endfor %}
+                                    
                                 </div>
 
                                 <div class="cart-total">
                                     <label>Subtotal:</label>
-                                    <span class="price">$58.67</span>
+                                    <span class="price">${{item.get_total}}</span>
                                 </div>
 
                                 <div class="cart-action">
                                     <a href="{% url 'product:cart' %}" class="btn btn-dark btn-outline btn-rounded">View Cart</a>
-                                    <a href="{% url 'pages:checkout' %}" class="btn btn-primary  btn-rounded">Checkout</a>
+                                    <a href="{% url 'product:checkout' %}" class="btn btn-primary  btn-rounded">Checkout</a>
                                 </div>
+                                {% endfor %}
                             </div>
                             <!-- End of Dropdown Box -->
                         </div>
@@ -693,7 +692,7 @@
                                             <li><a href="{% url 'pages:error_404' %}">Error 404</a></li>
                                             <li><a href="{% url 'pages:wishlist' %}">Wishlist</a></li>
                                             <li><a href="{% url 'product:cart' %}">Cart</a></li>
-                                            <li><a href="{% url 'pages:checkout' %}">Checkout</a></li>
+                                            <li><a href="{% url 'product:checkout' %}">Checkout</a></li>
                                             <li><a href="{% url 'account:my_account' %}">My Account</a></li>
                                             <li><a href="{% url 'pages:compare' %}">Compare</a></li>
                                         </ul> -->
@@ -961,7 +960,7 @@
 
                 <div class="cart-action">
                     <a href="{% url 'product:cart' %}" class="btn btn-dark btn-outline btn-rounded">View Cart</a>
-                    <a href="{% url 'pages:checkout' %}" class="btn btn-primary  btn-rounded">Checkout</a>
+                    <a href="{% url 'product:checkout' %}" class="btn btn-primary  btn-rounded">Checkout</a>
                 </div>
             </div>
             <!-- End of Dropdown Box -->
@@ -1123,7 +1122,7 @@
                                 <li><a href="coming-soon{% url 'blog:blog' %}">Coming Soon</a></li>
                                 <li><a href="{% url 'pages:wishlist' %}">Wishlist</a></li>
                                 <li><a href="{% url 'product:cart' %}">Cart</a></li>
-                                <li><a href="{% url 'pages:checkout' %}">Checkout</a></li>
+                                <li><a href="{% url 'product:checkout' %}">Checkout</a></li>
                                 <li><a href="{% url 'account:my_account' %}">My Account</a></li>
                             </ul>
                         </li>
