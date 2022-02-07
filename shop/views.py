@@ -38,7 +38,7 @@ class ShopDetailView(DetailView):
 def cart(request):
     
     if request.user.is_authenticated:
-        user = request.user.id
+        user = request.user
         order, created = Order.objects.get_or_create(user=user, status=False)
         items = order.orderitem_set.all()
         
@@ -55,7 +55,7 @@ def cart(request):
 def base_cart(request):
     
     if request.user.is_authenticated:
-        user = request.user.id
+        user = request.user
         order, created = Order.objects.get_or_create(user=user, status=False)
         items = order.orderitem_set.all()
         cartItems = order['get_cart_items']
@@ -74,7 +74,7 @@ def base_cart(request):
 def checkout(request):
     
     if request.user.is_authenticated:
-        user = request.user.id
+        user = request.user
         order, created = Order.objects.get_or_create(user=user, status=False)
         items = order.orderitem_set.all()
     else:
@@ -96,7 +96,7 @@ def update_item(request):
     print('Action', action)
     print('ProductID', productID)
     
-    user = request.user.id
+    user = request.user
     product = Shop.objects.get(id=productID)
     order, created = Order.objects.get_or_create(user=user, status=False)
     orderItem, created = OrderItem.objects.get_or_create(order=order, product=product)
@@ -109,5 +109,7 @@ def update_item(request):
     orderItem.save()
     
     if orderItem.quantity <= 0 or action == 'removeAll':
-        orderItem.delete() 
+        orderItem.delete()
+    # elif action == 'removeCart':
+    #     order.delete()
     return JsonResponse('item was added', safe=False)
