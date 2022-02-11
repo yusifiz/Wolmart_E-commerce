@@ -96,7 +96,7 @@ def update_item(request):
     print('Action', action)
     print('ProductID', productID)
     
-    user = request.user
+    user = request.user.id
     product = Shop.objects.get(id=productID)
     order, created = Order.objects.get_or_create(user=user, status=False)
     orderItem, created = OrderItem.objects.get_or_create(order=order, product=product)
