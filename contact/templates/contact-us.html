@@ -173,22 +173,20 @@
                             </div>
                             <div class="col-lg-6 mb-8">
                                 <h4 class="title mb-3">Send Us a Message</h4>
+                                {% if messageSent %}
+                                <div class="container">
+                                <h3><strong>Email successfully sent</strong></h3>
+                                <p>Your message was successfully sent to {{ form.cleaned_data.to }}</p>
+                                </div>
+                                {% endif %}
                                 <form class="form contact-us-form" action="#" method="post">
+                                    {% csrf_token %}
+                                    {% for field in form %}
                                     <div class="form-group">
-                                        <label for="username">Your Name</label>
-                                        <input type="text" id="username" name="username"
-                                            class="form-control">
+                                        {{ field.label_tag }}
+                                        {{ field }}
                                     </div>
-                                    <div class="form-group">
-                                        <label for="email_1">Your Email</label>
-                                        <input type="email" id="email_1" name="email_1"
-                                            class="form-control">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="message">Your Message</label>
-                                        <textarea id="message" name="message" cols="30" rows="5"
-                                            class="form-control"></textarea>
-                                    </div>
+                                    {% endfor %}
                                     <button type="submit" class="btn btn-dark btn-rounded">Send Now</button>
                                 </form>
                             </div>

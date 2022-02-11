@@ -16,7 +16,7 @@ def contact(request):
             cd = form.cleaned_data
             subject = 'test'
             message = cd['message']
-            send_mail(subject, message,settings.DEFAULT_FROM_EMAIL, ['memmedovh5@gmail.com',])
+            send_mail(subject, message,settings.DEFAULT_FROM_EMAIL, ['yusifosmanov475@gmail.com',])
             messageSent = True
             form.save()
             return redirect('/')
