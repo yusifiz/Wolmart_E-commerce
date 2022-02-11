@@ -113,3 +113,12 @@ def update_item(request):
     # elif action == 'removeCart':
     #     order.delete()
     return JsonResponse('item was added', safe=False)
+
+
+def search_bar(request):
+    if request.method == 'POST':
+        searched = request.POST['searched']
+        search_item = Shop.objects.filter(name__contains = searched)
+        return render(request, 'search.html',{'search_item':search_item})
+    else:
+        return render(request,'base.html',{})

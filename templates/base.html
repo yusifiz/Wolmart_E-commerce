@@ -118,7 +118,7 @@
                         <a href="{% url 'home:index' %}" class="logo ml-lg-0">
                             <img src="{% static 'images/demos/demo7/header-logo.png' %}" alt="logo" width="144" height="45" />
                         </a>
-                        <form method="get" action="#" class="input-wrapper header-search hs-expanded hs-round d-none d-md-flex">
+                        <form method="POST" action="{% url 'product:search' %}" class="input-wrapper header-search hs-expanded hs-round d-none d-md-flex">
                             <div class="select-box">
                                 <select id="category" name="category">
                                     <option value="">All Categories</option>
@@ -133,7 +133,8 @@
                                     <option value="12">Clothing</option>
                                 </select>
                             </div>
-                            <input type="text" class="form-control" name="search" id="search"
+                            {% csrf_token %}
+                            <input type="text" class="form-control" name="searched" id="search"
                                 placeholder="Search in..." required />
                             <button class="btn btn-search" type="submit"><i class="w-icon-search"></i>
                             </button>
@@ -683,7 +684,7 @@
                                     </li>
                                     <li>
                                         <a href="{% url 'about:about' %}">Pages</a>
-                                        <!-- <ul>
+                                        <ul>
 
                                             <li><a href="{% url 'about:about' %}">About Us</a></li>
                                             <li><a href="{% url 'pages:become_a_vendor' %}">Become A Vendor</a></li>
@@ -694,8 +695,7 @@
                                             <li><a href="{% url 'product:cart' %}">Cart</a></li>
                                             <li><a href="{% url 'product:checkout' %}">Checkout</a></li>
                                             <li><a href="{% url 'account:my_account' %}">My Account</a></li>
-                                            <li><a href="{% url 'pages:compare' %}">Compare</a></li>
-                                        </ul> -->
+                                        </ul>
                                     </li>
 
                                 </ul>
