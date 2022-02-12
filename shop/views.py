@@ -119,11 +119,7 @@ def search_bar(request):
     if request.method == 'POST':
         searched = request.POST['searched']
         search_item = Shop.objects.filter(name__contains = searched)
-        prod = Shop.objects.all()
-        l1st = []
-        for i in prod:
-            l1st.append(i.name)
         
-        return render(request, 'search.html',{'searched':searched,'search_item':search_item,'l1st':l1st})
+        return render(request, 'search.html',{'searched':searched,'search_item':search_item})
     else:
         return render(request,'search.html',{})
