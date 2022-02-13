@@ -29,6 +29,8 @@ from django.conf.urls.i18n import i18n_patterns
 from django.utils.translation import  gettext_lazy as _
 
 urlpatterns += i18n_patterns(
+    path('jet/', include('jet.urls', 'jet')),  # Django JET URLS
+    path('jet/dashboard/', include('jet.dashboard.urls', 'jet-dashboard')), 
     path('admin/', admin.site.urls),    
     path('',include("home.urls", namespace='home')),
     path('about/',include("about.urls", namespace="about")),

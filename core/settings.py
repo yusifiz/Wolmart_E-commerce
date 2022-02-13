@@ -32,8 +32,8 @@ AUTH_USER_MODEL = 'account.User'
 # Application definition
 
 INSTALLED_APPS = [
+    'jet.dashboard',
     'jet',
-    'jet.dashboard'
     'modeltranslation',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -57,7 +57,7 @@ INSTALLED_APPS = [
 
 
 # JET CONFIGs
-JET_DEFAULT_THEME = 'green'
+JET_DEFAULT_THEME = 'light-violet'
 JET_THEMES = [
     {
         'theme': 'default', # theme folder name
