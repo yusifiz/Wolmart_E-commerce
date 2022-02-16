@@ -63,7 +63,7 @@ class Checkout(models.Model):
     apartment = models.CharField(max_length=255, null=True, blank=True)
     city = models.CharField(max_length=255, null=True, blank=True)
     state = models.CharField(max_length=255, null=True, blank=True)
-    zip_ = models.CharField(max_length=255, null=True, blank=True)
+    _zip = models.CharField(max_length=255, null=True, blank=True)
     phone = models.CharField(max_length=255, null=True, blank=True)
     email = models.CharField(max_length=255, null=True, blank=True)
     order_notes = models.CharField(max_length=255, null=True, blank=True)

@@ -52,7 +52,7 @@ INSTALLED_APPS = [
     'shop.apps.ShopConfig',
     'vendor',
     'social_django',
-    
+    'ckeditor',
 ]
 
 
