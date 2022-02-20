@@ -7,7 +7,7 @@ subscribeForm.addEventListener('submit', function(e){
     console.log('Email', subscribeForm.email.value)
     let formData = {email: subscribeForm.email.value, };
 
-const url = "http://127.0.0.1:8000/subscribe/"
+const url = "subscribe/"
 let response = fetch(url,{
     method: 'POST',
     headers: {
@@ -16,6 +16,9 @@ let response = fetch(url,{
     },
     body: JSON.stringify(formData),
 });
-let responseData = response.json();
-console.log('json>>',responseData)
+
+response.then((response) =>{
+    console.log('json >> ', response.json())
+    return response.json()
+})
 }) 
