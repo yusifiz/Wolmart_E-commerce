@@ -734,11 +734,12 @@
                             </div>
                         </div>
                         <div class="col-xl-7 col-lg-6 col-md-9 mt-4 mt-lg-0 ">
-                            <form action="#" method="get"
+                            <form action="#" method="post"
                                 class="input-wrapper input-wrapper-inline input-wrapper-rounded">
+                                {% csrf_token %}
                                 <input type="email" class="form-control mr-2 bg-white" name="email" id="email"
                                     placeholder="Your E-mail Address" />
-                                <button class="btn btn-dark btn-rounded" type="submit">Subscribe<i
+                                <button class="btn btn-dark btn-rounded submit" type="submit">Subscribe<i
                                         class="w-icon-long-arrow-right"></i></button>
                             </form>
                         </div>
@@ -1590,6 +1591,7 @@
     <!-- Main JS -->
     <script src="{% static 'js/main.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/cart.js' %}"></script>
+    <script src="{% static 'js/api-requests.js' %}"></script>
     <script type="text/javascript">
         var user = '{{request.user}}'
 

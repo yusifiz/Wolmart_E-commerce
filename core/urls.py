@@ -40,7 +40,7 @@ urlpatterns += i18n_patterns(
     path('pages/',include("pages.urls", namespace='pages')),
     path('shop/',include("shop.urls", namespace='product')),
     path('vendor/',include("vendor.urls", namespace='vendor')),
-    
+    path('subscribe/', include('home.api.urls', namespace='home')),
     
     path('social-auth/', include('social_django.urls', namespace="social")),
     
