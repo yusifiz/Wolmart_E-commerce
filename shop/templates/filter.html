@@ -1,5 +1,8 @@
 {% extends "base.html" %}
 {% load static %}
+{% block styleCss %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.min.css' %}">
+{% endblock %}
 {% block content %}
 <main class="container">
 
@@ -13,7 +16,7 @@
         <div class="product-wrap">
             <div class="product text-center">
                 <figure class="product-media">
-                    <a href="{% url 'shop:single_product' i.slug %}">
+                    <a href="{% url 'product:single_product' i.slug %}">
                         <img src="{{ i.image.url }}" alt="Product" width="300" height="338" />
                     </a>
                     <div class="product-action-horizontal">
@@ -26,17 +29,17 @@
                 </figure>
                 <div class="product-details">
                     <div class="product-cat">
-                        <a href="{% url 'shop:single_product' i.slug %}">{{i.category}}</a>
+                        <a href="{% url 'product:single_product' i.slug %}">{{i.category}}</a>
                     </div>
                     <h3 class="product-name">
-                        <a href="{% url 'shop:single_product' i.slug %}">{{i.name}}</a>
+                        <a href="{% url 'product:single_product' i.slug %}">{{i.name}}</a>
                     </h3>
                     <div class="ratings-container">
                         <div class="ratings-full">
                             <span class="ratings" style="width: 100%;"></span>
                             <span class="tooltiptext tooltip-top"></span>
                         </div>
-                        <a href="{% url 'shop:single_product' i.slug %}" class="rating-reviews">(3 reviews)</a>
+                        <a href="{% url 'product:single_product' i.slug %}" class="rating-reviews">(3 reviews)</a>
                     </div>
                     <div class="product-pa-wrapper">
                         <div class="product-price">
