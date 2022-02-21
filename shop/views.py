@@ -124,3 +124,5 @@ def search_bar(request):
         return render(request, 'search.html',{'searched':searched,'search_item':search_item})
     else:
         return render(request,'search.html',{})
+    
+    
