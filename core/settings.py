@@ -57,7 +57,7 @@ INSTALLED_APPS = [
 
 
 # JET CONFIGs
-JET_DEFAULT_THEME = 'light-violet'
+JET_DEFAULT_THEME = 'green'
 JET_THEMES = [
     {
         'theme': 'default', # theme folder name
