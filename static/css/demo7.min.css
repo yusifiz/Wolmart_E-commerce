@@ -13422,7 +13422,7 @@ body .product-popup {
 .header-search.hs-expanded input.form-control {
   color: #666;
   border-right: none;
-  border-left: none;
+  /* border-left: none; */
 }
 .header-search.hs-expanded .btn-search {
   display: -webkit-box;

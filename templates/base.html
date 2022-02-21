@@ -119,7 +119,7 @@
                             <img src="{% static 'images/demos/demo7/header-logo.png' %}" alt="logo" width="144" height="45" />
                         </a>
                         <form method="POST" action="{% url 'product:search' %}" class="input-wrapper header-search hs-expanded hs-round d-none d-md-flex">
-                            <div class="select-box">
+                            <!-- <div class="select-box">
                                 <select id="category" name="category">
                                     <option value="">All Categories</option>
                                     <option value="4">Fashion</option>
@@ -132,7 +132,7 @@
                                     <option value="11">Kitchen</option>
                                     <option value="12">Clothing</option>
                                 </select>
-                            </div>
+                            </div> -->
                             {% csrf_token %}
                             <input type="text" class="form-control" name="searched" id="search"
                                 placeholder="Search in..." required />
