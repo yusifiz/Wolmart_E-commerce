@@ -1,10 +1,11 @@
+from unicodedata import category
 from django.shortcuts import render
 from blog.models import Blog
 from shop.models import Shop
 # Create your views here.
 
 def index(request):
-    product = Shop.objects.filter(price__range=(0, 101))[:2]
+    product = Shop.objects.filter(category__name='t-shirt').order_by('-created_at')[:5]
 
 
     blog_list = Blog.objects.all()
