@@ -3,7 +3,7 @@ let subscribeForm = document.getElementById("subscribe-section");
 console.log('form ==>>',subscribeForm)
 
 subscribeForm.addEventListener('submit', function(e){
-    e.preventDefault();
+    // e.preventDefault();
     console.log('Email', subscribeForm.email.value)
     let formData = {email: subscribeForm.email.value, };
 
