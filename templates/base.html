@@ -225,6 +225,7 @@
 
                                 <div class="dropdown-box mt-0">
                                     <ul class="menu vertical-menu category-menu bg-white text-default">
+                                        
                                         {% for i in product_category %}
                                         <li>
                                             <a href="{% url 'shop:filter' i.slug %}">
@@ -232,7 +233,7 @@
                                             </a>
                                         </li>
                                         {% endfor %}
-
+                                        
                                     </ul>
                                 </div>
                             </div>

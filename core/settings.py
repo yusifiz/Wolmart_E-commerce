@@ -122,7 +122,8 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 
-                'shop.context_processors.global_shop',
+                # 'shop.context_processors.global_shop',
+                'shop.context_processors.global_product_category',
                 
                 'social_django.context_processors.backends',  # <--
                 'social_django.context_processors.login_redirect', # <--
