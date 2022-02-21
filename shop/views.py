@@ -3,7 +3,7 @@ from django.views.generic import ListView, DetailView
 from django.http import JsonResponse
 import json
 
-from . models import Shop, Order, OrderItem
+from . models import Shop, Order, OrderItem, ProductCategory
 
 # Create your views here.
 
@@ -126,3 +126,11 @@ def search_bar(request):
         return render(request,'search.html',{})
     
     
+def filter(request, slug):
+    product = Shop.objects.filter(category__slug=slug)
+    category = ProductCategory.objects.filter(slug=slug).first()
+    context = {
+        'product':product,
+        'category':category,
+    }
+    return render(request, 'filter.html', context)
