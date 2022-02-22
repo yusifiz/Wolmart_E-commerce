@@ -6,6 +6,13 @@ from account.models import User
 class ProductCategory(models.Model):
     name = models.CharField(max_length=127, null=True, blank=True)
     slug = models.SlugField(max_length=127, null=True, blank=True)
+    
+    class Meta:
+        verbose_name = 'Product Category'
+        verbose_name_plural = 'Product Categories'
+        
+    def __str__(self):
+        return self.name
 
 
 class Shop(models.Model):
