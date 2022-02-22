@@ -15,7 +15,7 @@ class BlogCategory(models.Model):
         verbose_name_plural = 'Blog Categories'
 
 class Blog(models.Model):
-    category = models.CharField(max_length=127, blank=True, null=True)
+    category = models.ForeignKey(BlogCategory, on_delete=models.CASCADE,max_length=127, null=True, blank=True)
     name = models.CharField(max_length=127, blank=True, null=True)
     image = models.ImageField(upload_to='blog/')
     author = models.CharField(max_length=127, null=True, blank=True)
