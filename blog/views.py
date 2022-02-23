@@ -31,12 +31,3 @@ def blog_filter(request, slug):
     }
     return render(request, 'blog_filter.html', context)
 
-
-def single_blog_filter(request, slug):
-    blog = Blog.objects.filter(category__slug=slug)
-    blogCategory = BlogCategory.objects.all()
-    context = {
-        'blog':blog,
-        'blogCategory':blogCategory,
-    }
-    return render(request, 'single_blog_filter.html', context)
