@@ -291,16 +291,13 @@
                             </a>
                             <div class="sidebar-content">
                                 <div class="sticky-sidebar">
-                                    <div class="widget widget-search-form">
-                                        <div class="widget-body">
-                                            <form action="#" method="GET" class="input-wrapper input-wrapper-inline">
-                                                <input type="text" class="form-control"
-                                                    placeholder="Search in Blog" autocomplete="off" required>
-                                                <button class="btn btn-search"><i
-                                                        class="w-icon-search"></i></button>
-                                            </form>
-                                        </div>
-                                    </div>
+                                    <form method="POST" action="{% url 'blog:blog_search' %}" class="input-wrapper header-search hs-expanded hs-round d-none d-md-flex">
+                                        {% csrf_token %}
+                                        <input type="text" class="form-control"
+                                            placeholder="Search in Blog" name="searched" autocomplete="off" required>
+                                        <button class="btn btn-search"><i
+                                                class="w-icon-search"></i></button>
+                                    </form>
                                     <!-- End of Widget search form -->
                                     <div class="widget widget-categories">
                                         <h3 class="widget-title bb-no mb-0">Categories</h3>

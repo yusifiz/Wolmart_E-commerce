@@ -31,3 +31,11 @@ def blog_filter(request, slug):
     }
     return render(request, 'blog_filter.html', context)
 
+def blog_search_bar(request):
+    if request.method == 'POST':
+        searched = request.POST['searched']
+        search_item = Blog.objects.filter(name__contains = searched)
+        
+        return render(request, 'search_blog.html',{'searched':searched,'search_item':search_item})
+    else:
+        return render(request,'search_blog.html',{})
