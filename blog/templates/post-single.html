@@ -311,100 +311,34 @@
                                     </div>
                                     <!-- End of Widget categories -->
                                     <div class="widget widget-posts">
-                                        <h3 class="widget-title bb-no">Popular Posts</h3>
+                                        <h3 class="widget-title bb-no">Recently Posts</h3>
                                         <div class="widget-body">
                                             <div class="swiper">
-                                                <div class="swiper-container swiper-theme nav-top" data-swiper-options="{
-                                                    'spaceBetween': 20,
-                                                    'slidesPerView': 1
-                                                }">
-                                                    <div class="swiper-wrapper row cols-1">
-                                                        <div class="swiper-slide widget-col">
+                                                
+
+                                                            {% for recently in recent_blogs %}
+                                                            
                                                             <div class="post-widget mb-4">
                                                                 <figure class="post-media br-sm">
-                                                                    <img src="{% static 'images/blog/sidebar/1.jpg' %}" alt="150" height="150" />
+                                                                    <img src="{{ recently.image.url }}" alt="150" height="150" />
                                                                 </figure>
                                                                 <div class="post-details">
                                                                     <div class="post-meta">
-                                                                        <a href="#" class="post-date">March 1, 2021</a>
+                                                                        <a href="#" class="post-date">{{ recently.created_at |date:"M Y" }}</a>
                                                                     </div>
                                                                     <h4 class="post-title">
-                                                                        <a href="{% url 'blog:single_blog' blog_detail.pk %}">Fashion tells about who you are from external point</a>
+                                                                        <a href="{% url 'blog:single_blog' recently.slug %}">{{ recently.name }}</a>
                                                                     </h4>
                                                                 </div>
                                                             </div>
-                                                            <div class="post-widget mb-4">
-                                                                <figure class="post-media br-sm">
-                                                                    <img src="{% static 'images/blog/sidebar/2.jpg' %}" alt="150" height="150" />
-                                                                </figure>
-                                                                <div class="post-details">
-                                                                    <div class="post-meta">
-                                                                        <a href="#" class="post-date">March 5, 2021</a>
-                                                                    </div>
-                                                                    <h4 class="post-title">
-                                                                        <a href="{% url 'blog:single_blog' blog_detail.pk %}">New found the men dress for summer</a>
-                                                                    </h4>
-                                                                </div>
-                                                            </div>
-                                                            <div class="post-widget mb-2">
-                                                                <figure class="post-media br-sm">
-                                                                    <img src="{% static 'images/blog/sidebar/3.jpg' %}" alt="150" height="150" />
-                                                                </figure>
-                                                                <div class="post-details">
-                                                                    <div class="post-meta">
-                                                                        <a href="#" class="post-date">March 1, 2021</a>
-                                                                    </div>
-                                                                    <h4 class="post-title">
-                                                                        <a href="{% url 'blog:single_blog' blog_detail.pk %}">Cras ornare tristique elit</a>
-                                                                    </h4>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="swiper-slide widget-col">
-                                                            <div class="post-widget mb-4">
-                                                                <figure class="post-media br-sm">
-                                                                    <img src="{% static 'images/blog/sidebar/4.jpg' %}" alt="150" height="150" />
-                                                                </figure>
-                                                                <div class="post-details">
-                                                                    <div class="post-meta">
-                                                                        <a href="#" class="post-date">March 1, 2021</a>
-                                                                    </div>
-                                                                    <h4 class="post-title">
-                                                                        <a href="{% url 'blog:single_blog' blog_detail.pk %}">Vivamus vestibulum ntulla nec ante</a>
-                                                                    </h4>
-                                                                </div>
-                                                            </div>
-                                                            <div class="post-widget mb-4">
-                                                                <figure class="post-media br-sm">
-                                                                    <img src="{% static 'images/blog/sidebar/5.jpg' %}" alt="150" height="150" />
-                                                                </figure>
-                                                                <div class="post-details">
-                                                                    <div class="post-meta">
-                                                                        <a href="#" class="post-date">March 5, 2021</a>
-                                                                    </div>
-                                                                    <h4 class="post-title">
-                                                                        <a href="{% url 'blog:single_blog' blog_detail.pk %}">Fusce lacinia arcuet nulla</a>
-                                                                    </h4>
-                                                                </div>
-                                                            </div>
-                                                            <div class="post-widget mb-2">
-                                                                <figure class="post-media br-sm">
-                                                                    <img src="{% static 'images/blog/sidebar/6.jpg' %}" alt="150" height="150" />
-                                                                </figure>
-                                                                <div class="post-details">
-                                                                    <div class="post-meta">
-                                                                        <a href="#" class="post-date">March 1, 2021</a>
-                                                                    </div>
-                                                                    <h4 class="post-title">
-                                                                        <a href="{% url 'blog:single_blog' blog_detail.pk %}">Comes a cool blog post with Images</a>
-                                                                    </h4>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <button class="swiper-button-next"></button>
-                                                    <button class="swiper-button-prev"></button>
-                                                </div>
+
+                                                            {% endfor %}
+
+                                                        
+                                                        
+                                                
+                                                    
+                                                
                                             </div>
                                         </div>
                                     </div>

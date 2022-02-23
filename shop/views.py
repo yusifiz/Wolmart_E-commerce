@@ -119,7 +119,7 @@ def update_item(request):
 def search_bar(request):
     if request.method == 'POST':
         searched = request.POST['searched']
-        search_item = Shop.objects.filter(name__contains = searched)
+        search_item = Shop.objects.filter(name__icontains = searched)
         
         return render(request, 'search.html',{'searched':searched,'search_item':search_item})
     else:

@@ -18,7 +18,11 @@ class BlogDetailView(DetailView):
     context_object_name = 'blog_detail'
     
     def get_context_data(self, **kwargs):
+        recent_blogs = Blog.objects.order_by('-created_at')[:3]
         context = super().get_context_data(**kwargs)
+        context.update({
+            'recent_blogs':recent_blogs,
+        })
         return context
     
     
@@ -34,7 +38,7 @@ def blog_filter(request, slug):
 def blog_search_bar(request):
     if request.method == 'POST':
         searched = request.POST['searched']
-        search_item = Blog.objects.filter(name__contains = searched)
+        search_item = Blog.objects.filter(name__icontains = searched)
         
         return render(request, 'search_blog.html',{'searched':searched,'search_item':search_item})
     else:
