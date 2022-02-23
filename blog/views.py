@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from . models import Blog
+from . models import Blog, BlogCategory
 from django.views.generic import ListView, DetailView
 # Create your views here.
 
@@ -20,3 +20,23 @@ class BlogDetailView(DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         return context
+    
+    
+def blog_filter(request, slug):
+    blog = Blog.objects.filter(category__slug=slug)
+    blogCategory = BlogCategory.objects.all()
+    context = {
+        'blog':blog,
+        'blogCategory':blogCategory,
+    }
+    return render(request, 'blog_filter.html', context)
+
+
+def single_blog_filter(request, slug):
+    blog = Blog.objects.filter(category__slug=slug)
+    blogCategory = BlogCategory.objects.all()
+    context = {
+        'blog':blog,
+        'blogCategory':blogCategory,
+    }
+    return render(request, 'single_blog_filter.html', context)

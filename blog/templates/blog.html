@@ -35,8 +35,8 @@
                 <div class="container">
                     <ul class="nav-filters filter-underline blog-filters mb-4">
                         {% for b in blog_category %}
-                        
-                        <li><a href="#" class="nav-filter active">{{ b.name }}</a></li>
+                            
+                        <li><a href="{% url 'blog:blog_filter' b.slug %}">{{ b.name }}</a></li>
 
                         {% endfor %}
                     </ul>

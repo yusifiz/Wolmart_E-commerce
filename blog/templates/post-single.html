@@ -305,13 +305,11 @@
                                     <div class="widget widget-categories">
                                         <h3 class="widget-title bb-no mb-0">Categories</h3>
                                         <ul class="widget-body filter-items search-ul">
-                                            <li><a href="blog{% url 'blog:blog' %}">Clothes</a></li>
-                                            <li><a href="blog{% url 'blog:blog' %}">Entertainment</a></li>
-                                            <li><a href="blog{% url 'blog:blog' %}">Fashion</a></li>
-                                            <li><a href="blog{% url 'blog:blog' %}">Lifestyle</a></li>
-                                            <li><a href="blog{% url 'blog:blog' %}">Others</a></li>
-                                            <li><a href="blog{% url 'blog:blog' %}">Shoes</a></li>
-                                            <li><a href="blog{% url 'blog:blog' %}">Technology</a></li>
+                                            {% for b in blog_category %}
+                            
+                                            <li><a href="{% url 'blog:blog_filter' b.slug %}">{{ b.name }}</a></li>
+                    
+                                            {% endfor %}
                                         </ul>
                                     </div>
                                     <!-- End of Widget categories -->
