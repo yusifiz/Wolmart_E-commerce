@@ -3,6 +3,6 @@ from .models import Blog
 
 
 class BlogTranslationOptions(TranslationOptions):
-    fields = ('name','category', 'content')
+    fields = ('name', 'content')
     
 translator.register(Blog, BlogTranslationOptions)

@@ -34,14 +34,11 @@
             <div class="page-content">
                 <div class="container">
                     <ul class="nav-filters filter-underline blog-filters mb-4">
-                        <li><a href="#" class="nav-filter active" data-filter="*">All Blog Posts <span>6</span></a></li>
-                        <li><a href="#" class="nav-filter" data-filter=".clothes">Clothes <span>1</span></a></li>
-                        <li><a href="#" class="nav-filter" data-filter=".entertainment">Entertainment <span>1</span></a></li>
-                        <li><a href="#" class="nav-filter" data-filter=".fashion">Fashion <span>2</span></a></li>
-                        <li><a href="#" class="nav-filter" data-filter=".lifestyle">Lifestyle <span>3</span></a></li>
-                        <li><a href="#" class="nav-filter" data-filter=".others">Others <span>2</span></a></li>
-                        <li><a href="#" class="nav-filter" data-filter=".shoes">Shoes <span>1</span></a></li>
-                        <li><a href="#" class="nav-filter" data-filter=".technology">{% trans "Technology" %} <span>1</span></a></li>
+                        {% for b in blog_category %}
+                        
+                        <li><a href="#" class="nav-filter active">{{ b.name }}</a></li>
+
+                        {% endfor %}
                     </ul>
 
                     <div class="row grid cols-lg-3 cols-md-2 mb-2" data-grid-options="{
