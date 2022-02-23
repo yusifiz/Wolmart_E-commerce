@@ -13,6 +13,9 @@ class BlogCategory(models.Model):
     class Meta:
         verbose_name = 'Blog Category'
         verbose_name_plural = 'Blog Categories'
+        
+    def __str__(self):
+        return self.name
 
 class Blog(models.Model):
     category = models.ForeignKey(BlogCategory, on_delete=models.CASCADE,max_length=127, null=True, blank=True)

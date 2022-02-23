@@ -124,6 +124,7 @@ TEMPLATES = [
                 
                 # 'shop.context_processors.global_shop',
                 'shop.context_processors.global_product_category',
+                'blog.context_processors.global_blog_category',
                 
                 'social_django.context_processors.backends',  # <--
                 'social_django.context_processors.login_redirect', # <--

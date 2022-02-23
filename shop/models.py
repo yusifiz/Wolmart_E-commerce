@@ -18,7 +18,8 @@ class ProductCategory(models.Model):
 class Shop(models.Model):
     category = models.ForeignKey(ProductCategory, on_delete=models.CASCADE,max_length=127, null=True, blank=True)
     name = models.CharField(max_length=127, null=True, blank=True)
-    price = models.FloatField(null=True, blank=True)
+    price1 = models.FloatField(null=True, blank=True)
+    price2 = models.FloatField(null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
     image = models.ImageField(upload_to='shop/')
     slug = models.SlugField(max_length=127, null=True, blank=True)
