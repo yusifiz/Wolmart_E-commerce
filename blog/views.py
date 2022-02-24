@@ -1,6 +1,10 @@
 from django.shortcuts import render
 from . models import Blog, BlogCategory, BlogTag
 from django.views.generic import ListView, DetailView
+from django.shortcuts import redirect, render
+from django.urls import reverse_lazy
+from .forms import BlogCommentForm
+
 # Create your views here.
 
 class BlogListView(ListView):
@@ -17,6 +21,20 @@ class BlogDetailView(DetailView):
     template_name = 'post-single.html'
     context_object_name = 'blog_detail'
     
+    form = BlogCommentForm
+
+    def post(self, request, *args, **kwargs):
+        form = BlogCommentForm(request.POST)
+        if form.is_valid():
+            post = self.get_object()
+            form.instance.user = request.user
+            form.instance.post = post
+            form.save()
+            return reverse_lazy('home:home', kwargs={
+                'id':post.id
+            })
+
+    
     def get_context_data(self, **kwargs):
         recent_blogs = Blog.objects.order_by('-created_at')[:3]
         blog = Blog.objects.all()
@@ -27,6 +45,7 @@ class BlogDetailView(DetailView):
         context.update({
             'recent_blogs':recent_blogs,
             'related_blogs':related_blogs,
+            'form': self.form,
             # 'tags':tags,
         })
         return context
