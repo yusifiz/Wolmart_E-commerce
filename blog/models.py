@@ -5,6 +5,17 @@ from ckeditor.fields import RichTextField
 # Create your models here.
 
 
+class BlogTag(models.Model):
+    name = models.CharField(max_length=127, null=True, blank=True)
+    slug = models.SlugField(max_length=127, null=True, blank=True)
+    
+    class Meta:
+        verbose_name = 'Blog Tag'
+        verbose_name_plural = 'Blog Tags'
+        
+    def __str__(self):
+        return self.name
+
 class BlogCategory(models.Model):
     name = models.CharField(max_length=127, null=True, blank=True)
     slug = models.SlugField(max_length=127, null=True, blank=True)
@@ -19,6 +30,7 @@ class BlogCategory(models.Model):
 
 class Blog(models.Model):
     category = models.ForeignKey(BlogCategory, on_delete=models.CASCADE,max_length=127, null=True, blank=True)
+    tag = models.ManyToManyField(BlogTag, max_length=127, null=True, blank=True)
     name = models.CharField(max_length=127, blank=True, null=True)
     image = models.ImageField(upload_to='blog/')
     author = models.CharField(max_length=127, null=True, blank=True)
@@ -35,3 +47,18 @@ class Blog(models.Model):
     
     def __str__(self):
         return self.name
+    
+    
+class Comment(models.Model):
+    post = models.ForeignKey(Blog,on_delete=models.CASCADE,related_name='comments')
+    name = models.CharField(max_length=80)
+    email = models.EmailField()
+    body = models.TextField()
+    created_on = models.DateTimeField(auto_now_add=True)
+    active = models.BooleanField(default=False)
+
+    class Meta:
+        ordering = ['created_on']
+
+    def __str__(self):
+        return (self.name)

@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from . models import Blog, BlogCategory
+from . models import Blog, BlogCategory, BlogTag
 from django.views.generic import ListView, DetailView
 # Create your views here.
 
@@ -19,9 +19,15 @@ class BlogDetailView(DetailView):
     
     def get_context_data(self, **kwargs):
         recent_blogs = Blog.objects.order_by('-created_at')[:3]
+        blog = Blog.objects.all()
+        related_blogs = Blog.objects.filter(category = self.object.category).exclude(name = self.object.name)
+        # tags = BlogTag.objects.filter(name=self.get_object())
+        # print(self.kwargs.get('tag'))
         context = super().get_context_data(**kwargs)
         context.update({
             'recent_blogs':recent_blogs,
+            'related_blogs':related_blogs,
+            # 'tags':tags,
         })
         return context
     
