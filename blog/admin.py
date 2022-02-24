@@ -1,11 +1,13 @@
 from django.contrib import admin
 
 from blog.translation import BlogTranslationOptions
-from . models import Blog, BlogCategory, BlogTag
+from . models import Blog, BlogCategory, BlogTag, Comment
 from modeltranslation.translator import translator, TranslationOptions, register
 
 # Register your models here.
 admin.site.register(Blog)
+
+admin.site.register(Comment)
 
 @admin.register(BlogCategory)
 class BlogCategoryAdmin(admin.ModelAdmin):
