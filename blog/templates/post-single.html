@@ -171,24 +171,10 @@
                             </div>
                             <!-- End Related Posts -->
                             
-                            <h4 class="title title-lg font-weight-bold pt-1 mt-10">3 Comments</h4>
+                            <h4 class="title title-lg font-weight-bold pt-1 mt-10">{{ count }} Comments</h4>
                             <ul class="comments list-style-none pl-0">
-                                <li class="comment">
-                                    <div class="comment-body">
-                                        <figure class="comment-avatar">
-                                            <img src="{% static 'images/blog/single/1.png' %}" alt="Avatar" width="90" height="90" />
-                                        </figure>
-                                        <div class="comment-content">
-                                            <h4 class="comment-author font-weight-bold">
-                                                <a href="#">John Doe</a>
-                                                <span class="comment-date">Aug 23, 2021 at 10:46 am</span>
-                                            </h4>
-                                            <p>Vestibulum volutpat, lacus a ultrices sagittis, mi neque euismod dui, eu pulvinar nunc sapien ornare nisl.arcu fer
-                                                ment umet, dapibus sed, urna.</p>
-                                            <a href="#" class="btn btn-dark btn-link btn-underline btn-icon-right btn-reply">Reply<i class="w-icon-long-arrow-right"></i></a>
-                                        </div>
-                                    </div>
-                                </li>
+                                {% for c in comment %}
+                                
                                 <li class="comment">
                                     <div class="comment-body">
                                         <figure class="comment-avatar">
@@ -196,44 +182,32 @@
                                         </figure>
                                         <div class="comment-content">
                                             <h4 class="comment-author font-weight-bold">
-                                                <a href="#">Semi Colon</a>
-                                                <span class="comment-date">Aug 24, 2021 at 13:25 am</span>
+                                                <a href="#">{{ c.name }}</a>
+                                                <span class="comment-date">{{ c.created_on }}</span>
                                             </h4>
-                                            <p>Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales.</p>
-                                            <a href="#" class="btn btn-dark btn-link btn-underline btn-icon-right btn-reply">Reply<i class="w-icon-long-arrow-right"></i></a>
-                                        </div>  
-                                    </div>
-                                </li>
-                                <li class="comment">
-                                    <div class="comment-body">
-                                        <figure class="comment-avatar">
-                                            <img src="{% static 'images/blog/single/1.png' %}" alt="Avatar" width="90" height="90" />
-                                        </figure>
-                                        <div class="comment-content">
-                                            <h4 class="comment-author font-weight-bold">
-                                                <a href="#">John Doe</a>
-                                                <span class="comment-date">Aug 23, 2021 at 10:46 am</span>
-                                            </h4>
-                                            <p>Vestibulum volutpat, lacus a ultrices sagittis, mi neque euismod dui, eu pulvinar nunc sapien ornare nisl.arcu fer
-                                                ment umet, dapibus sed, urna.</p>
-                                            <a href="#" class="btn btn-dark btn-link btn-underline btn-icon-right btn-reply">Reply<i class="w-icon-long-arrow-right"></i></a>
+                                            <p>{{ c.body }}</p>
+                                            <!--<a href="#" class="btn btn-dark btn-link btn-underline btn-icon-right btn-reply">Reply<i class="w-icon-long-arrow-right"></i></a> -->
                                         </div>
                                     </div>
                                 </li>
+
+                                {% endfor %}
+
                             </ul>
                             <!-- End Comments -->
-                            <form class="reply-section pb-4">
+                            <form class="reply-section pb-4" method="post" action="{% url 'blog:single_blog' blog_detail.slug %}">
+                                {% csrf_token %}
                                 <h4 class="title title-md font-weight-bold pt-1 mt-10 mb-0">Leave a Reply</h4>
                                 <p>Your email address will not be published. Required fields are marked</p>
                                 <div class="row">
                                     <div class="col-sm-6 mb-4">
-                                        <input type="text" class="form-control" placeholder="Enter Your Name" id="name">
+                                        {{ form.name }}
                                     </div>
                                     <div class="col-sm-6 mb-4">
-                                        <input type="text" class="form-control" placeholder="Enter Your Email" id="email_1">
+                                        {{ form.email }}
                                     </div>
+                                        {{ form.body }}
                                 </div>
-                                <textarea cols="30" rows="6" placeholder="Write a Comment" class="form-control mb-4" id="comment"></textarea>
                                 <button class="btn btn-dark btn-rounded btn-icon-right btn-comment">Post Comment<i class="w-icon-long-arrow-right"></i></button>
                             </form>
                         </div>

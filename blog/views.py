@@ -1,10 +1,11 @@
+# from gc import get_objects
 from django.shortcuts import render
 from . models import Blog, BlogCategory, BlogTag
 from django.views.generic import ListView, DetailView
 from django.shortcuts import redirect, render
 from django.urls import reverse_lazy
 from .forms import BlogCommentForm
-
+from .models import Comment
 # Create your views here.
 
 class BlogListView(ListView):
@@ -20,8 +21,8 @@ class BlogDetailView(DetailView):
     model = Blog
     template_name = 'post-single.html'
     context_object_name = 'blog_detail'
-    
     form = BlogCommentForm
+    
 
     def post(self, request, *args, **kwargs):
         form = BlogCommentForm(request.POST)
@@ -30,12 +31,14 @@ class BlogDetailView(DetailView):
             form.instance.user = request.user
             form.instance.post = post
             form.save()
-            return reverse_lazy('home:home', kwargs={
-                'id':post.id
-            })
+            return redirect(reverse_lazy('blog:single_blog', kwargs={
+                'slug':post.slug
+            }))
 
     
     def get_context_data(self, **kwargs):
+        post_comments = Comment.objects.all().filter(post=self.object.id)
+        comment_count = Comment.objects.all().filter(post=self.object.id).count()
         recent_blogs = Blog.objects.order_by('-created_at')[:3]
         blog = Blog.objects.all()
         related_blogs = Blog.objects.filter(category = self.object.category).exclude(name = self.object.name)
@@ -46,7 +49,8 @@ class BlogDetailView(DetailView):
             'recent_blogs':recent_blogs,
             'related_blogs':related_blogs,
             'form': self.form,
-            # 'tags':tags,
+            'comment': post_comments,
+            'count': comment_count,
         })
         return context
     

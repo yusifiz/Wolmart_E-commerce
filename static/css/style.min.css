@@ -17444,9 +17444,7 @@ body .product-popup {
   padding: 2rem 0;
   border: none;
 }
-.post-single-content .comment:nth-child(2) {
-  margin-left: 9rem;
-}
+
 .post-single-content .comment-date {
   font-size: 1.3rem;
   color: #666;
