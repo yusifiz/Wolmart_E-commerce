@@ -8,5 +8,5 @@ urlpatterns = [
     path('<slug:slug>', BlogDetailView.as_view() , name='single_blog'),
     path('blog-filter/<slug:slug>',blog_filter,name='blog_filter'),
     path('search/', blog_search_bar, name='blog_search'),
-
+    # path('tags/<slug:tag_slug>/', TagIndexView.as_view(), name='posts_by_tag')
 ]

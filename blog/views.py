@@ -1,11 +1,12 @@
 # from gc import get_objects
-from django.shortcuts import render
-from . models import Blog, BlogCategory, BlogTag
+from django.shortcuts import render, get_object_or_404
+from . models import Blog, BlogCategory
 from django.views.generic import ListView, DetailView
 from django.shortcuts import redirect, render
 from django.urls import reverse_lazy
 from .forms import BlogCommentForm
 from .models import Comment
+
 # Create your views here.
 
 class BlogListView(ListView):
@@ -37,13 +38,15 @@ class BlogDetailView(DetailView):
 
     
     def get_context_data(self, **kwargs):
+        # tags = Blog.objects.all()
+        blog = Blog.objects.all()
+        
         post_comments = Comment.objects.all().filter(post=self.object.id)
         comment_count = Comment.objects.all().filter(post=self.object.id).count()
         recent_blogs = Blog.objects.order_by('-created_at')[:3]
-        blog = Blog.objects.all()
         related_blogs = Blog.objects.filter(category = self.object.category).exclude(name = self.object.name)
-        # tags = BlogTag.objects.filter(name=self.get_object())
-        # print(self.kwargs.get('tag'))
+        # print(blog.values_list('tags'))
+
         context = super().get_context_data(**kwargs)
         context.update({
             'recent_blogs':recent_blogs,
@@ -51,6 +54,7 @@ class BlogDetailView(DetailView):
             'form': self.form,
             'comment': post_comments,
             'count': comment_count,
+
         })
         return context
     
@@ -72,3 +76,12 @@ def blog_search_bar(request):
         return render(request, 'search_blog.html',{'searched':searched,'search_item':search_item})
     else:
         return render(request,'search_blog.html',{})
+    
+
+# class TagIndexView(ListView):
+#     model = Blog
+#     template_name = 'test.html'
+#     context_object_name = 'posts'
+    
+#     def get_queryset(self):
+#         return Blog.objects.filter(tags__slug=self.kwargs.get('tag_slug'))

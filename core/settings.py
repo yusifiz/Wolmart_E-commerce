@@ -34,6 +34,7 @@ AUTH_USER_MODEL = 'account.User'
 INSTALLED_APPS = [
     'jet.dashboard',
     'jet',
+    'taggit',
     'modeltranslation',
     'django.contrib.admin',
     'django.contrib.auth',
