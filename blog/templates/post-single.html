@@ -10,11 +10,11 @@
         <!-- Start of Main -->
         <main class="main">
             <!-- Start of Page Header -->
-            <div class="page-header">
+            <!-- <div class="page-header">
                 <div class="container">
                     <h1 class="page-title mb-0">Blog Single</h1>
                 </div>
-            </div>
+            </div> -->
             <!-- End of Page Header -->
 
             <!-- Start of Breadcrumb -->
@@ -23,7 +23,7 @@
                     <ul class="breadcrumb bb-no">
                         <li><a href="{% url 'home:index' %}">Home</a></li>
                         <li><a href="{% url 'blog:blog' %}">Blog</a></li>
-                        <li>Blog Single</li>
+                        <li>{{blog_detail.name}}</li>
                     </ul>
                 </div>
             </nav>
@@ -42,7 +42,7 @@
                                     <div class="post-meta">
                                         by <a href="#" class="post-author">{{blog_detail.author}}</a>
                                         - <a href="#" class="post-date">{{blog_detail.created_at}}</a>
-                                        <a href="#" class="post-comment"><i class="w-icon-comments"></i><span>0</span>Comments</a>
+                                        <a href="#" class="post-comment"><i class="w-icon-comments"></i><span>{{ count }}</span>Comments</a>
                                     </div>
                                     <h2 class="post-title"><a href="#">{{blog_detail.name}}</a></h2>
                                     <div class="post-content">
@@ -53,13 +53,13 @@
                                 </div>
                             </div>
                             <!-- End Post -->
-                            <blockquote class="text-center mb-8">
+                            <!-- <blockquote class="text-center mb-8">
                                 <i class="fas fa-quote-left"></i>
                                 <p class="font-weight-bold text-dark mt-1 mb-2">War and Marketing Have Many Similarities</p>
                                 <cite class="font-weight-normal text-dark">JELLY CRISTIANA</cite>
-                            </blockquote>
+                            </blockquote> -->
                             <!-- End Blockquote -->
-                            <p class="mb-10">Morbi interdum mollis sapien. Sed ac risus. Pha sellus lacinia, magna a  laoreet, lect us arcu pulvinar risus, vitae fac ilisis libeo dolor. 
+                            <!-- <p class="mb-10">Morbi interdum mollis sapien. Sed ac risus. Pha sellus lacinia, magna a  laoreet, lect us arcu pulvinar risus, vitae fac ilisis libeo dolor. 
                                 Sed vel lacus. Mauris nibh felis, adipiscing varius, adipiscing in, lacinia vel, tellus. Suspendisse ac urna.</p>
                             <h4 class="title title-md font-weight-bold">Defaulting to Mindfulness: The Third Person Effect</h4>
                             <p class="mb-2">Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, 
@@ -72,7 +72,7 @@
                                 <li>Nullam a magna porttitor, dictum risus nec, fauci eu risus enbus sapien.</li>
                                 <li>Ultrices eros in  eu risus encursus turpis massa tincidunt ante.</li>
                             </ul>
-                            <p>Nibh ipsum consequat nisl vel. Non arcu risus quis varius quam quisque id diam vel. Eu turpis egestas pharetra.</p>
+                            <p>Nibh ipsum consequat nisl vel. Non arcu risus quis varius quam quisque id diam vel. Eu turpis egestas pharetra.</p> -->
                             <div class="tags">
                                 <label class="text-dark mr-2">Tags:</label>
                                 {% for tag in tags %}
@@ -81,7 +81,7 @@
 
                             </div>
                             <!-- End Tag -->
-                            <div class="social-links mb-10">
+                            <!-- <div class="social-links mb-10">
                                 <div class="social-icons social-no-color border-thin">
                                     <a href="#" class="social-icon social-facebook w-icon-facebook"></a>
                                     <a href="#" class="social-icon social-twitter w-icon-twitter"></a>
@@ -89,7 +89,7 @@
                                     <a href="#" class="social-icon social-instagram w-icon-instagram"></a>
                                     <a href="#" class="social-icon social-youtube w-icon-youtube"></a>
                                 </div>
-                            </div>
+                            </div> -->
                             <!-- End Social Links -->
                             <div class="post-author-detail">
                                 <figure class="author-media mr-4">
@@ -100,13 +100,13 @@
                                         <h4 class="author-name font-weight-bold mb-2 pr-4 mr-auto">{{blog_detail.author}}
                                             <span class="font-weight-normal text-default">(AUTHOR)</span>
                                         </h4>
-                                        <a href="#" class="btn btn-primary btn-link btn-icon-right pb-0 text-normal font-weight-normal mb-2">More Posts by admin<i class="w-icon-long-arrow-right"></i></a>
+                                        <!-- <a href="#" class="btn btn-primary btn-link btn-icon-right pb-0 text-normal font-weight-normal mb-2">More Posts by admin<i class="w-icon-long-arrow-right"></i></a> -->
                                     </div>
                                     <p class="mb-0">{{ blog_detail.author_comment }}</p>
                                 </div>
                             </div>
                             <!-- End Post Author Detail -->
-                            <div class="post-navigation">
+                            <!-- <div class="post-navigation">
                                 <div class="nav nav-prev">
                                     <a href="#" class="align-items-start text-left">
                                         <span><i class="w-icon-long-arrow-left"></i>previous post</span>
@@ -119,7 +119,7 @@
                                         <span class="nav-content mb-0 text-normal">Fusce lacinia arcuet nulla</span>
                                     </a>
                                 </div>
-                            </div>
+                            </div> -->
                             <!-- End Post Navigation -->
                             <h4 class="title title-lg font-weight-bold mt-10 pt-1 mb-5">Related Posts</h4>
                             <div class="swiper">
@@ -273,7 +273,7 @@
                                         </div>
                                     </div>
                                     <!-- End of Widget posts -->
-                                    <div class="widget widget-custom-block">
+                                    <!-- <div class="widget widget-custom-block">
                                         <h3 class="widget-title bb-no">Custom Block</h3>
                                         <div class="widget-body">
                                             <p class="text-default mb-0">Fringilla urna porttitor rhoncus dolor purus.
@@ -281,19 +281,14 @@
                                                 Suspendisse potenti. Sed egestas, ante et 
                                                 vulputate volutpat, uctus metus libero.</p>
                                         </div>
-                                    </div>
+                                    </div> -->
                                     <!-- End of Widget custom block -->
                                     <div class="widget widget-tags">
                                         <h3 class="widget-title bb-no">Browse Tags</h3>
                                         <div class="widget-body tags">
-                                            <a href="#" class="tag">Fashion</a>
-                                            <a href="#" class="tag">Style</a>
-                                            <a href="#" class="tag">Travel</a>
-                                            <a href="#" class="tag">Women</a>
-                                            <a href="#" class="tag">Men</a>
-                                            <a href="#" class="tag">Hobbies</a>
-                                            <a href="#" class="tag">Shopping</a>
-                                            <a href="#" class="tag">Photography</a>
+                                            {% for tag in tags %}
+                                                <a href="{% url 'blog:posts_by_tag' tag %}" class="tag">{{ tag }}</a>
+                                            {% endfor %}
                                         </div>
                                     </div>
                                     <div class="widget widget-calendar">

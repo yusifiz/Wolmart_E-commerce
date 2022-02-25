@@ -24,9 +24,16 @@ class BlogListView(ListView):
     template_name = 'blog.html'
     paginate_by = 3 
     
-
-# def blog_mask_masonry(request):
-#     return render(request, "blog-mask-masonry.html")
+    def get_context_data(self, **kwargs):
+        blogs = Blog.objects.all()
+        
+        context = super().get_context_data(**kwargs)
+        context.update({
+            'blogs':blogs
+        })
+        
+        return context
+    
 
 class BlogDetailView(DetailView):
     model = Blog
@@ -48,14 +55,14 @@ class BlogDetailView(DetailView):
 
     
     def get_context_data(self, **kwargs):
-        # tags = Blog.objects.all()
+
         blog = Blog.objects.all()
         tags = list(Blog.objects.filter(id=self.object.id).values_list('tags__name', flat=True))
         post_comments = Comment.objects.all().filter(post=self.object.id)
         comment_count = Comment.objects.all().filter(post=self.object.id).count()
         recent_blogs = Blog.objects.order_by('-created_at')[:3]
         related_blogs = Blog.objects.filter(category = self.object.category).exclude(name = self.object.name)
-        # print(blog.values_list('tags'))
+
 
         context = super().get_context_data(**kwargs)
         context.update({
@@ -87,11 +94,3 @@ def blog_search_bar(request):
     else:
         return render(request,'search_blog.html',{})
     
-
-# class TagIndexView(ListView):
-#     model = Blog
-#     template_name = 'test.html'
-#     context_object_name = 'posts'
-    
-#     def get_queryset(self):
-#         return Blog.objects.filter(tags__slug=self.kwargs.get('tag_slug'))
