@@ -75,11 +75,9 @@
                             <p>Nibh ipsum consequat nisl vel. Non arcu risus quis varius quam quisque id diam vel. Eu turpis egestas pharetra.</p>
                             <div class="tags">
                                 <label class="text-dark mr-2">Tags:</label>
-                                {% comment %}{% for t in tags %}
-                                
-                                <a href="#" class="tag">{{ t.name }}</a>
-
-                                {% endfor %} {% endcomment %}
+                                {% for tag in tags %}
+                                <a href="{% url 'blog:posts_by_tag' tag %}" class="tag">{{ tag }}</a>
+                                {% endfor %}
 
                             </div>
                             <!-- End Tag -->

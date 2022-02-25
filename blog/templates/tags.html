@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+{% block styleCss %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.min.css' %}">
+{% endblock %}
+{% block content %}
+
+
+
+        <!-- Start of Main -->
+        <main class="main">
+            <!-- Start of Page Header -->
+            <div class="page-header">
+                <div class="container">
+                    <h1 class="page-title mb-0">Mask Grid</h1>
+                </div>
+            </div>
+            <!-- End of Page Header -->
+
+            <!-- Start of Breadcrumb -->
+            <nav class="breadcrumb-nav mb-6">
+                <div class="container">
+                    <ul class="breadcrumb">
+                        <li><a href="{% url 'home:index' %}">Home</a></li>
+                        <li><a href="{% url 'blog:blog' %}">Blog</a></li>
+                        <li>Mask Grid</li>
+                    </ul>
+                </div>
+            </nav>
+            <!-- End of Breadcrumb -->
+
+            <!-- Start of Page Content -->
+            <div class="page-content">
+                <div class="container">
+                    <ul class="nav-filters filter-underline blog-filters mb-4">
+                        {% for b in blog_category %}
+                            
+                        <li><a href="{% url 'blog:blog_filter' b.slug %}">{{ b.name }}</a></li>
+
+                        {% endfor %}
+                    </ul>
+
+                    <div class="row grid cols-lg-3 cols-md-2 mb-2" data-grid-options="{
+                        'layoutMode': 'fitRows'
+                    }">
+                        {% for blog in blog_list %}
+                        <div class="grid-item fashion">
+                            <article class="post post-mask overlay-zoom br-sm">
+                                <figure class="post-media">
+                                    <a href="{% url 'blog:single_blog' blog.slug  %}">
+                                        <img src="{{ blog.image.url }}" width="600"
+                                            height="420" alt="blog">
+                                    </a>
+                                </figure>
+                                <div class="post-details">
+                                    <div class="post-details-visible">
+                                        <div class="post-cats">
+                                            <a href="#">{{ blog.category }}</a>
+                                        </div>
+                                        <h4 class="post-title text-white"><a href="#">{{ blog.name }}</a>
+                                        </h4>
+                                    </div>
+                                    <div class="post-meta">
+                                        by <a href="#" class="post-author">{{ blog.author }}</a>
+                                        - <a href="#" class="post-date">{{ blog.date }}</a>
+                                        <a href="#" class="post-comment">0 Comments</a>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <ul class="pagination justify-content-center mb-10 pb-2 pt-2 mt-8">
+                        <li class="prev disabled">
+                            {% if page_obj.has_previous %}
+                            <a href="?page={{ page_obj.previous_page_number }}" aria-label="Previous" tabindex="-1" aria-disabled="true">
+                                <i class="w-icon-long-arrow-left"></i>Prev
+                            </a>
+                                <a href="?page=1"><<<</a>
+
+                            {% endif %}
+                        </li>
+                        {% for page in page_obj.paginator.page_range %}
+                                    {% if page is page_obj.number %}
+                                        <li class="page-item active"><a class="page-link" href="#">{{page}}</a></li>
+                                    {% else %}
+                                        <li class="page-item"><a href="?page={{page}}" class='page-link'>{{page}}</a></li>
+                                        <a href="?page={{ page_obj.paginator.num_pages }}">>>></a>
+                                    {% endif %}
+                                {% endfor %}
+                        <li class="next">
+                            {% if page_obj.has_next %}
+                            <a href="?page={{ page_obj.next_page_number }}" aria-label="Next">
+                                Next<i class="w-icon-long-arrow-right"></i>
+                            </a>
+                            {% endif %}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- End of Page Content -->
+        </main>
+        <!-- End of Main -->
+{% endblock %}
+

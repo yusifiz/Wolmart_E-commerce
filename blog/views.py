@@ -9,6 +9,16 @@ from .models import Comment
 
 # Create your views here.
 
+class TagIndexView(ListView):
+    model = Blog
+    template_name = 'tags.html'
+    paginate_by = 3
+    context_object_name = 'blog_list'
+    
+    def get_queryset(self):
+        return Blog.objects.filter(tags__slug=self.kwargs.get('tag_slug'))
+
+
 class BlogListView(ListView):
     model = Blog
     template_name = 'blog.html'
@@ -40,7 +50,7 @@ class BlogDetailView(DetailView):
     def get_context_data(self, **kwargs):
         # tags = Blog.objects.all()
         blog = Blog.objects.all()
-        
+        tags = list(Blog.objects.filter(id=self.object.id).values_list('tags__name', flat=True))
         post_comments = Comment.objects.all().filter(post=self.object.id)
         comment_count = Comment.objects.all().filter(post=self.object.id).count()
         recent_blogs = Blog.objects.order_by('-created_at')[:3]
@@ -54,7 +64,7 @@ class BlogDetailView(DetailView):
             'form': self.form,
             'comment': post_comments,
             'count': comment_count,
-
+            'tags':tags,
         })
         return context
     
