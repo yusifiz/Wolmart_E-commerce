@@ -153,10 +153,10 @@
                                             </figure>
                                             <div class="post-details text-center">
                                                 <div class="post-meta">
-                                                    by <a href="#" class="post-author">{{ r.name }}</a>
+                                                    by <a href="#" class="post-author">{{ r.author }}</a>
                                                     - <a href="#" class="post-date">{{ r.created_at }}</a>
                                                 </div>
-                                                <h4 class="post-title mb-3"><a href="{% url 'blog:single_blog' r.slug %}">Fashion tell about who you are from...</a></h4>
+                                                <h4 class="post-title mb-3"><a href="{% url 'blog:single_blog' r.slug %}">{{ r.name }}</a></h4>
                                                 <a href="{% url 'blog:single_blog' r.slug %}" class="btn btn-link btn-dark btn-underline font-weight-normal">Read More<i class="w-icon-long-arrow-right"></i></a>
                                             </div>
                                         </div>
@@ -193,10 +193,12 @@
 
                             </ul>
                             <!-- End Comments -->
+                            {% if user.is_authenticated %}
                             <form class="reply-section pb-4" method="post" action="{% url 'blog:single_blog' blog_detail.slug %}">
                                 {% csrf_token %}
                                 <h4 class="title title-md font-weight-bold pt-1 mt-10 mb-0">Leave a Reply</h4>
                                 <p>Your email address will not be published. Required fields are marked</p>
+                                
                                 <div class="row">
                                     <div class="col-sm-6 mb-4">
                                         {{ form.name }}
@@ -208,7 +210,11 @@
                                 </div>
                                 <button class="btn btn-dark btn-rounded btn-icon-right btn-comment">Post Comment<i class="w-icon-long-arrow-right"></i></button>
                             </form>
+                            {% else %}
+                            <p>Please register to write a comment..</p>
+                            {% endif %}
                         </div>
+                        
                         <!-- End of Main Content -->
                         <aside class="sidebar right-sidebar blog-sidebar sidebar-fixed sticky-sidebar-wrapper">
                             <div class="sidebar-overlay">

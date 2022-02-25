@@ -62,13 +62,13 @@
                                         <div class="post-cats">
                                             <a href="#">{{ b.category }}</a>
                                         </div>
-                                        <h4 class="post-title text-white"><a href="#">{{ b.name }}</a>
+                                        <h4 class="post-title text-white"><a href="{% url 'blog:single_blog' b.slug  %}">{{ b.name }}</a>
                                         </h4>
                                     </div>
                                     <div class="post-meta">
                                         by <a href="#" class="post-author">{{ b.author }}</a>
-                                        - <a href="#" class="post-date">{{ b.date }}</a>
-                                        <a href="#" class="post-comment">0 Comments</a>
+                                        - <a href="#" class="post-date">{{ b.created_at }}</a>
+                                        <!-- <a href="#" class="post-comment">0 Comments</a> -->
                                     </div>
                                 </div>
                             </article>

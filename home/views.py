@@ -8,7 +8,7 @@ def index(request):
     product = Shop.objects.filter(category__name='t-shirt').order_by('-created_at')[:5]
     
 
-    blog_list = Blog.objects.all()
+    blog_list = Blog.objects.all()[:5]
     context = {
         'blog_list' : blog_list,
         'product':product
