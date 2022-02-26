@@ -55,7 +55,7 @@ class BlogDetailView(DetailView):
 
     
     def get_context_data(self, **kwargs):
-
+          
         blog = Blog.objects.all()
         tags = list(Blog.objects.filter(id=self.object.id).values_list('tags__name', flat=True))
         post_comments = Comment.objects.all().filter(post=self.object.id)
