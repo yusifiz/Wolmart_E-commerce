@@ -1,6 +1,15 @@
 from django.db import models
+
 from account.models import User
 # Create your models here.
+
+
+class Color(models.Model):
+    name = models.CharField(max_length=127, null=True, blank=True)
+    
+    
+class Brand(models.Model):
+    name = models.CharField(max_length=127, null=True, blank=True)
 
 
 class ProductCategory(models.Model):
@@ -17,6 +26,8 @@ class ProductCategory(models.Model):
 
 class Shop(models.Model):
     category = models.ForeignKey(ProductCategory, on_delete=models.CASCADE,max_length=127, null=True, blank=True)
+    color = models.ForeignKey(Color, on_delete=models.CASCADE,max_length=127, null=True, blank=True)
+    brand = models.ForeignKey(Brand, on_delete=models.CASCADE,max_length=127, null=True, blank=True)
     name = models.CharField(max_length=127, null=True, blank=True)
     price1 = models.FloatField(null=True, blank=True)
     price2 = models.FloatField(null=True, blank=True)
