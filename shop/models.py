@@ -25,9 +25,21 @@ class ProductCategory(models.Model):
 
 
 class Shop(models.Model):
+    
+    SIZE_CHOICES = (
+        ('XXL','XXL'),
+        ('XL','XL'),
+        ('L','L'),
+        ('M','M'),
+        ('S','S'),
+        ('XS','XS'),
+        ('XXS','XXS'),
+    )
+    
     category = models.ForeignKey(ProductCategory, on_delete=models.CASCADE,max_length=127, null=True, blank=True)
     color = models.ForeignKey(Color, on_delete=models.CASCADE,max_length=127, null=True, blank=True)
     brand = models.ForeignKey(Brand, on_delete=models.CASCADE,max_length=127, null=True, blank=True)
+    size = models.CharField(choices=SIZE_CHOICES,default='M',max_length=63, null=True,blank=True)
     name = models.CharField(max_length=127, null=True, blank=True)
     price1 = models.FloatField(null=True, blank=True)
     price2 = models.FloatField(null=True, blank=True)
