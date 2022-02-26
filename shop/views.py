@@ -3,7 +3,7 @@ from django.views.generic import ListView, DetailView
 from django.http import JsonResponse
 import json
 
-from . models import Shop, Order, OrderItem, ProductCategory
+from . models import Shop, Order, OrderItem, ProductCategory, Color,Brand
 
 # Create your views here.
 
@@ -13,7 +13,20 @@ class ShopListView(ListView):
     paginate_by = 12
     context_object_name = 'products'
     # queryset = Shop.objects.filter(is_active=True)
-    
+    def get_context_data(self, **kwargs):
+        categories = ProductCategory.objects.all()
+        size = list(Shop.objects.all().values_list('size', flat=True))
+        color = Color.objects.all()
+        brand = Brand.objects.all()
+        context = super().get_context_data(**kwargs)
+        print(size)
+        context.update({
+            'categories':categories,
+            'size':size,
+            'color':color,
+            'brand':brand,
+        })
+        return context
     
     
 class ShopDetailView(DetailView):
@@ -134,3 +147,5 @@ def filter(request, slug):
         'category':category,
     }
     return render(request, 'filter.html', context)
+
+

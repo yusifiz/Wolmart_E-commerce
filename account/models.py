@@ -23,4 +23,4 @@ class User(AbstractUser):
     def profile_picture(self):
         if self.image:
             return self.image
-        return "https://thumbs.dreamstime.com/z/default-avatar-profile-icon-vector-social-media-user-photo-183042379.jpg"
+        return "https://www.google.com/url?sa=i&url=https%3A%2F%2Fpixabay.com%2Fimages%2Fsearch%2Fuser%2F&psig=AOvVaw0eNZRySltp0Hsen_aSCFxk&ust=1646077471828000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCPj7pMrSoPYCFQAAAAAdAAAAABAJ"

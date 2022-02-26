@@ -175,12 +175,21 @@
                                 
                                 <li class="comment">
                                     <div class="comment-body">
+                                        {% if c.user.image %}
+                                    
                                         <figure class="comment-avatar">
                                             <img src="{{ c.user.image.url }}" alt="Avatar" width="90" height="90" />
                                         </figure>
+
+                                        {% else %}
+                                        <figure class="comment-avatar">
+                                            <img src="{% static 'images/blank-profile-picture-973460__340.png' %}" alt="Avatar" width="90" height="90" />
+                                        </figure>
+                                        
+                                        {% endif %}
                                         <div class="comment-content">
                                             <h4 class="comment-author font-weight-bold">
-                                                <a href="#">{{ c.user.first_name }}</a>
+                                                <a href="#">{{ c.name }}</a>
                                                 <span class="comment-date">{{ c.created_on }}</span>
                                             </h4>
                                             <p>{{ c.body }}</p>
@@ -200,12 +209,12 @@
                                 <p>Your email address will not be published. Required fields are marked</p>
                                 
                                 <div class="row">
-                                    {% comment %}<div class="col-sm-6 mb-4">
+                                    <div class="col-sm-6 mb-4">
                                         {{ form.name }}
                                     </div>
                                     <div class="col-sm-6 mb-4">
-                                        {{ form.email }} 
-                                    </div> {% endcomment %}
+                                        {{ form.email }}
+                                    </div>
                                         {{ form.body }}
                                 </div>
                                 <button class="btn btn-dark btn-rounded btn-icon-right btn-comment">Post Comment<i class="w-icon-long-arrow-right"></i></button>

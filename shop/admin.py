@@ -1,10 +1,10 @@
 from django.contrib import admin
-from . models import Shop, Order, OrderItem, ProductCategory
+from . models import Shop, Order, OrderItem, ProductCategory, Brand, Color
 # Register your models here.
 
 @admin.register(Shop)
 class ShopAdmin(admin.ModelAdmin):
-    fields = ('category', 'name', 'image', 'price')
+    fields = ('category', 'name', 'image', 'price1','price2','color','brand','size',)
     
 
 @admin.register(ProductCategory)
@@ -13,3 +13,5 @@ class ProductCategoryAdmin(admin.ModelAdmin):
     
 admin.site.register(Order)
 admin.site.register(OrderItem)
+admin.site.register(Brand)
+admin.site.register(Color)
