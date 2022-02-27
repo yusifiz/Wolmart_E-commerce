@@ -330,7 +330,7 @@
 
                                             {% for i in brand %}
                                             
-                                            <li><a href="#">{{ i.name }}</a></li>
+                                            <li><input class='filter-checkbox' data-filter="brand" value="{{i}}" type='checkbox'> {{i.name}} </li>
                                             
                                             {% endfor %}
 
