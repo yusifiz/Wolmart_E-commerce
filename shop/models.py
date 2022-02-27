@@ -7,6 +7,9 @@ from account.models import User
 class Color(models.Model):
     name = models.CharField(max_length=127, null=True, blank=True)
     
+    def __str__(self):
+        return self.name
+    
     
 class Brand(models.Model):
     name = models.CharField(max_length=127, null=True, blank=True)
@@ -41,8 +44,7 @@ class Shop(models.Model):
     brand = models.ForeignKey(Brand, on_delete=models.CASCADE,max_length=127, null=True, blank=True)
     size = models.CharField(choices=SIZE_CHOICES, max_length=63, null=True,blank=True)
     name = models.CharField(max_length=127, null=True, blank=True)
-    price1 = models.FloatField(null=True, blank=True)
-    price2 = models.FloatField(null=True, blank=True)
+    price = models.FloatField(null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
     image = models.ImageField(upload_to='shop/')
     slug = models.SlugField(max_length=127, null=True, blank=True)

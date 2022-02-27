@@ -11573,11 +11573,13 @@ body .product-popup {
   text-indent: 1px;
   line-height: 1.3em;
 }
+
 @media (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5) {
   .filter-items.item-check a::before {
     text-indent: 0;
   }
 }
+
 .filter-items.item-check .active > a::before {
   content: "";
   background-color: #336699;
@@ -11770,6 +11772,7 @@ body .product-popup {
   .toolbox-horizontal .filter-items.item-check a::before {
     content: none;
   }
+
   .toolbox-horizontal .price-range {
     margin: 0;
   }

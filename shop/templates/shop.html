@@ -292,7 +292,7 @@
 
                                                 {% for i in products %}
                                                 
-                                                <li><a href="#">${{i.price1}} - ${{i.price2}}</a></li>
+                                                <li><a href="#">${{i.price}}</a></li>
                                                 
                                                 {% endfor %}
 
@@ -345,7 +345,7 @@
 
                                             {% for i in color %}
                                             
-                                            <li><a class="" href="#">{{i.name}}</a></li>
+                                            <li><input class='filter-checkbox' data-filter="color" value="{{i}}" type='checkbox'> {{i.name}} </li>
                                             
                                             {% endfor %}
 
@@ -397,7 +397,8 @@
                                     </div>
                                 </div>
                             </nav>
-                            <div class="product-wrapper row cols-md-3 cols-sm-2 cols-2">
+                            <div class="product-wrapper row cols-md-3 cols-sm-2 cols-2" id="filteredProducts">
+                                <p class="ajaxLoader">Loading...</p>
                                 {% for product in products %}
                                 
                                 <div class="product-wrap">
@@ -482,6 +483,9 @@
                 </div>
             </div>
             <!-- End of Page Content -->
+            <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+            <script language='JavaScript' type="text/javascript" src="{% static 'js/product-filter.js' %}"></script>
+
         </main>
         <!-- End of Main -->
 
