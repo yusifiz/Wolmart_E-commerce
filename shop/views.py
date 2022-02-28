@@ -109,14 +109,16 @@ def update_item(request):
     action = data['action']
     print('Action', action)
     print('ProductID', productID)
-    
-    user = request.user.id
+    # o = OrderItem.objects.all()
+    user = request.user
     product = Shop.objects.get(id=productID)
     order, created = Order.objects.get_or_create(user=user, status=False)
     orderItem, created = OrderItem.objects.get_or_create(order=order, product=product)
+    oitemcount = OrderItem.objects.all().count()
     
     if action == 'add':
         orderItem.quantity = (orderItem.quantity + 1)
+        print(oitemcount)
     elif action == 'remove':
         orderItem.quantity = (orderItem.quantity - 1)
 
@@ -124,6 +126,13 @@ def update_item(request):
     
     if orderItem.quantity <= 0 or action == 'removeAll':
         orderItem.delete()
+        print(oitemcount)
+        
+    if oitemcount <= 1 and action == 'removeAll' :
+        order.delete()
+    # elif o.quantity <= 0:
+    #     order.delete()
+
     # elif action == 'removeCart':
     #     order.delete()
     return JsonResponse('item was added', safe=False)
