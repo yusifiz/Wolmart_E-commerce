@@ -16680,6 +16680,7 @@ body .product-popup {
 }
 
 .footer-newsletter {
+  display: none;
   padding: 2.8rem 0;
 }
 .footer-newsletter .icon-box-side {
