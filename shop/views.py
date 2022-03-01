@@ -151,9 +151,17 @@ def search_bar(request):
 def filter(request, slug):
     product = Shop.objects.filter(category__slug=slug)
     category = ProductCategory.objects.filter(slug=slug).first()
+    categories = ProductCategory.objects.all()
+    size = Size.objects.all()
+    color = Color.objects.all()
+    brand = Brand.objects.all()
     context = {
         'product':product,
         'category':category,
+        'size':size,
+        'color':color,
+        'brand':brand,
+        'categories':categories,
     }
     return render(request, 'filter.html', context)
 

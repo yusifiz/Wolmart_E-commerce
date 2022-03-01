@@ -13,6 +13,7 @@ urlpatterns = [
     path('search/update_item/', update_item, name="update_item"),   
     path('search/', search_bar, name='search'),
     path('filter/<slug:slug>', filter, name='filter'),
+    # path('filter/<slug:slug>/filter-data/', filter_data, name='filter_data'),
     path('filter-data/',filter_data,name='filter_data'),
     # path('filter-data/update_item/', update_item, name="update_item"),
     path('wishlist/', wishlist, name='add_wishlist'),
