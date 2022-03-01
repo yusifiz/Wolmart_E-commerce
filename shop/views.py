@@ -3,7 +3,7 @@ from django.views.generic import ListView, DetailView
 from django.http import JsonResponse
 import json
 from django.template.loader import render_to_string
-from . models import Shop, Order, OrderItem, ProductCategory, Color,Brand, Wishlist
+from . models import Shop, Order, OrderItem, ProductCategory, Color,Brand, Wishlist, WishlistItem
 
 # Create your views here.
 
@@ -192,16 +192,16 @@ def wishlist(request):
     user = request.user
     product = Shop.objects.get(id=productID)
     wishlist, created = Wishlist.objects.get_or_create(user=user, status=False)
-    # orderItem, created = OrderItem.objects.get_or_create(order=order, product=product)
+    wishlistitem, created = WishlistItem.objects.get_or_create(wishlist=wishlist, product=product)
     # oitemcount = OrderItem.objects.all().count()
     if action == 'addWishlist':
-        wishlist.quantity = (wishlist.quantity + 1)
+        wishlistitem.quantity = (wishlistitem.quantity + 1)
         # print(oitemcount)
         print('ProductID', productID)
     elif action == 'remove-wishlist':
-        wishlist.delete()
+        wishlistitem.delete()
 
-    wishlist.save()
+    wishlistitem.save()
     
     # if orderItem.quantity <= 0 or action == 'removeAll':
     #     orderItem.delete()
@@ -215,18 +215,15 @@ def wishlist(request):
 
 
 def wishlist_view(request):
-    
+        
     if request.user.is_authenticated:
         user = request.user
         wishlist, created = Wishlist.objects.get_or_create(user=user, status=False)
-        # wl = []
-        # if True:
-        #    wl.append(wishlist) 
-        items = Wishlist.objects.all()
+        items = wishlist.wishlistitem_set.all()
         # cartItems = order.get_cart_items
-        print(items)
-    # else:
-    #     items = []
+        
+    else:
+        items = []
         # order = {'get_cart_total': 0,'get_cart_items': 0 }
         # cartItems = order['get_cart_items']
         
