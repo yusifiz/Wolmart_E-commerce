@@ -17,6 +17,13 @@ class Brand(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Size(models.Model):
+    size = models.CharField(max_length=127, null=True, blank=True)
+
+    def __str__(self):
+        return self.size
     
     
 class ProductCategory(models.Model):
@@ -33,20 +40,10 @@ class ProductCategory(models.Model):
 
 class Shop(models.Model):
     
-    SIZE_CHOICES = (
-        ('XXL','XXL'),
-        ('XL','XL'),
-        ('L','L'),
-        ('M','M'),
-        ('S','S'),
-        ('XS','XS'),
-        ('XXS','XXS'),
-    )
-    
     category = models.ForeignKey(ProductCategory, on_delete=models.CASCADE,max_length=127, null=True, blank=True)
     color = models.ForeignKey(Color, on_delete=models.CASCADE,max_length=127, null=True, blank=True)
     brand = models.ForeignKey(Brand, on_delete=models.CASCADE,max_length=127, null=True, blank=True)
-    size = models.CharField(choices=SIZE_CHOICES, max_length=63, null=True,blank=True)
+    size = models.ForeignKey(Size, on_delete=models.CASCADE,max_length=127, null=True, blank=True)
     name = models.CharField(max_length=127, null=True, blank=True)
     price = models.FloatField(null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
