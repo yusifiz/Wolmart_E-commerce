@@ -162,6 +162,7 @@ def filter_data(request):
 
     color = request.GET.getlist('color[]')
     brand = request.GET.getlist('brand[]')
+    size = request.GET.getlist('size[]')
     # color = list(Color.objects.all().values_list('id', flat=True))
     
     allprod=Shop.objects.all()
@@ -176,7 +177,11 @@ def filter_data(request):
         
         allprod=allprod.filter(brand__name__in = brand)
         print(allprod)
+    if len(size)>0:
+        print('sagol')
         
+        allprod=allprod.filter(size__name__in = size)
+        print(allprod)
     t = render_to_string('ajax/shop-filter.html', {'data': allprod})
         # print(t)
     return JsonResponse({'data':t})
