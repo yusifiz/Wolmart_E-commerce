@@ -198,10 +198,17 @@ def wishlist(request):
         wishlistitem.quantity = (wishlistitem.quantity + 1)
         # print(oitemcount)
         print('ProductID', productID)
-    elif action == 'remove-wishlist':
+    elif action == 'removeWishlist':
+        print('saasas')
+        wishlistitem.quantity = 0
+        
+    wishlistitem.save()
+
+    if wishlistitem.quantity == 0:
+        print('saasas')
+        
         wishlistitem.delete()
 
-    wishlistitem.save()
     
     # if orderItem.quantity <= 0 or action == 'removeAll':
     #     orderItem.delete()

@@ -37,7 +37,7 @@
                                 <th class="product-name"><span>Product</span></th>
                                 <th></th>
                                 <th class="product-price"><span>Price</span></th>
-                                <th class="product-stock-status"><span>Stock Status</span></th>
+                                <!-- <th class="product-stock-status"><span>Stock Status</span></th> -->
                                 <th class="wishlist-action">Actions</th>
                             </tr>
                         </thead>
@@ -54,7 +54,7 @@
                                                     height="338">
                                             </figure>
                                         </a>
-                                        <button type="submit" class="btn btn-close"><i
+                                        <button type="submit" class="btn btn-close wishlistjs" data-action="removeWishlist" data-product={{item.product.id}}><i
                                                 class="fas fa-times"></i></button>
                                     </div>
                                 </td>
