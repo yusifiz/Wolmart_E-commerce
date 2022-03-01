@@ -42,12 +42,15 @@
                             </tr>
                         </thead>
                         <tbody>
+                            
+                            {% for item in items %}
+                            
                             <tr>
                                 <td class="product-thumbnail">
                                     <div class="p-relative">
                                         <a href="{% url 'product:shop' %}">
                                             <figure>
-                                                <img src="{% static 'images/shop/7-1.jpg' %}" alt="product" width="300"
+                                                <img src="{{ item.product.image.url }}" alt="product" width="300"
                                                     height="338">
                                             </figure>
                                         </a>
@@ -57,15 +60,15 @@
                                 </td>
                                 <td class="product-name">
                                     <a href="{% url 'product:shop' %}">
-                                        Blue Sky Trunk
+                                        {{ item.product.name }}
                                     </a>
                                 </td>
                                 <td class="product-price">
-                                    <ins class="new-price">$85.00</ins>
+                                    <ins class="new-price">${{item.product.price}}</ins>
                                 </td>
-                                <td class="product-stock-status">
+                                {% comment %}<td class="product-stock-status">
                                     <span class="wishlist-in-stock">In Stock</span>
-                                </td>
+                                </td> {% endcomment %}
                                 <td class="wishlist-action">
                                     <div class="d-lg-flex">
                                         <a href="#"
@@ -76,70 +79,9 @@
                                     </div>
                                 </td>
                             </tr>
-                            <tr>
-                                <td class="product-thumbnail">
-                                    <div class="p-relative">
-                                        <a href="{% url 'product:shop' %}">
-                                            <figure>
-                                                <img src="{% static 'images/shop/19-1.jpg' %}" alt="product" width="300"
-                                                    height="338">
-                                            </figure>
-                                        </a>
-                                        <button type="submit" class="btn btn-close"><i
-                                                class="fas fa-times"></i></button>
-                                    </div>
-                                </td>
-                                <td class="product-name">
-                                    <a href="{% url 'product:shop' %}">
-                                        Handmade Ring
-                                    </a>
-                                </td>
-                                <td class="product-price"><ins class="new-price">$5.00</ins></td>
-                                <td class="product-stock-status">
-                                    <span class="wishlist-in-stock">In Stock</span>
-                                </td>
-                                <td class="wishlist-action">
-                                    <div class="d-lg-flex">
-                                        <a href="#"
-                                            class="btn btn-quickview btn-outline btn-default btn-rounded btn-sm mb-2 mb-lg-0">Quick
-                                            View</a>
-                                        <a href="#" class="btn btn-dark btn-rounded btn-sm ml-lg-2 btn-cart">Add to
-                                            cart</a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="product-thumbnail">
-                                    <div class="p-relative">
-                                        <a href="{% url 'product:shop' %}">
-                                            <figure>
-                                                <img src="{% static 'images/shop/20.jpg' %}" alt="product" width="300"
-                                                    height="338">
-                                            </figure>
-                                        </a>
-                                        <button type="submit" class="btn btn-close"><i
-                                                class="fas fa-times"></i></button>
-                                    </div>
-                                </td>
-                                <td class="product-name">
-                                    <a href="{% url 'product:shop' %}">
-                                        Pencil Case
-                                    </a>
-                                </td>
-                                <td class="product-price"><ins class="new-price">$54.00</ins></td>
-                                <td class="product-stock-status">
-                                    <span class="wishlist-in-stock">In Stock</span>
-                                </td>
-                                <td class="wishlist-action">
-                                    <div class="d-lg-flex">
-                                        <a href="#"
-                                            class="btn btn-quickview btn-outline btn-default btn-rounded btn-sm mb-2 mb-lg-0">Quick
-                                            View</a>
-                                        <a href="#" class="btn btn-dark btn-rounded btn-sm ml-lg-2 btn-cart">Add to
-                                            cart</a>
-                                    </div>
-                                </td>
-                            </tr>
+
+                            {% endfor %}
+
                         </tbody>
                     </table>
                     <div class="social-links">

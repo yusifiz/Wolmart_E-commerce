@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import ShopListView, ShopDetailView, cart, checkout, update_item, search_bar, filter, filter_data
+from .views import ShopListView, ShopDetailView, cart, checkout, update_item, search_bar, filter, filter_data, wishlist, wishlist_view
 
 app_name = 'product'
 
@@ -15,5 +15,7 @@ urlpatterns = [
     path('filter/<slug:slug>', filter, name='filter'),
     path('filter-data/',filter_data,name='filter_data'),
     # path('filter-data/update_item/', update_item, name="update_item"),
+    path('wishlist/', wishlist, name='add_wishlist'),
+    path('wishlistview/', wishlist_view, name='wishlist_view'),
     
 ]

@@ -1,4 +1,4 @@
-let updatebtns = document.getElementsByClassName('wishlist')
+let updatebtns = document.getElementsByClassName('wishlistjs')
 
 for(let i = 0; i < updatebtns.length; i++ ){
     updatebtns[i].addEventListener('click', function(e){
