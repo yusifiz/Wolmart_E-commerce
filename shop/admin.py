@@ -9,7 +9,7 @@ class ShopAdmin(admin.ModelAdmin):
 
 @admin.register(ProductCategory)
 class ProductCategoryAdmin(admin.ModelAdmin):
-    fields = ('name',)
+    fields = ('name','image',)
     
 admin.site.register(Order)
 admin.site.register(OrderItem)
