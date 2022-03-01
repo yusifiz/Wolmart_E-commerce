@@ -3,7 +3,7 @@ from django.views.generic import ListView, DetailView
 from django.http import JsonResponse
 import json
 from django.template.loader import render_to_string
-from . models import Shop, Order, OrderItem, ProductCategory, Color,Brand
+from . models import Shop, Order, OrderItem, ProductCategory, Color,Brand, Wishlist
 
 # Create your views here.
 
@@ -180,3 +180,57 @@ def filter_data(request):
     t = render_to_string('ajax/shop-filter.html', {'data': allprod})
         # print(t)
     return JsonResponse({'data':t})
+
+
+def wishlist(request):
+    datas = json.loads(request.body)
+    productID = datas['p']
+    action = datas['a']
+    print('Action', action)
+    print('ProductID', productID) 
+    
+    user = request.user
+    product = Shop.objects.get(id=productID)
+    wishlist, created = Wishlist.objects.get_or_create(user=user, status=False)
+    # orderItem, created = OrderItem.objects.get_or_create(order=order, product=product)
+    oitemcount = OrderItem.objects.all().count()
+    if action == 'add-wishlist':
+        wishlist.quantity = (wishlist.quantity + 1)
+        print(oitemcount)
+    elif action == 'remove-wishlist':
+        wishlist.delete()
+
+    wishlist.save()
+    
+    # if orderItem.quantity <= 0 or action == 'removeAll':
+    #     orderItem.delete()
+    #     print(oitemcount)
+        
+    # if oitemcount <= 1 and (action == 'removeAll' or action == 'remove'):
+    #     order.delete()
+        
+     
+    return JsonResponse('item was added', safe=False)
+
+
+def wishlist_view(request):
+    
+    if request.user.is_authenticated:
+        user = request.user
+        wishlist, created = Wishlist.objects.get_or_create(user=user, status=False)
+        items = wishlist.all()
+        # cartItems = order.get_cart_items
+        
+    else:
+        items = []
+        # order = {'get_cart_total': 0,'get_cart_items': 0 }
+        # cartItems = order['get_cart_items']
+        
+        
+        
+    context = {
+        'items': items,
+        # 'order': order,
+        # 'cartItems': cartItems
+    }
+    return render(request, 'wishlist.html', context)
