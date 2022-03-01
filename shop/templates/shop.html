@@ -315,7 +315,7 @@
 
                                             {% for i in size %}
                                             
-                                            <li><a href="#">{{ i }}</a></li>
+                                            <li><input class='filter-checkbox' data-filter="size" value="{{i}}" type='checkbox'> {{i.size}} </li>
                                             
                                             {% endfor %}
 
