@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import become_a_vendor,compare,error_404,faq,order,order_view,wishlist
+from .views import become_a_vendor,compare,error_404,faq,order,order_view
 
 app_name = 'pages'
 
@@ -10,5 +10,5 @@ urlpatterns = [
     path('faq/', faq, name='faq'),
     path('order/', order, name='order'),
     path('order-view/', order_view, name='order_view'),
-    path('wishlist/', wishlist, name='wishlist'),
+
 ]

@@ -20,5 +20,3 @@ def order_view(request):
 def order(request):
     return render(request, "order.html")
 
-def wishlist(request):
-    return render(request, "wishlist.html")
