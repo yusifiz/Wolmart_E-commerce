@@ -96,3 +96,10 @@ class OrderItem(models.Model):
         return total
     
     
+class Wishlist(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, null=True)
+    product = models.ForeignKey(Shop, on_delete=models.SET_NULL, null=True, blank=True)
+    date = models.DateTimeField(auto_now_add=True)
+    
+    def __str__(self):
+        return str(self.id)
