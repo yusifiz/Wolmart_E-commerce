@@ -102,23 +102,23 @@ def base_cart(request):
     }
     return render(request, 'base.html', context)
 
-def checkout(request):
+# def checkout(request):
     
-    if request.user.is_authenticated:
-        user = request.user
-        order, created = Order.objects.get_or_create(user=user, status=False)
-        items = order.orderitem_set.all()
-    else:
-        items = []
-        order = {'get_cart_total':0, 'get_cart_items':0}
+#     if request.user.is_authenticated:
+#         user = request.user
+#         order, created = Order.objects.get_or_create(user=user, status=False)
+#         items = order.orderitem_set.all()
+#     else:
+#         items = []
+#         order = {'get_cart_total':0, 'get_cart_items':0}
 
         
-    context = {
-        'items': items,
-        'order':order
+#     context = {
+#         'items': items,
+#         'order':order
         
-    }
-    return render(request, 'checkout.html', context)
+#     }
+#     return render(request, 'checkout.html', context)
 
 def update_item(request):
     data = json.loads(request.body)
