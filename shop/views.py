@@ -42,6 +42,7 @@ class ShopDetailView(DetailView):
         brand = Brand.objects.all()
         # product = Shop.objects.all()
         related_product = Shop.objects.filter(category=self.object.category).exclude(name=self.object.name)
+        more_product = Shop.objects.all().order_by('-id')[:3]
         context = super().get_context_data(**kwargs)
         context.update({
             'categories':categories,
@@ -49,6 +50,7 @@ class ShopDetailView(DetailView):
             'color':color,
             'brand':brand,
             'related_product':related_product,
+            'more_product':more_product,
             # 'product':product,
         })
         return context
