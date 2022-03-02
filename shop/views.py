@@ -40,12 +40,14 @@ class ShopDetailView(DetailView):
         size = Size.objects.all()
         color = Color.objects.all()
         brand = Brand.objects.all()
+        # product = Shop.objects.all()
         context = super().get_context_data(**kwargs)
         context.update({
             'categories':categories,
             'size':size,
             'color':color,
             'brand':brand,
+            # 'product':product,
         })
         return context
 
