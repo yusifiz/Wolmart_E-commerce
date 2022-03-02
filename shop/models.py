@@ -111,3 +111,12 @@ class WishlistItem(models.Model):
     wishlist = models.ForeignKey(Wishlist, on_delete=models.SET_NULL, blank=True, null=True)
     quantity = models.IntegerField(default=0, null=True, blank=True)
     date = models.DateTimeField(auto_now_add=True)
+    
+    
+class Checkout(models.Model):
+    adress1 = models.CharField(max_length=255, null=True, blank=True)
+    items = models.ForeignKey(OrderItem, on_delete=models.CASCADE, null=True, blank=True)
+    adress2 = models.CharField(max_length=255, null=True, blank=True)
+    town = models.CharField(max_length=255, null=True, blank=True)
+    zip = models.CharField(max_length=255, null=True, blank=True)
+    phone = models.IntegerField(null=True, blank=True)
