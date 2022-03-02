@@ -275,6 +275,7 @@ def wishlist_view(request):
 
 
 def checkout(request):
+    messageSent = False
     if request.user.is_authenticated:
         form = CheckoutForm()
         if request.method == 'POST':
@@ -282,9 +283,9 @@ def checkout(request):
             if form.is_valid():
                 
                 print(form)
-                    
                 form.save()
-                    
+                
+                messageSent = True            
         user = request.user
         order, created = Order.objects.get_or_create(user=user, status=False)
         items = order.orderitem_set.all()
@@ -302,6 +303,7 @@ def checkout(request):
         'items': items,
         'order': order,
         'cartItems':cartItems,
-        'form':form
+        'form':form,
+        'messageSent':messageSent,
     }
     return render(request, 'checkout.html', context)
