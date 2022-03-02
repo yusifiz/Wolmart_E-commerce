@@ -11,6 +11,7 @@ urlpatterns = [
     path('update_item/', update_item, name="update_item"),
     path('cart/update_item/', update_item, name="update_item"),
     path('search/update_item/', update_item, name="update_item"),   
+    path('search/wishlist/', wishlist, name="add_wishlist"),   
     path('search/', search_bar, name='search'),
     path('filter/<slug:slug>', filter, name='filter'),
     # path('filter/<slug:slug>/filter-data/', filter_data, name='filter_data'),
