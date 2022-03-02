@@ -11,8 +11,9 @@ def index(request):
     furniture = Shop.objects.filter(category__name__in=['Furniture', 'Cup'])[:5]
     electronics = Shop.objects.filter(category__name__in=['Electronics', 'Computer','Phone'])[:5]
     best_selling = Shop.objects.all().filter(category__name__in=['Electronics', 'Computer','Phone']).order_by('-id')[:3]
-    sale_product = Shop.objects.all().filter(category__name__in=['Clothes', 'Wear','T-shirt']).order_by('-id')[:3]
+    sale_products = Shop.objects.all().filter(category__name__in=['Clothes', 'Wear','T-shirt']).order_by('-id')[:3]
     featured = Shop.objects.all().filter(category__name__in=['Furniture', 'Cup']).order_by('-id')[:3]
+    latest_products = Shop.objects.all().order_by('id')[:3]
     blog_list = Blog.objects.all()[:5]
     context = {
         'blog_list' : blog_list,
@@ -22,7 +23,8 @@ def index(request):
         'electronics':electronics,
         'furniture':furniture,
         'best_selling':best_selling,
-        'sale_product':sale_product,
-        'featured':featured
+        'sale_products':sale_products,
+        'featured':featured,
+        'latest_products':latest_products,
     }
     return render(request, "index.html", context)

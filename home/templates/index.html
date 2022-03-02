@@ -1046,7 +1046,7 @@
                         <div class="col-lg-3 col-sm-6 mb-6">
                             <h4 class="title title-underline mb-2 pt-1">Sale Products</h4>
                             <div class="widget widget-products">
-                                {% for i in sale_product %}
+                                {% for i in sale_products %}
                                 
                                 <div class="product product-widget">
                                     <figure class="product-media">
@@ -1116,16 +1116,18 @@
                         <div class="col-lg-3 col-sm-6 mb-6">
                             <h4 class="title title-underline mb-2 pt-1">Latest Products</h4>
                             <div class="widget widget-products">
+                                {% for i in latest_products %}
+                                
                                 <div class="product product-widget">
                                     <figure class="product-media">
-                                        <a href="{% url 'product:shop' %}">
-                                            <img src="{% static 'images/demos/demo7/products/7-10.jpg' %}" alt="Product"
+                                        <a href="{% url 'product:single_product' i.slug %}">
+                                            <img src="{{ i.image.url }}" alt="Product"
                                                 width="124" height="140">
                                         </a>
                                     </figure>
                                     <div class="product-details">
                                         <h4 class="product-name">
-                                            <a href="{% url 'product:shop' %}">Women's Training Shoes</a>
+                                            <a href="{% url 'product:single_product' i.slug %}">{{ i.name }}</a>
                                         </h4>
                                         <!-- <div class="ratings-container">
                                             <div class="ratings-full">
@@ -1134,56 +1136,12 @@
                                             </div>
                                         </div> -->
                                         <div class="product-price">
-                                            <ins class="new-price">$48.00</ins><del class="old-price">$54.00</del>
+                                            <ins class="new-price">${{ i.price }}</ins>
                                         </div>
                                     </div>
                                 </div>
-                                <!-- End of Product Widget -->
-                                <div class="product product-widget">
-                                    <figure class="product-media">
-                                        <a href="{% url 'product:shop' %}">
-                                            <img src="{% static 'images/demos/demo7/products/7-11.jpg' %}" alt="Product"
-                                                width="124" height="140">
-                                        </a>
-                                    </figure>
-                                    <div class="product-details">
-                                        <h4 class="product-name">
-                                            <a href="{% url 'product:shop' %}">Multi Function Watch</a>
-                                        </h4>
-                                        <!-- <div class="ratings-container">
-                                            <div class="ratings-full">
-                                                <span class="ratings" style="width: 100%;"></span>
-                                                <span class="tooltiptext tooltip-top"></span>
-                                            </div>
-                                        </div> -->
-                                        <div class="product-price">
-                                            <ins class="new-price">$75.00</ins><del class="old-price">$95.68</del>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- End of Product Widget -->
-                                <div class="product product-widget">
-                                    <figure class="product-media">
-                                        <a href="{% url 'product:shop' %}">
-                                            <img src="{% static 'images/demos/demo7/products/7-12.jpg' %}" alt="Product"
-                                                width="124" height="140">
-                                        </a>
-                                    </figure>
-                                    <div class="product-details">
-                                        <h4 class="product-name">
-                                            <a href="{% url 'product:shop' %}">Top Men's Hiking Hat</a>
-                                        </h4>
-                                        <!-- <div class="ratings-container">
-                                            <div class="ratings-full">
-                                                <span class="ratings" style="width: 100%;"></span>
-                                                <span class="tooltiptext tooltip-top"></span>
-                                            </div>
-                                        </div> -->
-                                        <div class="product-price">
-                                            <ins class="new-price">$32.36</ins><del class="old-price">$37.00</del>
-                                        </div>
-                                    </div>
-                                </div>
+
+                                {% endfor %}
                                 <!-- End of Product Widget -->
                             </div>
                             <!-- End of Widget Products -->
