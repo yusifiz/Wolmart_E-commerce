@@ -1081,16 +1081,18 @@
                         <div class="col-lg-3 col-sm-6 mb-6">
                             <h4 class="title title-underline mb-2 pt-1">Featured Products</h4>
                             <div class="widget widget-products">
+                                {% for i in featured %}
+                                
                                 <div class="product product-widget">
                                     <figure class="product-media">
-                                        <a href="{% url 'product:shop' %}">
-                                            <img src="{% static 'images/demos/demo7/products/7-7.jpg' %}" alt="Product"
+                                        <a href="{% url 'product:single_product' i.slug %}">
+                                            <img src="{{ i.image.url }}" alt="Product"
                                                 width="124" height="140">
                                         </a>
                                     </figure>
                                     <div class="product-details">
                                         <h4 class="product-name">
-                                            <a href="{% url 'product:shop' %}">T-Shirt</a>
+                                            <a href="{% url 'product:single_product' i.slug %}">{{ i.name }}</a>
                                         </h4>
                                         <!-- <div class="ratings-container">
                                             <div class="ratings-full">
@@ -1099,56 +1101,12 @@
                                             </div>
                                         </div> -->
                                         <div class="product-price">
-                                            <ins class="new-price">$20.00</ins>
+                                            <ins class="new-price">${{ i.price }}</ins>
                                         </div>
                                     </div>
                                 </div>
-                                <!-- End of Product Widget -->
-                                <div class="product product-widget">
-                                    <figure class="product-media">
-                                        <a href="{% url 'product:shop' %}">
-                                            <img src="{% static 'images/demos/demo7/products/7-8.jpg' %}" alt="Product"
-                                                width="124" height="140">
-                                        </a>
-                                    </figure>
-                                    <div class="product-details">
-                                        <h4 class="product-name">
-                                            <a href="{% url 'product:shop' %}">Whiter Training Shoes</a>
-                                        </h4>
-                                        <!-- <div class="ratings-container">
-                                            <div class="ratings-full">
-                                                <span class="ratings" style="width: 100%;"></span>
-                                                <span class="tooltiptext tooltip-top"></span>
-                                            </div>
-                                        </div> -->
-                                        <div class="product-price">
-                                            <ins class="new-price">$25.00 - $45.00</ins>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- End of Product Widget -->
-                                <div class="product product-widget">
-                                    <figure class="product-media">
-                                        <a href="{% url 'product:shop' %}">
-                                            <img src="{% static 'images/demos/demo7/products/7-9.jpg' %}" alt="Product"
-                                                width="124" height="140">
-                                        </a>
-                                    </figure>
-                                    <div class="product-details">
-                                        <h4 class="product-name">
-                                            <a href="{% url 'product:shop' %}">Grey Calotte</a>
-                                        </h4>
-                                        <!-- <div class="ratings-container">
-                                            <div class="ratings-full">
-                                                <span class="ratings" style="width: 100%;"></span>
-                                                <span class="tooltiptext tooltip-top"></span>
-                                            </div>
-                                        </div> -->
-                                        <div class="product-price">
-                                            <ins class="new-price">$320.00</ins>
-                                        </div>
-                                    </div>
-                                </div>
+
+                                {% endfor %}
                                 <!-- End of Product Widget -->
                             </div>
                             <!-- End of Widget Products -->
