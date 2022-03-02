@@ -3,6 +3,8 @@ from django.views.generic import ListView, DetailView
 from django.http import JsonResponse
 import json
 from django.template.loader import render_to_string
+
+from shop.forms import CheckoutForm
 from . models import Shop, Order, OrderItem, ProductCategory, Color,Brand, Size, Wishlist, WishlistItem
 
 # Create your views here.
@@ -270,3 +272,36 @@ def wishlist_view(request):
         # 'cartItems': cartItems
     }
     return render(request, 'wishlist.html', context)
+
+
+def checkout(request):
+    if request.user.is_authenticated:
+        form = CheckoutForm()
+        if request.method == 'POST':
+            form = CheckoutForm(data=request.POST)
+            if form.is_valid():
+                
+                print(form)
+                    
+                form.save()
+                    
+        user = request.user
+        order, created = Order.objects.get_or_create(user=user, status=False)
+        items = order.orderitem_set.all()
+        print(items)
+        cartItems = order.get_cart_items
+        
+    else:
+        items = []
+        order = {'get_cart_total': 0,'get_cart_items': 0 }
+        cartItems = order['get_cart_items']
+        
+        
+        
+    context = {
+        'items': items,
+        'order': order,
+        'cartItems':cartItems,
+        'form':form
+    }
+    return render(request, 'checkout.html', context)
