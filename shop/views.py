@@ -36,8 +36,17 @@ class ShopDetailView(DetailView):
     
 
     def get_context_data(self, **kwargs):
+        categories = ProductCategory.objects.all()
+        size = Size.objects.all()
+        color = Color.objects.all()
+        brand = Brand.objects.all()
         context = super().get_context_data(**kwargs)
-        context['name'] = 'Test user'
+        context.update({
+            'categories':categories,
+            'size':size,
+            'color':color,
+            'brand':brand,
+        })
         return context
 
 

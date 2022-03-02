@@ -17,7 +17,7 @@
                     <li><a href="{% url 'product:shop' %}">Products</a></li>
                     
                 </ul>
-                <ul class="product-nav list-style-none">
+                <!-- <ul class="product-nav list-style-none">
                     <li class="product-nav-prev">
                         <a href="#">
                             <i class="w-icon-angle-left"></i>
@@ -38,7 +38,7 @@
                             <span class="product-name">Fabulous Sound Speaker</span>
                         </span>
                     </li>
-                </ul>
+                </ul> -->
             </nav>
             <!-- End of Breadcrumb -->
 
@@ -107,9 +107,9 @@
                                                     Category:
                                                     <span class="product-category"><a href="#">{{product.category}}</a></span>
                                                 </div>
-                                                <div class="product-sku">
+                                                <!-- <div class="product-sku">
                                                     SKU: <span>MS46891340</span>
-                                                </div>
+                                                </div> -->
                                             </div>
                                         </div>
 
@@ -134,14 +134,15 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div
-                                            class="product-form product-variation-form product-color-swatch product-variations mt-1">
+                                            class="product-form product-variation-form product-size-swatch">
                                             <label>Color:</label>
-                                            <div class="d-flex align-items-center">
-                                                <a href="#" class="color" style="background-color: #ffcc01"></a>
-                                                <a href="#" class="color" style="background-color: #ca6d00;"></a>
-                                                <a href="#" class="color" style="background-color: #1c93cb;"></a>
-                                                <a href="#" class="color" style="background-color: #ccc;"></a>
-                                                <a href="#" class="color" style="background-color: #333;"></a>
+                                            <div class="product-variations flex-wrap d-flex align-items-center">
+                                                {% for i in color %}
+
+                                                <a href="#" class="size">{{i.name}}</a>
+                                                
+                                                {% endfor %}
+
                                             </div>
                                         </div>
                                         <div
@@ -1295,7 +1296,7 @@
                             <a href="#" class="sidebar-toggle d-flex d-lg-none"><i class="fas fa-chevron-left"></i></a>
                             <div class="sidebar-content scrollable">
                                 <div class="sticky-sidebar">
-                                    <div class="widget widget-icon-box mb-6">
+                                    <!-- <div class="widget widget-icon-box mb-6">
                                         <div class="icon-box icon-box-side">
                                             <span class="icon-box-icon text-dark">
                                                 <i class="w-icon-truck"></i>
@@ -1323,7 +1324,7 @@
                                                 <p>Any back within 30 days</p>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> -->
                                     <!-- End of Widget Icon Box -->
 
                                     <div class="widget widget-banner mb-9">
