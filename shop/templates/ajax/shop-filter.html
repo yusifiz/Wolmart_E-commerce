@@ -19,10 +19,10 @@
 		</figure>
 		<div class="product-details">
 			<div class="product-cat">
-				<a href="shop-banner-sidebar.html">{{ product.category }}</a>
+				<a href="{% url 'product:filter' product.category.slug %}">{{ product.category }}</a>
 			</div>
 			<h3 class="product-name">
-				<a href="product-default.html">{{ product.name }}</a>
+				<a href="{% url 'product:single_product' product.slug %}">{{ product.name }}</a>
 			</h3>
 			<!-- <div class="ratings-container">
 				<div class="ratings-full">

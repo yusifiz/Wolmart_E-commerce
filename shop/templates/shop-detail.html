@@ -994,18 +994,18 @@
                                             
                                             <div class="swiper-slide product">
                                                 <figure class="product-media">
-                                                    <a href="product-default.html">
+                                                    <a href="{% url 'product:single_product' i.slug %}">
                                                         <img src="{{ i.image.url }}" alt="Product"
                                                             width="300" height="338" />
                                                     </a>
-                                                    <div class="product-action-vertical">
-                                                        <a href="#" class="btn-product-icon btn-cart w-icon-cart"
+                                                    {% comment %}<div class="product-action-vertical">
+                                                        <a href="#" data-product={{i.id}} data-action="addCart" class="btn-product-icon btn-cart w-icon-cart update-item"
                                                             title="Add to cart"></a>
                                                         <a href="#" class="btn-product-icon btn-wishlist w-icon-heart"
                                                             title="Add to wishlist"></a>
                                                         <a href="#" class="btn-product-icon btn-compare w-icon-compare"
                                                             title="Add to Compare"></a>
-                                                    </div>
+                                                    </div>{% endcomment %}
                                                     <!-- <div class="product-action">
                                                         <a href="#" class="btn-product btn-quickview" title="Quick View">Quick
                                                             View</a>
