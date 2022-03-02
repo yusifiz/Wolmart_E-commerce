@@ -13,12 +13,12 @@ for(let i = 0; i < updatebtns.length; i++ ){
             console.log('Not logged in')
 
         }else{
-            updateUserOrder(p, a)
+            updateUserWishlist(p, a)
         }
     })
 }
 
-function updateUserOrder(p, a){
+function updateUserWishlist(p, a){
     console.log('User logged in, sending data...')
 
     var url = 'wishlist/'; 

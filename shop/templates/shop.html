@@ -14,7 +14,7 @@
                     <ul class="breadcrumb bb-no">
                         <li><a href="{% url 'home:index' %}">Home</a></li>
                         <li><a href="{% url 'product:shop' %}">Shop</a></li>
-                        <li>3 Columns</li>
+                        <!-- <li>3 Columns</li> -->
                     </ul>
                 </div>
             </nav>
@@ -166,10 +166,10 @@
                             <div class="sidebar-content scrollable">
                                 <!-- Start of Sticky Sidebar -->
                                 <div class="sticky-sidebar">
-                                    <div class="filter-actions">
+                                    {% comment %}<div class="filter-actions">
                                         <label>Filter :</label>
                                         <a href="#" class="btn btn-dark btn-link filter-clean">Clean All</a>
-                                    </div>
+                                    </div> {% endcomment %}
                                     <!-- Start of Collapsible widget -->
                                     <div class="widget widget-collapsible">
                                         <h3 class="widget-title"><span>All Categories</span></h3>
@@ -262,7 +262,7 @@
 
                         <!-- Start of Shop Main Content -->
                         <div class="main-content">
-                            <nav class="toolbox sticky-toolbox sticky-content fix-top">
+                            {% comment %}<nav class="toolbox sticky-toolbox sticky-content fix-top">
                                 <div class="toolbox-left">
                                     <a href="#" class="btn btn-primary btn-outline btn-rounded left-sidebar-toggle 
                                         btn-icon-left d-block d-lg-none"><i
@@ -297,7 +297,7 @@
                                         </a>
                                     </div>
                                 </div>
-                            </nav>
+                            </nav> {% endcomment %}
                             <div class="product-wrapper row cols-md-3 cols-sm-2 cols-2" id="filteredProducts">
                                 <p class="ajaxLoader">Loading...</p>
                                 {% for product in products %}
@@ -310,9 +310,9 @@
                                                     height="338" />
                                             </a>
                                             <div class="product-action-horizontal">
-                                                <a href="#" data-product={{product.id}} data-action="add" class="btn-product-icon btn-cart w-icon-cart update-cart"
+                                                <a href="#" data-product={{product.id}} data-action="addCart" class="btn-product-icon btn-cart w-icon-cart update-cart"
                                                     title="Add to cart"></a>
-                                                <a href="#" class="btn-product-icon btn-wishlist w-icon-heart wishlistjs" data-action='addWishlist' data-product={{product.id}} 
+                                                <a href="#" data-product={{product.id}} data-action='addWishlist' class="btn-product-icon btn-wishlist w-icon-heart wishlistjs" 
                                                     title="Wishlist"></a>
                                                 <a href="#" class="btn-product-icon btn-compare w-icon-compare"
                                                     title="Compare"></a>
@@ -346,10 +346,10 @@
                                 {% endfor %}
                             </div>
 
-                            <div class="toolbox toolbox-pagination justify-content-between">
-                                <p class="showing-info mb-2 mb-sm-0">
+                            <div class="toolbox toolbox-pagination justify-content-center">
+                                {% comment %}<p class="showing-info mb-2 mb-sm-0">
                                     Showing<span>1-12 of 60</span>Products
-                                </p>
+                                </p> {% endcomment %}
                                 <ul class="pagination justify-content-center mb-10 pb-2 pt-2 mt-8">
                                     <li class="prev disabled">
                                         {% if page_obj.has_previous %}

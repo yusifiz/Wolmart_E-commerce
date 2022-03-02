@@ -19,7 +19,7 @@ class ShopListView(ListView):
         color = Color.objects.all()
         brand = Brand.objects.all()
         context = super().get_context_data(**kwargs)
-        print(size)
+        # print(size)
         context.update({
             'categories':categories,
             'size':size,
@@ -54,7 +54,7 @@ def cart(request):
         user = request.user
         order, created = Order.objects.get_or_create(user=user, status=False)
         items = order.orderitem_set.all()
-        
+        print(items)
         
     else:
         items = []
@@ -107,7 +107,7 @@ def update_item(request):
     data = json.loads(request.body)
     productID = data['productID']
     action = data['action']
-    print('Action', action)
+    print('Actionnnnn', action)
     print('ProductID', productID)
     # o = OrderItem.objects.all()
     user = request.user
@@ -115,11 +115,11 @@ def update_item(request):
     order, created = Order.objects.get_or_create(user=user, status=False)
     orderItem, created = OrderItem.objects.get_or_create(order=order, product=product)
     oitemcount = OrderItem.objects.all().count()
-    
-    if action == 'add':
+    print("orderItem.quantity")
+    if action == 'addCart':
         orderItem.quantity = (orderItem.quantity + 1)
-        print(oitemcount)
-    elif action == 'remove':
+        print(orderItem.quantity)
+    elif action == 'removeCart':
         orderItem.quantity = (orderItem.quantity - 1)
 
     orderItem.save()
@@ -212,13 +212,13 @@ def wishlist(request):
         # print(oitemcount)
         print('ProductID', productID)
     elif action == 'removeWishlist':
-        print('saasas')
+        # print('saasas')
         wishlistitem.quantity = 0
         
     wishlistitem.save()
 
     if wishlistitem.quantity == 0:
-        print('saasas')
+        # print('saasas')
         
         wishlistitem.delete()
 
