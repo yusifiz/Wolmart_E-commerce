@@ -350,17 +350,20 @@
                     <!-- End of Product List -->
 
                     <div class="row cols-xl-4 cols-lg-3 cols-sm-2 cols-1 mb-10 appear-animate">
+                        {% for i in clothes %}
+                        
+
                         <div class="product-widget-wrap">
                             <div class="product product-widget">
                                 <figure class="product-media">
-                                    <a href="{% url 'product:shop' %}">
-                                        <img src="{% static 'images/demos/demo7/products/2-1.jpg' %}" alt="Product" width="100"
+                                    <a href="{% url 'product:single_product' i.slug %}">
+                                        <img src="{{ i.image.url }}" alt="Product" width="100"
                                             height="106">
                                     </a>
                                 </figure>
                                 <div class="product-details">
                                     <h4 class="product-name">
-                                        <a href="{% url 'product:shop' %}">Fashionable Leather Satchel</a>
+                                        <a href="{% url 'product:single_product' i.slug %}">{{ i.name }}</a>
                                     </h4>
                                     <!-- <div class="ratings-container">
                                         <div class="ratings-full">
@@ -369,186 +372,14 @@
                                         </div>
                                     </div> -->
                                     <div class="product-price">
-                                        <ins class="new-price">$25.68</ins>
+                                        <ins class="new-price">${{ i.price }}</ins>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <!-- End of Product Widget -->
-                        <div class="product-widget-wrap">
-                            <div class="product product-widget">
-                                <figure class="product-media">
-                                    <a href="{% url 'product:shop' %}">
-                                        <img src="{% static 'images/demos/demo7/products/2-2.jpg' %}" alt="Product" width="100"
-                                            height="106">
-                                    </a>
-                                </figure>
-                                <div class="product-details">
-                                    <h4 class="product-name">
-                                        <a href="{% url 'product:shop' %}">Mini Wireless Earphone</a>
-                                    </h4>
-                                    <!-- <div class="ratings-container">
-                                        <div class="ratings-full">
-                                            <span class="ratings" style="width: 100%;"></span>
-                                            <span class="tooltiptext tooltip-top"></span>
-                                        </div>
-                                    </div> -->
-                                    <div class="product-price">
-                                        <ins class="new-price">$29.99 - $49.90</ins>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End of Product Widget -->
-                        <div class="product-widget-wrap">
-                            <div class="product product-widget">
-                                <figure class="product-media">
-                                    <a href="{% url 'product:shop' %}">
-                                        <img src="{% static 'images/demos/demo7/products/2-3.jpg' %}" alt="Product" width="100"
-                                            height="106">
-                                    </a>
-                                </figure>
-                                <div class="product-details">
-                                    <h4 class="product-name">
-                                        <a href="{% url 'product:shop' %}">Women's Comforter</a>
-                                    </h4>
-                                    <!-- <div class="ratings-container">
-                                        <div class="ratings-full">
-                                            <span class="ratings" style="width: 100%;"></span>
-                                            <span class="tooltiptext tooltip-top"></span>
-                                        </div>
-                                    </div> -->
-                                    <div class="product-price">
-                                        <ins class="new-price">$24.00</ins>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End of Product Widget -->
-                        <div class="product-widget-wrap">
-                            <div class="product product-widget">
-                                <figure class="product-media">
-                                    <a href="{% url 'product:shop' %}">
-                                        <img src="{% static 'images/demos/demo7/products/2-5.jpg' %}" alt="Product" width="100"
-                                            height="106">
-                                    </a>
-                                </figure>
-                                <div class="product-details">
-                                    <h4 class="product-name">
-                                        <a href="{% url 'product:shop' %}">T-Shirt</a>
-                                    </h4>
-                                    <!-- <div class="ratings-container">
-                                        <div class="ratings-full">
-                                            <span class="ratings" style="width: 100%;"></span>
-                                            <span class="tooltiptext tooltip-top"></span>
-                                        </div>
-                                    </div> -->
-                                    <div class="product-price">
-                                        <ins class="new-price">$20.00</ins>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End of Product Widget -->
-                        <div class="product-widget-wrap">
-                            <div class="product product-widget">
-                                <figure class="product-media">
-                                    <a href="{% url 'product:shop' %}">
-                                        <img src="{% static 'images/demos/demo7/products/2-4.jpg' %}" alt="Product" width="100"
-                                            height="106">
-                                    </a>
-                                </figure>
-                                <div class="product-details">
-                                    <h4 class="product-name">
-                                        <a href="{% url 'product:shop' %}">Leather Stripe Watch</a>
-                                    </h4>
-                                    <!-- <div class="ratings-container">
-                                        <div class="ratings-full">
-                                            <span class="ratings" style="width: 100%;"></span>
-                                            <span class="tooltiptext tooltip-top"></span>
-                                        </div>
-                                    </div> -->
-                                    <div class="product-price">
-                                        <ins class="new-price">$125.00</ins>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End of Product Widget -->
-                        <div class="product-widget-wrap">
-                            <div class="product product-widget">
-                                <figure class="product-media">
-                                    <a href="{% url 'product:shop' %}">
-                                        <img src="{% static 'images/demos/demo7/products/2-6.jpg' %}" alt="Product" width="100"
-                                            height="106">
-                                    </a>
-                                </figure>
-                                <div class="product-details">
-                                    <h4 class="product-name">
-                                        <a href="{% url 'product:shop' %}">Best Pedestrian Bag</a>
-                                    </h4>
-                                    <!-- <div class="ratings-container">
-                                        <div class="ratings-full">
-                                            <span class="ratings" style="width: 100%;"></span>
-                                            <span class="tooltiptext tooltip-top"></span>
-                                        </div>
-                                    </div> -->
-                                    <div class="product-price">
-                                        <ins class="new-price">$35.88</ins>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End of Product Widget -->
-                        <div class="product-widget-wrap">
-                            <div class="product product-widget">
-                                <figure class="product-media">
-                                    <a href="{% url 'product:shop' %}">
-                                        <img src="{% static 'images/demos/demo7/products/2-7.jpg' %}" alt="Product" width="100"
-                                            height="106">
-                                    </a>
-                                </figure>
-                                <div class="product-details">
-                                    <h4 class="product-name">
-                                        <a href="{% url 'product:shop' %}">Fashionable Original Coat</a>
-                                    </h4>
-                                    <!-- <div class="ratings-container">
-                                        <div class="ratings-full">
-                                            <span class="ratings" style="width: 100%;"></span>
-                                            <span class="tooltiptext tooltip-top"></span>
-                                        </div>
-                                    </div> -->
-                                    <div class="product-price">
-                                        <ins class="new-price">$89.99</ins>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End of Product Widget -->
-                        <div class="product-widget-wrap">
-                            <div class="product product-widget">
-                                <figure class="product-media">
-                                    <a href="{% url 'product:shop' %}">
-                                        <img src="{% static 'images/demos/demo7/products/2-8.jpg' %}" alt="Product" width="100"
-                                            height="106">
-                                    </a>
-                                </figure>
-                                <div class="product-details">
-                                    <h4 class="product-name">
-                                        <a href="{% url 'product:shop' %}">Classic Hat</a>
-                                    </h4>
-                                    <!-- <div class="ratings-container">
-                                        <div class="ratings-full">
-                                            <span class="ratings" style="width: 100%;"></span>
-                                            <span class="tooltiptext tooltip-top"></span>
-                                        </div>
-                                    </div> -->
-                                    <div class="product-price">
-                                        <ins class="new-price">$23.00</ins>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+
+                        {% endfor %}
+
                         <!-- End of Product Widget -->
                     </div>
                     <!-- End of Product Widget -->
@@ -830,20 +661,13 @@
                     <div class="row mb-7 category-products-wrapper appear-animate">
                         <div class="col-xl-3 col-lg-4 col-md-5">
                             <ul class="category-wrapper list-style-none">
-                                <li><a href="{% url 'product:shop' %}"><i class="w-icon-tshirt"></i>Clothing &amp;
-                                        Apparel</a></li>
-                                <li><a href="{% url 'product:shop' %}"><i class="w-icon-camera"></i>Digital Cameras</a>
-                                </li>
-                                <li><a href="{% url 'product:shop' %}"><i class="w-icon-mobile"></i>Smartphones</a></li>
-                                <li><a href="{% url 'product:shop' %}"><i class="w-icon-sofa"></i>Home &amp;
-                                        Furnitures</a></li>
-                                <li><a href="{% url 'product:shop' %}"><i class="w-icon-computer"></i>Computers &amp;
-                                        Laptops</a></li>
-                                <li><a href="{% url 'product:shop' %}"><i class="w-icon-basketball"></i>Sport</a></li>
-                                <li><a href="{% url 'product:shop' %}"><i class="w-icon-bow"></i>Toys &amp; Baby</a>
-                                </li>
-                                <li><a href="{% url 'product:shop' %}"><i class="w-icon-ruby"></i>Accessories &amp;
-                                        Jewelry</a></li>
+
+                                {% for i in product_category %}
+                                
+                                <li><a href="{% url 'product:filter' i.slug %}">{{ i.name }}</a></li>
+
+                                {% endfor %}
+
                             </ul>
                         </div>
                         <div class="col-xl-9 col-lg-8 col-md-7">
@@ -867,330 +691,47 @@
                                 }
                             }">
                                 <div class="swiper-wrapper row cols-xl-5 cols-lg-4 cols-md-3 cols-2">
+
+                                    {% for i in electronics %}
+                                    
                                     <div class="swiper-slide product-col">
                                         <div class="product product-slideup-content">
                                             <figure class="product-media">
-                                                <a href="{% url 'product:shop' %}">
-                                                    <img src="{% static 'images/demos/demo7/products/4-1.jpg' %}" alt="Product"
+                                                <a href="{% url 'product:single_product' i.slug %}">
+                                                    <img src="{{ i.image.url }}" alt="Product"
                                                         width="187" height="210">
                                                 </a>
-                                                <div class="product-action-vertical">
+                                                <!-- <div class="product-action-vertical">
                                                     <a href="#" class="btn-product-icon btn-quickview w-icon-search"
                                                         title="Quick View"></a>
-                                                </div>
+                                                </div> -->
                                             </figure>
                                             <div class="product-details">
                                                 <h3 class="product-name">
-                                                    <a href="{% url 'product:shop' %}">Colorful Flavoring Box</a>
+                                                    <a href="{% url 'product:single_product' i.slug %}">{{ i.name }}</a>
                                                 </h3>
                                                 <div class="product-price">
-                                                    <ins class="new-price">$25.70</ins>
+                                                    <ins class="new-price">${{ i.price }}</ins>
                                                 </div>
                                             </div>
                                             <div class="product-hidden-details">
                                                 <div class="product-action">
-                                                    <a href="#" class="btn-product btn-cart" title="Add to Cart">
+                                                    <a href="#" data-product={{i.id}} data-action="addCart" class="btn-product btn-cart update-cart" title="Add to Cart">
                                                         <i class="w-icon-cart"></i><span>Add To Cart</span></a>
-                                                    <a href="#" class="btn-product-icon btn-wishlist w-icon-heart"
+                                                    <a href="#" data-product={{i.id}} data-action="addWishlist" class="btn-product-icon btn-wishlist w-icon-heart wishlistjs"
                                                         title="Add to wishlist"></a>
-                                                    <a href="#" class="btn-product-icon btn-compare w-icon-compare"
-                                                        title="Compare"></a>
+                                                    <!-- <a href="#" class="btn-product-icon btn-compare w-icon-compare"
+                                                        title="Compare"></a> -->
                                                 </div>
                                             </div>
                                         </div>
                                         <!-- End of Product Slideup Content -->
-                                        <div class="product product-slideup-content">
-                                            <figure class="product-media">
-                                                <a href="{% url 'product:shop' %}">
-                                                    <img src="{% static 'images/demos/demo7/products/4-2.jpg' %}" alt="Product"
-                                                        width="187" height="210">
-                                                </a>
-                                                <div class="product-action-vertical">
-                                                    <a href="#" class="btn-product-icon btn-quickview w-icon-search"
-                                                        title="Quick View"></a>
-                                                </div>
-                                            </figure>
-                                            <div class="product-details">
-                                                <h3 class="product-name">
-                                                    <a href="{% url 'product:shop' %}">Men's Suede Belt</a>
-                                                </h3>
-                                                <div class="product-price">
-                                                    <ins class="new-price">$73.71</ins><del class="old-price">$78.04</del>
-                                                </div>
-                                            </div>
-                                            <div class="product-hidden-details">
-                                                <div class="product-action">
-                                                    <a href="#" class="btn-product btn-cart" title="Add to Cart">
-                                                        <i class="w-icon-cart"></i><span>Add To Cart</span></a>
-                                                    <a href="#" class="btn-product-icon btn-wishlist w-icon-heart"
-                                                        title="Add to wishlist"></a>
-                                                    <a href="#" class="btn-product-icon btn-compare w-icon-compare"
-                                                        title="Compare"></a>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        
                                         <!-- End of Product Slideup Content -->
                                     </div>
-                                    <!-- End of Product Col -->
-                                    <div class="swiper-slide product-col">
-                                        <div class="product product-slideup-content">
-                                            <figure class="product-media">
-                                                <a href="{% url 'product:shop' %}">
-                                                    <img src="{% static 'images/demos/demo7/products/4-3.jpg' %}" alt="Product"
-                                                        width="187" height="210">
-                                                </a>
-                                                <div class="product-action-vertical">
-                                                    <a href="#" class="btn-product-icon btn-quickview w-icon-search"
-                                                        title="Quick View"></a>
-                                                </div>
-                                            </figure>
-                                            <div class="product-details">
-                                                <h3 class="product-name">
-                                                    <a href="{% url 'product:shop' %}">Plastic Cup</a>
-                                                </h3>
-                                                <div class="product-price">
-                                                    <ins class="new-price">$16.00</ins>
-                                                </div>
-                                            </div>
-                                            <div class="product-hidden-details">
-                                                <div class="product-action">
-                                                    <a href="#" class="btn-product btn-cart" title="Add to Cart">
-                                                        <i class="w-icon-cart"></i><span>Add To Cart</span></a>
-                                                    <a href="#" class="btn-product-icon btn-wishlist w-icon-heart"
-                                                        title="Add to wishlist"></a>
-                                                    <a href="#" class="btn-product-icon btn-compare w-icon-compare"
-                                                        title="Compare"></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- End of Product Slideup Content -->
-                                        <div class="product product-slideup-content">
-                                            <figure class="product-media">
-                                                <a href="{% url 'product:shop' %}">
-                                                    <img src="{% static 'images/demos/demo7/products/4-4.jpg' %}" alt="Product"
-                                                        width="187" height="210">
-                                                </a>
-                                                <div class="product-action-vertical">
-                                                    <a href="#" class="btn-product-icon btn-quickview w-icon-search"
-                                                        title="Quick View"></a>
-                                                </div>
-                                            </figure>
-                                            <div class="product-details">
-                                                <h3 class="product-name">
-                                                    <a href="{% url 'product:shop' %}">Headkerchief</a>
-                                                </h3>
-                                                <div class="product-price">
-                                                    <ins class="new-price">$73.71</ins><del class="old-price">$78.04</del>
-                                                </div>
-                                            </div>
-                                            <div class="product-hidden-details">
-                                                <div class="product-action">
-                                                    <a href="#" class="btn-product btn-cart" title="Add to Cart">
-                                                        <i class="w-icon-cart"></i><span>Add To Cart</span></a>
-                                                    <a href="#" class="btn-product-icon btn-wishlist w-icon-heart"
-                                                        title="Add to wishlist"></a>
-                                                    <a href="#" class="btn-product-icon btn-compare w-icon-compare"
-                                                        title="Compare"></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- End of Product Slideup Content -->
-                                    </div>
-                                    <!-- End of Product Col -->
-                                    <div class="swiper-slide product-col">
-                                        <div class="product product-slideup-content">
-                                            <figure class="product-media">
-                                                <a href="{% url 'product:shop' %}">
-                                                    <img src="{% static 'images/demos/demo7/products/4-5.jpg' %}" alt="Product"
-                                                        width="187" height="210">
-                                                </a>
-                                                <div class="product-action-vertical">
-                                                    <a href="#" class="btn-product-icon btn-quickview w-icon-search"
-                                                        title="Quick View"></a>
-                                                </div>
-                                            </figure>
-                                            <div class="product-details">
-                                                <h3 class="product-name">
-                                                    <a href="{% url 'product:shop' %}">Mini Wireless Earphone</a>
-                                                </h3>
-                                                <div class="product-price">
-                                                    <ins class="new-price">$49.99</ins>
-                                                </div>
-                                            </div>
-                                            <div class="product-hidden-details">
-                                                <div class="product-action">
-                                                    <a href="#" class="btn-product btn-cart" title="Add to Cart">
-                                                        <i class="w-icon-cart"></i><span>Add To Cart</span></a>
-                                                    <a href="#" class="btn-product-icon btn-wishlist w-icon-heart"
-                                                        title="Add to wishlist"></a>
-                                                    <a href="#" class="btn-product-icon btn-compare w-icon-compare"
-                                                        title="Compare"></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- End of Product Slideup Content -->
-                                        <div class="product product-slideup-content">
-                                            <figure class="product-media">
-                                                <a href="{% url 'product:shop' %}">
-                                                    <img src="{% static 'images/demos/demo7/products/4-6.jpg' %}" alt="Product"
-                                                        width="187" height="210">
-                                                </a>
-                                                <div class="product-action-vertical">
-                                                    <a href="#" class="btn-product-icon btn-quickview w-icon-search"
-                                                        title="Quick View"></a>
-                                                </div>
-                                            </figure>
-                                            <div class="product-details">
-                                                <h3 class="product-name">
-                                                    <a href="{% url 'product:shop' %}">Portable Charger</a>
-                                                </h3>
-                                                <div class="product-price">
-                                                    <ins class="new-price">$25.00</ins>
-                                                </div>
-                                            </div>
-                                            <div class="product-hidden-details">
-                                                <div class="product-action">
-                                                    <a href="#" class="btn-product btn-cart" title="Add to Cart">
-                                                        <i class="w-icon-cart"></i><span>Add To Cart</span></a>
-                                                    <a href="#" class="btn-product-icon btn-wishlist w-icon-heart"
-                                                        title="Add to wishlist"></a>
-                                                    <a href="#" class="btn-product-icon btn-compare w-icon-compare"
-                                                        title="Compare"></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- End of Product Slideup Content -->
-                                    </div>
-                                    <!-- End of Product Col -->
-                                    <div class="swiper-slide product-col">
-                                        <div class="product product-slideup-content">
-                                            <figure class="product-media">
-                                                <a href="{% url 'product:shop' %}">
-                                                    <img src="{% static 'images/demos/demo7/products/4-7.jpg' %}" alt="Product"
-                                                        width="187" height="210">
-                                                </a>
-                                                <div class="product-action-vertical">
-                                                    <a href="#" class="btn-product-icon btn-quickview w-icon-search"
-                                                        title="Quick View"></a>
-                                                </div>
-                                            </figure>
-                                            <div class="product-details">
-                                                <h3 class="product-name">
-                                                    <a href="{% url 'product:shop' %}">Red Cap Sound Marker</a>
-                                                </h3>
-                                                <div class="product-price">
-                                                    <ins class="new-price">$65.89 - $69.99</ins>
-                                                </div>
-                                            </div>
-                                            <div class="product-hidden-details">
-                                                <div class="product-action">
-                                                    <a href="#" class="btn-product btn-cart" title="Add to Cart">
-                                                        <i class="w-icon-cart"></i><span>Add To Cart</span></a>
-                                                    <a href="#" class="btn-product-icon btn-wishlist w-icon-heart"
-                                                        title="Add to wishlist"></a>
-                                                    <a href="#" class="btn-product-icon btn-compare w-icon-compare"
-                                                        title="Compare"></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- End of Product Slideup Content -->
-                                        <div class="product product-slideup-content">
-                                            <figure class="product-media">
-                                                <a href="{% url 'product:shop' %}">
-                                                    <img src="{% static 'images/demos/demo7/products/4-8.jpg' %}" alt="Product"
-                                                        width="187" height="210">
-                                                </a>
-                                                <div class="product-action-vertical">
-                                                    <a href="#" class="btn-product-icon btn-quickview w-icon-search"
-                                                        title="Quick View"></a>
-                                                </div>
-                                            </figure>
-                                            <div class="product-details">
-                                                <h3 class="product-name">
-                                                    <a href="{% url 'product:shop' %}">Perfect Classic Hat</a>
-                                                </h3>
-                                                <div class="product-price">
-                                                    <ins class="new-price">$69.99</ins><del class="old-price">$84.16</del>
-                                                </div>
-                                            </div>
-                                            <div class="product-hidden-details">
-                                                <div class="product-action">
-                                                    <a href="#" class="btn-product btn-cart" title="Add to Cart">
-                                                        <i class="w-icon-cart"></i><span>Add To Cart</span></a>
-                                                    <a href="#" class="btn-product-icon btn-wishlist w-icon-heart"
-                                                        title="Add to wishlist"></a>
-                                                    <a href="#" class="btn-product-icon btn-compare w-icon-compare"
-                                                        title="Compare"></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- End of Product Slideup Content -->
-                                    </div>
-                                    <!-- End of Product Col -->
-                                    <div class="swiper-slide product-col">
-                                        <div class="product product-slideup-content">
-                                            <figure class="product-media">
-                                                <a href="{% url 'product:shop' %}">
-                                                    <img src="{% static 'images/demos/demo7/products/4-9.jpg' %}" alt="Product"
-                                                        width="187" height="210">
-                                                </a>
-                                                <div class="product-action-vertical">
-                                                    <a href="#" class="btn-product-icon btn-quickview w-icon-search"
-                                                        title="Quick View"></a>
-                                                </div>
-                                            </figure>
-                                            <div class="product-details">
-                                                <h3 class="product-name">
-                                                    <a href="{% url 'product:shop' %}">Roller Skate</a>
-                                                </h3>
-                                                <div class="product-price">
-                                                    <ins class="new-price">$66.99</ins>
-                                                </div>
-                                            </div>
-                                            <div class="product-hidden-details">
-                                                <div class="product-action">
-                                                    <a href="#" class="btn-product btn-cart" title="Add to Cart">
-                                                        <i class="w-icon-cart"></i><span>Add To Cart</span></a>
-                                                    <a href="#" class="btn-product-icon btn-wishlist w-icon-heart"
-                                                        title="Add to wishlist"></a>
-                                                    <a href="#" class="btn-product-icon btn-compare w-icon-compare"
-                                                        title="Compare"></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- End of Product Slideup Content -->
-                                        <div class="product product-slideup-content">
-                                            <figure class="product-media">
-                                                <a href="{% url 'product:shop' %}">
-                                                    <img src="{% static 'images/demos/demo7/products/4-10.jpg' %}" alt="Product"
-                                                        width="187" height="210">
-                                                </a>
-                                                <div class="product-action-vertical">
-                                                    <a href="#" class="btn-product-icon btn-quickview w-icon-search"
-                                                        title="Quick View"></a>
-                                                </div>
-                                            </figure>
-                                            <div class="product-details">
-                                                <h3 class="product-name">
-                                                    <a href="{% url 'product:shop' %}">Men's Black Watch</a>
-                                                </h3>
-                                                <div class="product-price">
-                                                    <ins class="new-price">$232.62</ins>
-                                                </div>
-                                            </div>
-                                            <div class="product-hidden-details">
-                                                <div class="product-action">
-                                                    <a href="#" class="btn-product btn-cart" title="Add to Cart">
-                                                        <i class="w-icon-cart"></i><span>Add To Cart</span></a>
-                                                    <a href="#" class="btn-product-icon btn-wishlist w-icon-heart"
-                                                        title="Add to wishlist"></a>
-                                                    <a href="#" class="btn-product-icon btn-compare w-icon-compare"
-                                                        title="Compare"></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- End of Product Slideup Content -->
-                                    </div>
+
+                                    {% endfor %}
+
                                     <!-- End of Product Col -->
                                 </div>
                                 <div class="swiper-pagination"></div>
