@@ -116,7 +116,7 @@
                                         <div class="product-price">
                                             <ins class="new-price">{{product.price}}$</ins></div>
 
-                                        <div class="ratings-container">
+                                        {% comment %}<div class="ratings-container">
                                             <div class="ratings-full">
                                                 <span class="ratings" style="width: 80%;"></span>
                                                 <span class="tooltiptext tooltip-top"></span>
@@ -130,10 +130,10 @@
                                                 <li>Volutpat ac tincidunt vitae semper quis lectus.</li>
                                                 <li>Aliquam id diam maecenas ultricies mi eget mauris.</li>
                                             </ul>
-                                        </div>
+                                        </div> {% endcomment %}
                                     </div>
                                     <div class="col-md-6">
-                                        <div
+                                        {% comment %}<div
                                             class="product-form product-variation-form product-size-swatch">
                                             <label>Color:</label>
                                             <div class="product-variations flex-wrap d-flex align-items-center">
@@ -154,15 +154,15 @@
                                                 <a href="#" class="size">Large</a>
                                                 <a href="#" class="size">Extra Large</a>
                                             </div>
-                                        </div>
+                                        </div>{% endcomment %}
 
-                                        <div class="product-variation-price">
+                                        <!-- <div class="product-variation-price">
                                             <span></span>
-                                        </div>
+                                        </div> -->
 
-                                        <hr class="product-divider mb-5">
+                                        <!-- <hr class="product-divider mb-5"> -->
 
-                                        <div class="fix-bottom product-sticky-content sticky-content">
+                                        <div class="fix-bottom product-sticky-content sticky-content mt-5">
                                             <div class="product-form container">
                                                 <div class="product-qty-form">
                                                     <div class="input-group">
@@ -179,7 +179,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="social-links-wrapper">
+                                        <!-- <div class="social-links-wrapper">
                                             <div class="social-links">
                                                 <div class="social-icons social-no-color border-thin">
                                                     <a href="#" class="social-icon social-facebook w-icon-facebook"></a>
@@ -198,7 +198,7 @@
                                                 <a href="#"
                                                     class="btn-product-icon btn-compare btn-icon-left w-icon-compare"><span></span></a>
                                             </div>
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </div>
                             </div>
@@ -207,7 +207,7 @@
                                     <li class="nav-item">
                                         <a href="#product-tab-description" class="nav-link active">Description</a>
                                     </li>
-                                    <li class="nav-item">
+                                    {% comment %}<li class="nav-item">
                                         <a href="#product-tab-specification" class="nav-link">Specification</a>
                                     </li>
                                     <li class="nav-item">
@@ -215,7 +215,7 @@
                                     </li>
                                     <li class="nav-item">
                                         <a href="#product-tab-reviews" class="nav-link">Customer Reviews (3)</a>
-                                    </li>
+                                    </li> {% endcomment %}
                                 </ul>
                                 <div class="tab-content">
                                     <div class="tab-pane active" id="product-tab-description">
@@ -270,7 +270,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="tab-pane" id="product-tab-specification">
+                                    {% comment %}<div class="tab-pane" id="product-tab-specification">
                                         <ul class="list-none">
                                             <li>
                                                 <label>Model</label>
@@ -943,10 +943,10 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div>{% endcomment %}
                                 </div>
                             </div>
-                            <section class="vendor-product-section">
+                            {% comment %}<section class="vendor-product-section">
                                 <div class="title-link-wrapper mb-4">
                                     <h4 class="title text-left">More Products From This Vendor</h4>
                                     <a href="#" class="btn btn-dark btn-link btn-slide-right btn-icon-right">More
@@ -1122,7 +1122,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </section>
+                            </section>{% endcomment %}
                             <section class="related-product-section">
                                 <div class="title-link-wrapper mb-4">
                                     <h4 class="title">Related Products</h4>
