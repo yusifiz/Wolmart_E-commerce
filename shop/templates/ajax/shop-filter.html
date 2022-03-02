@@ -6,8 +6,8 @@
 				<img src="{{ product.image.url }}" alt="Product" width="300"
 					height="338" />
 			</a>
-			<div class="product-action-horizontal">
-				<a href="#" data-product={{product.id}} data-action='add' class="btn-product-icon btn-cart w-icon-cart update-cart"
+			{% comment %}<div class="product-action-horizontal">
+				<a href="#" data-product={{product.id}} data-action='addCart' class="btn-product-icon btn-cart w-icon-cart update-cart"
 					title="Add to cart"></a>
 				<a href="#" class="btn-product-icon btn-wishlist w-icon-heart"
 					title="Wishlist"></a>
@@ -15,7 +15,7 @@
 					title="Compare"></a>
 				<a href="#" class="btn-product-icon btn-quickview w-icon-search"
 					title="Quick View"></a>
-			</div>
+			</div> {% endcomment %}
 		</figure>
 		<div class="product-details">
 			<div class="product-cat">
@@ -24,13 +24,13 @@
 			<h3 class="product-name">
 				<a href="product-default.html">{{ product.name }}</a>
 			</h3>
-			<div class="ratings-container">
+			<!-- <div class="ratings-container">
 				<div class="ratings-full">
 					<span class="ratings" style="width: 100%;"></span>
 					<span class="tooltiptext tooltip-top"></span>
 				</div>
 				<a href="product-default.html" class="rating-reviews">(3 reviews)</a>
-			</div>
+			</div> -->
 			<div class="product-pa-wrapper">
 				<div class="product-price">
 					{{product.price}} $

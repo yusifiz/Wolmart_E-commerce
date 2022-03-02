@@ -155,7 +155,7 @@
                         </a>
                         <div class="dropdown cart-dropdown cart-offcanvas mr-0 mr-lg-2">
                             <div class="cart-overlay"></div>
-                            <a href="#" class="cart-toggle label-down link">
+                            <a href="{% url 'product:cart' %}" class="cart-toggle label-down link">
                                 <i class="w-icon-cart">
                                     <span class="cart-count">{{order.get_cart_items}}</span>
                                 </i>
@@ -1124,13 +1124,13 @@
 
                     <div class="product-price">$40.00</div>
 
-                    <div class="ratings-container">
+                    <!-- <div class="ratings-container">
                         <div class="ratings-full">
                             <span class="ratings" style="width: 80%;"></span>
                             <span class="tooltiptext tooltip-top"></span>
                         </div>
                         <a href="#" class="rating-reviews">(3 Reviews)</a>
-                    </div>
+                    </div> -->
 
                     <div class="product-short-desc">
                         <ul class="list-type-check list-style-none">

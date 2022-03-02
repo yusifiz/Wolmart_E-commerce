@@ -314,10 +314,10 @@
                                                     title="Add to cart"></a>
                                                 <a href="#" data-product={{product.id}} data-action='addWishlist' class="btn-product-icon btn-wishlist w-icon-heart wishlistjs" 
                                                     title="Wishlist"></a>
-                                                <a href="#" class="btn-product-icon btn-compare w-icon-compare"
+                                                <!-- <a href="#" class="btn-product-icon btn-compare w-icon-compare"
                                                     title="Compare"></a>
                                                 <a href="#" class="btn-product-icon btn-quickview w-icon-search"
-                                                    title="Quick View"></a>
+                                                    title="Quick View"></a> -->
                                             </div>
                                         </figure>
                                         <div class="product-details">
@@ -327,13 +327,13 @@
                                             <h3 class="product-name">
                                                 <a href="{% url 'product:single_product' product.slug %}">{{product.name}}</a>
                                             </h3>
-                                            <div class="ratings-container">
+                                            <!-- <div class="ratings-container">
                                                 <div class="ratings-full">
                                                     <span class="ratings" style="width: 100%;"></span>
                                                     <span class="tooltiptext tooltip-top"></span>
                                                 </div>
                                                 <a href="{% url 'product:single_product' product.slug %}" class="rating-reviews">(3 reviews)</a>
-                                            </div>
+                                            </div> -->
                                             <div class="product-pa-wrapper">
                                                 <div class="product-price">
                                                     {{product.price}}$
