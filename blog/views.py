@@ -88,8 +88,10 @@ def blog_search_bar(request):
     if request.method == 'POST':
         searched = request.POST['searched']
         search_item = Blog.objects.filter(name__icontains = searched)
-        
-        return render(request, 'search_blog.html',{'searched':searched,'search_item':search_item})
-    else:
-        return render(request,'search_blog.html',{})
+        if searched in str(list(search_item)):
+            print( searched, search_item)
+            return render(request, 'search_blog.html',{'searched':searched,'search_item':search_item})
+        else:
+            print( searched, search_item)
+            return redirect(reverse_lazy('pages:error_404'))
     
