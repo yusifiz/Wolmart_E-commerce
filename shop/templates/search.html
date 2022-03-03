@@ -5,7 +5,13 @@
 {% endblock %}
 {% block content %}
 <main class="container">
-
+    <!-- <div class="main">
+    <div class="page-header">
+        <div class="container">
+            <h1 class="page-title mb-0">Search Products</h1>
+        </div>
+    </div>
+    </div> -->
     <div class="product-wrapper row cols-md-3 cols-sm-2 cols-2">
 
     
@@ -51,8 +57,7 @@
             </div>
         </div>
     </div>
-    {% empty %}
-        <h1>{{ searched }} not found! </h1>
+    
 
     {% endfor %}
 

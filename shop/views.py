@@ -1,8 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from django.views.generic import ListView, DetailView
 from django.http import JsonResponse
 import json
 from django.template.loader import render_to_string
+from django.urls import reverse_lazy
 
 from shop.forms import CheckoutForm
 from . models import Shop, Order, OrderItem, ProductCategory, Color,Brand, Size, Wishlist, WishlistItem
@@ -159,10 +160,12 @@ def search_bar(request):
     if request.method == 'POST':
         searched = request.POST['searched']
         search_item = Shop.objects.filter(name__icontains = searched)
-        
-        return render(request, 'search.html',{'searched':searched,'search_item':search_item})
-    else:
-        return render(request,'search.html',{})
+        if searched in str(list(search_item)):
+            print( searched, search_item)
+            return render(request, 'search.html',{'searched':searched,'search_item':search_item})
+        else:
+            print( searched, search_item)
+            return redirect(reverse_lazy('pages:error_404'))
     
     
 def filter(request, slug):
