@@ -147,6 +147,9 @@ def update_item(request):
         orderItem.delete()
         print(oitemcount)
         
+    if action=='removeOrder':
+        order.delete()
+    
     if oitemcount <= 1 and (action == 'removeAll' or action == 'remove'):
         order.delete()
     # elif o.quantity <= 0:

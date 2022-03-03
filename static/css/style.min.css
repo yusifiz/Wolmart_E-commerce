@@ -17506,9 +17506,7 @@ body .product-popup {
         -ms-flex: 0 0 8rem;
             flex: 0 0 8rem;
   }
-  .post-single-content .comment:nth-child(2) {
-    margin-left: 4rem;
-  }
+
 }
 /*----------------------------------------
     Become a Vendor page
