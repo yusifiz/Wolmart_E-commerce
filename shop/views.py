@@ -90,6 +90,7 @@ def base_cart(request):
         user = request.user
         order, created = Order.objects.get_or_create(user=user, status=False)
         items = order.orderitem_set.all()
+        # print('base -----.',items)
         cartItems = order['get_cart_items']
     else:
         items = []

@@ -4,7 +4,7 @@ from . models import Shop, Order, OrderItem, ProductCategory, Brand, Color, Wish
 
 @admin.register(Shop)
 class ShopAdmin(admin.ModelAdmin):
-    fields = ('category', 'name', 'image', 'price','color','brand','size','description')
+    fields = ('category_az','category_en', 'name_az','name_en', 'image', 'price','color','brand','size','description_az','description_en')
     
 
 @admin.register(ProductCategory)

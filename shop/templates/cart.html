@@ -62,7 +62,7 @@
                                         </td>
                                         <td class="product-price"><span class="amount">{{ item.product.price|floatformat:2 }}</span></td>
                                         <td class="product-quantity">
-                                            <div class="input-group">
+                                            <div class="input-group form-control">
                                                 {{item.quantity}}
                                                 <!-- <div class="quantity form-control input-group" type="number"></div> -->
                                                 <button class="quantity-plus w-icon-plus update-cart" data-product="{{item.product.id}}" data-action="addCart" ></button>

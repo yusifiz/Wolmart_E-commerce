@@ -65,18 +65,18 @@
                                         {{ item.product.name }}
                                     </a>
                                 </td>
-                                <td class="product-price">
-                                    <ins class="new-price">${{item.product.price}}</ins>
+                                <td class="product-price" style="text-align: center;">
+                                    <ins class="new-price" >${{item.product.price}}</ins>
                                 </td>
                                 {% comment %}<td class="product-stock-status">
                                     <span class="wishlist-in-stock">In Stock</span>
                                 </td> {% endcomment %}
                                 <td class="wishlist-action">
                                     <div class="d-lg-flex">
-                                        <a href="#"
+                                        <!-- <a href="#"
                                             class="btn btn-quickview btn-outline btn-default btn-rounded btn-sm mb-2 mb-lg-0">Quick
-                                            View</a>
-                                        <a href="#" class="btn btn-dark btn-rounded btn-sm ml-lg-2 btn-cart">Add to
+                                            View</a> -->
+                                        <a href="#"  data-product={{item.product.id}} data-action='addCart' class="btn btn-dark btn-rounded btn-sm ml-lg-2 btn-cart update-cart">Add to
                                             cart</a>
                                     </div>
                                 </td>

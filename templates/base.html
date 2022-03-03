@@ -153,18 +153,18 @@
                             <i class="w-icon-heart"></i>
                             <span class="wishlist-label d-lg-show">Wishlist</span>
                         </a>
-                        <div class="dropdown cart-dropdown cart-offcanvas mr-0 mr-lg-2">
-                            <div class="cart-overlay"></div>
+                        <div class="dropdown cart-dropdown  mr-0 mr-lg-2">
+                            <!-- <div class="cart-overlay"></div> -->
                             <a href="{% url 'product:cart' %}" class="cart-toggle label-down link">
                                 <i class="w-icon-cart">
                                     <span class="cart-count">{{order.get_cart_items}}</span>
                                 </i>
                                 <span class="cart-label">Cart</span>
                             </a>
-                            <div class="dropdown-box">
+                           {%comment%} <div class="dropdown-box">
                                 <div class="cart-header">
                                     <span>Shopping Cart</span>
-                                    <a href="#" class="btn-close">Close<i class="w-icon-long-arrow-right"></i></a>
+                                    <a href="#" data-product={{product.id}} data-action="removeAll" class="btn-close update-cart">Close<i class="w-icon-long-arrow-right"></i></a>
                                 </div>
                                 
                                 {% for item in items %}
@@ -203,7 +203,7 @@
                                     <a href="{% url 'product:cart' %}" class="btn btn-dark btn-outline btn-rounded">View Cart</a>
                                     <a href="{% url 'product:checkout' %}" class="btn btn-primary  btn-rounded">Checkout</a>
                                 </div>
-                            </div>
+                            </div> {%endcomment%}
                             <!-- End of Dropdown Box -->
                         </div>
                     </div>
@@ -621,8 +621,9 @@
         <!-- End of .mobile-menu-close -->
 
         <div class="mobile-menu-container scrollable">
-            <form action="#" method="get" class="input-wrapper">
-                <input type="text" class="form-control" name="search" autocomplete="off" placeholder="Search"
+            <form method="POST" action="{% url 'product:search' %}" class="input-wrapper">
+                {% csrf_token %}
+                <input type="text" class="form-control" name="searched" autocomplete="off" placeholder="Search"
                     required />
                 <button class="btn btn-search" type="submit">
                     <i class="w-icon-search"></i>

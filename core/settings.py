@@ -221,7 +221,7 @@ ugettext = lambda s: s
 LANGUAGES = (
     ('en', ugettext('English')),
     ('az', ugettext('Azerbaijan')),
-    ('ru', ugettext('Russian')),
+    # ('ru', ugettext('Russian')),
 
 )
 

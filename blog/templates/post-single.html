@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load i18n %}
 {% block styleCss %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/style.min.css' %}">
 {% endblock %}
@@ -42,7 +43,7 @@
                                     <div class="post-meta">
                                         by <a href="#" class="post-author">{{blog_detail.author}}</a>
                                         - <a href="#" class="post-date">{{blog_detail.created_at}}</a>
-                                        <a href="#" class="post-comment"><i class="w-icon-comments"></i><span>{{ count }}</span>Comments</a>
+                                        <a href="#" class="post-comment"><i class="w-icon-comments"></i><span>{{ count }}</span>{% trans 'Comments' %}</a>
                                     </div>
                                     <h2 class="post-title"><a href="#">{{blog_detail.name}}</a></h2>
                                     <div class="post-content">
