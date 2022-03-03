@@ -646,7 +646,7 @@
                         <li><a href="{% url 'home:index' %}">Home</a></li>
                         <li>
                             <a href="{% url 'product:shop' %}">Shop</a>
-                            <ul>
+                            {%comment%}<ul>
                                 <li>
                                     <a href="#">Shop Pages</a>
                                     <ul>
@@ -700,10 +700,10 @@
                                     </ul>
                                 </li>
                             </ul>
-                        </li>
+                        </li>{%endcomment%}
                         <li>
                             <a href="{% url 'blog:blog' %}">Blog</a>
-                            <ul>
+                           {%comment%} <ul>
                                 <li><a href="{% url 'blog:blog' %}">Classic</a></li>
                                 <li><a href="{% url 'blog:blog' %}">Listing</a></li>
                                 <li>
@@ -734,25 +734,25 @@
                                 <li>
                                     <a href="{% url 'blog:blog' %}">Single Post salam</a>
                                 </li>
-                            </ul>
+                            </ul> {%endcomment%}
                         </li>
-                        <li>
+                       {%comment%} <li>
                             <a href="{% url 'about:about' %}">Pages</a>
                             <ul>
 
-                                {% comment %}<li><a href="{% url 'about:about' %}">About Us</a></li>{% endcomment %}
-                                {% comment %}<li><a href="{% url 'pages:become_a_vendor' %}">Become A Vendor</a></li>{% endcomment %}
+                                <li><a href="{% url 'about:about' %}">About Us</a></li>
+                                <li><a href="{% url 'pages:become_a_vendor' %}">Become A Vendor</a></li>
                                 <li><a href="{% url 'contact:contact' %}">Contact Us</a></li>
                                 <li><a href="{% url 'account:login' %}">Login</a></li>
                                 <li><a href="{% url 'pages:faq' %}">FAQs</a></li>
-                                {% comment %}<li><a href="{% url 'pages:error_404' %}">Error 404</a></li>{% endcomment %}
-                                {% comment %}<li><a href="coming-soon{% url 'blog:blog' %}">Coming Soon</a></li>{% endcomment %}
+                                <li><a href="{% url 'pages:error_404' %}">Error 404</a></li>
+                                <li><a href="coming-soon{% url 'blog:blog' %}">Coming Soon</a></li>
                                 <li><a href="{% url 'product:wishlist_view' %}">Wishlist</a></li>
                                 <li><a href="{% url 'product:cart' %}">Cart</a></li>
                                 <li><a href="{% url 'product:checkout' %}">Checkout</a></li>
-                                {% comment %}<li><a href="{% url 'account:my_account' %}">My Account</a></li>{% endcomment %}
+                                <li><a href="{% url 'account:my_account' %}">My Account</a></li>
                             </ul>
-                        </li>
+                        </li> {%endcomment%}
                         <li>
 
                         </li>
@@ -760,266 +760,17 @@
                 </div>
                 <div class="tab-pane" id="categories">
                     <ul class="mobile-menu">
+                        {% for i in product_category %}
+                        
                         <li>
-                            <a href="{% url 'product:shop' %}">
-                                <i class="w-icon-tshirt2"></i>Fashion
+                            <a href="{% url 'product:filter' i.slug %}">
+                                {{i.name}}
                             </a>
-                            <ul>
-                                <li>
-                                    <a href="#">Women</a>
-                                    <ul>
-                                        <li><a href="{% url 'product:shop' %}">New Arrivals</a>
-                                        </li>
-                                        <li><a href="{% url 'product:shop' %}">Best Sellers</a>
-                                        </li>
-                                        <li><a href="{% url 'product:shop' %}">Trending</a></li>
-                                        <li><a href="{% url 'product:shop' %}">Clothing</a></li>
-                                        <li><a href="{% url 'product:shop' %}">Shoes</a></li>
-                                        <li><a href="{% url 'product:shop' %}">Bags</a></li>
-                                        <li><a href="{% url 'product:shop' %}">Accessories</a>
-                                        </li>
-                                        <li><a href="{% url 'product:shop' %}">Jewlery &
-                                                Watches</a></li>
-                                        
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#">Men</a>
-                                    <ul>
-                                        <li><a href="{% url 'product:shop' %}">New Arrivals</a>
-                                        </li>
-                                        <li><a href="{% url 'product:shop' %}">Best Sellers</a>
-                                        </li>
-                                        <li><a href="{% url 'product:shop' %}">Trending</a></li>
-                                        <li><a href="{% url 'product:shop' %}">Clothing</a></li>
-                                        <li><a href="{% url 'product:shop' %}">Shoes</a></li>
-                                        <li><a href="{% url 'product:shop' %}">Bags</a></li>
-                                        <li><a href="{% url 'product:shop' %}">Accessories</a>
-                                        </li>
-                                        <li><a href="{% url 'product:shop' %}">Jewlery &
-                                                Watches</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
+                            
                         </li>
-                        <li>
-                            <a href="{% url 'product:shop' %}">
-                                <i class="w-icon-home"></i>Home & Garden
-                            </a>
-                            <ul>
-                                <li>
-                                    <a href="#">Bedroom</a>
-                                    <ul>
-                                        <li><a href="{% url 'product:shop' %}">Beds, Frames &
-                                                Bases</a></li>
-                                        <li><a href="{% url 'product:shop' %}">Dressers</a></li>
-                                        <li><a href="{% url 'product:shop' %}">Nightstands</a>
-                                        </li>
-                                        <li><a href="{% url 'product:shop' %}">Kid's Beds &
-                                                Headboards</a></li>
-                                        <li><a href="{% url 'product:shop' %}">Armoires</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#">Living Room</a>
-                                    <ul>
-                                        <li><a href="{% url 'product:shop' %}">Coffee Tables</a>
-                                        </li>
-                                        <li><a href="{% url 'product:shop' %}">Chairs</a></li>
-                                        <li><a href="{% url 'product:shop' %}">Tables</a></li>
-                                        <li><a href="{% url 'product:shop' %}">Futons & Sofa
-                                                Beds</a></li>
-                                        <li><a href="{% url 'product:shop' %}">Cabinets &
-                                                Chests</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#">Office</a>
-                                    <ul>
-                                        <li><a href="{% url 'product:shop' %}">Office Chairs</a>
-                                        </li>
-                                        <li><a href="{% url 'product:shop' %}">Desks</a></li>
-                                        <li><a href="{% url 'product:shop' %}">Bookcases</a></li>
-                                        <li><a href="{% url 'product:shop' %}">File Cabinets</a>
-                                        </li>
-                                        <li><a href="{% url 'product:shop' %}">Breakroom
-                                                Tables</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#">Kitchen & Dining</a>
-                                    <ul>
-                                        <li><a href="{% url 'product:shop' %}">Dining Sets</a>
-                                        </li>
-                                        <li><a href="{% url 'product:shop' %}">Kitchen Storage
-                                                Cabinets</a></li>
-                                        <li><a href="{% url 'product:shop' %}">Bashers Racks</a>
-                                        </li>
-                                        <li><a href="{% url 'product:shop' %}">Dining Chairs</a>
-                                        </li>
-                                        <li><a href="{% url 'product:shop' %}">Dining Room
-                                                Tables</a></li>
-                                        <li><a href="{% url 'product:shop' %}">Bar Stools</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="{% url 'product:shop' %}">
-                                <i class="w-icon-electronics"></i>Electronics
-                            </a>
-                            <ul>
-                                <li>
-                                    <a href="#">Laptops &amp; Computers</a>
-                                    <ul>
-                                        <li><a href="{% url 'product:shop' %}">Desktop
-                                                Computers</a></li>
-                                        <li><a href="{% url 'product:shop' %}">Monitors</a></li>
-                                        <li><a href="{% url 'product:shop' %}">Laptops</a></li>
-                                        <li><a href="{% url 'product:shop' %}">Hard Drives &amp;
-                                                Storage</a></li>
-                                        <li><a href="{% url 'product:shop' %}">Computer
-                                                Accessories</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#">TV &amp; Video</a>
-                                    <ul>
-                                        <li><a href="{% url 'product:shop' %}">TVs</a></li>
-                                        <li><a href="{% url 'product:shop' %}">Home Audio
-                                                Speakers</a></li>
-                                        <li><a href="{% url 'product:shop' %}">Projectors</a></li>
-                                        <li><a href="{% url 'product:shop' %}">Media Streaming
-                                                Devices</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#">Digital Cameras</a>
-                                    <ul>
-                                        <li><a href="{% url 'product:shop' %}">Digital SLR
-                                                Cameras</a></li>
-                                        <li><a href="{% url 'product:shop' %}">Sports & Action
-                                                Cameras</a></li>
-                                        <li><a href="{% url 'product:shop' %}">Camera Lenses</a>
-                                        </li>
-                                        <li><a href="{% url 'product:shop' %}">Photo Printer</a>
-                                        </li>
-                                        <li><a href="{% url 'product:shop' %}">Digital Memory
-                                                Cards</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#">Cell Phones</a>
-                                    <ul>
-                                        <li><a href="{% url 'product:shop' %}">Carrier Phones</a>
-                                        </li>
-                                        <li><a href="{% url 'product:shop' %}">Unlocked Phones</a>
-                                        </li>
-                                        <li><a href="{% url 'product:shop' %}">Phone & Cellphone
-                                                Cases</a></li>
-                                        <li><a href="{% url 'product:shop' %}">Cellphone
-                                                Chargers</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="{% url 'product:shop' %}">
-                                <i class="w-icon-furniture"></i>Furniture
-                            </a>
-                            <ul>
-                                <li>
-                                    <a href="#">Furniture</a>
-                                    <ul>
-                                        <li><a href="{% url 'product:shop' %}">Sofas & Couches</a>
-                                        </li>
-                                        <li><a href="{% url 'product:shop' %}">Armchairs</a></li>
-                                        <li><a href="{% url 'product:shop' %}">Bed Frames</a></li>
-                                        <li><a href="{% url 'product:shop' %}">Beside Tables</a>
-                                        </li>
-                                        <li><a href="{% url 'product:shop' %}">Dressing Tables</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#">Lighting</a>
-                                    <ul>
-                                        <li><a href="{% url 'product:shop' %}">Light Bulbs</a>
-                                        </li>
-                                        <li><a href="{% url 'product:shop' %}">Lamps</a></li>
-                                        <li><a href="{% url 'product:shop' %}">Celling Lights</a>
-                                        </li>
-                                        <li><a href="{% url 'product:shop' %}">Wall Lights</a>
-                                        </li>
-                                        <li><a href="{% url 'product:shop' %}">Bathroom
-                                                Lighting</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#">Home Accessories</a>
-                                    <ul>
-                                        <li><a href="{% url 'product:shop' %}">Decorative
-                                                Accessories</a></li>
-                                        <li><a href="{% url 'product:shop' %}">Candals &
-                                                Holders</a></li>
-                                        <li><a href="{% url 'product:shop' %}">Home Fragrance</a>
-                                        </li>
-                                        <li><a href="{% url 'product:shop' %}">Mirrors</a></li>
-                                        <li><a href="{% url 'product:shop' %}">Clocks</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#">Garden & Outdoors</a>
-                                    <ul>
-                                        <li><a href="{% url 'product:shop' %}">Garden
-                                                Furniture</a></li>
-                                        <li><a href="{% url 'product:shop' %}">Lawn Mowers</a>
-                                        </li>
-                                        <li><a href="{% url 'product:shop' %}">Pressure
-                                                Washers</a></li>
-                                        <li><a href="{% url 'product:shop' %}">All Garden
-                                                Tools</a></li>
-                                        <li><a href="{% url 'product:shop' %}">Outdoor Dining</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="{% url 'product:shop' %}">
-                                <i class="w-icon-heartbeat"></i>Healthy & Beauty
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{% url 'product:shop' %}">
-                                <i class="w-icon-gift"></i>Gift Ideas
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{% url 'product:shop' %}">
-                                <i class="w-icon-gamepad"></i>Toy & Games
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{% url 'product:shop' %}">
-                                <i class="w-icon-ice-cream"></i>Cooking
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{% url 'product:shop' %}">
-                                <i class="w-icon-ios"></i>Smart Phones
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{% url 'product:shop' %}">
-                                <i class="w-icon-camera"></i>Cameras & Photo
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{% url 'product:shop' %}">
-                                <i class="w-icon-ruby"></i>Accessories
-                            </a>
-                        </li>
+                        
+                        {% endfor %}
+
                         <li>
                             <a href="{% url 'product:shop' %}"
                                 class="font-weight-bold text-primary text-uppercase ls-25">
