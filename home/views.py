@@ -14,6 +14,7 @@ def index(request):
     sale_products = Shop.objects.all().filter(category__name__in=['Clothes', 'Wear','T-shirt']).order_by('-id')[:3]
     featured = Shop.objects.all().filter(category__name__in=['Furniture', 'Cup']).order_by('-id')[:3]
     latest_products = Shop.objects.all().order_by('id')[:3]
+    latest = Shop.objects.all().filter(category__name__in=['Electronics', 'Computer','Phone','Furniture']).order_by('id')[:8]
     blog_list = Blog.objects.all()[:5]
     context = {
         'blog_list' : blog_list,
@@ -26,5 +27,6 @@ def index(request):
         'sale_products':sale_products,
         'featured':featured,
         'latest_products':latest_products,
+        'latest':latest,
     }
     return render(request, "index.html", context)
