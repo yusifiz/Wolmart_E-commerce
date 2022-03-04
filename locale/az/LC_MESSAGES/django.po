@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-05 00:05+0400\n"
+"POT-Creation-Date: 2022-03-05 00:24+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\account\forms.py:17
+#: .\account\forms.py:17 .\pages\templates\checkout.html:40
 msgid "Password"
 msgstr ""
 
@@ -267,6 +267,89 @@ msgstr "Bloqumuzdan"
 msgid "View All Articles"
 msgstr "Bütün Bloqlar"
 
+#: .\pages\templates\checkout.html:15 .\shop\templates\cart.html:17
+msgid "Shopping Cart"
+msgstr "Alış-veriş Səbəti"
+
+#: .\pages\templates\checkout.html:16 .\shop\templates\cart.html:18
+#: .\templates\base.html:326
+msgid "Checkout"
+msgstr "Sifariş"
+
+#: .\pages\templates\checkout.html:29
+msgid ""
+"If you have shopped with us before, please enter your details below. If you "
+"are a new customer, please proceed to the Billing section."
+msgstr ""
+"Əgər əvvəllər bizimlə alış-veriş etmisinizsə, lütfən, aşağıda "
+"məlumatlarınızı daxil edin. Əgər yeni müştərisinizsə, lütfən, Ödəniş "
+"bölməsinə keçin."
+
+#: .\pages\templates\checkout.html:33
+msgid "Username or email"
+msgstr "İstifadəçi adı və ya e-poçt"
+
+#: .\pages\templates\checkout.html:51
+msgid "Login"
+msgstr "Qeydiyyat"
+
+#: .\pages\templates\checkout.html:58
+msgid "Billing Details"
+msgstr "Ödəniş Detalları"
+
+#: .\pages\templates\checkout.html:92
+msgid "Thank you. Your order has been received."
+msgstr "Təşəkkürlər. Sifarişiniz qeydə alındı."
+
+#: .\pages\templates\checkout.html:100
+msgid "Place Order"
+msgstr "Sifariş et"
+
+#: .\pages\templates\checkout.html:112
+msgid "Your Order"
+msgstr "Sifarişiniz"
+
+#: .\pages\templates\checkout.html:118 .\shop\templates\cart.html:36
+#: .\shop\templates\wishlist.html:40
+msgid "Product"
+msgstr "Məhsul"
+
+#: .\pages\templates\checkout.html:134 .\shop\templates\cart.html:40
+msgid "Subtotal"
+msgstr "Cəmi"
+
+#: .\pages\templates\checkout.html:145 .\shop\templates\cart.html:185
+msgid "Total"
+msgstr "Cəmi"
+
+#: .\shop\templates\cart.html:38 .\shop\templates\wishlist.html:42
+msgid "Price"
+msgstr "Qiymət"
+
+#: .\shop\templates\cart.html:39
+msgid "Quantity"
+msgstr "Miqdar"
+
+#: .\shop\templates\cart.html:84 .\shop\templates\wishlist.html:90
+msgid "There is no product.."
+msgstr "Məhsul yoxdur.."
+
+#: .\shop\templates\cart.html:87
+msgid "Continue Shopping"
+msgstr "Alış-verişə davam et"
+
+#: .\shop\templates\cart.html:88
+msgid "Clear Cart"
+msgstr "Səbəti təmizlə"
+
+#: .\shop\templates\cart.html:101
+msgid "Cart Totals"
+msgstr "Cəmi"
+
+#: .\shop\templates\cart.html:190
+msgid "Proceed to checkout"
+msgstr "Sifariş et"
+
 #: .\shop\templates\shop-detail.html:18
 msgid "Products"
 msgstr "Məhsullar"
@@ -302,16 +385,6 @@ msgstr "Bəyəndiklərim"
 msgid "My wishlist"
 msgstr "Bəyəndiklərim"
 
-#: .\shop\templates\wishlist.html:40
-#, fuzzy
-#| msgid "Products"
-msgid "Product"
-msgstr "Məhsul"
-
-#: .\shop\templates\wishlist.html:42
-msgid "Price"
-msgstr "Qiymət"
-
 #: .\shop\templates\wishlist.html:44
 msgid "Actions"
 msgstr "Əməliyyatlar"
@@ -319,10 +392,6 @@ msgstr "Əməliyyatlar"
 #: .\shop\templates\wishlist.html:81
 msgid "Add to cart"
 msgstr "Səbətə əlavə et"
-
-#: .\shop\templates\wishlist.html:90
-msgid "There is no product.."
-msgstr "Məhsul yoxdur.."
 
 #: .\templates\base.html:105
 msgid "Sign In"
@@ -353,10 +422,6 @@ msgstr "Alış-veriş"
 #: .\templates\base.html:313
 msgid "Pages"
 msgstr "Səhifələr"
-
-#: .\templates\base.html:326
-msgid "Checkout"
-msgstr "Sifariş"
 
 #: .\templates\base.html:360
 msgid "Subscribe To Our Newsletter"

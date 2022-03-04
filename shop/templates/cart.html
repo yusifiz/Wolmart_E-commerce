@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load i18n %}
 {% block styleCss %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/style.min.css' %}">
 {% endblock %}
@@ -13,8 +14,8 @@
             <nav class="breadcrumb-nav">
                 <div class="container">
                     <ul class="breadcrumb shop-breadcrumb bb-no">
-                        <li class="active"><a href="{% url 'product:cart' %}">Shopping Cart</a></li>
-                        <li><a href="{% url 'product:checkout' %}">Checkout</a></li>
+                        <li class="active"><a href="{% url 'product:cart' %}">{%trans "Shopping Cart"%}</a></li>
+                        <li><a href="{% url 'product:checkout' %}">{%trans "Checkout"%}</a></li>
                        {%comment%} <li><a href="{% url 'pages:order' %}">Order Complete</a></li> {%endcomment%}
                     </ul>
                 </div>
@@ -31,11 +32,11 @@
                             <table class="shop-table cart-table">
                                 <thead>
                                     <tr>
-                                        <th class="product-name"><span>Product</span></th>
+                                        <th class="product-name"><span>{%trans "Product"%}</span></th>
                                         <th></th>
-                                        <th class="product-price"><span>Price</span></th>
-                                        <th class="product-quantity"><span>Quantity</span></th>
-                                        <th class="product-subtotal"><span>Subtotal</span></th>
+                                        <th class="product-price"><span>{%trans "Price"%}</span></th>
+                                        <th class="product-quantity"><span>{%trans "Quantity"%}</span></th>
+                                        <th class="product-subtotal"><span>{%trans "Subtotal"%}</span></th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -79,11 +80,11 @@
                                 </tbody>
                             </table>
                             {% else %}
-                            <h4>There is no product..</h4>
+                            <h4>{%trans "There is no product.."%}</h4>
                             {% endif %}
                             <div class="cart-action mb-6">
-                                <a href="{% url 'product:shop' %}" class="btn btn-dark btn-rounded btn-icon-left btn-shopping mr-auto"><i class="w-icon-long-arrow-left"></i>Continue Shopping</a>
-                                <button type="submit" data-product={{order.id}} data-action="removeOrder" class="btn btn-rounded btn-default btn-clear update-cart" name="clear_cart" value="Clear Cart">Clear Cart</button> 
+                                <a href="{% url 'product:shop' %}" class="btn btn-dark btn-rounded btn-icon-left btn-shopping mr-auto"><i class="w-icon-long-arrow-left"></i>{%trans "Continue Shopping"%}</a>
+                                <button type="submit" data-product={{order.id}} data-action="removeOrder" class="btn btn-rounded btn-default btn-clear update-cart" name="clear_cart" value="Clear Cart">{%trans "Clear Cart"%}</button> 
                                 <!-- <button type="submit" class="btn btn-rounded btn-update disabled" name="update_cart" value="Update Cart">Update Cart</button> -->
                             </div>
 
@@ -96,7 +97,7 @@
                         <div class="col-lg-4 sticky-sidebar-wrapper">
                             <div class="sticky-sidebar">
                                 <div class="cart-summary mb-4">
-                                    <h3 class="cart-title text-uppercase">Cart Totals</h3>
+                                    <h3 class="cart-title text-uppercase">{%trans "Cart Totals"%}</h3>
                                     {% comment %}<div class="cart-subtotal d-flex align-items-center justify-content-between">
                                         <label class="ls-25">Subtotal</label>
                                         <span>${{order.get_cart_total|floatformat:2}}</span>
@@ -179,12 +180,12 @@
 
                                     <hr class="divider mb-6">
                                     <div class="order-total d-flex justify-content-between align-items-center">
-                                        <label>Total</label>
+                                        <label>{%trans "Total"%}</label>
                                         <span class="ls-50">${{order.get_cart_total|floatformat:2}}</span>
                                     </div>
                                     <a href="{% url 'product:checkout' %}"
                                         class="btn btn-block btn-dark btn-icon-right btn-rounded  btn-checkout">
-                                        Proceed to checkout<i class="w-icon-long-arrow-right"></i></a>
+                                        {%trans "Proceed to checkout"%}<i class="w-icon-long-arrow-right"></i></a>
                                 </div>
                             </div>
                         </div>

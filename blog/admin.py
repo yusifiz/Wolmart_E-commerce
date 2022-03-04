@@ -5,7 +5,7 @@ from . models import Blog, BlogCategory, Comment
 from modeltranslation.translator import translator, TranslationOptions, register
 
 # Register your models here.
-admin.site.register(Blog)
+# admin.site.register(Blog)
 
 admin.site.register(Comment)
 
@@ -14,9 +14,9 @@ class BlogCategoryAdmin(admin.ModelAdmin):
     fields = ('name',)
     
 
-# @admin.register(Blog)
-# class BlogAdmin(admin.ModelAdmin):
-#     fields = ('category', 'name', 'image', 'author', 'content', 'author_comment')
+@admin.register(Blog)
+class BlogAdmin(admin.ModelAdmin):
+    fields = ('category_az','category_en', 'name_az','name_en', 'image', 'author', 'content_az','content_en', 'author_comment')
     
 
 # @register(Blog)
