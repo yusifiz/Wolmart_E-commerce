@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-04 23:20+0400\n"
+"POT-Creation-Date: 2022-03-04 23:33+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -108,7 +108,8 @@ msgid "Deals Hot Of The Day"
 msgstr "Günün təklifləri"
 
 #: .\home\templates\index.html:294 .\home\templates\index.html:659
-#: .\home\templates\index.html:1273
+#: .\home\templates\index.html:1273 .\shop\templates\shop-detail.html:979
+#: .\shop\templates\shop-detail.html:1106
 msgid "More Products"
 msgstr "Daha çox məhsul"
 
@@ -149,6 +150,38 @@ msgstr "Bütün Bloqlar"
 msgid "Read More"
 msgstr "Daha çox bloq"
 
+#: .\shop\templates\shop-detail.html:16 .\templates\base.html:245
+#: .\templates\base.html:544 .\templates\base.html:605
+msgid "Home"
+msgstr "Ana səhifə"
+
+#: .\shop\templates\shop-detail.html:17
+
+msgid "Products"
+msgstr "Məhsullar"
+
+#: .\shop\templates\shop-detail.html:107
+#, fuzzy
+#| msgid "Categories"
+msgid "Category:"
+msgstr "Kateqoriya:"
+
+#: .\shop\templates\shop-detail.html:180
+msgid "Add to Cart"
+msgstr "Səbətə əlavə et"
+
+#: .\shop\templates\shop-detail.html:211
+msgid "Description"
+msgstr "Xüsusiyyətləri"
+
+#: .\shop\templates\shop-detail.html:228
+msgid "Detail"
+msgstr "Detalları"
+
+#: .\shop\templates\shop-detail.html:978
+msgid "Related Products"
+msgstr "Oxşar Məhsullar"
+
 #: .\templates\base.html:97 .\templates\base.html:278
 #: .\templates\base.html:665
 msgid "Blog"
@@ -183,11 +216,6 @@ msgstr "Səbət"
 #: .\templates\base.html:225
 msgid "Browse Categories"
 msgstr "Kataloq"
-
-#: .\templates\base.html:245 .\templates\base.html:544
-#: .\templates\base.html:605
-msgid "Home"
-msgstr "Ana səhifə"
 
 #: .\templates\base.html:248 .\templates\base.html:548
 #: .\templates\base.html:607
