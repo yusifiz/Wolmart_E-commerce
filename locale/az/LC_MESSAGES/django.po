@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-04 00:40+0400\n"
+"POT-Creation-Date: 2022-03-04 22:49+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,7 +34,7 @@ msgstr ""
 msgid "email address"
 msgstr ""
 
-#: .\blog\templates\post-single.html:45
+#: .\blog\templates\post-single.html:46
 msgid "Comments"
 msgstr "Şərhlər"
 
@@ -55,18 +55,79 @@ msgstr ""
 msgid "Shop Now"
 msgstr "İndi Al"
 
-#: .\templates\base.html:97
+#: .\templates\base.html:97 .\templates\base.html:278
+#: .\templates\base.html:665
 msgid "Blog"
-msgstr ""
+msgstr "Bloq"
 
-#: .\templates\base.html:98
+#: .\templates\base.html:98 .\templates\base.html:320
 msgid "Contact Us"
-msgstr ""
+msgstr "Əlaqə"
 
 #: .\templates\base.html:105
 msgid "Sign In"
-msgstr ""
+msgstr "Giriş"
 
 #: .\templates\base.html:107
 msgid "Register"
-msgstr ""
+msgstr "Qeydiyyat"
+
+#: .\templates\base.html:149
+msgid "Call:"
+msgstr "Əlaqə:"
+
+#: .\templates\base.html:155 .\templates\base.html:324
+#: .\templates\base.html:563
+msgid "Wishlist"
+msgstr "Bəyəndiklərim"
+
+#: .\templates\base.html:163 .\templates\base.html:325
+#: .\templates\base.html:554
+msgid "Cart"
+msgstr "Səbət"
+
+#: .\templates\base.html:225
+msgid "Browse Categories"
+msgstr "Kataloq"
+
+#: .\templates\base.html:245 .\templates\base.html:544
+#: .\templates\base.html:605
+msgid "Home"
+msgstr "Ana səhifə"
+
+#: .\templates\base.html:248 .\templates\base.html:548
+#: .\templates\base.html:607
+msgid "Shop"
+msgstr "Alış-veriş"
+
+#: .\templates\base.html:313
+msgid "Pages"
+msgstr "Səhifələr"
+
+#: .\templates\base.html:326
+msgid "Checkout"
+msgstr "Sifariş"
+
+#: .\templates\base.html:360
+msgid "Subscribe To Our Newsletter"
+msgstr "Abunə Olun"
+
+#: .\templates\base.html:361
+msgid "Get all the latest information on Events, Sales and Offers."
+msgstr "Kampaniyalar, Satışlar və Təkliflər haqqında ən son məlumatları əldə edin."
+
+#: .\templates\base.html:372
+msgid "Subscribe"
+msgstr "Abunə"
+
+#: .\templates\base.html:595
+msgid "Main Menu"
+msgstr "Əsas menyu"
+
+#: .\templates\base.html:598
+msgid "Categories"
+msgstr "Kateqoriyalar"
+
+#: .\templates\base.html:739
+msgid "View All Categories"
+msgstr "Bütün Kateqoriyalar"

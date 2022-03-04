@@ -145,13 +145,13 @@
                             <a href="tel:#" class="w-icon-call"></a>
                             <div class="call-info d-lg-show">
                                 <h4 class="chat font-weight-normal font-size-md text-normal ls-normal text-light mb-0">
-                                    <a href="mailto:#" class="text-capitalize">Live Chat</a> or :</h4>
-                                <a href="tel:#" class="phone-number font-weight-bolder ls-50">0(800)123-456</a>
+                                    <a href="mailto:#" class="text-capitalize">{%trans 'Call:'%}</a></h4>
+                                <a href="tel:#" class="phone-number font-weight-bolder ls-50">(+994)-55-555-55</a>
                             </div>
                         </div>
                         <a class="wishlist label-down link d-xs-show" href="{% url 'product:wishlist_view' %}">
                             <i class="w-icon-heart"></i>
-                            <span class="wishlist-label d-lg-show">Wishlist</span>
+                            <span class="wishlist-label d-lg-show">{%trans 'Wishlist'%}</span>
                         </a>
                         <div class="dropdown cart-dropdown  mr-0 mr-lg-2">
                             <!-- <div class="cart-overlay"></div> -->
@@ -159,7 +159,7 @@
                                 <i class="w-icon-cart">
                                     <span class="cart-count">{{order.get_cart_items}}</span>
                                 </i>
-                                <span class="cart-label">Cart</span>
+                                <span class="cart-label">{%trans "Cart"%}</span>
                             </a>
                            {%comment%} <div class="dropdown-box">
                                 <div class="cart-header">
@@ -220,7 +220,7 @@
                                     aria-haspopup="true" aria-expanded="true" data-display="static"
                                     title="Browse Categories">
                                     <i class="w-icon-category text-dark"></i>
-                                    <span class="text-dark">Browse Categories</span>
+                                    <span class="text-dark">{%trans 'Browse Categories' %}</span>
                                 </a>
 
                                 <div class="dropdown-box mt-0">
@@ -240,10 +240,10 @@
                             <nav class="main-nav ml-4">
                                 <ul class="menu">
                                     <li class="active">
-                                        <a href="{% url 'home:index' %}">Home</a>
+                                        <a href="{% url 'home:index' %}">{%trans 'Home'%}</a>
                                     </li>
                                     <li>
-                                        <a href="{% url 'product:shop' %}">Shop</a>
+                                        <a href="{% url 'product:shop' %}">{%trans "Shop" %}</a>
 
                                     </li>
                                     <!-- <li> -->
@@ -273,7 +273,7 @@
                                         </ul> -->
                                     <!-- </li> -->
                                     <li>
-                                        <a href="{% url 'blog:blog' %}">Blog</a>
+                                        <a href="{% url 'blog:blog' %}">{%trans "Blog"%}</a>
                                         <!-- <ul>
                                             <li><a href="{% url 'blog:blog' %}">Classic</a></li>
                                             <li><a href="{% url 'blog:blog' %}">Listing</a></li>
@@ -308,17 +308,17 @@
                                         </ul> -->
                                     </li>
                                     <li>
-                                        <a href="{% url 'about:about' %}">Pages</a>
+                                        <a href="{% url 'about:about' %}">{%trans 'Pages'%}</a>
                                         <ul>
 
                                             {% comment %}<li><a href="{% url 'about:about' %}">About Us</a></li>{% endcomment %}
                                             {% comment %}<li><a href="{% url 'pages:become_a_vendor' %}">Become A Vendor</a></li>{% endcomment %}
-                                            <li><a href="{% url 'contact:contact' %}">Contact Us</a></li>
+                                            <li><a href="{% url 'contact:contact' %}">{%trans 'Contact Us' %}</a></li>
                                             <li><a href="{% url 'pages:faq' %}">FAQs</a></li>
                                             {% comment %}<li><a href="{% url 'pages:error_404' %}">Error 404</a></li>{% endcomment %}
-                                            <li><a href="{% url 'product:wishlist_view' %}">Wishlist</a></li>
-                                            <li><a href="{% url 'product:cart' %}">Cart</a></li>
-                                            <li><a href="{% url 'product:checkout' %}">Checkout</a></li>
+                                            <li><a href="{% url 'product:wishlist_view' %}">{%trans 'Wishlist' %}</a></li>
+                                            <li><a href="{% url 'product:cart' %}">{%trans 'Cart' %}</a></li>
+                                            <li><a href="{% url 'product:checkout' %}">{%trans 'Checkout' %}</a></li>
                                             {% comment %} <li><a href="{% url 'account:my_account' %}">My Account</a></li> {% endcomment %}
                                         </ul>
                                     </li>
@@ -351,9 +351,8 @@
                                     <i class="w-icon-envelop3"></i>
                                 </div>
                                 <div class="icon-box-content">
-                                    <h4 class="icon-box-title text-white text-uppercase font-weight-bold">Subscribe To
-                                        Our Newsletter</h4>
-                                    <p class="text-white">Get all the latest information on Events, Sales and Offers.
+                                    <h4 class="icon-box-title text-white text-uppercase font-weight-bold">{%trans "Subscribe To Our Newsletter"%}</h4>
+                                    <p class="text-white">{%trans "Get all the latest information on Events, Sales and Offers."%}
                                     </p>
                                 </div>
                             </div>
@@ -364,7 +363,7 @@
                                 {% csrf_token %}
                                 <input type="email" class="form-control mr-2 bg-white"  name="email" id="email" 
                                     placeholder="Your E-mail Address" />
-                                <button class="btn btn-dark btn-rounded submit" type="submit">Subscribe<i
+                                <button class="btn btn-dark btn-rounded submit" type="submit">{%trans "Subscribe"%}<i
                                         class="w-icon-long-arrow-right"></i></button>
                             </form>
                         </div>
@@ -535,17 +534,17 @@
     <div class="sticky-footer sticky-content fix-bottom">
         <a href="{% url 'home:index' %}" class="sticky-link active">
             <i class="w-icon-home"></i>
-            <p>Home</p>
+            <p>{%trans "Home"%}</p>
         </a>
         <a href="{% url 'product:shop' %}" class="sticky-link">
             <i class="w-icon-category"></i>
-            <p>Shop</p>
+            <p>{%trans "Shop"%}</p>
         </a>
 
         
             <a href="{% url 'product:cart' %}" class="sticky-link">
                 <i class="w-icon-cart"></i>
-                <p>Cart</p>
+                <p>{%trans "Cart"%}</p>
             </a>
             
             <!-- End of Dropdown Box -->
@@ -554,7 +553,7 @@
         
             <a href="{% url 'product:wishlist_view' %}" class="search-toggle sticky-link">
                 <i class="w-icon-heart"></i>
-                <p>Wishlist</p>
+                <p>{%trans "Wishlist"%}</p>
             </a>
             
         
@@ -586,19 +585,19 @@
             <div class="tab">
                 <ul class="nav nav-tabs" role="tablist">
                     <li class="nav-item">
-                        <a href="#main-menu" class="nav-link active">Main Menu</a>
+                        <a href="#main-menu" class="nav-link active">{%trans "Main Menu"%}</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#categories" class="nav-link">Categories</a>
+                        <a href="#categories" class="nav-link">{%trans "Categories"%}</a>
                     </li>
                 </ul>
             </div>
             <div class="tab-content">
                 <div class="tab-pane active" id="main-menu">
                     <ul class="mobile-menu">
-                        <li><a href="{% url 'home:index' %}">Home</a></li>
+                        <li><a href="{% url 'home:index' %}">{%trans "Home"%}</a></li>
                         <li>
-                            <a href="{% url 'product:shop' %}">Shop</a>
+                            <a href="{% url 'product:shop' %}">{%trans "Shop"%}</a>
                             {%comment%}<ul>
                                 <li>
                                     <a href="#">Shop Pages</a>
@@ -655,7 +654,7 @@
                             </ul>
                         </li>{%endcomment%}
                         <li>
-                            <a href="{% url 'blog:blog' %}">Blog</a>
+                            <a href="{% url 'blog:blog' %}">{%trans "Blog"%}</a>
                            {%comment%} <ul>
                                 <li><a href="{% url 'blog:blog' %}">Classic</a></li>
                                 <li><a href="{% url 'blog:blog' %}">Listing</a></li>
@@ -727,7 +726,7 @@
                         <li>
                             <a href="{% url 'product:shop' %}"
                                 class="font-weight-bold text-primary text-uppercase ls-25">
-                                View All Categories<i class="w-icon-angle-right"></i>
+                                {%trans "View All Categories"%}<i class="w-icon-angle-right"></i>
                             </a>
                         </li>
                     </ul>
