@@ -16,7 +16,7 @@ class BlogCategoryAdmin(admin.ModelAdmin):
 
 @admin.register(Blog)
 class BlogAdmin(admin.ModelAdmin):
-    fields = ('category_az','category_en', 'name_az','name_en', 'image', 'author', 'content_az','content_en', 'author_comment')
+    fields = ('category', 'name_az','name_en', 'image', 'author', 'content_az','content_en', 'author_comment','tags')
     
 
 # @register(Blog)
