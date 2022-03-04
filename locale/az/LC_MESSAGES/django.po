@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-04 23:58+0400\n"
+"POT-Creation-Date: 2022-03-05 00:05+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -35,8 +35,9 @@ msgid "email address"
 msgstr ""
 
 #: .\blog\templates\post-single.html:25 .\contact\templates\contact-us.html:24
-#: .\shop\templates\shop-detail.html:17 .\templates\base.html:245
-#: .\templates\base.html:544 .\templates\base.html:605
+#: .\shop\templates\shop-detail.html:17 .\shop\templates\wishlist.html:24
+#: .\templates\base.html:245 .\templates\base.html:544
+#: .\templates\base.html:605
 msgid "Home"
 msgstr "Ana səhifə"
 
@@ -292,6 +293,37 @@ msgstr "Detalları"
 msgid "Related Products"
 msgstr "Oxşar Məhsullar"
 
+#: .\shop\templates\wishlist.html:25 .\templates\base.html:155
+#: .\templates\base.html:324 .\templates\base.html:563
+msgid "Wishlist"
+msgstr "Bəyəndiklərim"
+
+#: .\shop\templates\wishlist.html:34
+msgid "My wishlist"
+msgstr "Bəyəndiklərim"
+
+#: .\shop\templates\wishlist.html:40
+#, fuzzy
+#| msgid "Products"
+msgid "Product"
+msgstr "Məhsul"
+
+#: .\shop\templates\wishlist.html:42
+msgid "Price"
+msgstr "Qiymət"
+
+#: .\shop\templates\wishlist.html:44
+msgid "Actions"
+msgstr "Əməliyyatlar"
+
+#: .\shop\templates\wishlist.html:81
+msgid "Add to cart"
+msgstr "Səbətə əlavə et"
+
+#: .\shop\templates\wishlist.html:90
+msgid "There is no product.."
+msgstr "Məhsul yoxdur.."
+
 #: .\templates\base.html:105
 msgid "Sign In"
 msgstr "Giriş"
@@ -303,11 +335,6 @@ msgstr "Qeydiyyat"
 #: .\templates\base.html:149
 msgid "Call:"
 msgstr "Əlaqə:"
-
-#: .\templates\base.html:155 .\templates\base.html:324
-#: .\templates\base.html:563
-msgid "Wishlist"
-msgstr "Bəyəndiklərim"
 
 #: .\templates\base.html:163 .\templates\base.html:325
 #: .\templates\base.html:554
