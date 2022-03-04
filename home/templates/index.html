@@ -26,11 +26,11 @@
                                             'name': 'fadeInUpShorter', 'duration': '1s'
                                         }">
                                             <h5 class="banner-subtitle text-uppercase font-weight-bold">
-                                                Performance &amp; Lifestyle
+                                                {%trans "Performance"%} &amp; {%trans "Lifestyle"%}
                                             </h5>
                                             <h3 class="banner-title ls-25 mb-6">
-                                                <span class="text-primary">Introducing</span>
-                                                Fashion lifestyle collection
+                                                <span class="text-primary">{%trans "Introducing"%}</span>
+                                                {%trans "Fashion lifestyle collection"%}
                                             </h3>
                                             <a href="{% url 'product:shop' %}"
                                                 class="btn btn-dark btn-outline btn-rounded btn-icon-right">
@@ -187,8 +187,8 @@
                                     <i class="w-icon-truck"></i>
                                 </span>
                                 <div class="icon-box-content">
-                                    <h4 class="icon-box-title font-weight-bolder ls-normal">Free Shipping & Returns</h4>
-                                    <p class="text-default">For all orders over $99</p>
+                                    <h4 class="icon-box-title font-weight-bolder ls-normal">{%trans "Free Shipping & Returns"%}</h4>
+                                    <p class="text-default">{%trans "For all orders over $99"%}</p>
                                 </div>
                             </div>
                             <div class="swiper-slide icon-box icon-box-side text-dark">
@@ -196,8 +196,8 @@
                                     <i class="w-icon-bag"></i>
                                 </span>
                                 <div class="icon-box-content">
-                                    <h4 class="icon-box-title font-weight-bolder ls-normal">Secure Payment</h4>
-                                    <p class="text-default">We ensure secure payment</p>
+                                    <h4 class="icon-box-title font-weight-bolder ls-normal">{%trans "Secure Payment"%}</h4>
+                                    <p class="text-default">{%trans "We ensure secure payment"%}</p>
                                 </div>
                             </div>
                             <div class="swiper-slide icon-box icon-box-side text-dark icon-box-money">
@@ -205,8 +205,8 @@
                                     <i class="w-icon-money"></i>
                                 </span>
                                 <div class="icon-box-content">
-                                    <h4 class="icon-box-title font-weight-bolder ls-normal">Money Back Guarantee</h4>
-                                    <p class="text-default">Any back within 30 days</p>
+                                    <h4 class="icon-box-title font-weight-bolder ls-normal">{%trans "Money Back Guarantee"%}</h4>
+                                    <p class="text-default">{%trans "Any back within 30 days"%}</p>
                                 </div>
                             </div>
                             <div class="swiper-slide icon-box icon-box-side text-dark icon-box-chat">
@@ -214,8 +214,8 @@
                                     <i class="w-icon-chat"></i>
                                 </span>
                                 <div class="icon-box-content">
-                                    <h4 class="icon-box-title font-weight-bolder ls-normal">Customer Support</h4>
-                                    <p class="text-default">Call or email us 24/7</p>
+                                    <h4 class="icon-box-title font-weight-bolder ls-normal">{%trans "Customer Support"%}</h4>
+                                    <p class="text-default">{%trans "Call or email us 24/7"%}</p>
                                 </div>
                             </div>
                         </div>
@@ -290,8 +290,8 @@
                     <!-- End of Category Banner 3Cols -->
 
                     <div class="title-link-wrapper title-deals appear-animate">
-                        <h2 class="title">Deals Hot Of The Day</h2>
-                        <a href="{% url 'product:shop' %}" class="font-weight-bold ls-25">More Products<i
+                        <h2 class="title">{%trans "Deals Hot Of The Day"%}</h2>
+                        <a href="{% url 'product:shop' %}" class="font-weight-bold ls-25">{%trans "More Products"%}<i
                                 class="w-icon-long-arrow-right"></i></a>
                     </div>
                     <div class="row appear-animate">
@@ -334,7 +334,7 @@
                                     </ul> -->
                                     <div class="product-action">
                                         <a href="#" data-product={{i.id}} data-action="addCart" class="btn-product btn-cart update-cart" title="Add to Cart"><i
-                                                class="w-icon-cart"></i> Add To Cart</a>
+                                                class="w-icon-cart"></i> {%trans "Add To Cart"%}</a>
                                         <a href="#" data-product={{i.id}} data-action="addWishlist" class="btn-product-icon btn-wishlist w-icon-heart wishlistjs"
                                             title="Add to wishlist"></a>
                                         <!-- <a href="#" class="btn-product-icon btn-compare w-icon-compare"
@@ -654,8 +654,8 @@
                     <!-- End of Vendor -->
 
                     <div class="title-link-wrapper mb-4 appear-animate">
-                        <h2 class="title">Top Categories</h2>
-                        <a href="{% url 'product:shop' %}" class="text-capitalize font-weight-bold">More Products<i
+                        <h2 class="title">{%trans "Top Categories"%}</h2>
+                        <a href="{% url 'product:shop' %}" class="text-capitalize font-weight-bold">{%trans "More Products"%}<i
                                 class="w-icon-long-arrow-right"></i></a>
                     </div>
                     <div class="row mb-7 category-products-wrapper appear-animate">
@@ -717,7 +717,7 @@
                                             <div class="product-hidden-details">
                                                 <div class="product-action">
                                                     <a href="#" data-product={{i.id}} data-action="addCart" class="btn-product btn-cart update-cart" title="Add to Cart">
-                                                        <i class="w-icon-cart"></i><span>Add To Cart</span></a>
+                                                        <i class="w-icon-cart"></i><span>{%trans "Add To Cart"%}</span></a>
                                                     <a href="#" data-product={{i.id}} data-action="addWishlist" class="btn-product-icon btn-wishlist w-icon-heart wishlistjs"
                                                         title="Add to wishlist"></a>
                                                     <!-- <a href="#" class="btn-product-icon btn-compare w-icon-compare"
@@ -858,7 +858,7 @@
                                             <div class="product-hidden-details">
                                                 <div class="product-action">
                                                     <a href="#" data-product={{i.id}} data-action="addCart" class="btn-product btn-cart update-cart" title="Add to Cart">
-                                                        <i class="w-icon-cart"></i><span>Add To Cart</span></a>
+                                                        <i class="w-icon-cart"></i><span>{%trans "Add To Cart"%}</span></a>
                                                     <a href="#" data-product={{i.id}} data-action="addWishlist" class="btn-product-icon btn-wishlist w-icon-heart wishlistjs"
                                                         title="Add to wishlist"></a>
                                                     <!-- <a href="#" class="btn-product-icon btn-compare w-icon-compare"
@@ -959,7 +959,7 @@
                                             <div class="product-hidden-details">
                                                 <div class="product-action">
                                                     <a href="#" class="btn-product btn-cart" title="Add to Cart">
-                                                        <i class="w-icon-cart"></i><span>Add To Cart</span></a>
+                                                        <i class="w-icon-cart"></i><span>{%trans "Add To Cart"%}</span></a>
                                                     <a href="#" class="btn-product-icon btn-wishlist w-icon-heart"
                                                         title="Add to wishlist"></a>
                                                     <a href="#" class="btn-product-icon btn-compare w-icon-compare"
@@ -1006,7 +1006,7 @@
 
                     <div class="row mb-4 appear-animate">
                         <div class="col-lg-3 col-sm-6 mb-6">
-                            <h4 class="title title-underline mb-2 pt-1">Best Selling</h4>
+                            <h4 class="title title-underline mb-2 pt-1">{%trans "Best Selling"%}</h4>
                             <div class="widget widget-products">
                                 {% for i in best_selling %}
                                 
@@ -1044,7 +1044,7 @@
                         <!-- End of Col -->
 
                         <div class="col-lg-3 col-sm-6 mb-6">
-                            <h4 class="title title-underline mb-2 pt-1">Sale Products</h4>
+                            <h4 class="title title-underline mb-2 pt-1">{%trans "Sale Products"%}</h4>
                             <div class="widget widget-products">
                                 {% for i in sale_products %}
                                 
@@ -1079,7 +1079,7 @@
                         <!-- End of Col -->
 
                         <div class="col-lg-3 col-sm-6 mb-6">
-                            <h4 class="title title-underline mb-2 pt-1">Featured Products</h4>
+                            <h4 class="title title-underline mb-2 pt-1">{%trans "Featured Products"%}</h4>
                             <div class="widget widget-products">
                                 {% for i in featured %}
                                 
@@ -1114,7 +1114,7 @@
                         <!-- End of Col -->
 
                         <div class="col-lg-3 col-sm-6 mb-6">
-                            <h4 class="title title-underline mb-2 pt-1">Latest Products</h4>
+                            <h4 class="title title-underline mb-2 pt-1">{%trans "Latest Products"%}</h4>
                             <div class="widget widget-products">
                                 {% for i in latest_products %}
                                 
@@ -1219,8 +1219,8 @@
                     <!-- End of Brands Wrapper -->
 
                     <div class="title-link-wrapper title-post mb-4 appear-animate">
-                        <h2 class="title ls-normal mb-0">From Our Blog</h2>
-                        <a href="{% url 'blog:blog' %}" class="font-weight-bold font-size-normal mb-2">View All Articles<i
+                        <h2 class="title ls-normal mb-0">{%trans "From Our Blog"%}</h2>
+                        <a href="{% url 'blog:blog' %}" class="font-weight-bold font-size-normal mb-2">{%trans "View All Articles"%}<i
                                 class="w-icon-long-arrow-right"></i></a>
                     </div>
                     <div class="swiper-container swiper-theme post-wrapper mb-8 mb-lg-4 appear-animate"
@@ -1255,7 +1255,7 @@
                                     </div>
                                     <h4 class="post-title"><a href="{% url 'blog:single_blog' blog.slug %}">{{blog.name}}</a>
                                     </h4>
-                                    <a href="{% url 'blog:single_blog' blog.slug %}" class="btn btn-link btn-dark btn-underline">Read More<i
+                                    <a href="{% url 'blog:single_blog' blog.slug %}" class="btn btn-link btn-dark btn-underline">{%trans "Read More"%}<i
                                             class="w-icon-long-arrow-right"></i></a>
                                 </div>
                             </div>
@@ -1266,8 +1266,8 @@
                     <!-- End of Blog Post -->
 
                     <div class="title-link-wrapper title-recent mb-4 appear-animate">
-                        <h2 class="title ls-normal mb-0">Latest Products</h2>
-                        <a href="{% url 'product:shop' %}" class="font-weight-bold font-size-normal mb-2">More Products<i
+                        <h2 class="title ls-normal mb-0">{%trans "Latest Products"%}</h2>
+                        <a href="{% url 'product:shop' %}" class="font-weight-bold font-size-normal mb-2">{%trans "More Products"%}<i
                                 class="w-icon-long-arrow-right"></i></a>
                     </div>
                     <div class="swiper-container swiper-theme shadow-swiper appear-animate pb-2 mb-10 appear-animate"
