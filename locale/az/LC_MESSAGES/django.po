@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-04 23:33+0400\n"
+"POT-Creation-Date: 2022-03-04 23:58+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,9 +34,129 @@ msgstr ""
 msgid "email address"
 msgstr ""
 
-#: .\blog\templates\post-single.html:46
+#: .\blog\templates\post-single.html:25 .\contact\templates\contact-us.html:24
+#: .\shop\templates\shop-detail.html:17 .\templates\base.html:245
+#: .\templates\base.html:544 .\templates\base.html:605
+msgid "Home"
+msgstr "Ana səhifə"
+
+#: .\blog\templates\post-single.html:26 .\templates\base.html:97
+#: .\templates\base.html:278 .\templates\base.html:665
+msgid "Blog"
+msgstr "Bloq"
+
+#: .\blog\templates\post-single.html:46 .\blog\templates\post-single.html:173
 msgid "Comments"
 msgstr "Şərhlər"
+
+#: .\blog\templates\post-single.html:78
+msgid "Tags:"
+msgstr "Teqlər"
+
+#: .\blog\templates\post-single.html:102
+msgid "(AUTHOR)"
+msgstr "(Müəllif)"
+
+#: .\blog\templates\post-single.html:125
+msgid "Related Posts"
+msgstr "Oxşar Məhsullar"
+
+#: .\blog\templates\post-single.html:161 .\home\templates\index.html:1261
+msgid "Read More"
+msgstr "Daha çox"
+
+#: .\blog\templates\post-single.html:209
+msgid "Leave a Comment"
+msgstr "Şərh yaz"
+
+#: .\blog\templates\post-single.html:221
+msgid "Post Comment"
+msgstr "Göndər"
+
+#: .\blog\templates\post-single.html:224
+msgid "Please register to write a comment.."
+msgstr "Şərh yazmaq üçün zəhmət olmasa qeydiyyatdan keçin.."
+
+#: .\blog\templates\post-single.html:249 .\templates\base.html:598
+msgid "Categories"
+msgstr "Kateqoriyalar"
+
+#: .\blog\templates\post-single.html:260
+msgid "Recently Posts"
+msgstr "Son Məqalələr"
+
+#: .\blog\templates\post-single.html:303
+msgid "Browse Tags"
+msgstr "Teqlər"
+
+#: .\blog\templates\post-single.html:311
+msgid "Calendar"
+msgstr "Kalendar"
+
+#: .\contact\templates\contact-us.html:25 .\templates\base.html:98
+#: .\templates\base.html:320
+msgid "Contact Us"
+msgstr "Əlaqə"
+
+#: .\contact\templates\contact-us.html:35
+msgid "Contact Information"
+msgstr "Əlaqə məlumatı"
+
+#: .\contact\templates\contact-us.html:65
+msgid "E-mail Address"
+msgstr "E-poçt Ünvanı"
+
+#: .\contact\templates\contact-us.html:74
+msgid "Phone Number"
+msgstr "Telefon Nömrəsi"
+
+#: .\contact\templates\contact-us.html:83
+msgid "Address"
+msgstr "Ünvan"
+
+#: .\contact\templates\contact-us.html:92
+msgid "Fax"
+msgstr "Faks"
+
+#: .\contact\templates\contact-us.html:106
+msgid "People usually ask these"
+msgstr "İnsanlar adətən bunları soruşurlar"
+
+#: .\contact\templates\contact-us.html:110
+msgid "How can I cancel my order?"
+msgstr "Sifarişimi necə ləğv edə bilərəm?"
+
+#: .\contact\templates\contact-us.html:123
+msgid "Why is my registration delayed?"
+msgstr "Niyə qeydiyyatım gecikir?"
+
+#: .\contact\templates\contact-us.html:136
+msgid "What do I need to buy products?"
+msgstr "Məhsulları almaq üçün nə lazımdır?"
+
+#: .\contact\templates\contact-us.html:149
+msgid "How can I track an order?"
+msgstr "Sifarişi necə izləyə bilərəm?"
+
+#: .\contact\templates\contact-us.html:162
+msgid "How can I get money back?"
+msgstr "Pulumu necə geri ala bilərəm?"
+
+#: .\contact\templates\contact-us.html:175
+msgid "Send Us a Message"
+msgstr "Bizə Mesaj Göndərin"
+
+#: .\contact\templates\contact-us.html:178
+msgid "Email successfully sent"
+msgstr "E-poçt uğurla göndərildi"
+
+#: .\contact\templates\contact-us.html:179
+msgid "Your message was successfully sent to"
+msgstr "Mesajınız uğurla göndərildi"
+
+#: .\contact\templates\contact-us.html:190
+msgid "Send Now"
+msgstr "Göndər"
 
 #: .\core\settings.py:222
 msgid "English"
@@ -108,8 +228,8 @@ msgid "Deals Hot Of The Day"
 msgstr "Günün təklifləri"
 
 #: .\home\templates\index.html:294 .\home\templates\index.html:659
-#: .\home\templates\index.html:1273 .\shop\templates\shop-detail.html:979
-#: .\shop\templates\shop-detail.html:1106
+#: .\home\templates\index.html:1273 .\shop\templates\shop-detail.html:980
+#: .\shop\templates\shop-detail.html:1107
 msgid "More Products"
 msgstr "Daha çox məhsul"
 
@@ -146,50 +266,31 @@ msgstr "Bloqumuzdan"
 msgid "View All Articles"
 msgstr "Bütün Bloqlar"
 
-#: .\home\templates\index.html:1261
-msgid "Read More"
-msgstr "Daha çox bloq"
-
-#: .\shop\templates\shop-detail.html:16 .\templates\base.html:245
-#: .\templates\base.html:544 .\templates\base.html:605
-msgid "Home"
-msgstr "Ana səhifə"
-
-#: .\shop\templates\shop-detail.html:17
-
+#: .\shop\templates\shop-detail.html:18
 msgid "Products"
 msgstr "Məhsullar"
 
-#: .\shop\templates\shop-detail.html:107
+#: .\shop\templates\shop-detail.html:108
 #, fuzzy
 #| msgid "Categories"
 msgid "Category:"
 msgstr "Kateqoriya:"
 
-#: .\shop\templates\shop-detail.html:180
+#: .\shop\templates\shop-detail.html:181
 msgid "Add to Cart"
 msgstr "Səbətə əlavə et"
 
-#: .\shop\templates\shop-detail.html:211
+#: .\shop\templates\shop-detail.html:212
 msgid "Description"
 msgstr "Xüsusiyyətləri"
 
-#: .\shop\templates\shop-detail.html:228
+#: .\shop\templates\shop-detail.html:229
 msgid "Detail"
 msgstr "Detalları"
 
-#: .\shop\templates\shop-detail.html:978
+#: .\shop\templates\shop-detail.html:979
 msgid "Related Products"
 msgstr "Oxşar Məhsullar"
-
-#: .\templates\base.html:97 .\templates\base.html:278
-#: .\templates\base.html:665
-msgid "Blog"
-msgstr "Bloq"
-
-#: .\templates\base.html:98 .\templates\base.html:320
-msgid "Contact Us"
-msgstr "Əlaqə"
 
 #: .\templates\base.html:105
 msgid "Sign In"
@@ -246,10 +347,6 @@ msgstr "Abunə"
 #: .\templates\base.html:595
 msgid "Main Menu"
 msgstr "Əsas menyu"
-
-#: .\templates\base.html:598
-msgid "Categories"
-msgstr "Kateqoriyalar"
 
 #: .\templates\base.html:739
 msgid "View All Categories"

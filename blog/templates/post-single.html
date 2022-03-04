@@ -22,8 +22,8 @@
             <nav class="breadcrumb-nav">
                 <div class="container">
                     <ul class="breadcrumb bb-no">
-                        <li><a href="{% url 'home:index' %}">Home</a></li>
-                        <li><a href="{% url 'blog:blog' %}">Blog</a></li>
+                        <li><a href="{% url 'home:index' %}">{%trans "Home"%}</a></li>
+                        <li><a href="{% url 'blog:blog' %}">{%trans "Blog"%}</a></li>
                         <li>{{blog_detail.name}}</li>
                     </ul>
                 </div>
@@ -75,7 +75,7 @@
                             </ul>
                             <p>Nibh ipsum consequat nisl vel. Non arcu risus quis varius quam quisque id diam vel. Eu turpis egestas pharetra.</p> -->
                             <div class="tags">
-                                <label class="text-dark mr-2">Tags:</label>
+                                <label class="text-dark mr-2">{%trans "Tags:"%}</label>
                                 {% for tag in tags %}
                                 <a href="{% url 'blog:posts_by_tag' tag %}" class="tag">{{ tag }}</a>
                                 {% endfor %}
@@ -99,7 +99,7 @@
                                 <div class="author-details">
                                     <div class="author-name-wrapper flex-wrap mb-2">
                                         <h4 class="author-name font-weight-bold mb-2 pr-4 mr-auto">{{blog_detail.author}}
-                                            <span class="font-weight-normal text-default">(AUTHOR)</span>
+                                            <span class="font-weight-normal text-default">{%trans "(AUTHOR)"%}</span>
                                         </h4>
                                         <!-- <a href="#" class="btn btn-primary btn-link btn-icon-right pb-0 text-normal font-weight-normal mb-2">More Posts by admin<i class="w-icon-long-arrow-right"></i></a> -->
                                     </div>
@@ -122,7 +122,7 @@
                                 </div>
                             </div> -->
                             <!-- End Post Navigation -->
-                            <h4 class="title title-lg font-weight-bold mt-10 pt-1 mb-5">Related Posts</h4>
+                            <h4 class="title title-lg font-weight-bold mt-10 pt-1 mb-5">{%trans "Related Posts"%}</h4>
                             <div class="swiper">
                                 <div class="post-slider swiper-container swiper-theme nav-top pb-2" data-swiper-options="{
                                     'spaceBetween': 20,
@@ -158,7 +158,7 @@
                                                     - <a href="#" class="post-date">{{ r.created_at }}</a>
                                                 </div>
                                                 <h4 class="post-title mb-3"><a href="{% url 'blog:single_blog' r.slug %}">{{ r.name }}</a></h4>
-                                                <a href="{% url 'blog:single_blog' r.slug %}" class="btn btn-link btn-dark btn-underline font-weight-normal">Read More<i class="w-icon-long-arrow-right"></i></a>
+                                                <a href="{% url 'blog:single_blog' r.slug %}" class="btn btn-link btn-dark btn-underline font-weight-normal">{%trans "Read More"%}<i class="w-icon-long-arrow-right"></i></a>
                                             </div>
                                         </div>
 
@@ -170,7 +170,7 @@
                             </div>
                             <!-- End Related Posts -->
                             
-                            <h4 class="title title-lg font-weight-bold pt-1 mt-10">{{ count }} Comments</h4>
+                            <h4 class="title title-lg font-weight-bold pt-1 mt-10">{{ count }} {%trans "Comments"%}</h4>
                             <ul class="comments list-style-none pl-0">
                                 {% for c in comment %}
                                 
@@ -206,8 +206,8 @@
                             {% if user.is_authenticated %}
                             <form class="reply-section pb-4" method="post" action="{% url 'blog:single_blog' blog_detail.slug %}">
                                 {% csrf_token %}
-                                <h4 class="title title-md font-weight-bold pt-1 mt-10 mb-0">Leave a Reply</h4>
-                                <p>Your email address will not be published. Required fields are marked</p>
+                                <h4 class="title title-md font-weight-bold pt-1 mt-10 mb-0">{%trans "Leave a Comment"%}</h4>
+                                <!-- <p>Your email address will not be published. Required fields are marked</p> -->
                                 
                                 <div class="row">
                                     <div class="col-sm-6 mb-4">
@@ -218,10 +218,10 @@
                                     </div>
                                         {{ form.body }}
                                 </div>
-                                <button class="btn btn-dark btn-rounded btn-icon-right btn-comment">Post Comment<i class="w-icon-long-arrow-right"></i></button>
+                                <button class="btn btn-dark btn-rounded btn-icon-right btn-comment">{%trans "Post Comment"%}<i class="w-icon-long-arrow-right"></i></button>
                             </form>
                             {% else %}
-                            <p>Please register to write a comment..</p>
+                            <p>{%trans "Please register to write a comment.."%}</p>
                             {% endif %}
                         </div>
                         
@@ -246,7 +246,7 @@
                                     </form>
                                     <!-- End of Widget search form -->
                                     <div class="widget widget-categories">
-                                        <h3 class="widget-title bb-no mb-0">Categories</h3>
+                                        <h3 class="widget-title bb-no mb-0">{%trans "Categories"%}</h3>
                                         <ul class="widget-body filter-items search-ul">
                                             {% for b in blog_category %}
                             
@@ -257,7 +257,7 @@
                                     </div>
                                     <!-- End of Widget categories -->
                                     <div class="widget widget-posts">
-                                        <h3 class="widget-title bb-no">Recently Posts</h3>
+                                        <h3 class="widget-title bb-no">{%trans "Recently Posts"%}</h3>
                                         <div class="widget-body">
                                             <div class="swiper">
                                                 
@@ -300,7 +300,7 @@
                                     </div> -->
                                     <!-- End of Widget custom block -->
                                     <div class="widget widget-tags">
-                                        <h3 class="widget-title bb-no">Browse Tags</h3>
+                                        <h3 class="widget-title bb-no">{%trans "Browse Tags"%}</h3>
                                         <div class="widget-body tags">
                                             {% for tag in tags %}
                                                 <a href="{% url 'blog:posts_by_tag' tag %}" class="tag">{{ tag }}</a>
@@ -308,7 +308,7 @@
                                         </div>
                                     </div>
                                     <div class="widget widget-calendar">
-                                        <h3 class="widget-title bb-no">Calendar</h3>
+                                        <h3 class="widget-title bb-no">{%trans "Calendar"%}</h3>
                                         <div class="widget-body">
                                             <div class="calendar-container" data-calendar-options="{
                                                 'dayExcerpt': 1
