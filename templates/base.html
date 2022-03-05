@@ -84,7 +84,7 @@
                             <div class="dropdown-box">
                                 {% for language in languages %}
                                 
-                                  <a href="/{{ language.code }}/"
+                                <a href="/{{ language.code }}/{{request.get_full_path|slice:'4:'}}"
                                     {% if language.code == CURRENT_LANGUAGE %} class="active"{% endif %}>
                                     {{ language.name_local }}
                                   </a>
@@ -392,11 +392,11 @@
                                         <a href="#" class="social-icon social-instagram w-icon-instagram"></a>
                                         <a href="#" class="social-icon social-youtube w-icon-youtube"></a>
                                         <a href="#" class="social-icon social-pinterest w-icon-pinterest"></a>
-                                    </div>{%endcomment%}
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-sm-6">
+                          <div class="col-lg-3 col-sm-6">
                             <div class="widget">
                                 <h3 class="widget-title">Company</h3>
                                 <ul class="widget-body">
