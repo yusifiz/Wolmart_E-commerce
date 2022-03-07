@@ -50,6 +50,7 @@ class Shop(models.Model):
     price = models.FloatField(null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
     image = models.ImageField(upload_to='shop/')
+    image2 = models.ImageField(null=True,blank=True,upload_to='shop/')
     slug = models.SlugField(max_length=127, null=True, blank=True)
     
     

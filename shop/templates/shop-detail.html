@@ -59,22 +59,22 @@
                                             <div class="swiper-slide">
                                                 <figure class="product-image">
                                                     <img src="{{ product.image.url }}"
-                                                        data-zoom-image="{% static 'images/products/gallery/1-800x900.jpg' %}"
+                                                        data-zoom-image="{{ product.image.url }}"
                                                         alt="Smart Watch" width="800" height="900">
-                                                    <a href="#" class="product-gallery-btn product-image-full"><i
-                                                            class="w-icon-zoom"></i></a>
+                                                    <!-- <a href="#" class="product-gallery-btn product-image-full"><i
+                                                            class="w-icon-zoom"></i></a> -->
                                                 </figure>
                                             </div>
                                               <div class="swiper-slide">
                                                 <figure class="product-image">
-                                                    <img src="{{ product.image.url }}"
-                                                        data-zoom-image="{% static 'images/products/gallery/2-800x900.jpg' %}"
+                                                    <img src="{{ product.image2.url }}"
+                                                        data-zoom-image="{{ product.image2.url }}"
                                                         alt="Smart Watch" width="488" height="549">
-                                                    <a href="#" class="product-gallery-btn product-image-full"><i
-                                                            class="w-icon-zoom"></i></a>
+                                                    <!-- <a href="#" class="product-gallery-btn product-image-full"><i
+                                                            class="w-icon-zoom"></i></a> -->
                                                 </figure>
                                             </div>
-                                            <div class="swiper-slide">
+                                           {%comment%} <div class="swiper-slide">
                                                 <figure class="product-image">
                                                     <img src="{{ product.image.url }}"
                                                         data-zoom-image="{% static 'images/products/gallery/3-800x900.jpg' %}"
@@ -91,7 +91,7 @@
                                                     <a href="#" class="product-gallery-btn product-image-full"><i
                                                             class="w-icon-zoom"></i></a>
                                                 </figure>
-                                            </div> 
+                                            </div> {%endcomment%}
                                         </div>
                                     </div>
                                 </div>
