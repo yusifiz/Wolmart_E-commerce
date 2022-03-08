@@ -283,8 +283,8 @@ def wishlist_view(request):
 
 def checkout(request):
     messageSent = False
+    form = CheckoutForm()
     if request.user.is_authenticated:
-        form = CheckoutForm()
         if request.method == 'POST':
             form = CheckoutForm(data=request.POST)
             if form.is_valid():
