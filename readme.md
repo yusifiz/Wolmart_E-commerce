@@ -1,4 +1,4 @@
-# [wol-mart.com](wol-mart.com)
+# [wol-mart.com](http://wol-mart.com)
 
 ## Requirements
 
