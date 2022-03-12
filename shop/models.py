@@ -115,6 +115,7 @@ class WishlistItem(models.Model):
     
     
 class Checkout(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
     adress1 = models.CharField(max_length=255, null=True, blank=True)
     items = models.ForeignKey(OrderItem, on_delete=models.CASCADE, null=True, blank=True)
     adress2 = models.CharField(max_length=255, null=True, blank=True)
