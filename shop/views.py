@@ -1,9 +1,11 @@
+from importlib import import_module
 from django.shortcuts import redirect, render
 from django.views.generic import ListView, DetailView
 from django.http import JsonResponse
 import json
 from django.template.loader import render_to_string
 from django.urls import reverse_lazy
+from django.db.models import Q
 
 from shop.forms import CheckoutForm
 from . models import Shop, Order, OrderItem, ProductCategory, Color,Brand, Size, Wishlist, WishlistItem
@@ -163,14 +165,20 @@ def update_item(request):
 def search_bar(request):
     if request.method == 'POST':
         searched = request.POST['searched']
-        search_item = Shop.objects.filter(name__icontains = searched)
-        if searched in str(list(search_item)):
-            print( searched, search_item)
-            return render(request, 'search.html',{'searched':searched,'search_item':search_item})
-        else:
-            print( searched, search_item)
-            return redirect(reverse_lazy('pages:error_404'))
-    
+        search_item = Shop.objects.filter(
+        Q(name__icontains=searched) | Q(description__icontains=searched)
+    )   
+        # if searched in str(list(search_item)):
+        #     print( searched, search_item)
+        #     return render(request, 'search.html',{'searched':searched,'search_item':search_item})
+        # else:
+        #     print( searched, search_item)
+        #     return redirect(reverse_lazy('pages:error_404'))
+        context = {
+            'search_item':search_item,
+            'searched':searched,
+        }
+        return render(request, 'search.html',context)
     
 def filter(request, slug):
     product = Shop.objects.filter(category__slug=slug)
