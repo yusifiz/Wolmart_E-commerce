@@ -4,4 +4,6 @@ from .models import Subscriber, HomeSlider
 # Register your models here.
 
 admin.site.register(Subscriber)
-admin.site.register(HomeSlider)
+@admin.register(HomeSlider)
+class HomeSliderAdmin(admin.ModelAdmin):
+    fileds = ('title_az','title_en', 'desc_az', 'desc_en', 'image',)
