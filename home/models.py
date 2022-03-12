@@ -10,3 +10,9 @@ class Subscriber(models.Model):
         if self.email:
             return str(self.email)
         return str(self.id)
+    
+    
+class HomeSlider(models.Model):
+    image = models.ImageField(upload_to='home/slider/')
+    title = models.CharField(max_length=200, null=True,blank=True)
+    desc = models.CharField(max_length=200,null=True, blank=True) 
