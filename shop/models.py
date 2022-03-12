@@ -70,7 +70,7 @@ class Order(models.Model):
     transaction_id = models.CharField(max_length=255, null=True)
     
     def __str__(self):
-        return str(self.id)
+        return self.id
     
     @property
     def get_cart_total(self):
@@ -91,6 +91,9 @@ class OrderItem(models.Model):
     quantity = models.IntegerField(default=0, null=True, blank=True)
     date = models.DateTimeField(auto_now_add=True)
 
+    def __str__(self):
+        return self.product
+    
     @property
     def get_total(self):
         total = self.product.price * self.quantity
@@ -104,7 +107,7 @@ class Wishlist(models.Model):
     transaction_id = models.CharField(max_length=255, null=True)
     
     def __str__(self):
-        return str(self.id)
+        return self.id
     
     
 class WishlistItem(models.Model):
@@ -113,6 +116,8 @@ class WishlistItem(models.Model):
     quantity = models.IntegerField(default=0, null=True, blank=True)
     date = models.DateTimeField(auto_now_add=True)
     
+    def __str__(self):
+        return self.product
     
 class Checkout(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
@@ -122,3 +127,6 @@ class Checkout(models.Model):
     town = models.CharField(max_length=255, null=True, blank=True)
     zip = models.CharField(max_length=255, null=True, blank=True)
     phone = models.IntegerField(null=True, blank=True)
+    
+    def __str__(self):
+        return self.id
