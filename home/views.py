@@ -1,7 +1,7 @@
 from unicodedata import category
 from django.shortcuts import render
 from blog.models import Blog
-from home.models import HomeSlider
+from home.models import HomeSlider, ServiceSlider
 from shop.models import Shop
 # Create your views here.
 
@@ -18,6 +18,7 @@ def index(request):
     latest = Shop.objects.all().filter(category__name__in=['Electronics', 'Computer','Phone','Furniture']).order_by('id')[:8]
     blog_list = Blog.objects.all()[:5]
     slider = HomeSlider.objects.all()
+    service_slider = ServiceSlider.objects.all()
     context = {
         'blog_list' : blog_list,
         # 'product':product,
@@ -31,5 +32,6 @@ def index(request):
         'latest_products':latest_products,
         'latest':latest,
         'slider':slider,
+        'service_slider':service_slider,
     }
     return render(request, "index.html", context)

@@ -85,42 +85,20 @@
                             }
                         }}">
                         <div class="swiper-wrapper row cols-md-4 cols-sm-3 cols-1">
+                            {% for i in service_slider %}
+                            
                             <div class="swiper-slide icon-box icon-box-side text-dark">
                                 <span class="icon-box-icon icon-shipping">
-                                    <i class="w-icon-truck"></i>
+                                    {{i.icon |safe}}
                                 </span>
                                 <div class="icon-box-content">
-                                    <h4 class="icon-box-title font-weight-bolder ls-normal">{%trans "Free Shipping & Returns"%}</h4>
-                                    <p class="text-default">{%trans "For all orders over $99"%}</p>
+                                    <h4 class="icon-box-title font-weight-bolder ls-normal">{{i.title}}</h4>
+                                    <p class="text-default">{{i.desc}}</p>
                                 </div>
                             </div>
-                            <div class="swiper-slide icon-box icon-box-side text-dark">
-                                <span class="icon-box-icon icon-payment">
-                                    <i class="w-icon-bag"></i>
-                                </span>
-                                <div class="icon-box-content">
-                                    <h4 class="icon-box-title font-weight-bolder ls-normal">{%trans "Secure Payment"%}</h4>
-                                    <p class="text-default">{%trans "We ensure secure payment"%}</p>
-                                </div>
-                            </div>
-                            <div class="swiper-slide icon-box icon-box-side text-dark icon-box-money">
-                                <span class="icon-box-icon icon-money">
-                                    <i class="w-icon-money"></i>
-                                </span>
-                                <div class="icon-box-content">
-                                    <h4 class="icon-box-title font-weight-bolder ls-normal">{%trans "Money Back Guarantee"%}</h4>
-                                    <p class="text-default">{%trans "Any back within 30 days"%}</p>
-                                </div>
-                            </div>
-                            <div class="swiper-slide icon-box icon-box-side text-dark icon-box-chat">
-                                <span class="icon-box-icon icon-chat">
-                                    <i class="w-icon-chat"></i>
-                                </span>
-                                <div class="icon-box-content">
-                                    <h4 class="icon-box-title font-weight-bolder ls-normal">{%trans "Customer Support"%}</h4>
-                                    <p class="text-default">{%trans "Call or email us 24/7"%}</p>
-                                </div>
-                            </div>
+
+                            {% endfor %}
+
                         </div>
                     </div>
                     <!-- End of Iocn Box Wrapper -->
