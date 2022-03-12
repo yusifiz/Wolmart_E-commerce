@@ -17,20 +17,22 @@
                             'disableOnInteraction': false
                         }
                     }">
-                        <div class="swiper-wrapper row cols-1 gutter-no">
+                    <div class="swiper-wrapper row cols-1 gutter-no">
+                            {% for i in slider %}
+                            
                             <div  class="swiper-slide banner banner-fixed intro-slide intro-slide1"
-                            style="background-image: url({% static 'images/demos/demo7/slides/slide-1.jpg' %}); background-color: #EEEDEB;">
+                            style="background-image: url({{i.image.url}}); background-color: #EEEDEB;">
                                 <div class="container">
                                     <div class="banner-content d-inline-block y-50">
                                         <div class="slide-animate" data-animation-options="{
                                             'name': 'fadeInUpShorter', 'duration': '1s'
                                         }">
                                             <h5 class="banner-subtitle text-uppercase font-weight-bold">
-                                                {%trans "Performance"%} &amp; {%trans "Lifestyle"%}
+                                                {{i.title}}
                                             </h5>
                                             <h3 class="banner-title ls-25 mb-6">
-                                                <span class="text-primary">{%trans "Introducing"%}</span>
-                                                {%trans "Fashion lifestyle collection"%}
+                                                {%comment%}<span class="text-primary">{%trans "Introducing"%}</span>{%endcomment%}
+                                                {{i.desc}}
                                             </h3>
                                             <a href="{% url 'product:shop' %}"
                                                 class="btn btn-dark btn-outline btn-rounded btn-icon-right">
@@ -40,120 +42,21 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- End of Intro Slide 1 -->
-                            <div class="swiper-slide banner banner-fixed intro-slide intro-slide2"
-                            style="background-image: url({% static 'images/demos/demo7/slides/slide-2.jpg' %}); background-color: #A9A9A9;">
-                                <div class="container text-right">
-                                    <div class="banner-content y-50 d-inline-block">
-                                        <div class="slide-animate" data-animation-options="{
-                                            'name': 'zoomIn', 'duration': '1s'
-                                        }">
-                                            <h5 class="banner-subtitle text-uppercase font-weight-bold ls-25 mb-0">
-                                                Up To <strong class="text-primary text-capitalize">30% Off</strong>
-                                            </h5>
-                                            <h3 class="banner-title text-white text-uppercase ls-25">Calisthenics</h3>
-                                            <div class="banner-price-info text-white">Start at $125.00</div>
-                                            <a href="{% url 'product:shop' %}"
-                                                class="btn btn-white btn-outline btn-rounded btn-icon-right">
-                                                {% trans "Shop Now" %}<i class="w-icon-long-arrow-right"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- End of Intro Slide 2 -->
-                            <div class="swiper-slide banner banner-fixed intro-slide intro-slide3"
-                                style="background-image: url({% static 'images/demos/demo7/slides/slide-3.jpg' %}); background-color: #F3F3F3;">
-                                <div class="container">
-                                    <div class="banner-content y-50 d-inline-block">
-                                        <div class="slide-animate" data-animation-options="{
-                                            'name': 'fadeInDownShorter', 'duration': '1s'
-                                        }">
-                                            <h5 class="banner-subtitle text-uppercase text-primary font-weight-bold mb-1">
-                                                From Online Store
-                                            </h5>
-                                            <h3 class="banner-title text-uppercase ls-25">Sprimgchic</h3>
-                                            <h4 class="ls-25 mb-0">Recommend</h4>
-                                            <p class="ls-25">Free shipping on all orders over <span
-                                                    class="text-dark">$99.00</span></p>
-                                            <a href="{% url 'product:shop' %}"
-                                                class="btn btn-dark btn-rounded btn-outline btn-icon-right">
-                                                {% trans "Shop Now" %}<i class="w-icon-long-arrow-right"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- End of Intro Slide 3 -->
-                            <div class="swiper-slide banner banner-fixed intro-slide intro-slide1"
-                                style="background-image: url({% static 'images/demos/demo7/slides/slide-1.jpg' %}); background-color: #EEEDEB;">
-                                <div class="container">
-                                    <div class="banner-content d-inline-block y-50">
-                                        <div class="slide-animate" data-animation-options="{
-                                            'name': 'fadeInUpShorter', 'duration': '1s'
-                                        }">
-                                            <h5 class="banner-subtitle text-uppercase font-weight-bold">
-                                                Performance &amp; Lifestyle
-                                            </h5>
-                                            <h3 class="banner-title ls-25 mb-6">
-                                                <span class="text-primary">Introducing</span>
-                                                Fashion lifestyle collection
-                                            </h3>
-                                            <a href="{% url 'product:shop' %}"
-                                                class="btn btn-dark btn-outline btn-rounded btn-icon-right">
-                                                {% trans "Shop Now" %}<i class="w-icon-long-arrow-right"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- End of Intro Slide 1 -->
-                            <div class="swiper-slide banner banner-fixed intro-slide intro-slide3"
-                                style="background-image: url({% static 'images/demos/demo7/slides/slide-3.jpg' %}); background-color: #F3F3F3;">
-                                <div class="container">
-                                    <div class="banner-content y-50 d-inline-block">
-                                        <div class="slide-animate" data-animation-options="{
-                                            'name': 'fadeInDownShorter', 'duration': '1s'
-                                        }">
-                                            <h5 class="banner-subtitle text-uppercase text-primary font-weight-bold mb-1">
-                                                From Online Store
-                                            </h5>
-                                            <h3 class="banner-title text-uppercase ls-25">Sprimgchic</h3>
-                                            <h4 class="ls-25 mb-0">Recommend</h4>
-                                            <p class="ls-25">Free shipping on all orders over <span
-                                                    class="text-dark">$99.00</span></p>
-                                            <a href="{% url 'product:shop' %}"
-                                                class="btn btn-dark btn-rounded btn-outline btn-icon-right">
-                                                {% trans "Shop Now" %}<i class="w-icon-long-arrow-right"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            
+                            {% endfor %}
                             <!-- End of Intro Slide 3 -->
                         </div>
+                        
                         <div class="custom-dots swiper-img-dots appear-animate">
+                            {% for i in slider %}
                             <a href="#" class="active appear-animate">
-                                <img src="{% static 'images/demos/demo7/slides/dot-1.png' %}" alt="Slide Thumb" width="70"
+                                <img src="{{i.thumbnail.url}}" alt="Slide Thumb" width="70"
                                     height="70">
                             </a>
-                            <a href="#" class="appear-animate">
-                                <img src="{% static 'images/demos/demo7/slides/dot-2.png' %}" alt="Slide Thumb" width="70"
-                                    height="70">
-                            </a>
-                            <a href="#" class="appear-animate">
-                                <img src="{% static 'images/demos/demo7/slides/dot-3.png' %}" alt="Slide Thumb" width="70"
-                                    height="70">
-                            </a>
-                            <a href="#" class="appear-animate">
-                                <img src="{% static 'images/demos/demo7/slides/dot-4.png' %}" alt="Slide Thumb" width="70"
-                                    height="70">
-                            </a>
-                            <a href="#" class="appear-animate">
-                                <img src="{% static 'images/demos/demo7/slides/dot-3.png' %}" alt="Slide Thumb" width="70"
-                                    height="70">
-                            </a>
+                            {% endfor %}
                         </div>
+
+
                     </div>
                 </section>
 

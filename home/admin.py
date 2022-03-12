@@ -6,4 +6,5 @@ from .models import Subscriber, HomeSlider
 admin.site.register(Subscriber)
 @admin.register(HomeSlider)
 class HomeSliderAdmin(admin.ModelAdmin):
+    exclude = ('title','desc')
     fileds = ('title_az','title_en', 'desc_az', 'desc_en', 'image',)

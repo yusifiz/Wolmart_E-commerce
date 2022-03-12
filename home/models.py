@@ -14,5 +14,8 @@ class Subscriber(models.Model):
     
 class HomeSlider(models.Model):
     image = models.ImageField(upload_to='home/slider/')
+    thumbnail = models.ImageField(upload_to='home/thumbnail/')
     title = models.CharField(max_length=200, null=True,blank=True)
     desc = models.CharField(max_length=200,null=True, blank=True) 
+    
+    
