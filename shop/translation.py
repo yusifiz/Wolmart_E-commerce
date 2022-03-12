@@ -3,6 +3,6 @@ from .models import Shop
 
 
 class ShopTranslationOptions(TranslationOptions):
-    fields = ()
+    fields = ('description','name')
     
 translator.register(Shop, ShopTranslationOptions)
