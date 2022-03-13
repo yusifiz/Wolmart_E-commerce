@@ -124,43 +124,66 @@ def base_cart(request):
 #     }
 #     return render(request, 'checkout.html', context)
 
-def update_item(request):
-    data = json.loads(request.body)
-    productID = data['productID']
-    action = data['action']
-    print('Actionnnnn', action)
-    print('ProductID', productID)
-    # o = OrderItem.objects.all()
-    user = request.user
-    product = Shop.objects.get(id=productID)
-    order, created = Order.objects.get_or_create(user=user, status=False)
-    orderItem, created = OrderItem.objects.get_or_create(order=order, product=product)
-    oitemcount = OrderItem.objects.all().count()
-    print("orderItem.quantity")
-    if action == 'addCart':
-        orderItem.quantity = (orderItem.quantity + 1)
-        print(orderItem.quantity)
-    elif action == 'removeCart':
-        orderItem.quantity = (orderItem.quantity - 1)
+# def update_item(request):
+#     data = json.loads(request.body)
+#     productID = data['productID']
+#     action = data['action']
+#     print('Actionnnnn', action)
+#     print('ProductID', productID)
+#     # o = OrderItem.objects.all()
+#     user = request.user
+#     product = Shop.objects.get(id=productID)
+#     order, created = Order.objects.get_or_create(user=user, status=False)
+#     orderItem, created = OrderItem.objects.get_or_create(order=order, product=product)
+#     oitemcount = OrderItem.objects.all().count()
+#     print("orderItem.quantity")
+#     if action == 'addCart':
+#         orderItem.quantity = (orderItem.quantity + 1)
+#         print(orderItem.quantity)
+#     elif action == 'removeCart':
+#         orderItem.quantity = (orderItem.quantity - 1)
 
-    orderItem.save()
+#     orderItem.save()
     
-    if orderItem.quantity <= 0 or action == 'removeAll':
-        orderItem.delete()
-        print(oitemcount)
+#     if orderItem.quantity <= 0 or action == 'removeAll':
+#         orderItem.delete()
+#         print(oitemcount)
         
-    if action=='removeOrder':
-        order.delete()
+#     if action=='removeOrder':
+#         order.delete()
     
-    if oitemcount <= 1 and (action == 'removeAll' or action == 'remove'):
-        order.delete()
-    # elif o.quantity <= 0:
-    #     order.delete()
+#     if oitemcount <= 1 and (action == 'removeAll' or action == 'remove'):
+#         order.delete()
+#     # elif o.quantity <= 0:
+#     #     order.delete()
 
-    # elif action == 'removeCart':
-    #     order.delete()
-    return JsonResponse('item was added', safe=False)
+#     # elif action == 'removeCart':
+#     #     order.delete()
+#     return JsonResponse('item was added', safe=False)
 
+
+def update_item(request):
+	# del request.session['cartdata']
+	cart_p={}
+	cart_p[str(request.GET['id'])]={
+		# 'image':request.GET['image'],
+		'title':request.GET['title'],
+		'qty':request.GET['qty'],
+		# 'price':request.GET['price'],
+	}
+	if 'cartdata' in request.session:
+		if str(request.GET['id']) in request.session['cartdata']:
+			cart_data=request.session['cartdata']
+			cart_data[str(request.GET['id'])]['qty']=int(cart_p[str(request.GET['id'])]['qty'])
+			cart_data.update(cart_data)
+			request.session['cartdata']=cart_data
+		else:
+			cart_data=request.session['cartdata']
+			cart_data.update(cart_p)
+			request.session['cartdata']=cart_data
+	else:
+		request.session['cartdata']=cart_p
+	return JsonResponse({'data':request.session['cartdata'],'totalitems':len(request.session['cartdata'])})
 
 def search_bar(request):
     if request.method == 'POST':

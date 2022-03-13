@@ -310,7 +310,10 @@
                                                     height="338" />
                                             </a>
                                             <div class="product-action-horizontal">
-                                                <button type="button" data-product={{product.id}} data-action="addCart" class="btn-product-icon btn-cart w-icon-cart update-cart"
+                                                <input type="number" value="1" class="form-control product-qty-{{product.id}}" id="productQty" />
+                                                <input type="hidden" class="product-id-{{product.id}}" value="{{product.id}}" />
+                                                <input type="hidden" class="product-title-{{product.id}}" value="{{product.title}}" />
+                                                <button type="button" data-product={{product.id}} data-action="addCart" id="addToCartBtn" class="btn-product-icon btn-cart w-icon-cart update-cart"
                                                     title="Add to cart"></button>
                                                 <button type="button" data-product={{product.id}} data-action='addWishlist' class="btn-product-icon btn-wishlist w-icon-heart wishlistjs" 
                                                     title="Wishlist"></button>
