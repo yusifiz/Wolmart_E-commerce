@@ -23,6 +23,8 @@ class ShopListView(ListView):
         size = Size.objects.all()
         color = Color.objects.all()
         brand = Brand.objects.all()
+        discount = Shop.objects.filter(discount_percent=True)
+        print(discount)
         context = super().get_context_data(**kwargs)
         # print(size)
         context.update({
@@ -30,6 +32,7 @@ class ShopListView(ListView):
             'size':size,
             'color':color,
             'brand':brand,
+            'discount':discount,
         })
         return context
     

@@ -48,6 +48,7 @@ class Shop(models.Model):
     name = models.CharField(max_length=127, null=True, blank=True)
     description = models.TextField(null=True, blank=True)
     price = models.FloatField(null=True, blank=True)
+    discount_percent = models.IntegerField(default=0)
     created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
     image = models.ImageField(upload_to='shop/')
     image2 = models.ImageField(null=True,blank=True,upload_to='shop/')
@@ -58,6 +59,12 @@ class Shop(models.Model):
         verbose_name = 'Product'
         verbose_name_plural = 'Products'
         ordering = ('created_at',)
+        
+    @property
+    def calculate_discount(self):
+        if self.discount_percent > 0:
+            return self.price - (self.price*self.discount_percent)/100
+        return self.price
         
     def __str__(self):
         return self.name
