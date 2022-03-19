@@ -817,10 +817,10 @@
                                                     <img src="{{ p.image.url }}" alt="Product"
                                                         width="239" height="269">
                                                 </a>
-                                                <div class="product-action-vertical">
+                                                <!-- <div class="product-action-vertical">
                                                     <a href="#" class="btn-product-icon btn-quickview w-icon-search"
                                                         title="Quick View"></a>
-                                                </div>
+                                                </div> -->
                                             </figure>
                                             <div class="product-details">
                                                 <h3 class="product-name">
@@ -839,12 +839,12 @@
                                             </div>
                                             <div class="product-hidden-details">
                                                 <div class="product-action">
-                                                    <a href="#" class="btn-product btn-cart" title="Add to Cart">
+                                                    <a href="#" class="btn-product btn-cart update-cart" data-product={{p.id}} data-action="addCart" title="Add to Cart">
                                                         <i class="w-icon-cart"></i><span>{%trans "Add To Cart"%}</span></a>
-                                                    <a href="#" class="btn-product-icon btn-wishlist w-icon-heart"
+                                                    <a href="#" class="btn-product-icon btn-wishlist w-icon-heart update-cart" data-product={{p.id}} data-action="addCart"
                                                         title="Add to wishlist"></a>
-                                                    <a href="#" class="btn-product-icon btn-compare w-icon-compare"
-                                                        title="Compare"></a>
+                                                    <!-- <a href="#" class="btn-product-icon btn-compare w-icon-compare"
+                                                        title="Compare"></a> -->
                                                 </div>
                                             </div>
                                         </div>
