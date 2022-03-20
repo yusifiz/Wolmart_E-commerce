@@ -5,6 +5,13 @@ from account.models import User
 # Create your models here.
 
 
+class Banner(models.Model):
+    title = models.CharField(max_length=255,null=True,blank=True)
+    image = models.ImageField(upload_to='banner/', null=True, blank=True)
+
+    def __str__(self):
+        return self.title
+
 class Color(models.Model):
     name = models.CharField(max_length=127, null=True, blank=True)
     
