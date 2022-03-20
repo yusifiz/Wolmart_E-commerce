@@ -338,7 +338,7 @@
                                                 <div class="product-price">
                                                     {% if product.discount_percent %}
                                                     <h4 class="product__price--original">₾{{ product.price|floatformat:2 }}</h4>
-                                                    <h4 class="product__price--discounted">₾{{ product.discount_percent|floatformat:2 }}</h4>
+                                                    <h4 class="product__price--discounted">₾{{ product.calculate_discount|floatformat:2 }}</h4>
                                                     {% else %}  
                                                     <h4>₾{{ product.price|floatformat:2 }}</h4>
                                                     {% endif %}
